@@ -1,8 +1,4 @@
 import unittest
-<<<<<<< HEAD
-from manager_cw_bot_api.get_business_conn_and_info_conn import gets
-=======
->>>>>>> f20ff53 (Updated data manager)
 
 
 class Test(unittest.TestCase):

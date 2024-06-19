@@ -1,14 +1,9 @@
 """
 Module of the business handler.
 """
-<<<<<<< HEAD
-import telebot
-import json
-=======
 import json
 
 import telebot
->>>>>>> f20ff53 (Updated data manager)
 from telebot import types
 
 from manager_cw_bot_api.buttons import Buttons
@@ -224,11 +219,7 @@ class Thanks:
             self.__bot.send_message(
                 chat_id=message.chat.id,
                 text=f"❌ FAIL! It's not TEXT-type! Please, try again (or repeat later)",
-<<<<<<< HEAD
-                reply_markup=Buttons.get_menu_on_back_or_main()
-=======
                 reply_markup=Buttons.back_on_main()
->>>>>>> f20ff53 (Updated data manager)
             )
 
     def __manage_thanks_from_users_only_text(self, message: types.Message) -> None:
@@ -258,11 +249,7 @@ class Thanks:
             self.__bot.send_message(
                 chat_id=message.from_user.id,
                 text="✅ SUCCESSFUL! The data updated!",
-<<<<<<< HEAD
-                reply_markup=Buttons.get_menu_on_back_or_main()
-=======
                 reply_markup=Buttons.back_on_main()
->>>>>>> f20ff53 (Updated data manager)
             )
 
         else:
@@ -294,11 +281,7 @@ class Thanks:
             self.__bot.send_message(
                 chat_id=message.from_user.id,
                 text="✅ SUCCESSFUL! The data updated!",
-<<<<<<< HEAD
-                reply_markup=Buttons.get_menu_on_back_or_main()
-=======
                 reply_markup=Buttons.back_on_main()
->>>>>>> f20ff53 (Updated data manager)
             )
 
         else:
@@ -342,11 +325,7 @@ class Thanks:
             self.__bot.send_message(
                 chat_id=message.from_user.id,
                 text="✅ SUCCESSFUL! The data updated!",
-<<<<<<< HEAD
-                reply_markup=Buttons.get_menu_on_back_or_main()
-=======
                 reply_markup=Buttons.back_on_main()
->>>>>>> f20ff53 (Updated data manager)
             )
 
         else:
@@ -439,11 +418,7 @@ class Congratulation:
             self.__bot.send_message(
                 chat_id=message.chat.id,
                 text=f"❌ FAIL! It's not TEXT-type! Please, try again (or repeat later)",
-<<<<<<< HEAD
-                reply_markup=Buttons.get_menu_on_back_or_main()
-=======
                 reply_markup=Buttons.back_on_main()
->>>>>>> f20ff53 (Updated data manager)
             )
 
     def __manage_congratulation_from_users_only_text(self, message: types.Message) -> None:
@@ -474,11 +449,7 @@ class Congratulation:
             self.__bot.send_message(
                 chat_id=message.from_user.id,
                 text="✅ SUCCESSFUL! The data updated!",
-<<<<<<< HEAD
-                reply_markup=Buttons.get_menu_on_back_or_main()
-=======
                 reply_markup=Buttons.back_on_main()
->>>>>>> f20ff53 (Updated data manager)
             )
 
         else:
@@ -511,11 +482,7 @@ class Congratulation:
             self.__bot.send_message(
                 chat_id=message.from_user.id,
                 text="✅ SUCCESSFUL! The data updated!",
-<<<<<<< HEAD
-                reply_markup=Buttons.get_menu_on_back_or_main()
-=======
                 reply_markup=Buttons.back_on_main()
->>>>>>> f20ff53 (Updated data manager)
             )
 
         else:
@@ -556,11 +523,7 @@ class Congratulation:
             self.__bot.send_message(
                 chat_id=message.from_user.id,
                 text="✅ SUCCESSFUL! The data updated!",
-<<<<<<< HEAD
-                reply_markup=Buttons.get_menu_on_back_or_main()
-=======
                 reply_markup=Buttons.back_on_main()
->>>>>>> f20ff53 (Updated data manager)
             )
 
         else:
@@ -653,11 +616,7 @@ class ProblemWithBot:
             self.__bot.send_message(
                 chat_id=message.chat.id,
                 text=f"❌ FAIL! It's not TEXT-type! Please, try again (or repeat later)",
-<<<<<<< HEAD
-                reply_markup=Buttons.get_menu_on_back_or_main()
-=======
                 reply_markup=Buttons.back_on_main()
->>>>>>> f20ff53 (Updated data manager)
             )
 
     def __manage_problem_with_bot_from_users_only_text(self, message: types.Message) -> None:
@@ -689,11 +648,7 @@ class ProblemWithBot:
             self.__bot.send_message(
                 chat_id=message.from_user.id,
                 text="✅ SUCCESSFUL! The data updated!",
-<<<<<<< HEAD
-                reply_markup=Buttons.get_menu_on_back_or_main()
-=======
                 reply_markup=Buttons.back_on_main()
->>>>>>> f20ff53 (Updated data manager)
             )
 
         else:
@@ -726,11 +681,7 @@ class ProblemWithBot:
             self.__bot.send_message(
                 chat_id=message.from_user.id,
                 text="✅ SUCCESSFUL! The data updated!",
-<<<<<<< HEAD
-                reply_markup=Buttons.get_menu_on_back_or_main()
-=======
                 reply_markup=Buttons.back_on_main()
->>>>>>> f20ff53 (Updated data manager)
             )
 
         else:
@@ -771,11 +722,7 @@ class ProblemWithBot:
             self.__bot.send_message(
                 chat_id=message.from_user.id,
                 text="✅ SUCCESSFUL! The data updated!",
-<<<<<<< HEAD
-                reply_markup=Buttons.get_menu_on_back_or_main()
-=======
                 reply_markup=Buttons.back_on_main()
->>>>>>> f20ff53 (Updated data manager)
             )
 
         else:

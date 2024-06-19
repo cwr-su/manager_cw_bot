@@ -1,16 +1,10 @@
 """
 Module of the GigaChatAI model.
 """
-<<<<<<< HEAD
-import requests
-import json
-
-=======
 import json
 
 import requests
 
->>>>>>> f20ff53 (Updated data manager)
 
 class GigaChat:
     """
@@ -146,8 +140,6 @@ class GigaChat:
             return "Sorry! I updated the data. Please, repeat your request :)"
 
 
-<<<<<<< HEAD
-=======
 class GigaImage:
     """Class of generate images for plus-users."""
 
@@ -240,7 +232,6 @@ class GigaImage:
             return "Sorry! I updated the data. Please, repeat your request :)"
 
 
->>>>>>> f20ff53 (Updated data manager)
 def get_data(file_path="bot.json") -> dict:
     """
     Get data of the GigaChatSettings.
@@ -268,8 +259,6 @@ def get_data(file_path="bot.json") -> dict:
         return response
 
 
-<<<<<<< HEAD
-=======
 def create(query: str) -> bytes | str:
     """
     Create a new image for plus-user.
@@ -284,7 +273,6 @@ def create(query: str) -> bytes | str:
     return img_data
 
 
->>>>>>> f20ff53 (Updated data manager)
 def pro(request: str) -> str:
     """
     GigaChatPro Version. Return answer to the user (str).

@@ -31,10 +31,7 @@ class CreateTable:
         """
         self._cursor.execute(query)
         self._connection.commit()
-<<<<<<< HEAD
-=======
         self._connection.close()
->>>>>>> f20ff53 (Updated data manager)
 
     def create_analytics(self):
         """
@@ -48,11 +45,6 @@ class CreateTable:
         count_of_thanks_from_users INT NOT NULL DEFAULT 1
         );
         """
-<<<<<<< HEAD
-
-        self._cursor.execute(query)
-        self._connection.commit()
-=======
         self._cursor.execute(query)
         self._connection.commit()
         self._connection.close()
@@ -92,4 +84,3 @@ class CreateTable:
         self._cursor.execute(query)
         self._connection.commit()
         self._connection.close()
->>>>>>> f20ff53 (Updated data manager)

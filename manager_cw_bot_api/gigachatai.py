@@ -3,19 +3,10 @@ Module of the GigaChatAI.
 """
 import telebot
 from telebot import types
-<<<<<<< HEAD
-import pymysql
-import datetime
-
-from manager_cw_bot_api.giga_request import (pro, light)
-from manager_cw_bot_api.buttons import Buttons
-from manager_cw_bot_api.mysql_connection import Connection
-=======
 
 from manager_cw_bot_api.buttons import Buttons
 from manager_cw_bot_api.giga_request import (pro, light)
 from manager_cw_bot_api.handler_db_sub_operations import HandlerDB
->>>>>>> f20ff53 (Updated data manager)
 
 
 class GigaChatAI:
@@ -39,11 +30,7 @@ class GigaChatAI:
         :return: None.
         """
         self.__bot.edit_message_text(
-<<<<<<< HEAD
-            text="Enter your request...",
-=======
             text="🧠 Enter your request...",
->>>>>>> f20ff53 (Updated data manager)
             chat_id=self.__call_query.message.chat.id,
             message_id=self.__call_query.message.message_id,
         )
@@ -56,33 +43,11 @@ class GigaChatAI:
         :return: None.
         """
         self.__class__.request_user = message.text
-<<<<<<< HEAD
-        chooses_buttons: types.InlineKeyboardMarkup = Buttons.get_var_giga_version()
-=======
         chooses_buttons: types.InlineKeyboardMarkup = Buttons.get_var_giga_version(message)
->>>>>>> f20ff53 (Updated data manager)
 
         self.__class__.msg_bot = self.__bot.send_message(
             chat_id=message.from_user.id,
             text=f"{message.from_user.first_name}, please, "
-<<<<<<< HEAD
-                 f"select the required 🧠 AI-Model, click below",
-            reply_markup=chooses_buttons
-        )
-
-        self.__bot.register_callback_query_handler(
-            callback=self.__giga_version_1,
-            func=lambda call: call.data == "gigachat_version_light"
-        )
-        self.__bot.register_callback_query_handler(
-            callback=self.__giga_version_2,
-            func=lambda call: call.data == "gigachat_version_pro"
-        )
-        self.__bot.register_callback_query_handler(
-            callback=self.__say_thanks,
-            func=lambda call: call.data == "say_thanks"
-        )
-=======
                  f"select the required 🧠 AI-Model, click below.",
             reply_markup=chooses_buttons
         )
@@ -110,7 +75,6 @@ class GigaChatAI:
                 callback=self.__say_thanks,
                 func=lambda call: call.data == "say_thanks"
             )
->>>>>>> f20ff53 (Updated data manager)
 
     def __giga_version_1(self, call_query: types.CallbackQuery) -> None:
         """
@@ -134,26 +98,6 @@ class GigaChatAI:
                 parse_mode="Markdown",
                 reply_markup=Buttons.say_thanks()
             )
-<<<<<<< HEAD
-        except Exception as ex:
-            try:
-                self.__bot.edit_message_text(
-                    text=self.response,
-                    chat_id=call_query.message.chat.id,
-                    message_id=self.__class__.msg_bot.message_id,
-                    reply_markup=Buttons.say_thanks()
-                )
-
-            except Exception:
-                pass
-            with open("../logs.txt", 'a') as logs:
-                logs.write(f"{datetime.datetime.now()} | {ex} | The error in "
-                           f"__giga_version_1-function of "
-                           f"gigachatai.py. Get Response from GigaChatAPI "
-                           f"and edit message | LIGHT V.\n")
-            print(f"The error (ex): {ex} | Get Response from GigaChatAPI and edit message | "
-                  f"LIGHT V.")
-=======
 
         except Exception:
             self.__bot.edit_message_text(
@@ -162,7 +106,6 @@ class GigaChatAI:
                 message_id=self.__class__.msg_bot.message_id,
                 reply_markup=Buttons.say_thanks()
             )
->>>>>>> f20ff53 (Updated data manager)
 
     def __giga_version_2(self, call_query: types.CallbackQuery) -> None:
         """
@@ -186,25 +129,6 @@ class GigaChatAI:
                 parse_mode="Markdown",
                 reply_markup=Buttons.say_thanks()
             )
-<<<<<<< HEAD
-        except Exception as ex:
-            try:
-                self.__bot.edit_message_text(
-                    text=self.response,
-                    chat_id=call_query.message.chat.id,
-                    message_id=self.__class__.msg_bot.message_id,
-                    reply_markup=Buttons.say_thanks()
-                )
-            except Exception:
-                pass
-            with open("../logs.txt", 'a') as logs:
-                logs.write(f"{datetime.datetime.now()} | {ex} | "
-                           f"The error in __giga_version_2-function of "
-                           f"gigachatai.py. Get Response from "
-                           f"GigaChatAPI and edit message | PRO V.\n")
-            print(f"The error (ex): {ex} | Get Response from GigaChatAPI and edit message | "
-                  f"PRO V.")
-=======
         except Exception:
             self.__bot.edit_message_text(
                 text=self.response,
@@ -212,7 +136,6 @@ class GigaChatAI:
                 message_id=self.__class__.msg_bot.message_id,
                 reply_markup=Buttons.say_thanks()
             )
->>>>>>> f20ff53 (Updated data manager)
 
     def __say_thanks(self, call_query: types.CallbackQuery) -> None:
         """
@@ -230,29 +153,4 @@ class GigaChatAI:
             text=f"{call_query.from_user.first_name} thanked you! 💖"
         )
 
-<<<<<<< HEAD
-        connection: pymysql.connections.Connection | str = Connection.get_connection(
-            self.__mysql_data
-        )
-        cursor = connection.cursor()
-
-        query: str = "SELECT count_of_thanks_from_users FROM analytics"
-        cursor.execute(query)
-        count_of_thanks_from_users = cursor.fetchall()
-
-        if len(count_of_thanks_from_users) == 0:
-            query: str = f"""INSERT INTO analytics (count_of_thanks_from_users)
-                    VALUES ({1});
-                    """
-            cursor.execute(query)
-        else:
-            query: str = f"""UPDATE analytics SET 
-                         count_of_thanks_from_users = {count_of_thanks_from_users[0][0] + 1}
-                         """
-            cursor.execute(query)
-
-        connection.commit()
-        connection.close()
-=======
         HandlerDB.update_analytic_datas()
->>>>>>> f20ff53 (Updated data manager)

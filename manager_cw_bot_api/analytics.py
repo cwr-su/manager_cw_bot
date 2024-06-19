@@ -3,21 +3,12 @@ Module of the analytics data from database for admin.
 """
 import datetime
 
-<<<<<<< HEAD
-import telebot
-from telebot import types
-import pymysql
-
-from manager_cw_bot_api.mysql_connection import Connection
-from manager_cw_bot_api.buttons import Buttons
-=======
 import pymysql
 import telebot
 from telebot import types
 
 from manager_cw_bot_api.buttons import Buttons
 from manager_cw_bot_api.mysql_connection import Connection
->>>>>>> f20ff53 (Updated data manager)
 
 
 class Analytic:
@@ -62,11 +53,7 @@ class Analytic:
                      f"🙏🏻 Count of THANKS for admin {count_of_thanks_from_users}\n\n"
                      f"The data is current as {datetime.datetime.now()}",
                 message_id=self.__call_query.message.message_id,
-<<<<<<< HEAD
-                reply_markup=Buttons.get_menu_on_back_or_main(),
-=======
                 reply_markup=Buttons.back_on_main(),
->>>>>>> f20ff53 (Updated data manager)
                 parse_mode="Markdown"
             )
 

@@ -3,11 +3,8 @@ Module of the create button for the menu and Bot in general.
 """
 from telebot import types
 
-<<<<<<< HEAD
-=======
 from manager_cw_bot_api.handler_db_sub_operations import HandlerDB
 
->>>>>>> f20ff53 (Updated data manager)
 
 class Buttons:
     """
@@ -27,51 +24,11 @@ class Buttons:
         return markup
 
     @staticmethod
-<<<<<<< HEAD
-    def get_var_giga_version() -> types.InlineKeyboardMarkup:
-=======
     def get_var_giga_version(message: types.Message) -> types.InlineKeyboardMarkup:
->>>>>>> f20ff53 (Updated data manager)
         """
         Markup-button (Inline) of the choose version of the GigaChatAI
         for the user.
 
-<<<<<<< HEAD
-        :return: Markup-buttons.
-        """
-        markup: types.InlineKeyboardMarkup = types.InlineKeyboardMarkup()
-        v1: types.InlineKeyboardButton = types.InlineKeyboardButton(
-            text="💡 GigaChatLight", callback_data="gigachat_version_light"
-        )
-        v2: types.InlineKeyboardButton = types.InlineKeyboardButton(
-            text="⚡ GigaChatPRO", callback_data="gigachat_version_pro"
-        )
-        v3: types.InlineKeyboardButton = types.InlineKeyboardButton(
-            text="🔙 Main Menu", callback_data="back_in_main_menu"
-        )
-        markup.row(v1).row(v2).row(v3)
-        return markup
-
-    @staticmethod
-    def get_menu_user() -> types.InlineKeyboardMarkup:
-        """
-        Markup-button (Inline) of the Bot Menu
-        for the user.
-
-        :return: Markup-button.
-        """
-        markup: types.InlineKeyboardMarkup = types.InlineKeyboardMarkup()
-        var1: types.InlineKeyboardButton = types.InlineKeyboardButton(
-            text="🧠 AI Assistance", callback_data="ai_assistance_request"
-        )
-        var2: types.InlineKeyboardButton = types.InlineKeyboardButton(
-            text="❔ Help | CWR.SU", url="https://cwr.su/"
-        )
-        var3: types.InlineKeyboardButton = types.InlineKeyboardButton(
-            text="❓ Help | Tickets SYSTEM", callback_data="explore_user_tickets_menu"
-        )
-        markup.row(var1).row(var2).row(var3)
-=======
         :param message: Message.
         :return: Markup-buttons.
         """
@@ -101,7 +58,6 @@ class Buttons:
             )
             markup.row(v1).row(v2).row(v3)
 
->>>>>>> f20ff53 (Updated data manager)
         return markup
 
     @staticmethod
@@ -126,11 +82,7 @@ class Buttons:
             text="🗣 Answer to the admin", callback_data="explore_answer_to_admin"
         )
         var5: types.InlineKeyboardButton = types.InlineKeyboardButton(
-<<<<<<< HEAD
-            text="🔙 Main Menu", callback_data="back_in_main_menu"
-=======
             text="🔙 Main", callback_data="back_on_main"
->>>>>>> f20ff53 (Updated data manager)
         )
         markup.row(var1).row(var2).row(var3).row(var4).row(var5)
         return markup
@@ -154,41 +106,16 @@ class Buttons:
         return markup
 
     @staticmethod
-<<<<<<< HEAD
-    def get_user_tickets(username, cursor) -> tuple:
-=======
     def get_user_tickets(username) -> tuple:
->>>>>>> f20ff53 (Updated data manager)
         """
         Markup-button (Inline) of the Bot
         for the user's history of "TICKETS".
 
         :param username: User's name -- username.
-<<<<<<< HEAD
-        :param cursor: Cursor of the connection to DB by MySQL.
-=======
->>>>>>> f20ff53 (Updated data manager)
 
         :return: Tuple with data.
         """
         markup: types.InlineKeyboardMarkup = types.InlineKeyboardMarkup()
-<<<<<<< HEAD
-
-        query: str = f"SELECT id_ticket, create_at, subject FROM users WHERE username = %s"
-        cursor.execute(query, (username,))
-        result: tuple = cursor.fetchall()
-        response: str = ""
-        if len(result) > 0:
-            for i in range(len(list(result))):
-                response += (f"<b>{i + 1}</b>. ID_TCK: <code>{result[i][0]}</code>| "
-                             f"CREATE_AT: {result[i][1]}| "
-                             f"Subject: <blockquote>'{result[i][2]}'</blockquote>\n")
-        else:
-            btn: types.InlineKeyboardButton = types.InlineKeyboardButton(
-                text=f"Not Found", callback_data="not_found"
-            )
-            markup.row(btn)
-=======
         response: str = ""
 
         result = HandlerDB.get_ticket_data(username, markup)
@@ -196,7 +123,6 @@ class Buttons:
             markup: types.InlineKeyboardMarkup = result
         elif type(result) is str:
             response = result
->>>>>>> f20ff53 (Updated data manager)
 
         var1: types.InlineKeyboardButton = types.InlineKeyboardButton(
             text="🔙 Tickets Menu", callback_data="explore_user_tickets_menu"
@@ -219,30 +145,6 @@ class Buttons:
         """
         markup: types.InlineKeyboardMarkup = types.InlineKeyboardMarkup()
         var1: types.InlineKeyboardButton = types.InlineKeyboardButton(
-<<<<<<< HEAD
-            text="🧠 AI Assistance", callback_data="ai_assistance_request"
-        )
-        var2: types.InlineKeyboardButton = types.InlineKeyboardButton(
-            text="📨 Show tickets", callback_data="explore_admin_show_tickets_menu"
-        )
-        var3: types.InlineKeyboardButton = types.InlineKeyboardButton(
-            text="✉ Show the ticket by ID", callback_data="explore_show_ticket_by_id"
-        )
-        var4: types.InlineKeyboardButton = types.InlineKeyboardButton(
-            text="🗣 Answer to the user", callback_data="explore_answer_to_user"
-        )
-        var5: types.InlineKeyboardButton = types.InlineKeyboardButton(
-            text="📈 Analytic", callback_data="analytic_data"
-        )
-        var6: types.InlineKeyboardButton = types.InlineKeyboardButton(
-            text="🧑‍💼 Business Handler", callback_data="business_handler"
-        )
-        markup.row(var1).row(var2).row(var3).row(var4).row(var5).row(var6)
-        return markup
-
-    @staticmethod
-    def get_users_tickets_for_admin(cursor) -> tuple:
-=======
             text="✨ Kandinsky AI | Generate IMG 🖼", callback_data="kandinsky_generate"
         )
         var2: types.InlineKeyboardButton = types.InlineKeyboardButton(
@@ -277,37 +179,10 @@ class Buttons:
 
     @staticmethod
     def get_users_tickets_for_admin() -> tuple:
->>>>>>> f20ff53 (Updated data manager)
         """
         Markup-button (Inline) of the Bot
         for the admin history of "TICKETS" of the users.
 
-<<<<<<< HEAD
-        :param cursor: Cursor of the connection to DB by MySQL.
-        :return: tuple of the tickets and Markup-buttons.
-        """
-        markup: types.InlineKeyboardMarkup = types.InlineKeyboardMarkup()
-
-        query: str = "SELECT id_ticket, username, create_at, subject FROM users"
-        cursor.execute(query)
-        result: tuple = cursor.fetchall()
-        response: str = ""
-
-        if len(result) > 0:
-            for i in range(len(list(result))):
-                response += (f"<b>{i+1}</b>. Sender: "
-                             f"@{result[i][1]}| ID_TCK: <code>{result[i][0]}</code>| CREATE_AT: "
-                             f"{result[i][2]}| Subject: "
-                             f"<blockquote>'{result[i][3]}'</blockquote>\n")
-        else:
-            btn: types.InlineKeyboardButton = types.InlineKeyboardButton(
-                text=f"Not Found", callback_data="not_found"
-            )
-            markup.row(btn)
-
-        var: types.InlineKeyboardButton = types.InlineKeyboardButton(
-            text="🔙 Main Menu", callback_data="back_in_main_menu"
-=======
         :return: tuple of the tickets and Markup-buttons.
         """
         markup: types.InlineKeyboardMarkup = types.InlineKeyboardMarkup()
@@ -321,7 +196,6 @@ class Buttons:
 
         var: types.InlineKeyboardButton = types.InlineKeyboardButton(
             text="🔙 Main", callback_data="back_on_main"
->>>>>>> f20ff53 (Updated data manager)
         )
         markup.row(var)
 
@@ -347,11 +221,7 @@ class Buttons:
             text="🤖 Problem with bot", callback_data="handler_problem_with_bot_from_users"
         )
         var4: types.InlineKeyboardButton = types.InlineKeyboardButton(
-<<<<<<< HEAD
-            text="🔙 Main Menu", callback_data="back_in_main_menu"
-=======
             text="🔙 Main Menu", callback_data="back_on_main"
->>>>>>> f20ff53 (Updated data manager)
         )
 
         markup.row(var1).row(var2).row(var3).row(var4)
@@ -377,11 +247,7 @@ class Buttons:
             text="💞 Both: Message and sticker", callback_data="message_and_sticker_for_thanks_hdl"
         )
         var4: types.InlineKeyboardButton = types.InlineKeyboardButton(
-<<<<<<< HEAD
-            text="🔙 Main Menu", callback_data="back_in_main_menu"
-=======
             text="🔙 Main Menu", callback_data="back_on_main"
->>>>>>> f20ff53 (Updated data manager)
         )
 
         markup.row(var1).row(var2).row(var3).row(var4)
@@ -408,11 +274,7 @@ class Buttons:
             callback_data="message_and_sticker_for_congratulation_hdl"
         )
         var4: types.InlineKeyboardButton = types.InlineKeyboardButton(
-<<<<<<< HEAD
-            text="🔙 Main Menu", callback_data="back_in_main_menu"
-=======
             text="🔙 Main Menu", callback_data="back_on_main"
->>>>>>> f20ff53 (Updated data manager)
         )
 
         markup.row(var1).row(var2).row(var3).row(var4)
@@ -439,11 +301,7 @@ class Buttons:
             callback_data="message_and_sticker_for_problem_with_bot_hdl"
         )
         var4: types.InlineKeyboardButton = types.InlineKeyboardButton(
-<<<<<<< HEAD
-            text="🔙 Main Menu", callback_data="back_in_main_menu"
-=======
             text="🔙 Main Menu", callback_data="back_on_main"
->>>>>>> f20ff53 (Updated data manager)
         )
 
         markup.row(var1).row(var2).row(var3).row(var4)
@@ -451,30 +309,9 @@ class Buttons:
         return markup
 
     @staticmethod
-<<<<<<< HEAD
-    def get_menu_on_back_or_main() -> types.InlineKeyboardMarkup:
-        """
-        Markup-button (Inline) of the Bot Menu
-        for admin/user that to back to the Main Menu.
-
-        :return: Markup-buttons.
-        """
-        markup: types.InlineKeyboardMarkup = types.InlineKeyboardMarkup()
-        var: types.InlineKeyboardButton = types.InlineKeyboardButton(
-            text="🔙 Main Menu", callback_data="back_in_main_menu"
-        )
-        markup.row(var)
-        return markup
-
-    @staticmethod
-    def say_thanks() -> types.InlineKeyboardMarkup:
-        """
-        Markup-button (Inline) of the Bot Thanks.
-=======
     def say_thanks() -> types.InlineKeyboardMarkup:
         """
         Markup-button (Inline) of the Bot thanks.
->>>>>>> f20ff53 (Updated data manager)
 
         :return: Markup-button.
         """
@@ -484,8 +321,6 @@ class Buttons:
         )
         markup.row(var)
         return markup
-<<<<<<< HEAD
-=======
 
     @staticmethod
     def sure_refund() -> types.InlineKeyboardMarkup:
@@ -792,4 +627,3 @@ class Buttons:
         return markup
 
 
->>>>>>> f20ff53 (Updated data manager)

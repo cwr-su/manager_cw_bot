@@ -2,11 +2,7 @@ Example of a bot.json file
 ==========================
 
 Below is a sample code of the ``bot.json`` file.
-<<<<<<< HEAD
---------------------------------------------
-=======
 ------------------------------------------------
->>>>>>> f20ff53 (Updated data manager)
 .. code-block:: python
     :linenos:
 

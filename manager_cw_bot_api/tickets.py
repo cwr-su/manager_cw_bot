@@ -52,19 +52,8 @@ class TicketUserView:
         :param call_query: Callback Query.
         :return: None.
         """
-<<<<<<< HEAD
-        connection: pymysql.connections.Connection | str = Connection.get_connection(
-            self.__mysql_data
-        )
-        cursor = connection.cursor()
-
-        response: tuple = Buttons.get_user_tickets(
-            call_query.from_user.username,
-            cursor
-=======
         response: tuple = Buttons.get_user_tickets(
             call_query.from_user.username
->>>>>>> f20ff53 (Updated data manager)
         )
         self.__bot.edit_message_text(
             text=f"💫 Here your ID tickets and Subjects\n\n{response[0]}",
@@ -74,11 +63,6 @@ class TicketUserView:
             parse_mode="HTML"
         )
 
-<<<<<<< HEAD
-        connection.close()
-
-=======
->>>>>>> f20ff53 (Updated data manager)
     def __send_new_ticket(self, call_query: types.CallbackQuery) -> None:
         """
         Send ticket to admin via Manager Bot in the Menu with mini-UI.
@@ -90,12 +74,7 @@ class TicketUserView:
             text="⚠ Please, tell me ID Ticket, your message and new status of the ticket, "
                  "which you want to answer. System use special "
                  "parse-mode here!\n\n"
-<<<<<<< HEAD
-                 "FORMAT your message: ``` ID_TICKET ~ MESSAGE ~ "
-                 "NEW_STATUS```\n"
-=======
                  "FORMAT your message: ``` ID_TICKET ~ MESSAGE```\n"
->>>>>>> f20ff53 (Updated data manager)
                  "1. IF YOU WANT *TO ATTACH THE PHOTO use this free website* (we checked "
                  "it!): "
                  "https://imgbly.com/;\n"
@@ -215,17 +194,8 @@ class TicketAdminView:
         :param call_query: Callback Query by click on the button.
         :return: None.
         """
-<<<<<<< HEAD
-        connection: pymysql.connections.Connection | str = Connection.get_connection(
-            self.__mysql_data
-        )
-        cursor = connection.cursor()
-
-        response: tuple = Buttons.get_users_tickets_for_admin(cursor)
-=======
 
         response: tuple = Buttons.get_users_tickets_for_admin()
->>>>>>> f20ff53 (Updated data manager)
         self.__bot.edit_message_text(
             text=f"🔹 Tickets (ADMIN)\n\n{response[0]}",
             chat_id=call_query.message.chat.id,
@@ -234,9 +204,6 @@ class TicketAdminView:
             parse_mode="HTML"
         )
 
-<<<<<<< HEAD
-        connection.close()
-=======
 
 class TicketAnswersToUsers:
     """Class for manage answers to users by ticket-system."""
@@ -497,4 +464,3 @@ class TicketAnswersToAdmin:
                 text=f"❌ FAIL! {ex}",
                 reply_markup=Buttons.back_on_main()
             )
->>>>>>> f20ff53 (Updated data manager)
