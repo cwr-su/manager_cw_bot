@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="_static/favicons/FaviconSVG_ManagerCWBotAPI.svg" type="image/svg+xml">
+    <link rel="icon" sizes="16x16" href="_static/favicons/favicon/favicon-16x16.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="_static/favicons/favicon/favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon" sizes="180x180" href="_static/favicons/favicon/apple-touch-icon-180x180.png" type="image/png">
+    <link rel="mask-icon" href="_static/favicons/favicon/safari-pinned-tab.svg" color="#5bbad5" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<<<<<<< HEAD
+  <title>Business &mdash; Manager CW Bot 1.5.1 documentation</title>
+=======
+  <title>Business &mdash; Manager CW Bot 2.0.1 documentation</title>
+>>>>>>> f20ff53 (Updated data manager)
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+      <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+<<<<<<< HEAD
+        <script src="_static/documentation_options.js?v=44dfd65d"></script>
+=======
+        <script src="_static/documentation_options.js?v=f5cff4aa"></script>
+>>>>>>> f20ff53 (Updated data manager)
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+<<<<<<< HEAD
+    <link rel="next" title="Business handler" href="business_handler.html" />
+=======
+    <link rel="next" title="Business handler for answers" href="business_answers.html" />
+>>>>>>> f20ff53 (Updated data manager)
+    <link rel="prev" title="Analytics" href="analytics.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Manager CW Bot
+              <img src="_static/manager_cw_bot_logo_black_and_cw-white_200pxX200px.svg" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+<<<<<<< HEAD
+                1.5.1
+=======
+                2.0.1
+>>>>>>> f20ff53 (Updated data manager)
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Methods and functions:</span></p>
+<ul class="current">
+<<<<<<< HEAD
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation lib and configuration</a></li>
+=======
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation lib, configuration and run the bot</a></li>
+>>>>>>> f20ff53 (Updated data manager)
+<li class="toctree-l1"><a class="reference internal" href="main.html">Run the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analytics.html">Analytics</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Business</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-business">Business module. Manage main functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#business.Manager"><code class="docutils literal notranslate"><span class="pre">Manager</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#business.Manager.__admin_menu_tickets"><code class="docutils literal notranslate"><span class="pre">Manager.__admin_menu_tickets()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#business.Manager.__ai_assistance"><code class="docutils literal notranslate"><span class="pre">Manager.__ai_assistance()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#business.Manager.__analytic_data"><code class="docutils literal notranslate"><span class="pre">Manager.__analytic_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#business.Manager.__answer_to_user"><code class="docutils literal notranslate"><span class="pre">Manager.__answer_to_user()</span></code></a></li>
+<<<<<<< HEAD
+<li class="toctree-l4"><a class="reference internal" href="#business.Manager.__business_handler"><code class="docutils literal notranslate"><span class="pre">Manager.__business_handler()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#business.Manager.__chat_action"><code class="docutils literal notranslate"><span class="pre">Manager.__chat_action()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#business.Manager.__explore_answer_admin_by_ticket"><code class="docutils literal notranslate"><span class="pre">Manager.__explore_answer_admin_by_ticket()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#business.Manager.__explore_answer_users_ticket"><code class="docutils literal notranslate"><span class="pre">Manager.__explore_answer_users_ticket()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#business.Manager.__explore_show_users_ticket"><code class="docutils literal notranslate"><span class="pre">Manager.__explore_show_users_ticket()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#business.Manager.__get_id_ticket_for_answer"><code class="docutils literal notranslate"><span class="pre">Manager.__get_id_ticket_for_answer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#business.Manager.__get_id_ticket_for_answer_for_admin"><code class="docutils literal notranslate"><span class="pre">Manager.__get_id_ticket_for_answer_for_admin()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#business.Manager.__get_id_ticket_for_show"><code class="docutils literal notranslate"><span class="pre">Manager.__get_id_ticket_for_show()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#business.Manager.__messages_to_bot"><code class="docutils literal notranslate"><span class="pre">Manager.__messages_to_bot()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#business.Manager.__user_menu_tickets"><code class="docutils literal notranslate"><span class="pre">Manager.__user_menu_tickets()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#business.Manager.back_in_main_menu"><code class="docutils literal notranslate"><span class="pre">Manager.back_in_main_menu()</span></code></a></li>
+=======
+<li class="toctree-l4"><a class="reference internal" href="#business.Manager.__back_on_main"><code class="docutils literal notranslate"><span class="pre">Manager.__back_on_main()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#business.Manager.__business_handler"><code class="docutils literal notranslate"><span class="pre">Manager.__business_handler()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#business.Manager.__enter_promo_code"><code class="docutils literal notranslate"><span class="pre">Manager.__enter_promo_code()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#business.Manager.__explore_answer_admin_by_ticket"><code class="docutils literal notranslate"><span class="pre">Manager.__explore_answer_admin_by_ticket()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#business.Manager.__explore_answer_users_ticket"><code class="docutils literal notranslate"><span class="pre">Manager.__explore_answer_users_ticket()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#business.Manager.__explore_show_users_ticket"><code class="docutils literal notranslate"><span class="pre">Manager.__explore_show_users_ticket()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#business.Manager.__generate_image_for_plus_user"><code class="docutils literal notranslate"><span class="pre">Manager.__generate_image_for_plus_user()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#business.Manager.__get_id_ticket_for_show"><code class="docutils literal notranslate"><span class="pre">Manager.__get_id_ticket_for_show()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#business.Manager.__get_main_menu"><code class="docutils literal notranslate"><span class="pre">Manager.__get_main_menu()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#business.Manager.__get_or_lk_plus"><code class="docutils literal notranslate"><span class="pre">Manager.__get_or_lk_plus()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#business.Manager.__refund"><code class="docutils literal notranslate"><span class="pre">Manager.__refund()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#business.Manager.__refunding_step1"><code class="docutils literal notranslate"><span class="pre">Manager.__refunding_step1()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#business.Manager.__show_promo_menu_admin_ctrl"><code class="docutils literal notranslate"><span class="pre">Manager.__show_promo_menu_admin_ctrl()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#business.Manager.__standard_message"><code class="docutils literal notranslate"><span class="pre">Manager.__standard_message()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#business.Manager.__successful_payment"><code class="docutils literal notranslate"><span class="pre">Manager.__successful_payment()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#business.Manager.__user_menu_tickets"><code class="docutils literal notranslate"><span class="pre">Manager.__user_menu_tickets()</span></code></a></li>
+>>>>>>> f20ff53 (Updated data manager)
+<li class="toctree-l4"><a class="reference internal" href="#business.Manager.run"><code class="docutils literal notranslate"><span class="pre">Manager.run()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#business.get_data"><code class="docutils literal notranslate"><span class="pre">get_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#business.run"><code class="docutils literal notranslate"><span class="pre">run()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<<<<<<< HEAD
+=======
+<li class="toctree-l1"><a class="reference internal" href="business_answers.html">Business handler for answers</a></li>
+>>>>>>> f20ff53 (Updated data manager)
+<li class="toctree-l1"><a class="reference internal" href="business_handler.html">Business handler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="buttons.html">Buttons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="create_table.html">Create Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example_bot_json.html">Example of a bot.json file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mysql_connection.html">MySQL Connector</a></li>
+<<<<<<< HEAD
+<li class="toctree-l1"><a class="reference internal" href="gigachatai.html">Giga Chat AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="giga_request.html">Giga Request</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get_business_conn_and_info_conn.html">Get business connection and info conn</a></li>
+=======
+<li class="toctree-l1"><a class="reference internal" href="giga_images.html">Giga Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="giga_request.html">Giga Request</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gigachatai.html">Giga Chat AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get_business_conn_and_info_conn.html">Get business connection and info conn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="handler_db_sub_operations.html">Handler database and subscribe operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="handler_promo.html">Handler promo data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="handler_successful_payment.html">Handler successful payment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="refund.html">Handler refund</a></li>
+<li class="toctree-l1"><a class="reference internal" href="send_invoice.html">Handler send invoice</a></li>
+>>>>>>> f20ff53 (Updated data manager)
+<li class="toctree-l1"><a class="reference internal" href="tickets.html">Tickets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests.html">Tests (UnitTest)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Manager CW Bot</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Business</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="business">
+<h1>Business<a class="headerlink" href="#business" title="Link to this heading"></a></h1>
+<section id="module-business">
+<span id="business-module-manage-main-functions"></span><h2>Business module. Manage main functions<a class="headerlink" href="#module-business" title="Link to this heading"></a></h2>
+<p>Module of the Manager-Business-Helper Bot.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="business.Manager">
+<<<<<<< HEAD
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">business.</span></span><span class="sig-name descname"><span class="pre">Manager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot_token</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">business_conn_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mysql_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/business.html#Manager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.Manager" title="Link to this definition"></a></dt>
+=======
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">business.</span></span><span class="sig-name descname"><span class="pre">Manager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot_token</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">business_conn_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mysql_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gigachat_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/business.html#Manager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.Manager" title="Link to this definition"></a></dt>
+>>>>>>> f20ff53 (Updated data manager)
+<dd><p>Manager of the Alex’s Account and helper ‘AI’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bot_token</strong> (<em>str</em>) – </p></li>
+<li><p><strong>business_conn_id</strong> (<em>str</em>) – </p></li>
+<li><p><strong>admin_id</strong> (<em>int</em>) – </p></li>
+<li><p><strong>mysql_data</strong> (<em>dict</em>) – </p></li>
+<<<<<<< HEAD
+=======
+<li><p><strong>gigachat_data</strong> (<em>dict</em>) – </p></li>
+>>>>>>> f20ff53 (Updated data manager)
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__admin_menu_tickets">
+<span class="sig-name descname"><span class="pre">__admin_menu_tickets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__admin_menu_tickets" title="Link to this definition"></a></dt>
+<dd><p>Handler (callback-handler) for show tickets to admin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__ai_assistance">
+<span class="sig-name descname"><span class="pre">__ai_assistance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__ai_assistance" title="Link to this definition"></a></dt>
+<dd><p>Handler (callback-handler) for go to the AI-Menu.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__analytic_data">
+<span class="sig-name descname"><span class="pre">__analytic_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__analytic_data" title="Link to this definition"></a></dt>
+<dd><p>Handler of the analytic-menu (UI) for admin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__answer_to_user">
+<span class="sig-name descname"><span class="pre">__answer_to_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__answer_to_user" title="Link to this definition"></a></dt>
+<dd><p>Answer to a user from admin-account (as admin).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>message</strong> (<em>Message</em>) – Message of a user.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<<<<<<< HEAD
+=======
+<dt class="sig sig-object py" id="business.Manager.__back_on_main">
+<span class="sig-name descname"><span class="pre">__back_on_main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__back_on_main" title="Link to this definition"></a></dt>
+<dd><p>Handler for return to main-menu.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call</strong> (<em>CallbackQuery</em>) – Callback Query.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+>>>>>>> f20ff53 (Updated data manager)
+<dt class="sig sig-object py" id="business.Manager.__business_handler">
+<span class="sig-name descname"><span class="pre">__business_handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__business_handler" title="Link to this definition"></a></dt>
+<dd><p>Handler (call-query) for admin (with business) - start main handler.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<<<<<<< HEAD
+<dt class="sig sig-object py" id="business.Manager.__chat_action">
+<span class="sig-name descname"><span class="pre">__chat_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chat_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__chat_action" title="Link to this definition"></a></dt>
+<dd><p>Send chat action.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>chat_id</strong> (<em>int</em><em> | </em><em>str</em>) – Chat ID.</p></li>
+<li><p><strong>action</strong> (<em>str</em>) – Action.</p></li>
+</ul>
+=======
+<dt class="sig sig-object py" id="business.Manager.__enter_promo_code">
+<span class="sig-name descname"><span class="pre">__enter_promo_code</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__enter_promo_code" title="Link to this definition"></a></dt>
+<dd><p>Func ‘ENTER’ a promo code from user. | Step 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call</strong> (<em>CallbackQuery</em>) – CallbackQuery.</p>
+>>>>>>> f20ff53 (Updated data manager)
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__explore_answer_admin_by_ticket">
+<span class="sig-name descname"><span class="pre">__explore_answer_admin_by_ticket</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__explore_answer_admin_by_ticket" title="Link to this definition"></a></dt>
+<dd><p>Handler (call-handler) for get id ticket for answer to admin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__explore_answer_users_ticket">
+<span class="sig-name descname"><span class="pre">__explore_answer_users_ticket</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__explore_answer_users_ticket" title="Link to this definition"></a></dt>
+<dd><p>Handler (call-handler) for get id ticket for answer to user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__explore_show_users_ticket">
+<span class="sig-name descname"><span class="pre">__explore_show_users_ticket</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__explore_show_users_ticket" title="Link to this definition"></a></dt>
+<dd><p>Explore to show user’s ticket by id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<<<<<<< HEAD
+<dt class="sig sig-object py" id="business.Manager.__get_id_ticket_for_answer">
+<span class="sig-name descname"><span class="pre">__get_id_ticket_for_answer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__get_id_ticket_for_answer" title="Link to this definition"></a></dt>
+<dd><p>Get id ticket for answer to user and sending answer to the user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>message</strong> (<em>Message</em>) – Message of the user.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__get_id_ticket_for_answer_for_admin">
+<span class="sig-name descname"><span class="pre">__get_id_ticket_for_answer_for_admin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__get_id_ticket_for_answer_for_admin" title="Link to this definition"></a></dt>
+<dd><p>Get id ticket for answer to user and sending answer to admin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>message</strong> (<em>Message</em>) – Message of the user.</p>
+=======
+<dt class="sig sig-object py" id="business.Manager.__generate_image_for_plus_user">
+<span class="sig-name descname"><span class="pre">__generate_image_for_plus_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__generate_image_for_plus_user" title="Link to this definition"></a></dt>
+<dd><p>Generate image for plus-user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call</strong> (<em>CallbackQuery</em>) – Callback Query.</p>
+>>>>>>> f20ff53 (Updated data manager)
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__get_id_ticket_for_show">
+<span class="sig-name descname"><span class="pre">__get_id_ticket_for_show</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__get_id_ticket_for_show" title="Link to this definition"></a></dt>
+<<<<<<< HEAD
+<dd><p>Get id ticket for admin answer/view or teh user view.</p>
+=======
+<dd><p>Get id ticket for admin answer/view or user view.</p>
+>>>>>>> f20ff53 (Updated data manager)
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>message</strong> (<em>Message</em>) – Message (ID ticket) from admin/the user.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<<<<<<< HEAD
+<dt class="sig sig-object py" id="business.Manager.__messages_to_bot">
+<span class="sig-name descname"><span class="pre">__messages_to_bot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__messages_to_bot" title="Link to this definition"></a></dt>
+<dd><p>Answers to different users include admin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>message</strong> (<em>Message</em>) – Message of a user.</p>
+=======
+<dt class="sig sig-object py" id="business.Manager.__get_main_menu">
+<span class="sig-name descname"><span class="pre">__get_main_menu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__get_main_menu" title="Link to this definition"></a></dt>
+<dd><p>Handler for go to main-menu.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>message</strong> (<em>Message</em>) – Message.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__get_or_lk_plus">
+<span class="sig-name descname"><span class="pre">__get_or_lk_plus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__get_or_lk_plus" title="Link to this definition"></a></dt>
+<dd><p>Get Plus or view (look at) “MY PLUS”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call</strong> (<em>CallbackQuery</em>) – Callback Query.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__refund">
+<span class="sig-name descname"><span class="pre">__refund</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__refund" title="Link to this definition"></a></dt>
+<dd><p>Refund-menu for admin use / control.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call</strong> (<em>CallbackQuery</em>) – Callback Query.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__refunding_step1">
+<span class="sig-name descname"><span class="pre">__refunding_step1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__refunding_step1" title="Link to this definition"></a></dt>
+<dd><p>Call-Handler for refund stars | Step 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call</strong> (<em>CallbackQuery</em>) – Callback Query.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__show_promo_menu_admin_ctrl">
+<span class="sig-name descname"><span class="pre">__show_promo_menu_admin_ctrl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__show_promo_menu_admin_ctrl" title="Link to this definition"></a></dt>
+<dd><p>Show PROMO Menu. | Control ADMIN.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call</strong> (<em>CallbackQuery</em>) – Callback Query.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__standard_message">
+<span class="sig-name descname"><span class="pre">__standard_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__standard_message" title="Link to this definition"></a></dt>
+<dd><p>Answer to the users and admin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>message</strong> (<em>Message</em>) – Message.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__successful_payment">
+<span class="sig-name descname"><span class="pre">__successful_payment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__successful_payment" title="Link to this definition"></a></dt>
+<dd><p>Handler for successful payment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>message</strong> (<em>Message</em>) – Message from user.</p>
+>>>>>>> f20ff53 (Updated data manager)
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__user_menu_tickets">
+<span class="sig-name descname"><span class="pre">__user_menu_tickets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__user_menu_tickets" title="Link to this definition"></a></dt>
+<dd><p>Handler (callback-handler) for go to the Tickets-Menu.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<<<<<<< HEAD
+<dt class="sig sig-object py" id="business.Manager.back_in_main_menu">
+<span class="sig-name descname"><span class="pre">back_in_main_menu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/business.html#Manager.back_in_main_menu"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.Manager.back_in_main_menu" title="Link to this definition"></a></dt>
+<dd><p>Back-function (to main menu).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call_query</strong> (<em>CallbackQuery</em>) – CallbackQuery.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+=======
+>>>>>>> f20ff53 (Updated data manager)
+<dt class="sig sig-object py" id="business.Manager.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/business.html#Manager.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.Manager.run" title="Link to this definition"></a></dt>
+<dd><p>Run-function Bot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="business.get_data">
+<span class="sig-prename descclassname"><span class="pre">business.</span></span><span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'bot.json'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/business.html#get_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.get_data" title="Link to this definition"></a></dt>
+<dd><p>Get data of the Alex’s Manager Bot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_path</strong> – File Path of JSON-API-keys for Bot.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dict with data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="business.run">
+<span class="sig-prename descclassname"><span class="pre">business.</span></span><span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/business.html#run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.run" title="Link to this definition"></a></dt>
+<dd><p>Run Function of the main-file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<hr class="docutils" />
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="./business_handler.html">How to manage the main functions of a business</a></p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Alexander Laptev, CW.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
