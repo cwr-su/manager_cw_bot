@@ -15,8 +15,8 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..",
 project = 'Manager CW Bot'
 copyright = '2024, Alexander Laptev, CW'
 author = 'Alexander Laptev, CW'
-version = '2.0.1'
-release = '2.0.1'
+version = '2.0.2'
+release = '2.0.2'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 

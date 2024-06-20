@@ -24,5 +24,5 @@ from manager_cw_bot_api.tickets import *
 
 
 __author__ = 'Alexander Laptev, CW'
-__version__ = '2.0.1'
+__version__ = '2.0.2'
 __email__ = 'cwr@cwr.su'
