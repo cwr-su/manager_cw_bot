@@ -33,8 +33,7 @@ class CreateTable:
 
         query: str = """CREATE TABLE IF NOT EXISTS analytics (
                 count_of_ai_queries INT NOT NULL DEFAULT 1,
-                count_of_tickets_system INT NOT NULL DEFAULT 1,
-                count_of_thanks_from_users INT NOT NULL DEFAULT 1
+                count_of_tickets_system INT NOT NULL DEFAULT 1
                 );
                 """
         self._cursor.execute(query)

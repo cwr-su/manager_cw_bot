@@ -103,7 +103,9 @@ class Buttons:
         return Builder
 
     @staticmethod
-    async def get_var_giga_version(message: types.Message) -> InlineKeyboardBuilder:
+    async def get_var_giga_version(
+        message: types.Message | types.CallbackQuery
+    ) -> InlineKeyboardBuilder:
         """
         Builder-button (Inline) of the choose version of the GigaChatAI
         for the user.
@@ -624,20 +626,6 @@ class Buttons:
         return Builder
 
     @staticmethod
-    async def say_thanks() -> InlineKeyboardBuilder:
-        """
-        Builder-button (Inline) of the Bot "thanks".
-
-        :return: Builder-button.
-        """
-        Builder: InlineKeyboardBuilder = InlineKeyboardBuilder()
-        var: types.InlineKeyboardButton = types.InlineKeyboardButton(
-            text="Say: Thank you! 💖", callback_data="say_thanks"
-        )
-        Builder.row(var)
-        return Builder
-
-    @staticmethod
     async def sure_refund() -> InlineKeyboardBuilder:
         """
         Get Builder-keyboard for 'sure' refund by admin.
@@ -851,7 +839,7 @@ class Buttons:
             text="✨ Generate IMG 🖼", callback_data="kandinsky_generate"
         )
         var2: types.InlineKeyboardButton = types.InlineKeyboardButton(
-            text="🧠 Assistance (without 'chat-dialog')", callback_data="ai_assistance_request"
+            text="🧠 Assistance (DIALOG 🆕*)", callback_data="ai_assistance_request"
         )
         var3: types.InlineKeyboardButton = types.InlineKeyboardButton(
             text="🔙 Main", callback_data="back_on_main"
