@@ -1,6 +1,8 @@
 """
 Module of the GigaChatAI.
 """
+import abc
+
 from aiogram import Bot, types, Router, F
 from aiogram.fsm.context import FSMContext
 from aiogram.utils.keyboard import InlineKeyboardBuilder
@@ -8,7 +10,7 @@ from aiogram.utils.keyboard import InlineKeyboardBuilder
 from manager_cw_bot_api.buttons import Buttons
 from manager_cw_bot_api.giga_request import pro, light
 from manager_cw_bot_api.handler_db_sub_operations import HandlerDB
-from manager_cw_bot_api.fsm_handler import ProcessGigaChatAI
+from manager_cw_bot_api.fsm_handler import GetProcessQueryCDLight, GetProcessQueryCDPro
 
 router_chat_ai: Router = Router()
 
@@ -23,63 +25,47 @@ class GigaChatAI:
     def __init__(
             self,
             bot: Bot,
-            call_query: types.CallbackQuery,
-            mysql_data: dict,
-            admin_id: int
+            call_query: types.CallbackQuery
     ) -> None:
         self.__bot: Bot = bot
         self.__call_query: types.CallbackQuery = call_query
-        self.__mysql_data: dict = mysql_data
-        self.__admin_id: int = admin_id
 
         router_chat_ai.message.register(
-            self.__request,
-            ProcessGigaChatAI.request
+            self.__chat_dialog_light,
+            GetProcessQueryCDLight.query
         )
 
-    async def show_info_edit_text(self, state: FSMContext) -> None:
-        """
-        Show pre-answer message by editing text.
+        router_chat_ai.message.register(
+            self.__chat_dialog_pro,
+            GetProcessQueryCDPro.query
+        )
 
-        :param state: FSM.
+    async def choosing_ai_model(self) -> None:
+        """
+        Choosing AI-Model (PRO/Light) before Chat-Dialog function.
+
         :return: None.
         """
-        await state.set_state(ProcessGigaChatAI.request)
+        var: InlineKeyboardBuilder = await Buttons.get_var_giga_version(self.__call_query)
+        self.__class__.msg_bot = self.__call_query.message
+
         await self.__bot.edit_message_text(
-            text="🧠 Enter your request and then choose the AI-Model...",
-            chat_id=self.__call_query.message.chat.id,
+            chat_id=self.__call_query.from_user.id,
             message_id=self.__call_query.message.message_id,
-        )
-
-    async def __request(self, message: types.Message, state: FSMContext) -> None:
-        """
-        Request from the user, handler of the buttons and register callback-query.
-
-        :param message: User message.
-        :param state: FSM.
-
-        :return: None.
-        """
-        await state.clear()
-        self.__class__.request_user = message.text
-
-        var: InlineKeyboardBuilder = await Buttons.get_var_giga_version(message)
-        self.__class__.msg_bot = await self.__bot.send_message(
-            chat_id=message.from_user.id,
-            text=f"{message.from_user.first_name}, please, "
+            text=f"{self.__call_query.from_user.first_name}, please, "
                  f"select the required 🧠 AI-Model, click below.",
             reply_markup=var.as_markup()
         )
         await self.__bot.set_message_reaction(
-            chat_id=message.from_user.id,
-            message_id=message.message_id,
+            chat_id=self.__call_query.from_user.id,
+            message_id=self.__call_query.message.message_id,
             reaction=[types.ReactionTypeEmoji(
                 types='emoji',
                 emoji='🫡'
             )]
         )
 
-        result: tuple = await HandlerDB.check_subscription(message)
+        result: tuple = await HandlerDB.check_subscription(self.__call_query)
         if result[0] is True:
             router_chat_ai.callback_query.register(
                 self.__giga_version_1,
@@ -89,137 +75,283 @@ class GigaChatAI:
                 self.__giga_version_2,
                 F.data == "gigachat_version_pro"
             )
-            router_chat_ai.callback_query.register(
-                self.__say_thanks,
-                F.data == "say_thanks"
-            )
         else:
             router_chat_ai.callback_query.register(
                 self.__giga_version_1,
                 F.data == "gigachat_version_light"
             )
-            router_chat_ai.callback_query.register(
-                self.__say_thanks,
-                F.data == "say_thanks"
-            )
 
-    async def __giga_version_1(self, call_query: types.CallbackQuery) -> None:
+    async def __giga_version_1(self, call_query: types.CallbackQuery, state: FSMContext) -> None:
         """
         Handler of the callback query by click on the btn1: LightVersion of GigaChat.
 
         :param call_query: Query (by click on the button) with callback.
+        :param state: FSM.
+
         :return: None.
         """
+        await state.set_state(GetProcessQueryCDLight.query)
+
         await self.__bot.edit_message_text(
-            text="💭 Please, waiting... I'm thinking",
+            text="Hello! I'm ready to help you! What question are you interested in? 😎\n\n" \
+                 "_STOP-Command_: `//stop`.",
             chat_id=call_query.message.chat.id,
-            message_id=self.__class__.msg_bot.message_id
+            message_id=self.__class__.msg_bot.message_id,
+            parse_mode="Markdown"
         )
 
-        response = await light(self.__class__.request_user)
-        var: InlineKeyboardBuilder = await Buttons.say_thanks()
+    async def __chat_dialog_light(self, message: types.Message, state: FSMContext) -> None:
+        """
+        GLV Chat-Dialog function.
 
-        try:
-            await self.__bot.edit_message_text(
-                text=response,
-                chat_id=call_query.message.chat.id,
-                message_id=call_query.message.message_id,
-                parse_mode="Markdown",
-                reply_markup=var.as_markup()
-            )
+        :param message: Message of user / query.
+        :param state: FSM.
 
-        except Exception:
-            await self.__bot.edit_message_text(
-                text=response,
-                chat_id=call_query.message.chat.id,
-                message_id=call_query.message.message_id,
-                reply_markup=var.as_markup()
-            )
+        :return: None.
+        """
+        cd: ChatDialogGigaVersionLight = ChatDialogGigaVersionLight(self.__bot)
+        await cd.chat_dialog(message, state)
 
-    async def __giga_version_2(self, call_query: types.CallbackQuery) -> None:
+    async def __giga_version_2(self, call_query: types.CallbackQuery, state: FSMContext) -> None:
         """
         Handler of the callback query by click on the btn1: PROVersion of GigaChat.
 
         :param call_query: Query (by click on the button) with callback.
+        :param state: FSM.
+
         :return: None.
         """
+        await state.set_state(GetProcessQueryCDPro.query)
+
         await self.__bot.edit_message_text(
-            text="💭 Please, waiting... 🧠 I'm thinking",
+            text="Hello! I'm ready to help you! What question are you interested in? 😎\n\n" \
+                 "_STOP-Command_: `//stop`.",
             chat_id=call_query.message.chat.id,
-            message_id=self.__class__.msg_bot.message_id
+            message_id=self.__class__.msg_bot.message_id,
+            parse_mode="Markdown"
         )
 
-        response: str = await pro(self.__class__.request_user)
-        var: InlineKeyboardBuilder = await Buttons.say_thanks()
+    async def __chat_dialog_pro(self, message: types.Message, state: FSMContext) -> None:
+        """
+        GPV Chat-Dialog function.
 
-        try:
-            await self.__bot.edit_message_text(
+        :param message: Message of user / query.
+        :param state: FSM.
+
+        :return: None.
+        """
+        cd: ChatDialogGigaVersionPro = ChatDialogGigaVersionPro(self.__bot)
+        await cd.chat_dialog(message, state)
+
+
+class BaseChatDialog(abc.ABC):
+    """
+    The class for Chat-Dialog function (Base Class-Sector).
+    """
+    def __init__(self, bot: Bot) -> None:
+        self.bot: Bot = bot
+    
+    @abc.abstractmethod
+    async def chat_dialog(self, message: types.Message, state: FSMContext) -> None:
+        """
+        Basic Chat-Dialog function.
+
+        :param message: Message of user / query.
+        :param state: FSM.
+        
+        :return: None.
+        """
+
+
+class ChatDialogGigaVersionLight(BaseChatDialog):
+    """
+    The class for Chat-Dialog function (GigaLight V. dialog).
+    """
+    async def chat_dialog(self, message: types.Message, state: FSMContext) -> None:
+        """
+        GLV Chat-Dialog function.
+
+        :param message: Message of user / query.
+        :param state: FSM.
+
+        :return: None.
+        """
+        if message.text.lower() != "//stop":
+            router_chat_ai.message.register(
+                ChatDialogGigaVersionLight.chat_dialog,
+                GetProcessQueryCDLight.query
+            )
+            
+            response = await light(message.text)
+
+            await self.bot.send_message(
                 text=response,
-                chat_id=call_query.message.chat.id,
-                message_id=call_query.message.message_id,
+                chat_id=message.from_user.id,
+                parse_mode="Markdown",
+            )
+            await self.bot.send_message(
+                text=f"*If you want to stop this chat, write* `//stop`.\n(Light mode is enabled)",
+                chat_id=message.from_user.id,
+                parse_mode="Markdown",
+            )
+            
+            await HandlerDB.update_analytic_datas_count_ai_queries()
+
+            await state.clear()
+            new_state: NewFSMContextLight = NewFSMContextLight(self.bot)
+            await new_state.set(state)
+
+        else:
+            var: InlineKeyboardBuilder = await Buttons.back_on_main()
+            await self.bot.send_message(
+                text=f"Got it! I have stopped (AI-Chat Dialog).",
+                chat_id=message.from_user.id,
                 parse_mode="Markdown",
                 reply_markup=var.as_markup()
             )
-        except Exception:
-            await self.__bot.edit_message_text(
+
+            await state.clear()
+
+
+class ChatDialogGigaVersionPro(BaseChatDialog):
+    """
+    The class for Chat-Dialog function (GigaPro V. dialog).
+    """
+    async def chat_dialog(self, message: types.Message, state: FSMContext) -> None:
+        """
+        GLV Chat-Dialog function.
+
+        :param message: Message of user / query.
+        :param state: FSM.
+
+        :return: None.
+        """
+        if message.text.lower() != "//stop":
+            router_chat_ai.message.register(
+                ChatDialogGigaVersionPro.chat_dialog,
+                GetProcessQueryCDPro.query
+            )
+            
+            response = await pro(message.text)
+
+            await self.bot.send_message(
                 text=response,
-                chat_id=call_query.message.chat.id,
-                message_id=call_query.message.message_id,
+                chat_id=message.from_user.id,
+                parse_mode="Markdown",
+            )
+            await self.bot.send_message(
+                text=f"*If you want to stop this chat, write* `//stop`.\n(Pro mode is enabled)",
+                chat_id=message.from_user.id,
+                parse_mode="Markdown",
+            )
+
+            await HandlerDB.update_analytic_datas_count_ai_queries()
+
+            await state.clear()
+            new_state: NewFSMContextPro = NewFSMContextPro(self.bot)
+            await new_state.set(state)
+
+        else:
+            var: InlineKeyboardBuilder = await Buttons.back_on_main()
+            await self.bot.send_message(
+                text=f"Got it! I have stopped (AI-Chat Dialog-PRO).",
+                chat_id=message.from_user.id,
+                parse_mode="Markdown",
                 reply_markup=var.as_markup()
             )
 
-    async def __say_thanks(self, call_query: types.CallbackQuery) -> None:
-        """
-        Function counter/sender for count_of_thanks_from_users.
+            await state.clear()
 
-        :param call_query: Callback Query.
+
+class BaseNewFSMContext(abc.ABC):
+    """
+    The base-class for create new state (FSM).
+    """
+    def __init__(self, bot: Bot) -> None:
+        pass
+    
+    @abc.abstractmethod
+    async def set(self, state: FSMContext) -> None:
+        """
+        Set state.
+
+        :param state: FSM.
         :return: None.
         """
-        if call_query.from_user.id == self.__admin_id:
-            var: InlineKeyboardBuilder = await Buttons.get_menu_admin()
-            await self.__bot.send_message(
-                chat_id=call_query.from_user.id,
-                text=f"👑 <b>{call_query.from_user.first_name}</b>, thank you for your feedback! 💞🙏\n"
-                     f"You are in the main menu. Select the desired item below!\n"
-                     f"\nUsing the services CWR.SU (CW), you accept all the rules and the agreement. "
-                     f"<a href="
-                     f"'https://acdn.cwr.su/src/acdn/Agreement_and_Terms_of_Use_for_the_Manager_CW_Bot_Service.pdf'>SEE"
-                     f"</a>.",
-                reply_markup=var.as_markup(),
-                parse_mode="HTML"
-            )
-        else:
-            checked: bool | tuple = await HandlerDB.check_subscription(call_query)
-            if checked[0] is False:
-                var: InlineKeyboardBuilder = await Buttons.get_menu_without_premium()
-                await self.__bot.send_message(
-                    chat_id=call_query.from_user.id,
-                    text="💡 You are in the main menu. Select the desired item below!, thank you for your feedback! "
-                         "💞🙏\n\nUsing the services CWR.SU (CW), you accept all the rules and the agreement. "
-                         f"<a href="
-                         f"'https://acdn.cwr.su/src/acdn/Agreement_and_Terms_of_Use_for_the_Manager_CW_Bot_Service.pdf'"
-                         f">SEE</a>.",
-                    reply_markup=var.as_markup(),
-                    parse_mode="HTML"
-                )
-            elif checked[0] is True:
-                var: InlineKeyboardBuilder = await Buttons.get_menu_with_premium()
-                await self.__bot.send_message(
-                    chat_id=call_query.from_user.id,
-                    text=f"👑 <b>{call_query.from_user.first_name}</b>, thank you for your feedback! 💞🙏\n"
-                         f"You are in the main menu. Select the desired item below!\n"
-                         f"\nUsing the services CWR.SU (CW), you accept all the rules and the agreement. "
-                         f"<a href="
-                         f"'https://acdn.cwr.su/src/acdn/Agreement_and_Terms_of_Use_for_the_Manager_CW_Bot_Service.pdf'"
-                         f">SEE</a>.",
-                    reply_markup=var.as_markup(),
-                    parse_mode="HTML"
-                )
-        var: InlineKeyboardBuilder = await Buttons.back_on_main()
-        await self.__bot.send_message(
-            chat_id=self.__admin_id,
-            text=f"{call_query.from_user.first_name} thanked you! 💖",
-            reply_markup=var.as_markup()
+
+    @abc.abstractmethod
+    async def chat_dialog_light(self, message: types.Message, state: FSMContext) -> None:
+        """
+        GLV Chat-Dialog function.
+
+        :param message: Message of user / query.
+        :param state: FSM.
+
+        :return: None.
+        """
+
+
+class NewFSMContextLight:
+    """
+    The class for create new state (FSM) - GVL.
+    """
+    def __init__(self, bot: Bot) -> None:
+        self.__bot: Bot = bot
+        router_chat_ai.message.register(
+            self.chat_dialog_light,
+            GetProcessQueryCDLight.query
         )
 
-        await HandlerDB.update_analytic_datas()
+    async def set(self, state: FSMContext) -> None:
+        """
+        Set state.
+        
+        :param state: FSM.
+        :return: None.
+        """
+        await state.set_state(GetProcessQueryCDLight.query)
+    
+    async def chat_dialog_light(self, message: types.Message, state: FSMContext) -> None:
+        """
+        GLV Chat-Dialog function.
+
+        :param message: Message of user / query.
+        :param state: FSM.
+
+        :return: None.
+        """
+        cd: ChatDialogGigaVersionLight = ChatDialogGigaVersionLight(self.__bot)
+        await cd.chat_dialog(message, state)
+
+
+class NewFSMContextPro:
+    """
+    The class for create new state (FSM) - GVL.
+    """
+    def __init__(self, bot: Bot) -> None:
+        self.__bot: Bot = bot
+        router_chat_ai.message.register(
+            self.chat_dialog_pro,
+            GetProcessQueryCDPro.query
+        )
+
+    async def set(self, state: FSMContext) -> None:
+        """
+        Set state.
+        
+        :param state: FSM.
+        :return: None.
+        """
+        await state.set_state(GetProcessQueryCDPro.query)
+    
+    async def chat_dialog_pro(self, message: types.Message, state: FSMContext) -> None:
+        """
+        GLV Chat-Dialog function.
+
+        :param message: Message of user / query.
+        :param state: FSM.
+
+        :return: None.
+        """
+        cd: ChatDialogGigaVersionPro = ChatDialogGigaVersionPro(self.__bot)
+        await cd.chat_dialog(message, state)

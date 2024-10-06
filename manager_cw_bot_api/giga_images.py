@@ -10,6 +10,7 @@ from aiogram.utils.keyboard import InlineKeyboardBuilder
 from manager_cw_bot_api.buttons import Buttons
 from manager_cw_bot_api.giga_request import create
 from manager_cw_bot_api.fsm_handler import GigaImage
+from manager_cw_bot_api.handler_db_sub_operations import HandlerDB
 
 router_ai_img: Router = Router()
 
@@ -129,6 +130,8 @@ class GigaCreator:
                     text="Return to main-menu:",
                     reply_markup=var.as_markup()
                 )
+
+                await HandlerDB.update_analytic_datas_count_ai_queries()
 
                 await self.__bot.delete_message(
                     chat_id=call.from_user.id,
