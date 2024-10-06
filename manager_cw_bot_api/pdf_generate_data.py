@@ -18,9 +18,9 @@ class GenerateTicketDataUniversal:
         """
         pdf = FPDF()
 
-        pdf.add_font("DinCWFont_TTF", "", "./styles/DIN2014-Regular.ttf", uni=True)
-        pdf.add_font("DinCWFont_TTF", "I", "./styles/DIN2014-Italic.ttf", uni=True)
-        pdf.add_font("DinCWFont_TTF", "B", "./styles/DIN2014-Bold.ttf", uni=True)
+        pdf.add_font("DinCWFont_TTF", "", "./manager_cw_bot_api/styles/DIN2014-Regular.ttf", uni=True)
+        pdf.add_font("DinCWFont_TTF", "I", "./manager_cw_bot_api/styles/DIN2014-Italic.ttf", uni=True)
+        pdf.add_font("DinCWFont_TTF", "B", "./manager_cw_bot_api/styles/DIN2014-Bold.ttf", uni=True)
         pdf.set_font("DinCWFont_TTF", "", 13)
 
         pdf.add_page()
@@ -35,7 +35,7 @@ class GenerateTicketDataUniversal:
           <thead>
             <tr>
               <th width="40%" align='left'><a href='https://cwr.su/'><img 
-              src='./styles/logo_email.png'></a></th>
+              src='./manager_cw_bot_api/styles/logo_email.png'></a></th>
               <th width="60%" align='right'>
                 <h5>CODEWRITER COMPANY\nSELF-EMPLOYED LAPTEV ALEXANDER A.\nTEL.: +7 995 024-61-04, CWR.SU</h5>
               </th>
@@ -97,7 +97,7 @@ class GenerateTicketDataUniversal:
           <br></p>
           <p>Director and developer, creator, designer of the CW product: Laptev Alexander A.</p>
           <br>
-          <center><img src="./styles/stamp.png" width=100 height=100></center>
+          <center><img src="./manager_cw_bot_api/styles/stamp.png" width=100 height=100></center>
           <p><i>*This document is valid due to the stamp at the end of the contents of this document.</i></p>
           <p align='center'>© CW | All rights reserved | 2023 - 2024.</p>
         """, tag_styles={
@@ -125,9 +125,9 @@ class GenerateReceiptForUser:
         """
         pdf = FPDF()
 
-        pdf.add_font("DinCWFont_TTF", "", "./styles/DIN2014-Regular.ttf", uni=True)
-        pdf.add_font("DinCWFont_TTF", "I", "./styles/DIN2014-Italic.ttf", uni=True)
-        pdf.add_font("DinCWFont_TTF", "B", "./styles/DIN2014-Bold.ttf", uni=True)
+        pdf.add_font("DinCWFont_TTF", "", "./manager_cw_bot_api/styles/DIN2014-Regular.ttf", uni=True)
+        pdf.add_font("DinCWFont_TTF", "I", "./manager_cw_bot_api/styles/DIN2014-Italic.ttf", uni=True)
+        pdf.add_font("DinCWFont_TTF", "B", "./manager_cw_bot_api/styles/DIN2014-Bold.ttf", uni=True)
         pdf.set_font("DinCWFont_TTF", "", 13)
 
         pdf.add_page()
@@ -142,7 +142,7 @@ class GenerateReceiptForUser:
                   <thead>
                     <tr>
                       <th width="40%" align='left'><a href='https://cwr.su/'><img 
-                      src='./styles/logo_email.png'></a></th>
+                      src='./manager_cw_bot_api/styles/logo_email.png'></a></th>
                       <th width="60%" align='right'>
                         <h5>CODEWRITER COMPANY\nSELF-EMPLOYED LAPTEV ALEXANDER A.\nTEL.: +7 995 024-61-04, CWR.SU</h5>
                       </th>
@@ -206,7 +206,7 @@ class GenerateReceiptForUser:
                   <br></p>
                   <p>Director and developer, creator, designer of the CW product: Laptev Alexander A.</p>
                   <br>
-                  <center><img src="./styles/stamp.png" width=100 height=100></center>
+                  <center><img src="./manager_cw_bot_api/styles/stamp.png" width=100 height=100></center>
                   <p><i>*This document is valid due to the stamp at the end of the contents of this document.</i></p>
                   <p align='center'>© CW | All rights reserved | 2023 - 2024.</p>
                 """, tag_styles={
@@ -234,9 +234,9 @@ class GenerateReceiptRefundForUser:
         """
         pdf = FPDF()
 
-        pdf.add_font("DinCWFont_TTF", "", "./styles/DIN2014-Regular.ttf", uni=True)
-        pdf.add_font("DinCWFont_TTF", "I", "./styles/DIN2014-Italic.ttf", uni=True)
-        pdf.add_font("DinCWFont_TTF", "B", "./styles/DIN2014-Bold.ttf", uni=True)
+        pdf.add_font("DinCWFont_TTF", "", "./manager_cw_bot_api/styles/DIN2014-Regular.ttf", uni=True)
+        pdf.add_font("DinCWFont_TTF", "I", "./manager_cw_bot_api/styles/DIN2014-Italic.ttf", uni=True)
+        pdf.add_font("DinCWFont_TTF", "B", "./manager_cw_bot_api/styles/DIN2014-Bold.ttf", uni=True)
         pdf.set_font("DinCWFont_TTF", "", 13)
 
         pdf.add_page()
@@ -251,7 +251,7 @@ class GenerateReceiptRefundForUser:
                   <thead>
                     <tr>
                       <th width="40%" align='left'><a href='https://cwr.su/'><img 
-                      src='./styles/logo_email.png'></a></th>
+                      src='./manager_cw_bot_api/styles/logo_email.png'></a></th>
                       <th width="60%" align='right'>
                         <h5>CODEWRITER COMPANY\nSELF-EMPLOYED LAPTEV ALEXANDER A.\nTEL.: +7 995 024-61-04, CWR.SU</h5>
                       </th>
@@ -311,7 +311,7 @@ class GenerateReceiptRefundForUser:
                   <br></p>
                   <p>Director and developer, creator, designer of the CW product: Laptev Alexander A.</p>
                   <br>
-                  <center><img src="./styles/stamp.png" width=100 height=100></center>
+                  <center><img src="./manager_cw_bot_api/styles/stamp.png" width=100 height=100></center>
                   <p><i>*This document is valid due to the stamp at the end of the contents of this document.</i></p>
                   <p align='center'>© CW | All rights reserved | 2023 - 2024.</p>
                 """, tag_styles={
