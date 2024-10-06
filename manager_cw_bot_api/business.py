@@ -76,21 +76,21 @@ class PrivacyMessagesSector:
 
         :return: None.
         """
-        await bot.send_document(
+        await bot.edit_message_text(
+            message_id=call_query.message.message_id,
             chat_id=call_query.from_user.id,
-            document="https://acdn.cwr.su/src/acdn/new_user_agreement_manager_cw_bot.pdf",
-            caption=f"🇬🇧 ENG"
-                    f"🗣 <b>{call_query.from_user.first_name}</b>, you must follow these rules, which are indicated in "
-                    f"the attached document. It also indicates what we charge, what data we transfer to the "
-                    f"server for data processing / analysis, and the like.\n"
-                    f"You also <b>automatically</b> accept the user agreement specified in the attachment.\n\n"
-                    f"👑 The rules for signing up for a CW PREMIUM ➕ subscription are listed <a "
-                    f"href='https://acdn.cwr.su/src/acdn/Agreement_and_Terms_of_Use_for_the_Manager_CW_Bot_Service.pdf'"
-                    f">here</a>.\n\n🔥 The paid CW PREMIUM ➕subscription period is 30 days.\nCW PREMIUM's price:\n"
-                    f"⭐ 15 XTR (TGStar);\n"
-                    f"💳 5 RUB - Different payment options are available.\n\n"
-                    f"#UserAgreement #privacy_manager_cw_bot_and_include_api\n"
-                    f"#privacy_bot #privacy",
+            text=f"🇬🇧 ENG: https://acdn.cwr.su/src/acdn/new_user_agreement_manager_cw_bot.pdf "
+                 f"🗣 <b>{call_query.from_user.first_name}</b>, you must follow these rules, which are indicated in "
+                 f"the attached document. It also indicates what we charge, what data we transfer to the "
+                 f"server for data processing / analysis, and the like.\n"
+                 f"You also <b>automatically</b> accept the user agreement specified in the attachment.\n\n"
+                 f"👑 The rules for signing up for a CW PREMIUM ➕ subscription are listed <a "
+                 f"href='https://acdn.cwr.su/src/acdn/Agreement_and_Terms_of_Use_for_the_Manager_CW_Bot_Service.pdf'"
+                 f">here</a>.\n\n🔥 The paid CW PREMIUM ➕subscription period is 30 days.\nCW PREMIUM's price:\n"
+                 f"⭐ 15 XTR (TGStar);\n"
+                 f"💳 5 RUB - Different payment options are available.\n\n"
+                 f"#UserAgreement #privacy_manager_cw_bot_and_include_api\n"
+                 f"#privacy_bot #privacy",
             parse_mode="HTML"
         )
 
@@ -107,21 +107,21 @@ class PrivacyMessagesSector:
 
         :return: None.
         """
-        await bot.send_document(
+        await bot.edit_message_text(
             chat_id=call_query.from_user.id,
-            document="https://acdn.cwr.su/src/acdn/new_user_agreement_manager_cw_bot.pdf",
-            caption=f"🇷🇺 RUS"
-                    f"🗣 <b>{call_query.from_user.first_name}</b>, вы должны соблюдать эти правила, которые указаны в "
-                    f"прикреплённом док-те. Там также указано какие данные мы собираем и передаем на "
-                    f"сервер для обработки / анализа и т.п.\n"
-                    f"Вы также автоматически принимаете пользовательское соглашение, указанное во вложении.\n\n"
-                    f"👑 Смотрите перечисленные правила оформления подписки CW PREMIUM ➕ <a "
-                    f"href='https://acdn.cwr.su/src/acdn/Agreement_and_Terms_of_Use_for_the_Manager_CW_Bot_Service.pdf'"
-                    f">здесь</a>.\n\n🔥 Срок действия платной подписки CW PREMIUM ➕ составляет 30 дней.\nПРАЙС CW "
-                    f"PREMIUM'а:\n⭐ 15 XTR (TGStar);\n"
-                    f"💳 5 RUB - Доступны различные варианты оплаты.\n\n"
-                    f"#UserAgreement #privacy_manager_cw_bot_and_include_api\n"
-                    f"#privacy_bot #privacy",
+            message_id=call_query.message.message_id,
+            text=f"🇷🇺 RUS: https://acdn.cwr.su/src/acdn/new_user_agreement_manager_cw_bot.pdf "
+                 f"🗣 <b>{call_query.from_user.first_name}</b>, вы должны соблюдать эти правила, которые указаны в "
+                 f"прикреплённом док-те. Там также указано какие данные мы собираем и передаем на "
+                 f"сервер для обработки / анализа и т.п.\n"
+                 f"Вы также автоматически принимаете пользовательское соглашение, указанное во вложении.\n\n"
+                 f"👑 Смотрите перечисленные правила оформления подписки CW PREMIUM ➕ <a "
+                 f"href='https://acdn.cwr.su/src/acdn/Agreement_and_Terms_of_Use_for_the_Manager_CW_Bot_Service.pdf'"
+                 f">здесь</a>.\n\n🔥 Срок действия платной подписки CW PREMIUM ➕ составляет 30 дней.\nПРАЙС CW "
+                 f"PREMIUM'а:\n⭐ 15 XTR (TGStar);\n"
+                 f"💳 5 RUB - Доступны различные варианты оплаты.\n\n"
+                 f"#UserAgreement #privacy_manager_cw_bot_and_include_api\n"
+                 f"#privacy_bot #privacy",
             parse_mode="HTML"
         )
 
@@ -667,7 +667,6 @@ class AISector:
             bot: Bot,
             call_query: types.CallbackQuery,
             state: FSMContext,
-            mysql_data: dict,
             admin_id: int
     ) -> None:
         """
@@ -684,12 +683,10 @@ class AISector:
         giga_chat_ai_helper: GigaChatAI = (
             GigaChatAI(
                 bot,
-                call_query,
-                mysql_data,
-                admin_id
+                call_query
             )
         )
-        await giga_chat_ai_helper.show_info_edit_text(state)
+        await giga_chat_ai_helper.choosing_ai_model()
 
     @staticmethod
     async def generate_image_for_premium_user(
@@ -1118,7 +1115,6 @@ class Manager(Bot):
         """
         analytic: Analytic = Analytic(
             self,
-            self.__mysql_data,
             call_query
         )
         await analytic.analyse()
@@ -1243,7 +1239,7 @@ class Manager(Bot):
         :return: None.
         """
         await AISector.ai_assistance(
-            self, call_query, state, self.__mysql_data, self.__admin_id
+            self, call_query, state, self.__admin_id
         )
 
     async def __generate_image_for_premium_user(self, call: types.CallbackQuery, state: FSMContext) -> None:

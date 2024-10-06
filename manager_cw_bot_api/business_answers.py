@@ -1,17 +1,13 @@
 """Module of the answers."""
 import datetime
 import json
+import abc
 
 from aiogram import types, Bot
 
 
-class Answers:
-    """Answers-Class."""
-
-    def __init__(self, business_connection_id, admin_id):
-        self.__business_connection_id: str = business_connection_id
-        self.__admin_id: int = admin_id
-
+class ChatAction:
+    """The class for set some action for message."""
     @staticmethod
     async def chat_action(bot: Bot, chat_id: int | str, action: str,
                           business_connection_id: str) -> None:
@@ -25,8 +21,18 @@ class Answers:
 
         :return: None.
         """
-        await bot.send_chat_action(chat_id=chat_id, action=action,
-                                   business_connection_id=business_connection_id)
+        await bot.send_chat_action(
+            chat_id=chat_id, action=action,
+            business_connection_id=business_connection_id
+        )
+
+
+class Answers:
+    """Answers-Class."""
+
+    def __init__(self, business_connection_id, admin_id):
+        self.__business_connection_id: str = business_connection_id
+        self.__admin_id: int = admin_id
 
     async def answer_to_user(self, bot: Bot, message: types.Message) -> None:
         """
@@ -36,7 +42,7 @@ class Answers:
         :param message: Message of a user.
         :return: None.
         """
-        chat_id: int = message.chat.id
+        chat_id: int = message.from_user.id
         action: str = "typing"
 
         if message.from_user.id != self.__admin_id:
@@ -44,170 +50,270 @@ class Answers:
             with open("bot.json", "r", encoding='utf-8') as file:
                 data: dict = json.load(file)
 
-            data = data["BUSINESS_HANDLER"]
+            data: dict = data["BUSINESS_HANDLER"]
 
-            thanks_sticker = data["THANKS"]["THANKS_STICKER"]
-            congratulation_sticker = data["CONGRATULATION"]["CONGRATULATION_STICKER"]
-            problem_with_bot_sticker = data["PROBLEM_WITH_BOT"]["PROBLEM_WITH_BOT_STICKER"]
+            thanks_sticker: str = data["THANKS"]["THANKS_STICKER"]
+            congratulation_sticker: str = data["CONGRATULATION"]["CONGRATULATION_STICKER"]
+            problem_with_bot_sticker: str = data["PROBLEM_WITH_BOT"]["PROBLEM_WITH_BOT_STICKER"]
 
-            thanks_text = data["THANKS"]["THANKS_TEXT"]
-            congratulation_text = data["CONGRATULATION"]["CONGRATULATION_TEXT"]
-            problem_with_bot_text = data["PROBLEM_WITH_BOT"]["PROBLEM_WITH_BOT_TEXT"]
+            thanks_text: dict = data["THANKS"]["THANKS_TEXT"]
+            congratulation_text: dict = data["CONGRATULATION"]["CONGRATULATION_TEXT"]
+            problem_with_bot_text: dict = data["PROBLEM_WITH_BOT"]["PROBLEM_WITH_BOT_TEXT"]
 
             if "пасиб" in message.text.lower() or "thank" in message.text.lower() \
-                    or "благодарю" in message.text.lower() or "спасиб" in message.text.lower():
-                await Answers.chat_action(
-                    bot=bot,
-                    chat_id=chat_id,
-                    action=action,
-                    business_connection_id=self.__business_connection_id
+                or "благодарю" in message.text.lower() or "спасиб" in message.text.lower():
+                thanks_func_sector: FunctionBusinessAnswerThanksSector = FunctionBusinessAnswerThanksSector(
+                    bot, 
+                    chat_id, 
+                    action, 
+                    self.__business_connection_id, 
+                    thanks_text, 
+                    thanks_sticker, 
+                    self.__admin_id
                 )
-                try:
-                    if thanks_text["MSG"] != "NONE":
-                        if thanks_text["OFFSET"] != "NONE":
-                            await bot.send_message(
-                                business_connection_id=self.__business_connection_id,
-                                chat_id=chat_id,
-                                text=thanks_text["MSG"],
-                                entities=[types.MessageEntity(
-                                    type='custom_emoji',
-                                    offset=thanks_text["OFFSET"],
-                                    length=thanks_text["LENGTH"],
-                                    custom_emoji_id=thanks_text["C_E_ID"]
-                                )]
-                            )
-                        else:
-                            await bot.send_message(
-                                business_connection_id=self.__business_connection_id,
-                                chat_id=chat_id,
-                                text=thanks_text["MSG"]
-                            )
-                except Exception as ex:
-                    await bot.send_message(
-                        chat_id=self.__admin_id,
-                        text=f"Sorry! The message (THANKS_TEXT) can't send!\n{ex}"
-                    )
-                    with open("logs.txt", 'a') as logs:
-                        logs.write(f"{datetime.datetime.now()} | {ex} | The error in "
-                                   f"__answer_to_user-function of business.py\n")
-                try:
-                    if thanks_sticker != "NONE":
-                        await bot.send_sticker(
-                            business_connection_id=self.__business_connection_id,
-                            chat_id=chat_id,
-                            sticker=thanks_sticker
-                        )
-                except Exception as ex:
-                    await bot.send_message(
-                        chat_id=self.__admin_id,
-                        text=f"Sorry! The message (THANKS_STICKER) can't send!\n{ex}"
-                    )
-                    with open("logs.txt", 'a') as logs:
-                        logs.write(f"{datetime.datetime.now()} | {ex} | The error in "
-                                   f"__answer_to_user-function of business.py\n")
+                await thanks_func_sector.pattern()
 
             if "с днём рожден" in message.text.lower() or "happy birthday" in \
                     message.text.lower() or "с праздник" in message.text.lower() or \
                     "с днем рожден" in message.text.lower() or message.text.lower() == "с др":
-                await Answers.chat_action(
-                    bot=bot,
-                    chat_id=chat_id,
-                    action=action,
-                    business_connection_id=self.__business_connection_id
-                )
-                try:
-                    if congratulation_text["MSG"] != "NONE":
-                        if congratulation_text["OFFSET"] != "NONE":
-                            await bot.send_message(
-                                business_connection_id=self.__business_connection_id,
-                                chat_id=chat_id,
-                                text=congratulation_text["MSG"],
-                                entities=[types.MessageEntity(
-                                    type='custom_emoji',
-                                    offset=congratulation_text["OFFSET"],
-                                    length=congratulation_text["LENGTH"],
-                                    custom_emoji_id=congratulation_text["C_E_ID"]
-                                )]
-                            )
-                        else:
-                            await bot.send_message(
-                                business_connection_id=self.__business_connection_id,
-                                chat_id=chat_id,
-                                text=congratulation_text["MSG"]
-                            )
-                except Exception as ex:
-                    await bot.send_message(
-                        chat_id=self.__admin_id,
-                        text=f"Sorry! The message (CONGRATULATION_TEXT) can't send!\n{ex}"
+                congratulation_func_sector: FunctionBusinessAnswerCongratulationSector = \
+                    FunctionBusinessAnswerCongratulationSector(
+                        bot, 
+                        chat_id, 
+                        action, 
+                        self.__business_connection_id, 
+                        congratulation_text, 
+                        congratulation_sticker, 
+                        self.__admin_id
                     )
-                    with open("logs.txt", 'a') as logs:
-                        logs.write(f"{datetime.datetime.now()} | {ex} | The error in "
-                                   f"__answer_to_user-function of business.py\n")
-                try:
-                    if congratulation_sticker != "NONE":
-                        await bot.send_sticker(
-                            business_connection_id=self.__business_connection_id,
-                            chat_id=chat_id,
-                            sticker=congratulation_sticker
-                        )
-
-                except Exception as ex:
-                    await bot.send_message(
-                        chat_id=self.__admin_id,
-                        text=f"Sorry! The message (CONGRATULATION_STICKER) can't send!\n{ex}"
-                    )
-                    with open("logs.txt", 'a') as logs:
-                        logs.write(f"{datetime.datetime.now()} | {ex} | The error in "
-                                   f"__answer_to_user-function of business.py\n")
+                await congratulation_func_sector.pattern()
 
             if ('не работает бот' in message.text.lower() or 'бот не работает' in
-                    message.text.lower()):
-                await Answers.chat_action(
-                    bot=bot,
-                    chat_id=chat_id,
-                    action=action,
-                    business_connection_id=self.__business_connection_id
+                    message.text.lower() or "bot doesn't work" in message.text.lower() or
+                    "bot doesnt work" in message.text.lower()):
+                bot_doesnt_work_func_sector: FunctionBusinessAnswerBotDoesntWorkSector = \
+                    FunctionBusinessAnswerBotDoesntWorkSector(
+                        bot, 
+                        chat_id, 
+                        action, 
+                        self.__business_connection_id, 
+                        problem_with_bot_text, 
+                        problem_with_bot_sticker, 
+                        self.__admin_id
+                    )
+                await bot_doesnt_work_func_sector.pattern()
+
+
+class BaseFunctionBusinessAnswerSector(abc.ABC):
+    """
+    The basic class-sector of function business answer (by some patterns).
+    """
+    def __init__(
+            self, 
+            bot: Bot, 
+            chat_id: int | str, 
+            action: str, 
+            b_c_id: str, 
+            text_pattern: dict, 
+            sticker_pattern: str,
+            admin_id: int
+    ) -> None:
+        self._bot: Bot = bot
+        self._chat_id: int | str = chat_id
+        self._action: str = action
+        self._business_connection_id: str = b_c_id
+        self._text_pattern: dict = text_pattern
+        self._sticker_pattern: str = sticker_pattern
+        self._admin_id: int = admin_id
+
+    @abc.abstractmethod
+    async def pattern(self) -> None:
+        """
+        Pattern-function for business answers.
+
+        :return: None.
+        """
+
+
+class FunctionBusinessAnswerThanksSector(BaseFunctionBusinessAnswerSector):
+    """
+    The class-sector of function business answer (by pattern "thanks").
+    """
+    async def pattern(self) -> None:
+        """
+        Pattern-function for business answers by phrases-type: "thanks".
+
+        :return: None.
+        """
+        await ChatAction.chat_action(
+            bot=self._bot,
+            chat_id=self._chat_id,
+            action=self._action,
+            business_connection_id=self._business_connection_id
+        )
+        try:
+            if self._text_pattern["MSG"] != "NONE":
+                if self._text_pattern["OFFSET"] != "NONE":
+                    await self._bot.send_message(
+                        business_connection_id=self._business_connection_id,
+                        chat_id=self._chat_id,
+                        text=self._text_pattern["MSG"],
+                        entities=[types.MessageEntity(
+                            type='custom_emoji',
+                            offset=self._text_pattern["OFFSET"],
+                            length=self._text_pattern["LENGTH"],
+                            custom_emoji_id=self._text_pattern["C_E_ID"]
+                        )]
+                    )
+                else:
+                    await self._bot.send_message(
+                        business_connection_id=self._business_connection_id,
+                        chat_id=self._chat_id,
+                        text=self._text_pattern["MSG"]
+                    )
+        except Exception as ex:
+            await self._bot.send_message(
+                chat_id=self._admin_id,
+                text=f"Sorry! The message (THANKS_TEXT) can't send!\n{ex}"
+            )
+            with open("logs.txt", 'a') as logs:
+                logs.write(f"{datetime.datetime.now()} | {ex} | The error in "
+                            f"__answer_to_user-function of business.py\n")
+        try:
+            if self._sticker_pattern != "NONE":
+                await self._bot.send_sticker(
+                    business_connection_id=self._business_connection_id,
+                    chat_id=self._chat_id,
+                    sticker=self._sticker_pattern
                 )
-                try:
-                    if problem_with_bot_text["MSG"] != "NONE":
-                        if problem_with_bot_text["OFFSET"] != "NONE":
-                            await bot.send_message(
-                                business_connection_id=self.__business_connection_id,
-                                chat_id=chat_id,
-                                text=problem_with_bot_text["MSG"],
-                                entities=[types.MessageEntity(
-                                    type='custom_emoji',
-                                    offset=problem_with_bot_text["OFFSET"],
-                                    length=problem_with_bot_text["LENGTH"],
-                                    custom_emoji_id=problem_with_bot_text["C_E_ID"]
-                                )]
-                            )
-                        else:
-                            await bot.send_message(
-                                business_connection_id=self.__business_connection_id,
-                                chat_id=chat_id,
-                                text=problem_with_bot_text["MSG"]
-                            )
-                except Exception as ex:
-                    await bot.send_message(
-                        chat_id=self.__admin_id,
-                        text=f"Sorry! The message (PROBLEM_WITH_BOT_TEXT) can't send!\n{ex}"
+        except Exception as ex:
+            await self._bot.send_message(
+                chat_id=self._admin_id,
+                text=f"Sorry! The message (THANKS_STICKER) can't send!\n{ex}"
+            )
+            with open("logs.txt", 'a') as logs:
+                logs.write(f"{datetime.datetime.now()} | {ex} | The error in "
+                           f"__answer_to_user-function of business.py\n")
+
+
+class FunctionBusinessAnswerCongratulationSector(BaseFunctionBusinessAnswerSector):
+    """
+    The class-sector of function business answer (by pattern "congratulation").
+    """
+    async def pattern(self) -> None:
+        """
+        Pattern-function for business answers by phrases-type: "congratulation".
+
+        :return: None.
+        """
+        await ChatAction.chat_action(
+            bot=self._bot,
+            chat_id=self._chat_id,
+            action=self._action,
+            business_connection_id=self._business_connection_id
+        )
+        try:
+            if self._text_pattern["MSG"] != "NONE":
+                if self._text_pattern["OFFSET"] != "NONE":
+                    await self._bot.send_message(
+                        business_connection_id=self._business_connection_id,
+                        chat_id=self._chat_id,
+                        text=self._text_pattern["MSG"],
+                        entities=[types.MessageEntity(
+                            type='custom_emoji',
+                            offset=self._text_pattern["OFFSET"],
+                            length=self._text_pattern["LENGTH"],
+                            custom_emoji_id=self._text_pattern["C_E_ID"]
+                        )]
                     )
-                    with open("logs.txt", 'a') as logs:
-                        logs.write(f"{datetime.datetime.now()} | {ex} | The error in "
-                                   f"__answer_to_user-function of business.py\n")
-                try:
-                    if problem_with_bot_sticker != "NONE":
-                        await bot.send_sticker(
-                            business_connection_id=self.__business_connection_id,
-                            chat_id=chat_id,
-                            sticker=problem_with_bot_sticker
-                        )
-                except Exception as ex:
-                    await bot.send_message(
-                        chat_id=self.__admin_id,
-                        text=f"Sorry! The message (PROBLEM_WITH_BOT_STICKER) can't send!\n{ex}"
+                else:
+                    await self._bot.send_message(
+                        business_connection_id=self._business_connection_id,
+                        chat_id=self._chat_id,
+                        text=self._text_pattern["MSG"]
                     )
-                    with open("logs.txt", 'a') as logs:
-                        logs.write(f"{datetime.datetime.now()} | {ex} | The error in "
-                                   f"__answer_to_user-function of business.py\n")
+        except Exception as ex:
+            await self._bot.send_message(
+                chat_id=self._admin_id,
+                text=f"Sorry! The message (CONGRATULATION_TEXT) can't send!\n{ex}"
+            )
+            with open("logs.txt", 'a') as logs:
+                logs.write(f"{datetime.datetime.now()} | {ex} | The error in "
+                            f"__answer_to_user-function of business.py\n")
+        try:
+            if self._sticker_pattern != "NONE":
+                await self._bot.send_sticker(
+                    business_connection_id=self._business_connection_id,
+                    chat_id=self._chat_id,
+                    sticker=self._sticker_pattern
+                )
+
+        except Exception as ex:
+            await self._bot.send_message(
+                chat_id=self._admin_id,
+                text=f"Sorry! The message (CONGRATULATION_STICKER) can't send!\n{ex}"
+            )
+            with open("logs.txt", 'a') as logs:
+                logs.write(f"{datetime.datetime.now()} | {ex} | The error in "
+                           f"__answer_to_user-function of business.py\n")
+                
+
+class FunctionBusinessAnswerBotDoesntWorkSector(BaseFunctionBusinessAnswerSector):
+    """
+    The class-sector of function business answer (by pattern "bot doesn't work").
+    """
+    async def pattern(self) -> None:
+        """
+        Pattern-function for business answers by phrases-type: "bot doesn't work".
+
+        :return: None.
+        """
+        await ChatAction.chat_action(
+            bot=self._bot,
+            chat_id=self._chat_id,
+            action=self._action,
+            business_connection_id=self._business_connection_id
+        )
+        try:
+            if self._text_pattern["MSG"] != "NONE":
+                if self._text_pattern["OFFSET"] != "NONE":
+                    await self._bot.send_message(
+                        business_connection_id=self._business_connection_id,
+                        chat_id=self._chat_id,
+                        text=self._text_pattern["MSG"],
+                        entities=[types.MessageEntity(
+                            type='custom_emoji',
+                            offset=self._text_pattern["OFFSET"],
+                            length=self._text_pattern["LENGTH"],
+                            custom_emoji_id=self._text_pattern["C_E_ID"]
+                        )]
+                    )
+                else:
+                    await self._bot.send_message(
+                        business_connection_id=self._business_connection_id,
+                        chat_id=self._chat_id,
+                        text=self._text_pattern["MSG"]
+                    )
+        except Exception as ex:
+            await self._bot.send_message(
+                chat_id=self._admin_id,
+                text=f"Sorry! The message (PROBLEM_WITH_BOT_TEXT) can't send!\n{ex}"
+            )
+            with open("logs.txt", 'a') as logs:
+                logs.write(f"{datetime.datetime.now()} | {ex} | The error in "
+                        f"__answer_to_user-function of business.py\n")
+        try:
+            if self._sticker_pattern != "NONE":
+                await self._bot.send_sticker(
+                    business_connection_id=self._business_connection_id,
+                    chat_id=self._chat_id,
+                    sticker=self._sticker_pattern
+                )
+        except Exception as ex:
+            await self._bot.send_message(
+                chat_id=self._admin_id,
+                text=f"Sorry! The message (PROBLEM_WITH_BOT_STICKER) can't send!\n{ex}"
+            )
+            with open("logs.txt", 'a') as logs:
+                logs.write(f"{datetime.datetime.now()} | {ex} | The error in "
+                        f"__answer_to_user-function of business.py\n")
