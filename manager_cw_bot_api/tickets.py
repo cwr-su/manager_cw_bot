@@ -259,26 +259,7 @@ class TicketUserView:
                         strftime('%d.%m.%Y | %H:%M:%S MSK+3')
                     )
 
-                    query = f"""INSERT INTO users (id_ticket, username, tg_id_sender, 
-                    ticket_data, create_at, subject) VALUES('{id_ticket}', '{username}', 
-                    '{tg_id_sender}', '{ticket_data}', '{create_at}', 
-                    '{subject}');"""
-                    cursor.execute(query)
-
-                    query_select_1step = "SELECT count_of_tickets_system FROM analytics;"
-                    cursor.execute(query_select_1step)
-                    result = cursor.fetchall()
-
-                    if len(result) == 0:
-                        query_update_2step = f"""INSERT INTO analytics ( count_of_tickets_system )
-                        VALUES ( {1} );"""
-                        cursor.execute(query_update_2step)
-                    else:
-                        query_update_2step = f"""UPDATE analytics SET count_of_tickets_system = 
-                        {result[0][0] + 1};"""
-                        cursor.execute(query_update_2step)
-
-                    connection.commit()
+                    await HandlerDB.add_new_ticket_data()
 
                     await self.__bot.send_message(
                         chat_id=message.from_user.id,
@@ -287,7 +268,7 @@ class TicketUserView:
                         reply_markup=var.as_markup()
                     )
 
-                    connection.close()
+                    await HandlerDB.update_analytic_datas_count_tickets_system()
 
                 except Exception as ex:
                     with open("logs.txt", 'a') as logs:
@@ -341,36 +322,46 @@ class TicketAdminView:
         :return: None.
         """
         response: tuple = await Buttons.get_users_tickets_for_admin()
-        if response[0][0] is False:
-            await self.__bot.edit_message_text(
-                text=f"🔹 Tickets (ADMIN UI | CWBot UI)\n----------------------------------------\n{response[0][1]}",
-                chat_id=call_query.message.chat.id,
-                message_id=call_query.message.message_id,
-                reply_markup=response[1].as_markup(),
-                parse_mode="HTML"
-            )
-        elif response[0][0] is True:
-            self.__class__.__response_big = response[0][1], response[0][2]
+        if len(response[0]) != 0:
+            if response[0][0] is False:
+                await self.__bot.edit_message_text(
+                    text=f"🔹 Tickets (ADMIN UI | CWBot UI)\n----------------------------------------\n{response[0][1]}",
+                    chat_id=call_query.message.chat.id,
+                    message_id=call_query.message.message_id,
+                    reply_markup=response[1].as_markup(),
+                    parse_mode="HTML"
+                )
+            elif response[0][0] is True:
+                self.__class__.__response_big = response[0][1], response[0][2]
 
-            await self.__bot.edit_message_text(
-                text=f"🔹 Tickets (ADMIN UI | CWBot UI)\n----------------------------------------\nI'm sorry, but "
-                     f"I can't send the details of all tickets. More characters "
-                     f"are required. Will you allow me to send the details of the remaining tickets to your email?\n\n"
-                     f"<b>Available Data look after click on the button (which you need)</b>.",
-                chat_id=call_query.message.chat.id,
-                message_id=call_query.message.message_id,
-                reply_markup=response[1].as_markup(),
-                parse_mode="HTML"
-            )
+                await self.__bot.edit_message_text(
+                    text=f"🔹 Tickets (ADMIN UI | CWBot UI)\n----------------------------------------\nI'm sorry, but "
+                        f"I can't send the details of all tickets. More characters "
+                        f"are required. Will you allow me to send the details of the remaining tickets to your email?\n\n"
+                        f"<b>Available Data look after click on the button (which you need)</b>.",
+                    chat_id=call_query.message.chat.id,
+                    message_id=call_query.message.message_id,
+                    reply_markup=response[1].as_markup(),
+                    parse_mode="HTML"
+                )
 
-            router.callback_query.register(
-                self.__allow_send_email_ticket_data_admin,
-                F.data == "allow_send_email_ticket_data_admin"
-            )
-            router.callback_query.register(
-                self.__not_allow_send_email_ticket_data_admin,
-                F.data == "not_allow_send_email_ticket_data_admin"
-            )
+                router.callback_query.register(
+                    self.__allow_send_email_ticket_data_admin,
+                    F.data == "allow_send_email_ticket_data_admin"
+                )
+                router.callback_query.register(
+                    self.__not_allow_send_email_ticket_data_admin,
+                    F.data == "not_allow_send_email_ticket_data_admin"
+                )
+        else:
+            await self.__bot.edit_message_text(
+                    text=f"🔹 Tickets (ADMIN UI | CWBot UI)\n----------------------------------------\n\n"
+                         f"It's still empty here!",
+                    chat_id=call_query.message.chat.id,
+                    message_id=call_query.message.message_id,
+                    reply_markup=response[1].as_markup(),
+                    parse_mode="HTML"
+                )
 
     async def __allow_send_email_ticket_data_admin(self, call_query: types.CallbackQuery) -> None:
         """

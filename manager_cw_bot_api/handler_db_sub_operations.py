@@ -147,26 +147,71 @@ class HandlerDB:
             print(ex)
 
     @staticmethod
-    async def update_analytic_datas() -> None:
+    async def get_analytic_datas() -> tuple:
         """
-        Update analytic datas.
+        Get Analytics.
 
+        :return: Tuple with data.
+        """
+        connection: pymysql.Connection = await Connection.get_connection(await HandlerDB.get_data())
+        cursor = connection.cursor()
+
+        query: str = "SELECT * FROM analytics;"
+        cursor.execute(query)
+        response: tuple = cursor.fetchall()
+        connection.close()
+
+        return response
+
+    @staticmethod
+    async def update_analytic_datas_count_ai_queries(count: int = 1) -> None:
+        """
+        Update analytic datas. Update CAQ.
+
+        :param count: Count of AI queries.
         :return: None.
         """
         connection: pymysql.Connection = await Connection.get_connection(await HandlerDB.get_data())
         cursor = connection.cursor()
 
-        query: str = "SELECT count_of_thanks_from_users FROM analytics;"
+        query: str = "SELECT count_of_ai_queries FROM analytics;"
         cursor.execute(query)
-        count_of_thanks_from_users = cursor.fetchall()
+        count_of_ai_queries = cursor.fetchall()
 
-        if len(count_of_thanks_from_users) == 0:
-            query: str = f"""INSERT INTO analytics (count_of_thanks_from_users)
-                         VALUES ({1});"""
+        if len(count_of_ai_queries) == 0:
+            query: str = f"""INSERT INTO analytics (count_of_ai_queries)
+                         VALUES ({count});"""
             cursor.execute(query)
         else:
             query: str = f"""UPDATE analytics SET 
-                         count_of_thanks_from_users = {count_of_thanks_from_users[0][0] + 1};"""
+                         count_of_ai_queries = {count_of_ai_queries[0][0] + count};"""
+            cursor.execute(query)
+
+        connection.commit()
+        connection.close()
+
+    @staticmethod
+    async def update_analytic_datas_count_tickets_system(count: int = 1) -> None:
+        """
+        Update count of tickets. Update CTS.
+
+        :param count: Count of Tickets in the TSystem.
+        :return: None.
+        """
+        connection: pymysql.Connection = await Connection.get_connection(await HandlerDB.get_data())
+        cursor = connection.cursor()
+
+        query: str = "SELECT count_of_tickets_system FROM analytics;"
+        cursor.execute(query)
+        count_of_tickets_system = cursor.fetchall()
+
+        if len(count_of_tickets_system) == 0:
+            query: str = f"""INSERT INTO analytics (count_of_tickets_system)
+                         VALUES ({count});"""
+            cursor.execute(query)
+        else:
+            query: str = f"""UPDATE analytics SET 
+                         count_of_tickets_system = {count_of_tickets_system[0][0] + count};"""
             cursor.execute(query)
 
         connection.commit()
@@ -320,6 +365,40 @@ class HandlerDB:
         except Exception as ex:
             print(ex)
             return False
+        
+    @staticmethod
+    async def add_new_ticket_data(
+        id_ticket: str, 
+        username: str, 
+        tg_id_sender: int, 
+        ticket_data: str, 
+        create_at: str, 
+        subject: str
+    ) -> None:
+        """
+        Function for add new ticket data.
+
+        :param id_ticket: ID Ticket.
+        :param username: Sender's Telegram Username.
+        :param tg_id_sender: Sender's Telegram ID.
+        :param ticket_data: Data of the Ticket.
+        :param create_at: CREATE_AT - data of the ticket.
+        :param subject: Subject of the ticket.
+
+        :return: None.
+        """
+        connection: pymysql.Connection = await Connection.get_connection(await HandlerDB.get_data())
+        cursor = connection.cursor()
+
+        query = f"""INSERT INTO users (id_ticket, username, tg_id_sender, 
+        ticket_data, create_at, subject) VALUES('{id_ticket}', '{username}', 
+        '{tg_id_sender}', '{ticket_data}', '{create_at}', 
+        '{subject}');"""
+
+        cursor.execute(query)
+
+        connection.commit()
+        connection.close()
 
     @staticmethod
     async def get_ticket_data(tg_id: int, builder: InlineKeyboardBuilder) -> InlineKeyboardBuilder | tuple:
