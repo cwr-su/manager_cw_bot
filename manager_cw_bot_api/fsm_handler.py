@@ -43,8 +43,12 @@ class GigaImage(StatesGroup):
     request: State = State()
 
 
-class ProcessGigaChatAI(StatesGroup):
-    request: State = State()
+class GetProcessQueryCDLight(StatesGroup):
+    query: State = State()
+
+
+class GetProcessQueryCDPro(StatesGroup):
+    query: State = State()
 
 
 class ProcessEditingEmailAfterConfirmation(StatesGroup):
