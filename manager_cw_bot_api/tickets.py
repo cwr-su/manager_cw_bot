@@ -259,7 +259,14 @@ class TicketUserView:
                         strftime('%d.%m.%Y | %H:%M:%S MSK+3')
                     )
 
-                    await HandlerDB.add_new_ticket_data()
+                    await HandlerDB.add_new_ticket_data(
+                        id_ticket, 
+                        username, 
+                        tg_id_sender, 
+                        ticket_data,
+                        create_at, 
+                        subject
+                    )
 
                     await self.__bot.send_message(
                         chat_id=message.from_user.id,
