@@ -1,11 +1,26 @@
-# Manager CW Bot Lib
-[![MCW](https://gitlab.com/cwr_su/manager_cw_bot/badges/master/coverage.svg)](https://gitlab.com/cwr_su/manager_cw_bot/)
+# Manager CW Bot | MCW
 
-## Updates and new features in the latest version of the LIB!
+--------------------
 
-### Download: `git clone https://gitlab.com/cwr_su/manager_cw_bot.git`
+![MCW](https://img.shields.io/badge/manager__cw__bot__api-v._5.1-a83fd9?link=https://docs.cwr.su/)
+![MCW](https://img.shields.io/badge/last_update-v._5.1-green?link=https://docs.cwr.su/manager_cw_bot/info_updates)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/manager-cw-bot-api?link=https://pypi.org/project/manager-cw-bot-api/)
+![PyPI - Version](https://img.shields.io/pypi/v/manager_cw_bot_api)
+
+--------------------
+
+## 😎 Updates and new features in the latest version of the LIB!
+
+### Download ⏬ / Git clone:
+`git clone https://gitlab.com/cwr_su/manager_cw_bot.git`
 
 #### MCW library (manager_cw_bot) update for GIT (hub/lab) users. You can now test the new functionality in the official bot https://t.me/helper_cwBot.
 
-##### See all changes in the ‘Commits’ section - Master-branch ([click here](https://gitlab.com/cwr_su/manager_cw_bot/-/commits/master/?ref_type=HEADS)).
+See all changes in the ‘Commits’ section - Master-branch ([click here](https://gitlab.com/cwr_su/manager_cw_bot/-/commits/master/?ref_type=HEADS)).
 
+--------------------
+
+👀 Greetings, dear developer, on the MCW project page, which is located in one of the GIT remote-storage. 
+You can see what's new in the latest library update by clicking on the "last update" button above. 
+
+🙏 Thank you for choosing Manager CW Bot as your **personal** Manager **CW** Bot as well as its API (in python language).
