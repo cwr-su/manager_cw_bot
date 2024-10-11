@@ -3,7 +3,6 @@ Module of the analytics data from database for admin.
 """
 import datetime
 
-import pymysql
 from aiogram import types, Bot
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 

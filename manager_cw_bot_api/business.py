@@ -665,18 +665,13 @@ class AISector:
     @staticmethod
     async def ai_assistance(
             bot: Bot,
-            call_query: types.CallbackQuery,
-            state: FSMContext,
-            admin_id: int
+            call_query: types.CallbackQuery
     ) -> None:
         """
         Handler (callback-handler) for go to the AI-Menu.
 
         :param bot: The Bot-object.
         :param call_query: Callback Query.
-        :param state: FSM.
-        :param mysql_data: MySQL (Database) data.
-        :param admin_id: Admin ID (telegram ID).
 
         :return: None.
         """
@@ -1229,17 +1224,15 @@ class Manager(Bot):
             self, call, state
         )
 
-    async def __ai_assistance(self, call_query: types.CallbackQuery, state: FSMContext) -> None:
+    async def __ai_assistance(self, call_query: types.CallbackQuery) -> None:
         """
         Handler (callback-handler) for go to the AI-Menu.
 
         :param call_query: Callback Query.
-        :param state: FSM.
-
         :return: None.
         """
         await AISector.ai_assistance(
-            self, call_query, state, self.__admin_id
+            self, call_query
         )
 
     async def __generate_image_for_premium_user(self, call: types.CallbackQuery, state: FSMContext) -> None:

@@ -243,11 +243,6 @@ class TicketUserView:
                 )
             else:
                 try:
-                    connection: pymysql.connections.Connection | str = await Connection.get_connection(
-                        self.__mysql_data
-                    )
-                    cursor = connection.cursor()
-
                     id_ticket = ''.join(random.choices(string.ascii_letters + string.digits, k=5))
                     subject = message.text[:24]
                     username: str = message.from_user.username
@@ -343,9 +338,9 @@ class TicketAdminView:
 
                 await self.__bot.edit_message_text(
                     text=f"🔹 Tickets (ADMIN UI | CWBot UI)\n----------------------------------------\nI'm sorry, but "
-                        f"I can't send the details of all tickets. More characters "
-                        f"are required. Will you allow me to send the details of the remaining tickets to your email?\n\n"
-                        f"<b>Available Data look after click on the button (which you need)</b>.",
+                         f"I can't send the details of all tickets. More characters "
+                         f"are required. Will you allow me to send the details of the remaining tickets to your email?"
+                         f"\n\n<b>Available Data look after click on the button (which you need)</b>.",
                     chat_id=call_query.message.chat.id,
                     message_id=call_query.message.message_id,
                     reply_markup=response[1].as_markup(),

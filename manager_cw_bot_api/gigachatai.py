@@ -93,7 +93,7 @@ class GigaChatAI:
         await state.set_state(GetProcessQueryCDLight.query)
 
         await self.__bot.edit_message_text(
-            text="Hello! I'm ready to help you! What question are you interested in? 😎\n\n" \
+            text="Hello! I'm ready to help you! What question are you interested in? 😎\n\n"
                  "_STOP-Command_: `//stop`.",
             chat_id=call_query.message.chat.id,
             message_id=self.__class__.msg_bot.message_id,
@@ -124,7 +124,7 @@ class GigaChatAI:
         await state.set_state(GetProcessQueryCDPro.query)
 
         await self.__bot.edit_message_text(
-            text="Hello! I'm ready to help you! What question are you interested in? 😎\n\n" \
+            text="Hello! I'm ready to help you! What question are you interested in? 😎\n\n"
                  "_STOP-Command_: `//stop`.",
             chat_id=call_query.message.chat.id,
             message_id=self.__class__.msg_bot.message_id,
@@ -148,9 +148,10 @@ class BaseChatDialog(abc.ABC):
     """
     The class for Chat-Dialog function (Base Class-Sector).
     """
+
     def __init__(self, bot: Bot) -> None:
         self.bot: Bot = bot
-    
+
     @abc.abstractmethod
     async def chat_dialog(self, message: types.Message, state: FSMContext) -> None:
         """
@@ -167,6 +168,7 @@ class ChatDialogGigaVersionLight(BaseChatDialog):
     """
     The class for Chat-Dialog function (GigaLight V. dialog).
     """
+
     async def chat_dialog(self, message: types.Message, state: FSMContext) -> None:
         """
         GLV Chat-Dialog function.
@@ -181,7 +183,7 @@ class ChatDialogGigaVersionLight(BaseChatDialog):
                 ChatDialogGigaVersionLight.chat_dialog,
                 GetProcessQueryCDLight.query
             )
-            
+
             response = await light(message.text)
 
             await self.bot.send_message(
@@ -194,7 +196,7 @@ class ChatDialogGigaVersionLight(BaseChatDialog):
                 chat_id=message.from_user.id,
                 parse_mode="Markdown",
             )
-            
+
             await HandlerDB.update_analytic_datas_count_ai_queries()
 
             await state.clear()
@@ -217,6 +219,7 @@ class ChatDialogGigaVersionPro(BaseChatDialog):
     """
     The class for Chat-Dialog function (GigaPro V. dialog).
     """
+
     async def chat_dialog(self, message: types.Message, state: FSMContext) -> None:
         """
         GLV Chat-Dialog function.
@@ -231,7 +234,7 @@ class ChatDialogGigaVersionPro(BaseChatDialog):
                 ChatDialogGigaVersionPro.chat_dialog,
                 GetProcessQueryCDPro.query
             )
-            
+
             response = await pro(message.text)
 
             await self.bot.send_message(
@@ -267,9 +270,10 @@ class BaseNewFSMContext(abc.ABC):
     """
     The base-class for create new state (FSM).
     """
+
     def __init__(self, bot: Bot) -> None:
         pass
-    
+
     @abc.abstractmethod
     async def set(self, state: FSMContext) -> None:
         """
@@ -295,6 +299,7 @@ class NewFSMContextLight:
     """
     The class for create new state (FSM) - GVL.
     """
+
     def __init__(self, bot: Bot) -> None:
         self.__bot: Bot = bot
         router_chat_ai.message.register(
@@ -310,7 +315,7 @@ class NewFSMContextLight:
         :return: None.
         """
         await state.set_state(GetProcessQueryCDLight.query)
-    
+
     async def chat_dialog_light(self, message: types.Message, state: FSMContext) -> None:
         """
         GLV Chat-Dialog function.
@@ -328,6 +333,7 @@ class NewFSMContextPro:
     """
     The class for create new state (FSM) - GVL.
     """
+
     def __init__(self, bot: Bot) -> None:
         self.__bot: Bot = bot
         router_chat_ai.message.register(
@@ -343,7 +349,7 @@ class NewFSMContextPro:
         :return: None.
         """
         await state.set_state(GetProcessQueryCDPro.query)
-    
+
     async def chat_dialog_pro(self, message: types.Message, state: FSMContext) -> None:
         """
         GLV Chat-Dialog function.

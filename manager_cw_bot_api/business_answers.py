@@ -8,6 +8,7 @@ from aiogram import types, Bot
 
 class ChatAction:
     """The class for set some action for message."""
+
     @staticmethod
     async def chat_action(bot: Bot, chat_id: int | str, action: str,
                           business_connection_id: str) -> None:
@@ -61,14 +62,14 @@ class Answers:
             problem_with_bot_text: dict = data["PROBLEM_WITH_BOT"]["PROBLEM_WITH_BOT_TEXT"]
 
             if "пасиб" in message.text.lower() or "thank" in message.text.lower() \
-                or "благодарю" in message.text.lower() or "спасиб" in message.text.lower():
+                    or "благодарю" in message.text.lower() or "спасиб" in message.text.lower():
                 thanks_func_sector: FunctionBusinessAnswerThanksSector = FunctionBusinessAnswerThanksSector(
-                    bot, 
-                    chat_id, 
-                    action, 
-                    self.__business_connection_id, 
-                    thanks_text, 
-                    thanks_sticker, 
+                    bot,
+                    chat_id,
+                    action,
+                    self.__business_connection_id,
+                    thanks_text,
+                    thanks_sticker,
                     self.__admin_id
                 )
                 await thanks_func_sector.pattern()
@@ -78,12 +79,12 @@ class Answers:
                     "с днем рожден" in message.text.lower() or message.text.lower() == "с др":
                 congratulation_func_sector: FunctionBusinessAnswerCongratulationSector = \
                     FunctionBusinessAnswerCongratulationSector(
-                        bot, 
-                        chat_id, 
-                        action, 
-                        self.__business_connection_id, 
-                        congratulation_text, 
-                        congratulation_sticker, 
+                        bot,
+                        chat_id,
+                        action,
+                        self.__business_connection_id,
+                        congratulation_text,
+                        congratulation_sticker,
                         self.__admin_id
                     )
                 await congratulation_func_sector.pattern()
@@ -93,12 +94,12 @@ class Answers:
                     "bot doesnt work" in message.text.lower()):
                 bot_doesnt_work_func_sector: FunctionBusinessAnswerBotDoesntWorkSector = \
                     FunctionBusinessAnswerBotDoesntWorkSector(
-                        bot, 
-                        chat_id, 
-                        action, 
-                        self.__business_connection_id, 
-                        problem_with_bot_text, 
-                        problem_with_bot_sticker, 
+                        bot,
+                        chat_id,
+                        action,
+                        self.__business_connection_id,
+                        problem_with_bot_text,
+                        problem_with_bot_sticker,
                         self.__admin_id
                     )
                 await bot_doesnt_work_func_sector.pattern()
@@ -108,13 +109,14 @@ class BaseFunctionBusinessAnswerSector(abc.ABC):
     """
     The basic class-sector of function business answer (by some patterns).
     """
+
     def __init__(
-            self, 
-            bot: Bot, 
-            chat_id: int | str, 
-            action: str, 
-            b_c_id: str, 
-            text_pattern: dict, 
+            self,
+            bot: Bot,
+            chat_id: int | str,
+            action: str,
+            b_c_id: str,
+            text_pattern: dict,
             sticker_pattern: str,
             admin_id: int
     ) -> None:
@@ -139,6 +141,7 @@ class FunctionBusinessAnswerThanksSector(BaseFunctionBusinessAnswerSector):
     """
     The class-sector of function business answer (by pattern "thanks").
     """
+
     async def pattern(self) -> None:
         """
         Pattern-function for business answers by phrases-type: "thanks".
@@ -178,7 +181,7 @@ class FunctionBusinessAnswerThanksSector(BaseFunctionBusinessAnswerSector):
             )
             with open("logs.txt", 'a') as logs:
                 logs.write(f"{datetime.datetime.now()} | {ex} | The error in "
-                            f"__answer_to_user-function of business.py\n")
+                           f"__answer_to_user-function of business.py\n")
         try:
             if self._sticker_pattern != "NONE":
                 await self._bot.send_sticker(
@@ -200,6 +203,7 @@ class FunctionBusinessAnswerCongratulationSector(BaseFunctionBusinessAnswerSecto
     """
     The class-sector of function business answer (by pattern "congratulation").
     """
+
     async def pattern(self) -> None:
         """
         Pattern-function for business answers by phrases-type: "congratulation".
@@ -239,7 +243,7 @@ class FunctionBusinessAnswerCongratulationSector(BaseFunctionBusinessAnswerSecto
             )
             with open("logs.txt", 'a') as logs:
                 logs.write(f"{datetime.datetime.now()} | {ex} | The error in "
-                            f"__answer_to_user-function of business.py\n")
+                           f"__answer_to_user-function of business.py\n")
         try:
             if self._sticker_pattern != "NONE":
                 await self._bot.send_sticker(
@@ -256,12 +260,13 @@ class FunctionBusinessAnswerCongratulationSector(BaseFunctionBusinessAnswerSecto
             with open("logs.txt", 'a') as logs:
                 logs.write(f"{datetime.datetime.now()} | {ex} | The error in "
                            f"__answer_to_user-function of business.py\n")
-                
+
 
 class FunctionBusinessAnswerBotDoesntWorkSector(BaseFunctionBusinessAnswerSector):
     """
     The class-sector of function business answer (by pattern "bot doesn't work").
     """
+
     async def pattern(self) -> None:
         """
         Pattern-function for business answers by phrases-type: "bot doesn't work".
@@ -301,7 +306,7 @@ class FunctionBusinessAnswerBotDoesntWorkSector(BaseFunctionBusinessAnswerSector
             )
             with open("logs.txt", 'a') as logs:
                 logs.write(f"{datetime.datetime.now()} | {ex} | The error in "
-                        f"__answer_to_user-function of business.py\n")
+                           f"__answer_to_user-function of business.py\n")
         try:
             if self._sticker_pattern != "NONE":
                 await self._bot.send_sticker(
@@ -316,4 +321,4 @@ class FunctionBusinessAnswerBotDoesntWorkSector(BaseFunctionBusinessAnswerSector
             )
             with open("logs.txt", 'a') as logs:
                 logs.write(f"{datetime.datetime.now()} | {ex} | The error in "
-                        f"__answer_to_user-function of business.py\n")
+                           f"__answer_to_user-function of business.py\n")

@@ -3,7 +3,6 @@ Module of the connection to MySQL Server for get CONNECTION-object for
 manage DataBase (DB).
 """
 import datetime
-
 import pymysql
 
 
