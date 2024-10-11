@@ -2,15 +2,55 @@
 Module of the GigaChatAI model.
 """
 import json
+
 import requests
+import abc
 
 
-class GigaChat:
-    """
-    The class of AI-text model GigaChat.
-    Now: Available only two version of the AI-assistance: GigaPro / GigaLite.
-    """
+class BaseGetData(abc.ABC):
+    """The base class for retrieving configuration data."""
 
+    @staticmethod
+    @abc.abstractmethod
+    async def get_data(file_path) -> dict:
+        """
+        Base function for getting data (from conf-file, which created by admin).
+
+        :param file_path: File Path of JSON-API-keys for Bot and settings for the GIGACHAT.
+        :return: Dict with data.
+        """
+
+
+class BaseVersionAI(abc.ABC):
+    """Base class for selecting the AI version."""
+
+    @staticmethod
+    @abc.abstractmethod
+    async def request(request: str) -> str:
+        """
+        AI Version. Return answer to the user (str).
+
+        :param request: Request from the user.
+        :return: Answer (tuple) pro-version ("deep" answer).
+        """
+
+
+class BaseGetToken(abc.ABC):
+    """The base class for obtaining a token AI-API"""
+
+    @staticmethod
+    @abc.abstractmethod
+    async def get_token(auth_token_giga: str) -> str:
+        """
+        Get token for admin-AI-Account.
+
+        :param auth_token_giga: Authorization token.
+        :return: Access (Auth) Token (answer).
+        """
+
+
+class GetAuthTokenSber(BaseGetToken):
+    """The base class for obtaining a token AI SBER API (GigaChat API)."""
     @staticmethod
     async def get_token(auth_token_giga: str) -> str:
         """
@@ -33,9 +73,54 @@ class GigaChat:
 
         return response['access_token']
 
+
+class BaseAIText(abc.ABC):
+    """AI text-chat-model base class."""
+
     @staticmethod
-    async def request_pro(request_of_user: str, token_giga: str, temperature_giga: float,
-                          top_p_giga: float, n_giga: int, auth_token_giga: str) -> str:
+    @abc.abstractmethod
+    async def request(request_of_user: str, token_giga: str, temperature_giga: float,
+                      top_p_giga: float, n_giga: int, auth_token_giga: str) -> str:
+        """
+        Answer for the user from the request (from the user) by some AI Model.
+
+        :param request_of_user: Request from the user.
+        :param token_giga: Token of some AI Model.
+        :param temperature_giga: Temperature of an answer.
+        :param top_p_giga: Alternative to temperature.
+        :param n_giga: Quality and count answer for the generated.
+        :param auth_token_giga: Authorization token of some AI Model.
+
+        :return: Result.
+        """
+
+
+class BaseAIImage(abc.ABC):
+    """AI image-generate-model base class."""
+
+    @staticmethod
+    @abc.abstractmethod
+    async def request(query: str, auth_token_giga: str, token_giga: str) -> str:
+        """
+        Create image for some users.
+
+        :param query: Query from the user.
+        :param auth_token_giga: Authorization token for some AI Model.
+        :param token_giga: Token for requests.
+
+        :return: Image data.
+        """
+
+
+class GigaChatPro(BaseAIText):
+    """
+    The class of AI-text model GigaChat.
+    Version of the AI-assistance: GigaPro.
+    """
+
+    @staticmethod
+    async def request(request_of_user: str, token_giga: str, temperature_giga: float,
+                      top_p_giga: float, n_giga: int, auth_token_giga: str) -> str:
         """
         Answer for the user from the request (from the user) by GigaChatPRO.
         Limited Version of the Answers for the user. Premium answers (PRO).
@@ -46,6 +131,8 @@ class GigaChat:
         :param top_p_giga: Alternative to temperature.
         :param n_giga: Quality and count answer for the generated.
         :param auth_token_giga: Authorization token of the GigaChatAI.
+
+        :return: Result.
         """
         url: str = "https://gigachat.devices.sberbank.ru/api/v1/chat/completions"
 
@@ -76,7 +163,7 @@ class GigaChat:
             print(
                 f"Error - pro (e): {e} | Response: "
                 f"{ans}")
-            new_token: str = await GigaChat.get_token(auth_token_giga)
+            new_token: str = await GetAuthTokenSber.get_token(auth_token_giga)
 
             with open("bot.json", encoding='utf-8') as f:
                 dt: dict = json.load(f)
@@ -88,9 +175,16 @@ class GigaChat:
 
             return "Sorry! I updated the data. Please, repeat your request :)"
 
+
+class GigaChatLight(BaseAIText):
+    """
+    The class of AI-text model GigaChat.
+    Version of the AI-assistance: GigaLight.
+    """
+
     @staticmethod
-    async def request_light(request_of_user: str, token_giga: str, temperature_giga: float,
-                            top_p_giga: float, n_giga: int, auth_token_giga: str) -> str:
+    async def request(request_of_user: str, token_giga: str, temperature_giga: float,
+                      top_p_giga: float, n_giga: int, auth_token_giga: str) -> str:
         """
         Answer for the user from the request (from the user) by GigaChatLight.
         Light answers ('Really' Light).
@@ -133,7 +227,7 @@ class GigaChat:
 
             print(auth_token_giga)
 
-            new_token: str = await GigaChat.get_token(auth_token_giga)
+            new_token: str = await GetAuthTokenSber.get_token(auth_token_giga)
 
             with open("bot.json", encoding='utf-8') as f:
                 dt: dict = json.load(f)
@@ -146,39 +240,19 @@ class GigaChat:
             return "Sorry! I updated the data. Please, repeat your request :)"
 
 
-class GigaImage:
+class GigaImagePro(BaseAIImage):
     """Class of generate images for premium-users."""
 
-    def __init__(self, query: str) -> None:
-        self.__query: str = query
-
     @staticmethod
-    async def get_token(auth_token_giga: str) -> str:
+    async def request(request: str, auth_token_giga: str, token_giga: str) -> bytes | str:
         """
-        Get token for admin-AI-Account GigaChat.
+        Create image for Premium users.
 
-        :param auth_token_giga: Authorization token for GigaChatAI (requests only now).
-        :return: Access (Auth) Token for GigaChatAI (answers).
-        """
-        url: str = 'https://ngw.devices.sberbank.ru:9443/api/v2/oauth'
-        payload: str = 'scope=GIGACHAT_API_PERS'
-        headers: dict = {
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'Accept': 'application/json',
-            'RqUID': '7d0518ce-47eb-47be-8d2d-4d817e351aae',
-            'Authorization': 'Basic ' + auth_token_giga
-        }
-
-        response: dict = requests.request("POST", url, headers=headers, data=payload, verify=False).json()
-        return response['access_token']
-
-    async def giga_create(self, auth_token_giga: str, token_giga: str) -> bytes | str:
-        """
-        Create image for premium-user.
-
+        :param request: Request / Query from the user.
         :param auth_token_giga: Authorization token for GigaChatAI (requests only now).
         :param token_giga: Token for requests.
-        :return: Image data.
+
+        :return: Image data | Result (str).
         """
         url: str = "https://gigachat.devices.sberbank.ru/api/v1/chat/completions"
         payload: str = json.dumps({
@@ -190,7 +264,7 @@ class GigaImage:
                 },
                 {
                     "role": "user",
-                    "content": self.__query
+                    "content": request
                 },
             ],
             "function_call": "auto",
@@ -227,7 +301,7 @@ class GigaImage:
             ans: dict = requests.request('POST', url, data=payload, headers=headers, verify=False).json()
             print(f"Error - GenerateImage (e): {e} | Response:"
                   f"{ans}")
-            new_token: str = await GigaImage.get_token(auth_token_giga)
+            new_token: str = await GetAuthTokenSber.get_token(auth_token_giga)
 
             with open("bot.json", encoding='utf-8') as f:
                 dt: dict = json.load(f)
@@ -240,70 +314,79 @@ class GigaImage:
             return "Sorry! I updated the data. Please, repeat your request :)"
 
 
-async def get_data(file_path="bot.json") -> dict:
-    """
-    Get data of the GigaChatSettings.
+class GetData(BaseGetData):
+    """The class-sector for getting conf-data from conf-file."""
 
-    :param file_path: File Path of JSON-API-keys for Bot and settings for the GIGACHAT.
-    :return: Dict with data.
-    """
-    with open(file_path, encoding="utf-8") as file:
-        data: dict = json.load(file)
+    @staticmethod
+    async def get_data(file_path="bot.json") -> dict:
+        """
+        Get data of the GigaChatSettings.
 
-        token: str = data["GIGACHAT"]["TOKEN"]
-        auth_token: str = data["GIGACHAT"]["AUTH_TOKEN"]
+        :param file_path: File Path of JSON-API-keys for Bot and settings for the GIGACHAT.
+        :return: Dict with data.
+        """
+        with open(file_path, encoding="utf-8") as file:
+            data: dict = json.load(file)
 
-        temperature: float = data["GIGACHAT"]["ANSWER_SETTING"]["TEMPERATURE"]
-        top_p: float = data["GIGACHAT"]["ANSWER_SETTING"]["TOP_P"]
-        n: int = data["GIGACHAT"]["ANSWER_SETTING"]["N"]
+            token: str = data["GIGACHAT"]["TOKEN"]
+            auth_token: str = data["GIGACHAT"]["AUTH_TOKEN"]
 
-        response: dict = {
-            "token": token,
-            "auth_token": auth_token,
-            "temperature": temperature,
-            "top_p": top_p,
-            "n": n
-        }
-        return response
+            temperature: float = data["GIGACHAT"]["ANSWER_SETTING"]["TEMPERATURE"]
+            top_p: float = data["GIGACHAT"]["ANSWER_SETTING"]["TOP_P"]
+            n: int = data["GIGACHAT"]["ANSWER_SETTING"]["N"]
 
-
-async def create(query: str) -> bytes | str:
-    """
-    Create a new image for premium-user.
-
-    :param query: Query from premium-user.
-    :return: Image data.
-    """
-    data: dict = await get_data()
-
-    creator: GigaImage = GigaImage(query)
-    img_data: bytes | str = await creator.giga_create(data["auth_token"], data["token"])
-    return img_data
+            response: dict = {
+                "token": token,
+                "auth_token": auth_token,
+                "temperature": temperature,
+                "top_p": top_p,
+                "n": n
+            }
+            return response
 
 
-async def pro(request: str) -> str:
-    """
-    GigaChatPro Version. Return answer to the user (str).
+class VersionAIImagePro(BaseVersionAI):
+    @staticmethod
+    async def request(request: str) -> bytes | str:
+        """
+        Create a new image for premium-user.
 
-    :param request: Request from the user.
-    :return: Answer (tuple) pro-version ("deep" answer).
-    """
-    data: dict = await get_data()
-    answer: str = await GigaChat.request_pro(
-        request, data["token"], data["temperature"], data["top_p"], data["n"], data["auth_token"]
-    )
-    return answer
+        :param request: Request/Query from premium-user.
+        :return: Image data.
+        """
+        data: dict = await GetData.get_data()
+
+        img_data: bytes | str = await GigaImagePro.request(request, data["auth_token"], data["token"])
+        return img_data
 
 
-async def light(request: str) -> str:
-    """
-    GigaChatLight Version. Return answer to the user (str).
+class VersionAIPro(BaseVersionAI):
+    @staticmethod
+    async def request(request: str) -> str:
+        """
+        GigaChatPro Version. Return answer to the user (str).
 
-    :param request: Request from the user.
-    :return: Answer (tuple) light-version ("low" answer).
-    """
-    data: dict = await get_data()
-    answer: str = await GigaChat.request_light(
-        request, data["token"], data["temperature"], data["top_p"], data["n"], data["auth_token"]
-    )
-    return answer
+        :param request: Request from the user.
+        :return: Answer (tuple) pro-version ("deep" answer).
+        """
+        data: dict = await GetData.get_data()
+        answer: str = await GigaChatPro.request(
+            request, data["token"], data["temperature"], data["top_p"], data["n"], data["auth_token"]
+        )
+        return answer
+
+
+class VersionAILight(BaseVersionAI):
+    @staticmethod
+    async def request(request: str) -> str:
+        """
+        GigaChatLight Version. Return answer to the user (str).
+
+        :param request: Request from the user.
+        :return: Answer (tuple) light-version ("low" answer).
+        """
+        data: dict = await GetData.get_data()
+        answer: str = await GigaChatLight.request(
+            request, data["token"], data["temperature"], data["top_p"], data["n"], data["auth_token"]
+        )
+        return answer

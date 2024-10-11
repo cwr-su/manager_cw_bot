@@ -8,7 +8,7 @@ from aiogram.fsm.context import FSMContext
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
 from manager_cw_bot_api.buttons import Buttons
-from manager_cw_bot_api.giga_request import create
+from manager_cw_bot_api.giga_request import VersionAIImagePro
 from manager_cw_bot_api.fsm_handler import GigaImage
 from manager_cw_bot_api.handler_db_sub_operations import HandlerDB
 
@@ -95,7 +95,7 @@ class GigaCreator:
                 text="💫 Please, wait! I'm generating... ⏳",
             )
 
-        image_data: str | bytes = await create(query)
+        image_data: str | bytes = await VersionAIImagePro.request(query)
         try:
             if image_data == "Sorry! I updated the data. Please, repeat your request :)":
                 var: InlineKeyboardBuilder = await Buttons.back_on_main()

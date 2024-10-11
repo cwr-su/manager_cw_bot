@@ -8,7 +8,7 @@ from aiogram.fsm.context import FSMContext
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
 from manager_cw_bot_api.buttons import Buttons
-from manager_cw_bot_api.giga_request import pro, light
+from manager_cw_bot_api.giga_request import VersionAIPro, VersionAILight
 from manager_cw_bot_api.handler_db_sub_operations import HandlerDB
 from manager_cw_bot_api.fsm_handler import GetProcessQueryCDLight, GetProcessQueryCDPro
 
@@ -184,7 +184,7 @@ class ChatDialogGigaVersionLight(BaseChatDialog):
                 GetProcessQueryCDLight.query
             )
 
-            response = await light(message.text)
+            response: str = await VersionAILight.request(message.text)
 
             await self.bot.send_message(
                 text=response,
@@ -235,7 +235,7 @@ class ChatDialogGigaVersionPro(BaseChatDialog):
                 GetProcessQueryCDPro.query
             )
 
-            response = await pro(message.text)
+            response: str = await VersionAIPro.request(message.text)
 
             await self.bot.send_message(
                 text=response,
