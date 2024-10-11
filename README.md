@@ -1,7 +1,5 @@
 # Manager CW Bot | MCW
 
---------------------
-
 ![MCW](https://img.shields.io/badge/manager__cw__bot__api-v._5.1-a83fd9?link=https://docs.cwr.su/)
 ![MCW](https://img.shields.io/badge/last_update-v._5.1-green?link=https://docs.cwr.su/manager_cw_bot/info_updates)
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/manager-cw-bot-api?link=https://pypi.org/project/manager-cw-bot-api/)
