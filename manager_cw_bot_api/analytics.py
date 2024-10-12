@@ -35,14 +35,17 @@ class Analytic:
             count_of_tickets_system: int = response[0][1]
 
         try:
-            var: InlineKeyboardBuilder = await Buttons.get_menu_back_to_business_and_money_for_admin()
+            var: InlineKeyboardBuilder = await (
+                Buttons.get_menu_back_to_business_and_money_for_admin()
+            )
             await self.__bot.edit_message_text(
                 chat_id=self.__call_query.message.chat.id,
                 text=f"👑 <b>{self.__call_query.from_user.first_name}</b>, look! Your statistic's "
                      f"below.\n----------------------------------------\n"
                      f"⁉ Count of AI <b>Queries</b> (all): <b>{count_of_ai_queries}</b>.\n\n"
-                     f"🎫 Count of <b>Tickets</b> in the System (all): <b>{count_of_tickets_system}</b>.\n\n"
-                     f"*<i>The data is current as {str(datetime.datetime.now()).split('.')[0]}.</i>",
+                     f"🎫 Count of <b>Tickets</b> in the System (all): <b>{count_of_tickets_system}"
+                     f"</b>.\n\n*<i>The data is current as "
+                     f"{str(datetime.datetime.now()).split('.')[0]}.</i>",
                 message_id=self.__call_query.message.message_id,
                 reply_markup=var.as_markup(),
                 parse_mode="HTML"

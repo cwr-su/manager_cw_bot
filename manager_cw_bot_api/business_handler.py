@@ -8,8 +8,11 @@ from aiogram.fsm.context import FSMContext
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
 from manager_cw_bot_api.buttons import Buttons
-from manager_cw_bot_api.fsm_handler import (BusinessHandlerThanksFunctions, BusinessHandlerCongratulationFunctions,
-                                            BusinessHandlerProblemWithBotFunctions)
+from manager_cw_bot_api.fsm_handler import (
+    BusinessHandlerThanksFunctions,
+    BusinessHandlerCongratulationFunctions,
+    BusinessHandlerProblemWithBotFunctions
+)
 
 router_business: Router = Router()
 
@@ -20,7 +23,11 @@ class BusinessHandler:
     """
     message: types.Message = None
 
-    def __init__(self, bot, call_query) -> None:
+    def __init__(
+            self,
+            bot,
+            call_query
+    ) -> None:
         self.__bot: Bot = bot
         self.__call_query: types.CallbackQuery = call_query
 
@@ -44,9 +51,9 @@ class BusinessHandler:
         var: InlineKeyboardBuilder = await Buttons.get_menu_business_handler()
         await self.__bot.edit_message_text(
             chat_id=self.__call_query.message.chat.id,
-            text=f"🔥 <b>{self.__call_query.from_user.first_name}</b>, you can manage your bot here. "
-                 f"You should know:\n  1. <b>Now</b> available only 3 type of message (you can "
-                 f"see that below).\n  2. <b>Don't use the bot like spam-bot</b> otherwise "
+            text=f"🔥 <b>{self.__call_query.from_user.first_name}</b>, you can manage your bot "
+                 f"here. You should know:\n  1. <b>Now</b> available only 3 type of message (you "
+                 f"can see that below).\n  2. <b>Don't use the bot like spam-bot</b> otherwise "
                  f"we'll ban you!\n\n<i>Thanks for understanding!\n       - Developer of the "
                  f"bot</i>",
             message_id=self.__call_query.message.message_id,
@@ -54,7 +61,10 @@ class BusinessHandler:
             parse_mode="HTML"
         )
 
-    async def __handler_thanks_from_users(self, call_query: types.CallbackQuery) -> None:
+    async def __handler_thanks_from_users(
+            self,
+            call_query: types.CallbackQuery
+    ) -> None:
         """
         Handler (call-query) for admin (with business).
 
@@ -84,7 +94,10 @@ class BusinessHandler:
             F.data == "message_and_sticker_for_thanks_hdl"
         )
 
-    async def __handler_congratulation_from_users(self, call_query: types.CallbackQuery) -> None:
+    async def __handler_congratulation_from_users(
+            self,
+            call_query: types.CallbackQuery
+    ) -> None:
         """
         Handler (call-query) for admin (with business).
 
@@ -114,7 +127,10 @@ class BusinessHandler:
             F.data == "message_and_sticker_for_congratulation_hdl"
         )
 
-    async def __handler_problem_with_bot_from_users(self, call_query: types.CallbackQuery) -> None:
+    async def __handler_problem_with_bot_from_users(
+            self,
+            call_query: types.CallbackQuery
+    ) -> None:
         """
         Handler (call-query) for admin (with business).
 
@@ -151,7 +167,10 @@ class Thanks:
     """
     message: types.Message = None
 
-    def __init__(self, bot: Bot) -> None:
+    def __init__(
+            self,
+            bot: Bot
+    ) -> None:
         self.__bot: Bot = bot
 
         router_business.message.register(
@@ -171,7 +190,11 @@ class Thanks:
             BusinessHandlerThanksFunctions.message_and_sticker_step2_sticker
         )
 
-    async def only_text_for_thanks_hdl(self, call_query: types.CallbackQuery, state: FSMContext) -> None:
+    async def only_text_for_thanks_hdl(
+            self,
+            call_query: types.CallbackQuery,
+            state: FSMContext
+    ) -> None:
         """
         Handler function of manage THANKS-command by only text.
 
@@ -187,7 +210,11 @@ class Thanks:
             message_id=call_query.message.message_id
         )
 
-    async def only_sticker_for_thanks_hdl(self, call_query: types.CallbackQuery, state: FSMContext) -> None:
+    async def only_sticker_for_thanks_hdl(
+            self,
+            call_query: types.CallbackQuery,
+            state: FSMContext
+    ) -> None:
         """
         Handler function of manage THANKS-command by only sticker.
 
@@ -203,7 +230,11 @@ class Thanks:
             message_id=call_query.message.message_id
         )
 
-    async def message_and_sticker_for_thanks_hdl(self, call_query: types.CallbackQuery, state: FSMContext) -> None:
+    async def message_and_sticker_for_thanks_hdl(
+            self,
+            call_query: types.CallbackQuery,
+            state: FSMContext
+    ) -> None:
         """
         Handler function of manage THANKS-command by text and sticker. Step 1.
         Get call-query.
@@ -220,7 +251,11 @@ class Thanks:
             message_id=call_query.message.message_id
         )
 
-    async def __message_and_sticker_for_thanks_hdl_step2(self, message: types.Message, state: FSMContext) -> None:
+    async def __message_and_sticker_for_thanks_hdl_step2(
+            self,
+            message: types.Message,
+            state: FSMContext
+    ) -> None:
         """
         Handler function of manage THANKS-command by text and sticker. Step 2.
         Get message.
@@ -246,7 +281,11 @@ class Thanks:
                 reply_markup=var.as_markup()
             )
 
-    async def __manage_thanks_from_users_only_text(self, message: types.Message, state: FSMContext) -> None:
+    async def __manage_thanks_from_users_only_text(
+            self,
+            message: types.Message,
+            state: FSMContext
+    ) -> None:
         """
         Manage THANKS-command by only text. Edit configurate-file by user settings.
 
@@ -286,7 +325,11 @@ class Thanks:
                 text="Sorry, but this type of message not available!"
             )
 
-    async def __manage_thanks_from_users_only_sticker(self, message: types.Message, state: FSMContext) -> None:
+    async def __manage_thanks_from_users_only_sticker(
+            self,
+            message: types.Message,
+            state: FSMContext
+    ) -> None:
         """
         Manage THANKS-command by only sticker. Edit configurate-file by user settings.
 
@@ -320,7 +363,11 @@ class Thanks:
                 text="Sorry, but this type of message not available!"
             )
 
-    async def __manage_thanks_from_users_text_and_sticker(self, message: types.Message, state: FSMContext) -> None:
+    async def __manage_thanks_from_users_text_and_sticker(
+            self,
+            message: types.Message,
+            state: FSMContext
+    ) -> None:
         """
         Manage THANKS-command by text and sticker. Edit configurate-file by user settings.
 
@@ -368,7 +415,10 @@ class Congratulation:
     """
     message: types.Message = None
 
-    def __init__(self, bot: Bot) -> None:
+    def __init__(
+            self,
+            bot: Bot
+    ) -> None:
         self.__bot: Bot = bot
 
         router_business.message.register(
@@ -464,7 +514,9 @@ class Congratulation:
         :return: None.
         """
         if message.content_type == "text":
-            await state.set_state(BusinessHandlerThanksFunctions.message_and_sticker_step2_sticker)
+            await state.set_state(
+                BusinessHandlerThanksFunctions.message_and_sticker_step2_sticker
+            )
 
             self.__class__.message = message
             await self.__bot.send_message(
@@ -621,7 +673,11 @@ class ProblemWithBot:
     """
     message: types.Message = None
 
-    def __init__(self, bot: Bot) -> None:
+    def __init__(
+            self,
+            bot:
+            Bot
+    ) -> None:
         self.__bot: Bot = bot
 
         router_business.message.register(
@@ -641,7 +697,11 @@ class ProblemWithBot:
             BusinessHandlerCongratulationFunctions.message_and_sticker_step2_sticker
         )
 
-    async def only_text_for_problem_with_bot_hdl(self, call_query: types.CallbackQuery, state: FSMContext) -> None:
+    async def only_text_for_problem_with_bot_hdl(
+            self,
+            call_query: types.CallbackQuery,
+            state: FSMContext
+    ) -> None:
         """
         Handler function of manage ProblemWithBot-command by only text.
 
@@ -657,7 +717,11 @@ class ProblemWithBot:
             message_id=call_query.message.message_id
         )
 
-    async def only_sticker_for_problem_with_bot_hdl(self, call_query: types.CallbackQuery, state: FSMContext) -> None:
+    async def only_sticker_for_problem_with_bot_hdl(
+            self,
+            call_query: types.CallbackQuery,
+            state: FSMContext
+    ) -> None:
         """
         Handler function of manage ProblemWithBot-command by only sticker.
 
@@ -687,7 +751,9 @@ class ProblemWithBot:
 
         :return: None.
         """
-        await state.set_state(BusinessHandlerProblemWithBotFunctions.message_and_sticker_step1_message)
+        await state.set_state(
+            BusinessHandlerProblemWithBotFunctions.message_and_sticker_step1_message
+        )
         await self.__bot.edit_message_text(
             chat_id=call_query.message.chat.id,
             text=f"👌🏻 Please, write your message now (only text!)",
@@ -709,7 +775,9 @@ class ProblemWithBot:
         :return: None.
         """
         if message.content_type == "text":
-            await state.set_state(BusinessHandlerProblemWithBotFunctions.message_and_sticker_step2_sticker)
+            await state.set_state(
+                BusinessHandlerProblemWithBotFunctions.message_and_sticker_step2_sticker
+            )
 
             self.__class__.message = message
             await self.__bot.send_message(
@@ -789,11 +857,16 @@ class ProblemWithBot:
                 data: dict = json.load(file)
 
             data["BUSINESS_HANDLER"]["PROBLEM_WITH_BOT"][
-                "PROBLEM_WITH_BOT_STICKER"] = message.sticker.file_id
-            data["BUSINESS_HANDLER"]["PROBLEM_WITH_BOT"]["PROBLEM_WITH_BOT_TEXT"]["MSG"] = "NONE"
-            data["BUSINESS_HANDLER"]["PROBLEM_WITH_BOT"]["PROBLEM_WITH_BOT_TEXT"]["OFFSET"] = "NONE"
-            data["BUSINESS_HANDLER"]["PROBLEM_WITH_BOT"]["PROBLEM_WITH_BOT_TEXT"]["LENGTH"] = "NONE"
-            data["BUSINESS_HANDLER"]["PROBLEM_WITH_BOT"]["PROBLEM_WITH_BOT_TEXT"]["C_E_ID"] = "NONE"
+                "PROBLEM_WITH_BOT_STICKER"] = \
+                message.sticker.file_id
+            data["BUSINESS_HANDLER"]["PROBLEM_WITH_BOT"]["PROBLEM_WITH_BOT_TEXT"]["MSG"] = \
+                "NONE"
+            data["BUSINESS_HANDLER"]["PROBLEM_WITH_BOT"]["PROBLEM_WITH_BOT_TEXT"]["OFFSET"] = \
+                "NONE"
+            data["BUSINESS_HANDLER"]["PROBLEM_WITH_BOT"]["PROBLEM_WITH_BOT_TEXT"]["LENGTH"] = \
+                "NONE"
+            data["BUSINESS_HANDLER"]["PROBLEM_WITH_BOT"]["PROBLEM_WITH_BOT_TEXT"]["C_E_ID"] = \
+                "NONE"
 
             with open("bot.json", "w", encoding='utf-8') as file:
                 json.dump(data, file, ensure_ascii=False, indent=4)

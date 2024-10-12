@@ -69,7 +69,13 @@ class GetAuthTokenSber(BaseGetToken):
             'Authorization': 'Basic ' + auth_token_giga
         }
 
-        response: dict = requests.request("POST", url, headers=headers, data=payload, verify=False).json()
+        response: dict = requests.request(
+            method="POST",
+            url=url,
+            headers=headers,
+            data=payload,
+            verify=False
+        ).json()
 
         return response['access_token']
 
@@ -156,10 +162,22 @@ class GigaChatPro(BaseAIText):
         })
 
         try:
-            response: dict = requests.request("POST", url, data=body, headers=headers, verify=False).json()
+            response: dict = requests.request(
+                method="POST",
+                url=url,
+                data=body,
+                headers=headers,
+                verify=False
+            ).json()
             return response['choices'][0]['message']['content']
         except Exception as e:
-            ans: dict = requests.request('POST', url, data=body, headers=headers, verify=False).json()
+            ans: dict = requests.request(
+                method='POST',
+                url=url,
+                data=body,
+                headers=headers,
+                verify=False
+            ).json()
             print(
                 f"Error - pro (e): {e} | Response: "
                 f"{ans}")
@@ -218,10 +236,22 @@ class GigaChatLight(BaseAIText):
         })
 
         try:
-            response: dict = requests.request("POST", url, data=body, headers=headers, verify=False).json()
+            response: dict = requests.request(
+                method="POST",
+                url=url,
+                data=body,
+                headers=headers,
+                verify=False
+            ).json()
             return response['choices'][0]['message']['content']
         except Exception as e:
-            ans: dict = requests.request('POST', url, data=body, headers=headers, verify=False).json()
+            ans: dict = requests.request(
+                method='POST',
+                url=url,
+                data=body,
+                headers=headers,
+                verify=False
+            ).json()
             print(f"Error - light (e): {e} | Response: "
                   f"{ans}")
 
@@ -277,28 +307,44 @@ class GigaImagePro(BaseAIImage):
         }
 
         try:
-            response: dict = requests.request("POST", url, headers=headers, data=payload, verify=False).json()
+            response: dict = requests.request(
+                method="POST",
+                url=url,
+                headers=headers,
+                data=payload,
+                verify=False
+            ).json()
             if "<img" in str(response["choices"][0]["message"]["content"]):
                 src: str = str(response["choices"][0]["message"]["content"]).split('"')[1]
 
-                url_get_data: str = "https://gigachat.devices.sberbank.ru/api/v1/files/" + src + "/content"
+                url_get_data: str = "https://gigachat.devices.sberbank.ru/api/v1/files/" + \
+                                    src + "/content"
                 headers_get_data: dict = {
                     'Accept': 'application/jpg',
                     'Authorization': 'Bearer ' + token_giga
                 }
 
-                response: bytes = requests.request("GET",
-                                                   url_get_data,
-                                                   headers=headers_get_data,
-                                                   stream=True,
-                                                   verify=False).content
+                response: bytes = requests.request(
+                    method="GET",
+                    url=url_get_data,
+                    headers=headers_get_data,
+                    stream=True,
+                    verify=False
+                ).content
+
                 return response
             else:
                 src: str = str(response["choices"][0]["message"]["content"])
                 return src
 
         except Exception as e:
-            ans: dict = requests.request('POST', url, data=payload, headers=headers, verify=False).json()
+            ans: dict = requests.request(
+                method='POST',
+                url=url,
+                data=payload,
+                headers=headers,
+                verify=False
+            ).json()
             print(f"Error - GenerateImage (e): {e} | Response:"
                   f"{ans}")
             new_token: str = await GetAuthTokenSber.get_token(auth_token_giga)
@@ -356,7 +402,11 @@ class VersionAIImagePro(BaseVersionAI):
         """
         data: dict = await GetData.get_data()
 
-        img_data: bytes | str = await GigaImagePro.request(request, data["auth_token"], data["token"])
+        img_data: bytes | str = await GigaImagePro.request(
+            request,
+            data["auth_token"],
+            data["token"]
+        )
         return img_data
 
 
@@ -371,7 +421,12 @@ class VersionAIPro(BaseVersionAI):
         """
         data: dict = await GetData.get_data()
         answer: str = await GigaChatPro.request(
-            request, data["token"], data["temperature"], data["top_p"], data["n"], data["auth_token"]
+            request,
+            data["token"],
+            data["temperature"],
+            data["top_p"],
+            data["n"],
+            data["auth_token"]
         )
         return answer
 
@@ -387,6 +442,11 @@ class VersionAILight(BaseVersionAI):
         """
         data: dict = await GetData.get_data()
         answer: str = await GigaChatLight.request(
-            request, data["token"], data["temperature"], data["top_p"], data["n"], data["auth_token"]
+            request,
+            data["token"],
+            data["temperature"],
+            data["top_p"],
+            data["n"],
+            data["auth_token"]
         )
         return answer

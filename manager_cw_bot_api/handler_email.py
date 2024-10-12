@@ -8,8 +8,11 @@ from aiogram.fsm.context import FSMContext
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
 from manager_cw_bot_api.buttons import Buttons
-from manager_cw_bot_api.fsm_handler import ProcessEditingEmailAfterConfirmation, ProcessAddNewEmail, \
+from manager_cw_bot_api.fsm_handler import (
+    ProcessEditingEmailAfterConfirmation,
+    ProcessAddNewEmail,
     ProcessEnterTheCodeForAddNewEMailForVerifyEmail
+)
 from manager_cw_bot_api.handler_db_sub_operations import HandlerDB
 from manager_cw_bot_api.handler_email_sender import SenderEmail
 
@@ -92,11 +95,14 @@ class HandlerEM:
 
         :return: None.
         """
-        var: InlineKeyboardBuilder = await Buttons.get_menu_email_settings(call.from_user.id, self.__admin_id)
+        var: InlineKeyboardBuilder = await Buttons.get_menu_email_settings(
+            call.from_user.id,
+            self.__admin_id
+        )
         await self.__bot.edit_message_text(
             chat_id=call.from_user.id,
-            text=f"⚡ <b>{call.from_user.first_name}</b>, you are in the EmailSettings menu! Please, select the "
-                 f"item you need below.",
+            text=f"⚡ <b>{call.from_user.first_name}</b>, you are in the EmailSettings menu! "
+                 f"Please, select the item you need below.",
             message_id=call.message.message_id,
             parse_mode="HTML",
             reply_markup=var.as_markup()
@@ -197,7 +203,8 @@ class HandlerEM:
         if email == new_email:
             await self.__bot.send_message(
                 chat_id=message.from_user.id,
-                text=f"❌ <b>{message.from_user.first_name}</b>, sorry! But this EMail Address is the same as yours.",
+                text=f"❌ <b>{message.from_user.first_name}</b>, sorry! But this EMail Address is "
+                     f"the same as yours.",
                 parse_mode="HTML"
             )
         else:
@@ -267,31 +274,32 @@ class HandlerEM:
                             code
                         )
                         await self.__bot.send_message(
-                            text=f"👌🏻 Please, {message.from_user.first_name}, enter the verification code. I sent it to"
-                                 f" your EMail (*{self.__class__.__email}*)",
+                            text=f"👌🏻 Please, {message.from_user.first_name}, enter the "
+                                 f"verification code. I sent it to your EMail "
+                                 f"(*{self.__class__.__email}*)",
                             chat_id=message.from_user.id,
                             parse_mode="Markdown"
                         )
                     else:
                         await self.__bot.send_message(
-                            text=f"❌ {message.from_user.first_name}, *Fail*! I can't add the verification code! "
-                                 f"Try again 🔃",
+                            text=f"❌ {message.from_user.first_name}, *Fail*! I can't add the "
+                                 f"verification code! Try again 🔃",
                             chat_id=message.from_user.id,
                             parse_mode="Markdown",
                             reply_markup=var.as_markup()
                         )
                 else:
                     await self.__bot.send_message(
-                        text=f"❌ {message.from_user.first_name}, *Fail*! I can't send the verification code! "
-                             f"Try again 🔃",
+                        text=f"❌ {message.from_user.first_name}, *Fail*! I can't send the "
+                             f"verification code! Try again 🔃",
                         chat_id=message.from_user.id,
                         parse_mode="Markdown",
                         reply_markup=var.as_markup()
                     )
             else:
                 await self.__bot.send_message(
-                    text=f"❌ {message.from_user.first_name}, *Fail*! Your EMail: {self.__class__.__email} is invalid! "
-                         f"Try again 🔃",
+                    text=f"❌ {message.from_user.first_name}, *Fail*! Your EMail: "
+                         f"{self.__class__.__email} is invalid! Try again 🔃",
                     chat_id=message.from_user.id,
                     parse_mode="Markdown",
                     reply_markup=var.as_markup()
@@ -306,24 +314,24 @@ class HandlerEM:
                 if result[0] is False or email_edit_mode == "ON":
                     await state.set_state(ProcessEnterTheCodeForAddNewEMailForVerifyEmail.code)
                     await self.__bot.edit_message_text(
-                        text=f"👌🏻 Please, {message.from_user.first_name}, enter the verification code. I sent it to"
-                             f" your EMail (*{self.__class__.__email}*)",
+                        text=f"👌🏻 Please, {message.from_user.first_name}, enter the verification "
+                             f"code. I sent it to your EMail (*{self.__class__.__email}*)",
                         message_id=message.message.message_id,
                         chat_id=message.from_user.id,
                         parse_mode="Markdown"
                     )
                 else:
                     await self.__bot.edit_message_text(
-                        text=f"❌ {message.from_user.first_name}, *Fail*! I can't send the verification code! "
-                             f"Try again 🔃",
+                        text=f"❌ {message.from_user.first_name}, *Fail*! I can't send the "
+                             f"verification code! Try again 🔃",
                         message_id=message.message.message_id,
                         chat_id=message.from_user.id,
                         parse_mode="Markdown"
                     )
             else:
                 await self.__bot.edit_message_text(
-                    text=f"❌ {message.from_user.first_name}, *Fail*! Your EMail: {self.__class__.__email} is invalid! "
-                         f"Try again 🔃",
+                    text=f"❌ {message.from_user.first_name}, *Fail*! Your EMail: "
+                         f"{self.__class__.__email} is invalid! Try again 🔃",
                     message_id=message.message.message_id,
                     chat_id=message.from_user.id,
                     parse_mode="Markdown"
@@ -358,9 +366,9 @@ class HandlerEM:
                     var: InlineKeyboardBuilder = await Buttons.back_on_main()
                     if result:
                         await self.__bot.send_message(
-                            text=f"✅ {message.from_user.first_name}, <b>Successfully</b>! Your EMail: "
-                                 f"<b>{self.__class__.__email}</b> "
-                                 f"has been added!",
+                            text=f"✅ {message.from_user.first_name}, "
+                                 f"<b>Successfully</b>! Your EMail: "
+                                 f"<b>{self.__class__.__email}</b> has been added!",
                             chat_id=message.chat.id,
                             parse_mode="HTML",
                             reply_markup=var.as_markup()
@@ -389,8 +397,8 @@ class HandlerEM:
 
                     var: InlineKeyboardBuilder = await Buttons.back_on_main()
                     await self.__bot.send_message(
-                        text=f"✅ {message.from_user.first_name}, <b>Successfully</b>! Your EMail: "
-                             f"<b>{self.__class__.__email}</b> "
+                        text=f"✅ {message.from_user.first_name}, <b>Successfully</b>! "
+                             f"Your EMail: <b>{self.__class__.__email}</b> "
                              f"has been added!",
                         chat_id=message.chat.id,
                         parse_mode="HTML",
@@ -402,10 +410,13 @@ class HandlerEM:
                     )
 
             else:
-                var: InlineKeyboardBuilder = await Buttons.get_add_new_email_or_check_ver_code_try_again()
+                var: InlineKeyboardBuilder = await (
+                    Buttons.get_add_new_email_or_check_ver_code_try_again()
+                )
 
                 await self.__bot.send_message(
-                    text=f"❌ {message.from_user.first_name}, <b>Fail</b>! Code is invalid! Please, try again.",
+                    text=f"❌ {message.from_user.first_name}, <b>Fail</b>! Code is invalid! "
+                         f"Please, try again.",
                     chat_id=message.chat.id,
                     parse_mode="HTML",
                     reply_markup=var.as_markup()
@@ -414,8 +425,8 @@ class HandlerEM:
             var: InlineKeyboardBuilder = await Buttons.get_add_new_email_try_again()
 
             await self.__bot.send_message(
-                text=f"❌ {message.from_user.first_name}, <b>Fail</b>! Verification code isn't exists"
-                     f" (💡 Please, write to ADMIN)!",
+                text=f"❌ {message.from_user.first_name}, <b>Fail</b>! "
+                     f"Verification code isn't exists (💡 Please, write to ADMIN)!",
                 chat_id=message.chat.id,
                 parse_mode="HTML",
                 reply_markup=var.as_markup()

@@ -17,8 +17,11 @@ from manager_cw_bot_api.handler_db_sub_operations import HandlerDB
 from manager_cw_bot_api.mysql_connection import Connection
 from manager_cw_bot_api.handler_email_sender import SenderEmail
 from manager_cw_bot_api.pdf_generate_data import GenerateTicketDataUniversal
-from manager_cw_bot_api.fsm_handler import (GetDataForSendNewTicket, GetTicketDataForAnswerToUser,
-                                            GetTicketDataForAnswerToAdmin)
+from manager_cw_bot_api.fsm_handler import (
+    GetDataForSendNewTicket,
+    GetTicketDataForAnswerToUser,
+    GetTicketDataForAnswerToAdmin
+)
 
 router: Router = Router()
 
@@ -74,7 +77,8 @@ class TicketUserView:
         )
         if response[0][0] is False:
             await self.__bot.edit_message_text(
-                text=f"🔹 Tickets (USER UI | CWBot UI)\n----------------------------------------\n{response[0][1]}",
+                text=f"🔹 Tickets (USER UI | CWBot UI)\n----------------------------------------"
+                     f"\n{response[0][1]}",
                 chat_id=call_query.message.chat.id,
                 message_id=call_query.message.message_id,
                 reply_markup=response[1].as_markup(),
@@ -84,10 +88,12 @@ class TicketUserView:
             self.__class__.__response_big = response[0][1], response[0][2]
 
             await self.__bot.edit_message_text(
-                text=f"🔹 Tickets (USER UI | CWBot UI)\n----------------------------------------\nI'm sorry, but "
+                text=f"🔹 Tickets (USER UI | CWBot UI)\n----------------------------------------"
+                     f"\nI'm sorry, but "
                      f"I can't send the details of all tickets. More characters "
-                     f"are required. Will you allow me to send the details of the remaining tickets to your email?\n\n"
-                     f"<b>Available Data look after click on the button (which you need)</b>.",
+                     f"are required. Will you allow me to send the details of the remaining "
+                     f"tickets to your email?\n\n<b>Available Data look after click on the "
+                     f"button (which you need)</b>.",
                 chat_id=call_query.message.chat.id,
                 message_id=call_query.message.message_id,
                 reply_markup=response[1].as_markup(),
@@ -131,8 +137,9 @@ class TicketUserView:
                 await self.__bot.send_document(
                     chat_id=call_query.message.chat.id,
                     document=FSInputFile(file_path),
-                    caption=f"✅ {call_query.from_user.first_name}, see TicketData in the attachment below. Also, "
-                            f"for convenience, I am sending you an email with the same file, in the official format."
+                    caption=f"✅ {call_query.from_user.first_name}, see TicketData in the "
+                            f"attachment below. Also, for convenience, I am sending you an "
+                            f"email with the same file, in the official format."
                 )
                 await SenderEmail.send_others_ticket_data_in_email_format(
                     result[1][0],
@@ -152,7 +159,8 @@ class TicketUserView:
 
                 var: InlineKeyboardBuilder = await Buttons.back_on_main()
                 await self.__bot.send_message(
-                    text=f"🔐 You've all the data and they're safe. To go to the main, click on the button below.",
+                    text=f"🔐 You've all the data and they're safe. To go to the main, click on "
+                         f"the button below.",
                     chat_id=call_query.message.chat.id,
                     reply_markup=var.as_markup(),
                     parse_mode="HTML"
@@ -161,7 +169,11 @@ class TicketUserView:
         except Exception as ex:
             print(ex)
 
-    async def __not_allow_send_email_ticket_data_user(self, call_query: types.CallbackQuery) -> None:
+    async def __not_allow_send_email_ticket_data_user(
+            self,
+            call_query:
+            types.CallbackQuery
+    ) -> None:
         """
         Not allow to send email for ticket data (big) for user.
 
@@ -265,8 +277,8 @@ class TicketUserView:
 
                     await self.__bot.send_message(
                         chat_id=message.from_user.id,
-                        text=f"✅ Successful! {message.from_user.first_name}, your ticket added and "
-                             f"sent.",
+                        text=f"✅ Successful! {message.from_user.first_name}, your ticket added "
+                             f"and sent.",
                         reply_markup=var.as_markup()
                     )
 
@@ -327,7 +339,8 @@ class TicketAdminView:
         if len(response[0]) != 0:
             if response[0][0] is False:
                 await self.__bot.edit_message_text(
-                    text=f"🔹 Tickets (ADMIN UI | CWBot UI)\n----------------------------------------\n{response[0][1]}",
+                    text=f"🔹 Tickets (ADMIN UI | CWBot UI)\n"
+                         f"----------------------------------------\n{response[0][1]}",
                     chat_id=call_query.message.chat.id,
                     message_id=call_query.message.message_id,
                     reply_markup=response[1].as_markup(),
@@ -337,10 +350,13 @@ class TicketAdminView:
                 self.__class__.__response_big = response[0][1], response[0][2]
 
                 await self.__bot.edit_message_text(
-                    text=f"🔹 Tickets (ADMIN UI | CWBot UI)\n----------------------------------------\nI'm sorry, but "
+                    text=f"🔹 Tickets (ADMIN UI | CWBot UI)\n"
+                         f"----------------------------------------\nI'm sorry, but "
                          f"I can't send the details of all tickets. More characters "
-                         f"are required. Will you allow me to send the details of the remaining tickets to your email?"
-                         f"\n\n<b>Available Data look after click on the button (which you need)</b>.",
+                         f"are required. Will you allow me to send the details of the "
+                         f"remaining tickets to your email?"
+                         f"\n\n<b>Available Data look after click on the button "
+                         f"(which you need)</b>.",
                     chat_id=call_query.message.chat.id,
                     message_id=call_query.message.message_id,
                     reply_markup=response[1].as_markup(),
@@ -357,7 +373,8 @@ class TicketAdminView:
                 )
         else:
             await self.__bot.edit_message_text(
-                    text=f"🔹 Tickets (ADMIN UI | CWBot UI)\n----------------------------------------\n\n"
+                    text=f"🔹 Tickets (ADMIN UI | CWBot UI)\n"
+                         f"----------------------------------------\n\n"
                          f"It's still empty here!",
                     chat_id=call_query.message.chat.id,
                     message_id=call_query.message.message_id,
@@ -365,7 +382,10 @@ class TicketAdminView:
                     parse_mode="HTML"
                 )
 
-    async def __allow_send_email_ticket_data_admin(self, call_query: types.CallbackQuery) -> None:
+    async def __allow_send_email_ticket_data_admin(
+            self,
+            call_query: types.CallbackQuery
+    ) -> None:
         """
         Allow to send email for ticket data (big) for admin.
 
@@ -375,7 +395,8 @@ class TicketAdminView:
         var: InlineKeyboardBuilder = await Buttons.back_on_main()
         try:
             await self.__bot.edit_message_text(
-                text=f"🔹 Tickets (ADMIN UI | CWBot UI)\n----------------------------------------\n"
+                text=f"🔹 Tickets (ADMIN UI | CWBot UI)\n"
+                     f"----------------------------------------\n"
                      f"⚡ <b>Available Data</b>:"
                      f"\n\n{self.__class__.__response_big[0]}",
                 chat_id=call_query.message.chat.id,
@@ -389,12 +410,16 @@ class TicketAdminView:
                 admin_email: str = data["EMAIL_DATA"]["ADMIN_EMAIL"]
                 admin_name: str = data["business_connection"]["user"]["first_name"]
 
-            file_path: str = await GenerateTicketDataUniversal.generate(admin_name, self.__class__.__response_big[1])
+            file_path: str = await GenerateTicketDataUniversal.generate(
+                admin_name,
+                self.__class__.__response_big[1]
+            )
             await self.__bot.send_document(
                 chat_id=call_query.message.chat.id,
                 document=FSInputFile(file_path),
-                caption=f"✅ {call_query.from_user.first_name}, see TicketData in the attachment below. Also, "
-                        f"for convenience, I am sending you an email with the same file, in the official format."
+                caption=f"✅ {call_query.from_user.first_name}, see TicketData in the attachment "
+                        f"below. Also, for convenience, I am sending you an email with "
+                        f"the same file, in the official format."
             )
             await SenderEmail.send_others_ticket_data_in_email_format(
                 admin_email,
@@ -412,7 +437,8 @@ class TicketAdminView:
                 message_id=msg_temp.message_id
             )
             await self.__bot.send_message(
-                text=f"🔐 You've all the data and they're safe. To go to the main, click on the button below.",
+                text=f"🔐 You've all the data and they're safe. "
+                     f"To go to the main, click on the button below.",
                 chat_id=call_query.message.chat.id,
                 reply_markup=var.as_markup(),
                 parse_mode="HTML"
@@ -421,7 +447,10 @@ class TicketAdminView:
         except Exception as ex:
             print(ex)
 
-    async def __not_allow_send_email_ticket_data_admin(self, call_query: types.CallbackQuery) -> None:
+    async def __not_allow_send_email_ticket_data_admin(
+            self,
+            call_query: types.CallbackQuery
+    ) -> None:
         """
         Not allow to send email for ticket data (big) for admin.
 
@@ -431,7 +460,8 @@ class TicketAdminView:
         try:
             var: InlineKeyboardBuilder = await Buttons.back_on_main()
             await self.__bot.edit_message_text(
-                text=f"🔹 Tickets (ADMIN UI | CWBot UI)\n----------------------------------------\n"
+                text=f"🔹 Tickets (ADMIN UI | CWBot UI)\n"
+                     f"----------------------------------------\n"
                      f"⚡ <b>Available Data</b>:"
                      f"\n\n{self.__class__.__response_big[0]}",
                 chat_id=call_query.message.chat.id,
@@ -456,7 +486,11 @@ class TicketAnswersToUsers:
             GetTicketDataForAnswerToUser.ticket_data
         )
 
-    async def explore_answer_users_ticket(self, call_query: types.CallbackQuery, state: FSMContext) -> None:
+    async def explore_answer_users_ticket(
+            self,
+            call_query: types.CallbackQuery,
+            state: FSMContext
+    ) -> None:
         """
         Handler (call-handler) for get id ticket for answer to user.
 
@@ -478,9 +512,11 @@ class TicketAnswersToUsers:
                      f"https://imgbly.com/;\n"
                      f"2. IF YOU WANT *TO ATTACH THE DOCUMENT-FILE use this free website* (we "
                      f"checked it!): https://www.file.io/;\n"
-                     f"3. IF YOU WANT *TO USE THE SYMBOL*: ``` '  ``` - *USE THIS* (backquote): ``` `  "
+                     f"3. IF YOU WANT *TO USE THE SYMBOL*: ``` '  ``` - *USE THIS* (backquote): "
+                     f"``` `  "
                      f"```"
-                     f"4. IF YOU WANT *TO USE THE SYMBOL*: ``` \\  ``` - *USE THIS* (double slash): "
+                     f"4. IF YOU WANT *TO USE THE SYMBOL*: ``` \\  ``` - *USE THIS* "
+                     f"(double slash): "
                      f"``` \\\\  ```"
                      f"But when you'll send, you agree with rules of "
                      f"'SENDER'.\n\n_1. Please, don't send spam or other ticket as spam\n"
@@ -490,7 +526,11 @@ class TicketAnswersToUsers:
                 parse_mode="Markdown"
             )
 
-    async def __get_ticket_data_for_answer(self, message: types.Message, state: FSMContext) -> None:
+    async def __get_ticket_data_for_answer(
+            self,
+            message: types.Message,
+            state: FSMContext
+    ) -> None:
         """
         Get ticket-data for answer to user and sending answer to the user.
 
@@ -531,7 +571,8 @@ class TicketAnswersToUsers:
 
                     await self.__bot.send_message(
                         chat_id=tg_id_sender,
-                        text=f"👤 <b>ANSWER FROM ADMIN</b>\n----------------------------------------\n"
+                        text=f"👤 <b>ANSWER FROM ADMIN</b>\n"
+                             f"----------------------------------------\n"
                              f"#️⃣ ID Ticket: <code>{id_ticket}</code>\n"
                              f"🌐 STATUS: <b>{new_status}</b>\n"
                              f"✉ Subject: {subject}\n"
@@ -593,7 +634,11 @@ class TicketAnswersToAdmin:
             GetTicketDataForAnswerToAdmin.ticket_data
         )
 
-    async def explore_answer_admin_by_ticket(self, call_query: types.CallbackQuery, state: FSMContext) -> None:
+    async def explore_answer_admin_by_ticket(
+            self,
+            call_query: types.CallbackQuery,
+            state: FSMContext
+    ) -> None:
         """
         Handler (call-handler) for get id ticket for answer to admin.
 
@@ -613,7 +658,8 @@ class TicketAnswersToAdmin:
                  f"https://imgbly.com/;\n"
                  f"2. IF YOU WANT *TO ATTACH THE DOCUMENT-FILE use this free website* (we "
                  f"checked it!): https://www.file.io/;\n"
-                 f"3. IF YOU WANT *TO USE THE SYMBOL*: ``` '  ``` - *USE THIS* (backquote): ``` `  ```"
+                 f"3. IF YOU WANT *TO USE THE SYMBOL*: ``` '  ``` - *USE THIS* (backquote): "
+                 f"``` `  ```"
                  f"4. IF YOU WANT *TO USE THE SYMBOL*: ``` \\  ``` - *USE THIS* (double slash): "
                  f"``` \\\\  ```"
                  f"But when you'll send, you agree with rules of "
@@ -624,7 +670,11 @@ class TicketAnswersToAdmin:
             parse_mode="Markdown"
         )
 
-    async def __get_ticket_data_for_answer_to_admin(self, message: types.Message, state: FSMContext) -> None:
+    async def __get_ticket_data_for_answer_to_admin(
+            self,
+            message: types.Message,
+            state: FSMContext
+    ) -> None:
         """
         Get ticket-data for answer to user and sending answer to admin.
 
@@ -666,7 +716,8 @@ class TicketAnswersToAdmin:
                     if tg_id_sender == message.from_user.id:
                         await self.__bot.send_message(
                             chat_id=self.__admin_id,
-                            text=f"👤 <b>ANSWER FROM USER</b>\n----------------------------------------\n"
+                            text=f"👤 <b>ANSWER FROM USER</b>\n"
+                                 f"----------------------------------------\n"
                                  f"#️⃣ ID Ticket: <code>{id_ticket}</code>\n"
                                  f"🌐 STATUS: <b>{status}</b>\n"
                                  f"✉ Subject: {subject}\n"

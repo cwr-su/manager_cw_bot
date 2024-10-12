@@ -12,11 +12,18 @@ router_send_invoice: Router = Router()
 
 class ChooseMethodOfPayment:
     """Class for choose method of payment."""
-    def __init__(self, bot: Bot, admin_id: int) -> None:
+    def __init__(
+            self,
+            bot: Bot,
+            admin_id: int
+    ) -> None:
         self.__bot: Bot = bot
         self.__admin_id: int = admin_id
 
-    async def choose_step1(self, call: types.CallbackQuery) -> None:
+    async def choose_step1(
+            self,
+            call: types.CallbackQuery
+    ) -> None:
         """
         Choose method of payment. Step 1.
 
@@ -25,7 +32,8 @@ class ChooseMethodOfPayment:
         """
         var: InlineKeyboardBuilder = await Buttons.get_premium_process_choosing()
         await self.__bot.edit_message_text(
-            text=f"❤ <b>{call.from_user.first_name}</b>, please, choose the method of payment below.",
+            text=f"❤ <b>{call.from_user.first_name}</b>, please, choose the method of payment "
+                 f"below.",
             chat_id=call.from_user.id,
             message_id=call.message.message_id,
             reply_markup=var.as_markup(),
@@ -44,7 +52,10 @@ class ChooseMethodOfPayment:
             F.data == "check_pay_yookassa"
         )
 
-    async def __continue_subscribe_premium_with_yookassa(self, call: types.CallbackQuery) -> None:
+    async def __continue_subscribe_premium_with_yookassa(
+            self,
+            call: types.CallbackQuery
+    ) -> None:
         """
         Continue payment. | Yookassa-Method.
 
@@ -68,9 +79,10 @@ class ChooseMethodOfPayment:
 
             var: InlineKeyboardBuilder = await Buttons.get_menu_yookassa_payment(url)
             await self.__bot.edit_message_text(
-                text=f"✨ {call.from_user.first_name}, perfect!\n\nClick on the button below (💳 <b>Pay</b>) "
-                     f"and then click on the <b>Check </b>🔑.\n\nIf button isn't activated, please, return to the "
-                     f"main-menu (/start) and click on the: <b>GET CW PREMIUM</b> 🔥 (or <b>👑 MY CW PREMIUM 🌟</b>) -> "
+                text=f"✨ {call.from_user.first_name}, perfect!\n\nClick on the button below "
+                     f"(💳 <b>Pay</b>) and then click on the <b>Check </b>🔑.\n\nIf button "
+                     f"isn't activated, please, return to the main-menu (/start) and click on "
+                     f"the: <b>GET CW PREMIUM</b> 🔥 (or <b>👑 MY CW PREMIUM 🌟</b>) -> "
                      f"<b>Get CW PREMIUM 💥 | -55%</b> -> 🔑 <b>Check payment</b>.\n\n"
                      f"ID: <code>{confirmation_id}</code>",
                 chat_id=call.from_user.id,
@@ -87,7 +99,10 @@ class ChooseMethodOfPayment:
         except Exception as ex:
             print(ex)
 
-    async def check_pay_yookassa(self, call: types.CallbackQuery) -> None:
+    async def check_pay_yookassa(
+            self,
+            call: types.CallbackQuery
+    ) -> None:
         """
         Check pay Yookassa.
 
@@ -118,26 +133,32 @@ class ChooseMethodOfPayment:
             else:
                 await self.__bot.answer_callback_query(
                     callback_query_id=call.id,
-                    text=f"❌ {call.from_user.first_name}, fail! It looks like you haven't paid the bill! Try again.\n"
-                         f"❕ If you are sure that you have paid for it, then write to the admin / TicketSystem.",
+                    text=f"❌ {call.from_user.first_name}, fail! It looks like you haven't paid "
+                         f"the bill! Try again.\n❕ If you are sure that you have paid for "
+                         f"it, then write to the admin / TicketSystem.",
                     show_alert=True
                 )
 
         elif result[0] is False and result[1] == "None":
             await self.__bot.answer_callback_query(
                 callback_query_id=call.id,
-                text=f"❌ {call.from_user.first_name}, fail! Payment wasn't created!\n❕ Please, write to admin.",
+                text=f"❌ {call.from_user.first_name}, fail! Payment wasn't created!\n❕ "
+                     f"Please, write to admin.",
                 show_alert=True
             )
         else:
             await self.__bot.answer_callback_query(
                 callback_query_id=call.id,
-                text=f"❌ {call.from_user.first_name}, fail! Please, try again: return to the main-menu (/start) "
-                     f"and click on the: GET PREMIUM 🔥 -> 🔑 Check payment.",
+                text=f"❌ {call.from_user.first_name}, fail! Please, try again: return to "
+                     f"the main-menu (/start) and click on the: GET PREMIUM "
+                     f"🔥 -> 🔑 Check payment.",
                 show_alert=True
             )
 
-    async def __continue_subscribe_premium_with_telegram_stars(self, call: types.CallbackQuery) -> None:
+    async def __continue_subscribe_premium_with_telegram_stars(
+            self,
+            call: types.CallbackQuery
+    ) -> None:
         """
         Continue payment. | TelegramStars-Method.
 

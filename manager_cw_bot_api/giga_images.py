@@ -57,7 +57,8 @@ class GigaCreator:
         self.__class__.__query = message.text
         await self.__bot.send_message(
             chat_id=message.chat.id,
-            text=f"{message.from_user.first_name}, are you want to *generate image*? Are you sure?",
+            text=f"{message.from_user.first_name}, are you want to *generate image*? "
+                 f"Are you sure?",
             reply_markup=var.as_markup(),
             parse_mode="Markdown"
         )
@@ -113,10 +114,11 @@ class GigaCreator:
                 await self.__bot.send_document(
                     chat_id=call.from_user.id,
                     document=FSInputFile(temp_image),
-                    caption=f"<b>{call.from_user.first_name}</b>, the new photo has been generated according to your "
-                            f"request: <blockquote>{self.__class__.__query}</blockquote>\n\n"
-                            f"✨ There are still generations left: ♾.\n\nThe photo is attached to the message as a "
-                            f"file. Download it by clicking on the button above.\n\n"
+                    caption=f"<b>{call.from_user.first_name}</b>, the new photo has been generated"
+                            f" according to your request: <blockquote>{self.__class__.__query}"
+                            f"</blockquote>\n\n✨ There are still generations left: ♾.\n\nThe "
+                            f"photo is attached to the message as a file. Download it by clicking "
+                            f"on the button above.\n\n"
                             f"#AI_Photo\nDeveloper: @aleksandr_twitt.",
                     parse_mode="HTML",
                     message_effect_id='5104841245755180586'
@@ -141,7 +143,8 @@ class GigaCreator:
         except Exception as ex:
             print(ex)
             var: InlineKeyboardBuilder = await Buttons.back_on_main()
-            if "cannot identify image file" in str(ex) or "bytes-like object is required, not 'str'" in str(ex):
+            if ("cannot identify image file" in str(ex) or
+                    "bytes-like object is required, not 'str'" in str(ex)):
                 await self.__bot.edit_message_text(
                     chat_id=call.from_user.id,
                     text=image_data,
@@ -151,7 +154,8 @@ class GigaCreator:
             else:
                 await self.__bot.edit_message_text(
                     chat_id=call.from_user.id,
-                    text="🤔 Oh, something wrong! 👌🏻 Please, don't worry! Write ticket or EMail: help@cwr.su.",
+                    text="🤔 Oh, something wrong! 👌🏻 Please, don't worry! "
+                         "Write ticket or EMail: help@cwr.su.",
                     reply_markup=var.as_markup(),
                     message_id=call.message.message_id
                 )

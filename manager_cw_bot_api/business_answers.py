@@ -63,14 +63,16 @@ class Answers:
 
             if "пасиб" in message.text.lower() or "thank" in message.text.lower() \
                     or "благодарю" in message.text.lower() or "спасиб" in message.text.lower():
-                thanks_func_sector: FunctionBusinessAnswerThanksSector = FunctionBusinessAnswerThanksSector(
-                    bot,
-                    chat_id,
-                    action,
-                    self.__business_connection_id,
-                    thanks_text,
-                    thanks_sticker,
-                    self.__admin_id
+                thanks_func_sector: FunctionBusinessAnswerThanksSector = (
+                    FunctionBusinessAnswerThanksSector(
+                        bot,
+                        chat_id,
+                        action,
+                        self.__business_connection_id,
+                        thanks_text,
+                        thanks_sticker,
+                        self.__admin_id
+                    )
                 )
                 await thanks_func_sector.pattern()
 

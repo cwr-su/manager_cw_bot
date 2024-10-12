@@ -103,8 +103,9 @@ class SenderEmail:
               <body>
                 <div id="main">
                   <p id='hd'><a href='cwr.su'>CW | CodeWriter | CWR.SU</a></p>
-                  <p>🤝 Hello, <b>""" + name + """</b>!<br/>Below, in email-attachment you can see your TicketData, 
-                  which you have requested in the <a href='https://t.me/helper_cwBot'>Manager CW Bot</a>.</p><br/>
+                  <p>🤝 Hello, <b>""" + name + """</b>!<br/>Below, in email-attachment you can 
+                  see your TicketData, which you have requested in the 
+                  <a href='https://t.me/helper_cwBot'>Manager CW Bot</a>.</p><br/>
                   <br/>
                   <i>Sincerely, the CW team.
                   <br/><br/>
@@ -113,10 +114,12 @@ class SenderEmail:
                   <br/>
                   On cooperation issues: <a href='mailto:cwr@cwr.su'>cwr@cwr.su</a>.
                   <br/>
-                  For technical issues and problems: <a href='mailto:help@cwr.su'>help@cwr.su</a>.</i>
+                  For technical issues and problems: 
+                  <a href='mailto:help@cwr.su'>help@cwr.su</a>.</i>
                   <br/>
                   <br/></p>
-                  <p>👤 Director and developer, creator, designer of the CW product: Laptev Alexander A.</p>
+                  <p>👤 Director and developer, creator, designer of the CW product: Laptev 
+                  Alexander A.</p>
                   <p>👌🏻 This system notification is generated automatically by CW System. 
                   You don't need to answer it!</p>
                   <p id='foot'>© CW | All rights reserved | 2023 - 2024.<br/></p>
@@ -137,13 +140,23 @@ class SenderEmail:
             message['From'] = formataddr((sender_name, sender_email))
             message['Subject'] = subject
 
-            message.attach(MIMEText(text, 'html', 'utf-8'))
+            message.attach(MIMEText(
+                _text=text,
+                _subtype='html',
+                _charset='utf-8')
+            )
 
             with open(file_path, "rb") as file:
-                doc = MIMEBase('application', 'octet-stream')
+                doc = MIMEBase(
+                    _maintype='application',
+                    _subtype='octet-stream'
+                )
                 doc.set_payload(file.read())
                 encoders.encode_base64(doc)
-                doc.add_header('Content-Disposition', f"attachment; filename={file_path}")
+                doc.add_header(
+                    _name='Content-Disposition',
+                    _value=f"attachment; filename={file_path}"
+                )
 
             message.attach(doc)
 
@@ -221,10 +234,14 @@ class SenderEmail:
               <body>
                 <div id="main">
                   <p id='hd'><a href='cwr.su'>CW | CodeWriter | CWR.SU</a></p>
-                  <p>🤝 Hello, <b>""" + name + """</b>! Below you can copy the verification code to confirm the
-                  action (change/add this EMail) in the <a href='https://t.me/helper_cwBot'>Manager CW Bot</a>.
-                  The code was requested at """ + datetime.datetime.now(
-                  datetime.timezone(datetime.timedelta(hours=3))).strftime('%d.%m.%Y | %H:%M:%S MSK+3') + """<br/>
+                  <p>🤝 Hello, <b>""" + name + """</b>! Below you can copy the verification code 
+                  to confirm the action (change/add this EMail) in the 
+                  <a href='https://t.me/helper_cwBot'>Manager CW Bot</a>. The code was requested 
+                  at """ + \
+                  datetime.datetime.now(
+                      datetime.timezone(datetime.timedelta(hours=3))
+                  ).strftime('%d.%m.%Y | %H:%M:%S MSK+3') + \
+                  """<br/>
                   <br/>
                   ❕ If you are NOT doing this, contact technical support 
                   immediately by 📧 EMail, which is listed below.</p><br/>
@@ -237,10 +254,12 @@ class SenderEmail:
                   <br/>
                   On cooperation issues: <a href='mailto:cwr@cwr.su'>cwr@cwr.su</a>.
                   <br/>
-                  For technical issues and problems: <a href='mailto:help@cwr.su'>help@cwr.su</a>.</i>
+                  For technical issues and problems: 
+                  <a href='mailto:help@cwr.su'>help@cwr.su</a>.</i>
                   <br/>
                   <br/></p>
-                  <p>👤 Director and developer, creator, designer of the CW product: Laptev Alexander A.</p>
+                  <p>👤 Director and developer, creator, designer of the CW product: Laptev 
+                  Alexander A.</p>
                   <p>👌🏻 This system notification is generated automatically by CW System. 
                   You don't need to answer it!</p>
                   <p id='foot'>© CW | All rights reserved | 2023 - 2024.<br/></p>
@@ -255,7 +274,11 @@ class SenderEmail:
             host: str = result["HOST"]
             port: int = result["PORT"]
 
-            message: MIMEText = MIMEText(text, 'html', 'utf-8')
+            message: MIMEText = MIMEText(
+                _text=text,
+                _subtype='html',
+                _charset='utf-8'
+            )
 
             message['From'] = formataddr((sender_name, sender_email))
             message['Subject'] = subject
@@ -333,9 +356,10 @@ class SenderEmail:
                   <body>
                     <div id="main">
                       <p id='hd'><a href='cwr.su'>CW | CodeWriter | CWR.SU</a></p>
-                      <p>🤝 Hello, <b>""" + name + """</b>!<br/>Below, in email-attachment you can see your 
-                      Subscription "CW PREMIUM" Payment 
-                      Receipt from the <a href='https://t.me/helper_cwBot'>Manager CW Bot</a>.</p><br/>
+                      <p>🤝 Hello, <b>""" + name + """</b>!<br/>Below, in email-attachment you 
+                      can see your Subscription "CW PREMIUM" Payment 
+                      Receipt from the <a href='https://t.me/helper_cwBot'>Manager CW Bot</a>.</p>
+                      <br/>
                       <br/>
                       <i>Sincerely, the CW team.
                       <br/><br/>
@@ -344,10 +368,12 @@ class SenderEmail:
                       <br/>
                       On cooperation issues: <a href='mailto:cwr@cwr.su'>cwr@cwr.su</a>.
                       <br/>
-                      For technical issues and problems: <a href='mailto:help@cwr.su'>help@cwr.su</a>.</i>
+                      For technical issues and problems: 
+                      <a href='mailto:help@cwr.su'>help@cwr.su</a>.</i>
                       <br/>
                       <br/></p>
-                      <p>👤 Director and developer, creator, designer of the CW product: Laptev Alexander A.</p>
+                      <p>👤 Director and developer, creator, designer of the CW product: Laptev 
+                      Alexander A.</p>
                       <p>👌🏻 This system notification is generated automatically by CW System. 
                       You don't need to answer it!</p>
                       <p id='foot'>© CW | All rights reserved | 2023 - 2024.<br/></p>
@@ -368,13 +394,23 @@ class SenderEmail:
             message['From'] = formataddr((sender_name, sender_email))
             message['Subject'] = subject
 
-            message.attach(MIMEText(text, 'html', 'utf-8'))
+            message.attach(MIMEText(
+                _text=text,
+                _subtype='html',
+                _charset='utf-8')
+            )
 
             with open(file_path, "rb") as file:
-                doc = MIMEBase('application', 'octet-stream')
+                doc = MIMEBase(
+                    _maintype='application',
+                    _subtype='octet-stream'
+                )
                 doc.set_payload(file.read())
                 encoders.encode_base64(doc)
-                doc.add_header('Content-Disposition', f"attachment; filename={file_path}")
+                doc.add_header(
+                    _name='Content-Disposition',
+                    _value=f"attachment; filename={file_path}"
+                )
 
             message.attach(doc)
 
@@ -487,13 +523,23 @@ class SenderEmail:
             message['From'] = formataddr((sender_name, sender_email))
             message['Subject'] = subject
 
-            message.attach(MIMEText(text, 'html', 'utf-8'))
+            message.attach(MIMEText(
+                _text=text,
+                _subtype='html',
+                _charset='utf-8')
+            )
 
             with open(file_path, "rb") as file:
-                doc = MIMEBase('application', 'octet-stream')
+                doc = MIMEBase(
+                    _maintype='application',
+                    _subtype='octet-stream'
+                )
                 doc.set_payload(file.read())
                 encoders.encode_base64(doc)
-                doc.add_header('Content-Disposition', f"attachment; filename={file_path}")
+                doc.add_header(
+                    _name='Content-Disposition',
+                    _value=f"attachment; filename={file_path}"
+                )
 
             message.attach(doc)
 

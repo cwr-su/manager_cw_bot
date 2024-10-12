@@ -7,7 +7,10 @@ from aiogram.utils.keyboard import InlineKeyboardBuilder
 from aiogram.types.input_file import FSInputFile
 
 from manager_cw_bot_api.buttons import Buttons
-from manager_cw_bot_api.fsm_handler import ProcessRefundingGetREFTokenST1, ProcessEmergencyRefundingGetREFTokenST1
+from manager_cw_bot_api.fsm_handler import (
+    ProcessRefundingGetREFTokenST1,
+    ProcessEmergencyRefundingGetREFTokenST1
+)
 from manager_cw_bot_api.handler_db_sub_operations import HandlerDB, SubOperations
 from manager_cw_bot_api.handler_email_sender import SenderEmail
 from manager_cw_bot_api.pdf_generate_data import GenerateReceiptRefundForUser
@@ -31,7 +34,11 @@ class Refund:
             ProcessEmergencyRefundingGetREFTokenST1.user_id
         )
 
-    async def refunding_step1_confirmation(self, call: types.CallbackQuery, state: FSMContext) -> None:
+    async def refunding_step1_confirmation(
+            self,
+            call: types.CallbackQuery,
+            state: FSMContext
+    ) -> None:
         """
         Call-Handler for refund stars | Step 1 - Confirmation.
 
@@ -44,13 +51,17 @@ class Refund:
         await self.__bot.edit_message_text(
             chat_id=call.message.chat.id,
             message_id=call.message.message_id,
-            text='Important! If the payment was made through the YooKassa system (as a payment method), then a refund '
-                 '(in this case) is possible only through a personal account on the site https://yookassa.ru / in the '
-                 '"Refunds" section.\n\n'
+            text='Important! If the payment was made through the YooKassa system (as a payment '
+                 'method), then a refund (in this case) is possible only through a personal '
+                 'account on the site https://yookassa.ru / in the "Refunds" section.\n\n'
                  '🔐 Enter the *REFUND-token... (*only for Telegram Stars as a payment method)'
         )
 
-    async def __refunding_step2_confirmation(self, message: types.Message, state: FSMContext) -> None:
+    async def __refunding_step2_confirmation(
+            self,
+            message: types.Message,
+            state: FSMContext
+    ) -> None:
         """
         Refunding star(-s) to user | Step 2 - Confirmation.
 
@@ -65,16 +76,19 @@ class Refund:
         self.__class__.__refund_token = message.text
 
         if self.__class__.__refund_token != "PROMO":
-            checked: tuple = await HandlerDB.check_subscription_by_refund_token(self.__class__.__refund_token)
+            checked: tuple = await HandlerDB.check_subscription_by_refund_token(
+                self.__class__.__refund_token
+            )
             if checked[0] is False:
                 if checked[2] == "none":
                     await self.__bot.send_message(
                         chat_id=message.from_user.id,
-                        text=f"⚠️ *{message.from_user.first_name}*, are you sure? I could not find this REFUND-"
-                             f"Token in the database. It may not have been added in time due to problems on the "
-                             f"server side.\n\nIf you see that the token looks like a real one, click the "
-                             f"corresponding button below. BUT if you are not sure that this isn't a real token, "
-                             f"click '❌ Cancel'!\n\n"
+                        text=f"⚠️ *{message.from_user.first_name}*, are you sure? I could not "
+                             f"find this REFUND-Token in the database. It may not have been "
+                             f"added in time due to problems on the server side.\n\nIf you see "
+                             f"that the token looks like a real one, click the corresponding "
+                             f"button below. BUT if you are not sure that this isn't a real "
+                             f"token, click '❌ Cancel'!\n\n"
                              f"⚠ This step is registered!",
                         parse_mode="Markdown",
                         reply_markup=var.as_markup()
@@ -109,10 +123,11 @@ class Refund:
 
                 await self.__bot.send_message(
                     chat_id=message.from_user.id,
-                    text=f"⚠️ *{message.from_user.first_name}*, are you sure? The subscription ends after *{remains} "
-                         f"{d}*. If necessary, notify the user about this!"
-                         f"\n\nAfter the star(s) are returned, the *subscription will be disabled*!\n"
-                         f"But *user can resume* it at any other time by clicking on *Get CW PREMIUM* in main menu.",
+                    text=f"⚠️ *{message.from_user.first_name}*, are you sure? The subscription "
+                         f"ends after *{remains} {d}*. If necessary, notify the user about this!"
+                         f"\n\nAfter the star(s) are returned, the *subscription will be "
+                         f"disabled*!\nBut *user can resume* it at any other time by "
+                         f"clicking on *Get CW PREMIUM* in main menu.",
                     parse_mode="Markdown",
                     reply_markup=var.as_markup()
                 )
@@ -146,7 +161,9 @@ class Refund:
                 message_id=call.message.message_id
             )
 
-            check: tuple = await HandlerDB.check_subscription_by_refund_token(self.__class__.__refund_token)
+            check: tuple = await HandlerDB.check_subscription_by_refund_token(
+                self.__class__.__refund_token
+            )
             print(check)
 
             if check[2] != "none":
@@ -160,7 +177,9 @@ class Refund:
                         strftime('%d.%m.%Y | %H:%M:%S'))
 
                 receipt_data = (f"<tr>"
-                                f"  <td align='center'><code>{self.__class__.__refund_token}</code></td>"
+                                f"  <td align='center'><code>"
+                                f"{self.__class__.__refund_token}"
+                                f"</code></td>"
                                 f"  <td align='center'>@{call.from_user.username}</td>"
                                 f"  <td align='center'>15 XTR</td>"
                                 f"  <td align='center'>{time} (UTC+3)</td>"
@@ -169,7 +188,9 @@ class Refund:
 
                 result: tuple = await HandlerDB.get_email_data(call.from_user.id)
 
-                deleted: tuple = await HandlerDB.delete_record_for_subscribe(self.__class__.__refund_token)
+                deleted: tuple = await HandlerDB.delete_record_for_subscribe(
+                    self.__class__.__refund_token
+                )
                 if deleted[0] is True:
                     await self.__bot.edit_message_text(
                         chat_id=call.from_user.id,
@@ -193,12 +214,13 @@ class Refund:
                         await self.__bot.send_document(
                             chat_id=call.from_user.id,
                             document=FSInputFile(file_path),
-                            caption=f"👑 {call.from_user.first_name}, there is the payment receipt attached below. "
-                                    f"It'll also send to you by email! ⚡"
+                            caption=f"👑 {call.from_user.first_name}, there is the payment "
+                                    f"receipt attached below. It'll also send to you by email! ⚡"
                         )
                         await SenderEmail.send_receipt_refund_to_user_in_email_format(
                             result[1][0],
-                            f"🧾📨 Receipt for the refund of funds from the Manager CW for {result[1][1]} | CWR.SU",
+                            f"🧾📨 Receipt for the refund of funds from the Manager "
+                            f"CW for {result[1][1]} | CWR.SU",
                             result[1][1],
                             file_path
                         )
@@ -215,8 +237,8 @@ class Refund:
 
                         var: InlineKeyboardBuilder = await Buttons.back_on_main()
                         await self.__bot.send_message(
-                            text=f"🔐 You've all the data and they're safe. To go to the main, click on the button "
-                                 f"below.",
+                            text=f"🔐 You've all the data and they're safe. To go to the main, "
+                                 f"click on the button below.",
                             chat_id=call.from_user.id,
                             reply_markup=var.as_markup(),
                             parse_mode="HTML"
@@ -234,8 +256,9 @@ class Refund:
                 var: InlineKeyboardBuilder = await Buttons.sure_emergency_refund_confirmation()
                 await self.__bot.edit_message_text(
                     chat_id=call.from_user.id,
-                    text=f"⚠️ *{call.from_user.first_name}*, are you sure? I could not find the User ID to return "
-                         f"the stars. If you are sure that this is a real REFUND Token, click the corresponding "
+                    text=f"⚠️ *{call.from_user.first_name}*, are you sure? I could not find the "
+                         f"User ID to return the stars. If you are sure that this is a "
+                         f"real REFUND Token, click the corresponding "
                          f"button below. If not, then click on '❌ Cancel'!",
                     parse_mode="Markdown",
                     message_id=call.message.message_id,
@@ -252,8 +275,8 @@ class Refund:
             if "CHARGE_ALREADY_REFUNDED" in str(t_ex):
                 await self.__bot.edit_message_text(
                     chat_id=call.from_user.id,
-                    text=f"🚫 *{call.from_user.first_name}*, sorry. But I can't make a refund by this ("
-                         f"`{self.__class__.__refund_token}`) "
+                    text=f"🚫 *{call.from_user.first_name}*, sorry. But I can't make a refund "
+                         f"by this (`{self.__class__.__refund_token}`) "
                          f"token.\n\n❌ Error: There has already been a refund for this token!"
                          f"\n\nPlease, write: help@cwr.su for support.",
                     message_id=call.message.message_id,
@@ -263,15 +286,19 @@ class Refund:
             else:
                 await self.__bot.edit_message_text(
                     chat_id=call.from_user.id,
-                    text=f"🚫 *{call.from_user.first_name}*, sorry. But I can't make a refund by this ("
-                         f"`{self.__class__.__refund_token}`) "
+                    text=f"🚫 *{call.from_user.first_name}*, sorry. But I can't make a refund "
+                         f"by this (`{self.__class__.__refund_token}`) "
                          f"token.\n\nPlease, write: help@cwr.su for support.",
                     message_id=call.message.message_id,
                     parse_mode="Markdown",
                     reply_markup=var.as_markup()
                 )
 
-    async def __emergency_refunding_step1(self, call: types.CallbackQuery, state: FSMContext) -> None:
+    async def __emergency_refunding_step1(
+            self,
+            call: types.CallbackQuery,
+            state: FSMContext
+    ) -> None:
         """
         Emergency Refund by admin. | Step 1 | Confirmation.
 
@@ -302,7 +329,11 @@ class Refund:
                 parse_mode="HTML"
             )
 
-    async def __emergency_refunding_step2(self, message: types.Message, state: FSMContext) -> None:
+    async def __emergency_refunding_step2(
+            self,
+            message: types.Message,
+            state: FSMContext
+    ) -> None:
         """
         Emergency Refund by admin. | Step 2 | Confirmation.
 

@@ -18,10 +18,29 @@ class GenerateTicketDataUniversal:
         """
         pdf = FPDF()
 
-        pdf.add_font("DinCWFont_TTF", "", "./manager_cw_bot_api/styles/DIN2014-Regular.ttf", uni=True)
-        pdf.add_font("DinCWFont_TTF", "I", "./manager_cw_bot_api/styles/DIN2014-Italic.ttf", uni=True)
-        pdf.add_font("DinCWFont_TTF", "B", "./manager_cw_bot_api/styles/DIN2014-Bold.ttf", uni=True)
-        pdf.set_font("DinCWFont_TTF", "", 13)
+        pdf.add_font(
+            family="DinCWFont_TTF",
+            style="",
+            fname="./manager_cw_bot_api/styles/DIN2014-Regular.ttf",
+            uni=True
+        )
+        pdf.add_font(
+            family="DinCWFont_TTF",
+            style="I",
+            fname="./manager_cw_bot_api/styles/DIN2014-Italic.ttf",
+            uni=True
+        )
+        pdf.add_font(
+            family="DinCWFont_TTF",
+            style="B",
+            fname="./manager_cw_bot_api/styles/DIN2014-Bold.ttf",
+            uni=True
+        )
+        pdf.set_font(
+            family="DinCWFont_TTF",
+            style="",
+            size=13
+        )
 
         pdf.add_page()
 
@@ -37,7 +56,8 @@ class GenerateTicketDataUniversal:
               <th width="40%" align='left'><a href='https://cwr.su/'><img 
               src='./manager_cw_bot_api/styles/logo_email.png'></a></th>
               <th width="60%" align='right'>
-                <h5>CODEWRITER COMPANY\nSELF-EMPLOYED LAPTEV ALEXANDER A.\nTEL.: +7 995 024-61-04, CWR.SU</h5>
+                <h5>CODEWRITER COMPANY\nSELF-EMPLOYED LAPTEV ALEXANDER A.\nTEL.: +7 995 024-61-04, 
+                CWR.SU</h5>
               </th>
             </tr>
           </thead>
@@ -49,8 +69,8 @@ class GenerateTicketDataUniversal:
           requested in the <a href='https://t.me/helper_cwBot'>Manager CW Bot</a>.<br><br>
           The date and time when the document was generated (Moscow time | MSK UTC+3): 
           """ + time + """.</p>
-          <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-          - - - - - - - - - - - - - - - - - - -</p>
+          <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+          - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
           <p>\uf000</p>
           <table width="100%">
             <thead>
@@ -66,15 +86,17 @@ class GenerateTicketDataUniversal:
             </tbody>
           </table>
           <p>*"Subject" (the word) in this case refers to the first 25 characters of the letter. 
-          To view the entire email / ticket, go to <a href='https://t.me/helper_cwBot'>Manager CW Bot</a>.<br>
+          To view the entire email / ticket, go to <a href='https://t.me/helper_cwBot'>Manager CW 
+          Bot</a>.<br>
           This document does not provide for the display of emojis or other other symbols.</p>
 
           <p>Your data is <b>always safe</b>!<br>
-          If you have not requested this type of document, please contact technical support by writing to the 
-          email listed below.</p>
-          <p><b>Important!</b> Using CW services (CWR.SU ) - you accept all the rules and the agreement written on 
-          the website <a href='https://acdn.cwr.su/'><b>acdn.cwr.su</b></a> in the corresponding section 
-          on the main page.<br>
+          If you have not requested this type of document, please contact technical support by 
+          writing to the email listed below.</p>
+          <p><b>Important!</b> Using CW services (CWR.SU ) - you accept all the rules and the 
+          agreement written on 
+          the website <a href='https://acdn.cwr.su/'><b>acdn.cwr.su</b></a> in the corresponding 
+          section on the main page.<br>
           <i>If</i> you <i>don't agree with them (agreement / rules)</i>, 
           <i>destroy this document</i> and stop using CW services.</p>
         """, tag_styles={
@@ -98,7 +120,8 @@ class GenerateTicketDataUniversal:
           <p>Director and developer, creator, designer of the CW product: Laptev Alexander A.</p>
           <br>
           <center><img src="./manager_cw_bot_api/styles/stamp.png" width=100 height=100></center>
-          <p><i>*This document is valid due to the stamp at the end of the contents of this document.</i></p>
+          <p><i>*This document is valid due to the stamp at the end of the contents of this 
+          document.</i></p>
           <p align='center'>© CW | All rights reserved | 2023 - 2024.</p>
         """, tag_styles={
             "a": FontFace(color="#390085")
@@ -125,10 +148,29 @@ class GenerateReceiptForUser:
         """
         pdf = FPDF()
 
-        pdf.add_font("DinCWFont_TTF", "", "./manager_cw_bot_api/styles/DIN2014-Regular.ttf", uni=True)
-        pdf.add_font("DinCWFont_TTF", "I", "./manager_cw_bot_api/styles/DIN2014-Italic.ttf", uni=True)
-        pdf.add_font("DinCWFont_TTF", "B", "./manager_cw_bot_api/styles/DIN2014-Bold.ttf", uni=True)
-        pdf.set_font("DinCWFont_TTF", "", 13)
+        pdf.add_font(
+            family="DinCWFont_TTF",
+            style="",
+            fname="./manager_cw_bot_api/styles/DIN2014-Regular.ttf",
+            uni=True
+        )
+        pdf.add_font(
+            family="DinCWFont_TTF",
+            style="I",
+            fname="./manager_cw_bot_api/styles/DIN2014-Italic.ttf",
+            uni=True
+        )
+        pdf.add_font(
+            family="DinCWFont_TTF",
+            style="B",
+            fname="./manager_cw_bot_api/styles/DIN2014-Bold.ttf",
+            uni=True
+        )
+        pdf.set_font(
+            family="DinCWFont_TTF",
+            style="",
+            size=13
+        )
 
         pdf.add_page()
 
@@ -144,7 +186,8 @@ class GenerateReceiptForUser:
                       <th width="40%" align='left'><a href='https://cwr.su/'><img 
                       src='./manager_cw_bot_api/styles/logo_email.png'></a></th>
                       <th width="60%" align='right'>
-                        <h5>CODEWRITER COMPANY\nSELF-EMPLOYED LAPTEV ALEXANDER A.\nTEL.: +7 995 024-61-04, CWR.SU</h5>
+                        <h5>CODEWRITER COMPANY\nSELF-EMPLOYED LAPTEV ALEXANDER A.\nTEL.: 
+                        +7 995 024-61-04, CWR.SU</h5>
                       </th>
                     </tr>
                   </thead>
@@ -153,11 +196,12 @@ class GenerateReceiptForUser:
                   <font size="22"><p align='left'>Payment Receipt from the Manager CW Bot<br>
                   Квитанция об оплате из Manager CW бота</p></font>
                   <p><b>""" + name + """</b>, below you can see your Subscription "CW PREMIUM" 
-                  Payment Receipt from the <a href='https://t.me/helper_cwBot'>Manager CW Bot</a>.<br><br>
+                  Payment Receipt from the <a href='https://t.me/helper_cwBot'>Manager CW Bot</a>.
+                  <br><br>
                   The date and time when the document was generated (Moscow time | MSK UTC+3): 
                   """ + time + """.</p>
-                  <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-                  - - - - - - - - - - - - - - - - - - - - - - -</p>
+                  <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+                  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
                   <p>\uf000</p>
                   <table width="100%">
                     <thead>
@@ -177,13 +221,15 @@ class GenerateReceiptForUser:
                   <a href='https://t.me/helper_cwBot'>Manager CW Bot</a>.</p>
 
                   <p>Your data is <b>always safe</b>!<br>
-                  *Payment ID is a unique token that is used to refund TGStars (XTR) or funds (RUB / USD / and more).
+                  *Payment ID is a unique token that is used to refund TGStars (XTR) or funds 
+                  (RUB / USD / and more).
                   <br>
-                  **This receipt document was generated automatically. Please keep it, as it may be needed in case of 
-                  rejection of this digital product.</p>
-                  <p><b>Important!</b> Using CW services (CWR.SU ) - you accept all the rules and the agreement written 
-                  on the website <a href='https://acdn.cwr.su/'><b>acdn.cwr.su</b></a> in the corresponding section 
-                  on the main page.<br>
+                  **This receipt document was generated automatically. Please keep it, as it may 
+                  be needed in case of rejection of this digital product.</p>
+                  <p><b>Important!</b> Using CW services (CWR.SU ) - you accept all the rules and 
+                  the agreement written 
+                  on the website <a href='https://acdn.cwr.su/'><b>acdn.cwr.su</b></a> in the 
+                  corresponding section on the main page.<br>
                   <i>If</i> you <i>don't agree with them (agreement / rules)</i>, 
                   <i>destroy this document</i> and stop using CW services.</p>
                 """, tag_styles={
@@ -201,13 +247,18 @@ class GenerateReceiptForUser:
                   <br>
                   On cooperation issues: <a href='mailto:cwr@cwr.su'>cwr@cwr.su</a>.
                   <br>
-                  For technical issues and problems: <a href='mailto:help@cwr.su'>help@cwr.su</a>.</i>
+                  For technical issues and problems: <a href='mailto:help@cwr.su'>help@cwr.su</a>.
+                  </i>
                   <br>
                   <br></p>
-                  <p>Director and developer, creator, designer of the CW product: Laptev Alexander A.</p>
+                  <p>Director and developer, creator, designer of the CW product: Laptev 
+                  Alexander A.</p>
                   <br>
-                  <center><img src="./manager_cw_bot_api/styles/stamp.png" width=100 height=100></center>
-                  <p><i>*This document is valid due to the stamp at the end of the contents of this document.</i></p>
+                  <center>
+                    <img src="./manager_cw_bot_api/styles/stamp.png" width=100 height=100>
+                  </center>
+                  <p><i>*This document is valid due to the stamp at the end of the contents of 
+                  this document.</i></p>
                   <p align='center'>© CW | All rights reserved | 2023 - 2024.</p>
                 """, tag_styles={
             "a": FontFace(color="#390085")
@@ -234,10 +285,29 @@ class GenerateReceiptRefundForUser:
         """
         pdf = FPDF()
 
-        pdf.add_font("DinCWFont_TTF", "", "./manager_cw_bot_api/styles/DIN2014-Regular.ttf", uni=True)
-        pdf.add_font("DinCWFont_TTF", "I", "./manager_cw_bot_api/styles/DIN2014-Italic.ttf", uni=True)
-        pdf.add_font("DinCWFont_TTF", "B", "./manager_cw_bot_api/styles/DIN2014-Bold.ttf", uni=True)
-        pdf.set_font("DinCWFont_TTF", "", 13)
+        pdf.add_font(
+            family="DinCWFont_TTF",
+            style="",
+            fname="./manager_cw_bot_api/styles/DIN2014-Regular.ttf",
+            uni=True
+        )
+        pdf.add_font(
+            family="DinCWFont_TTF",
+            style="I",
+            fname="./manager_cw_bot_api/styles/DIN2014-Italic.ttf",
+            uni=True
+        )
+        pdf.add_font(
+            family="DinCWFont_TTF",
+            style="B",
+            fname="./manager_cw_bot_api/styles/DIN2014-Bold.ttf",
+            uni=True
+        )
+        pdf.set_font(
+            family="DinCWFont_TTF",
+            style="",
+            size=13
+        )
 
         pdf.add_page()
 
@@ -253,21 +323,24 @@ class GenerateReceiptRefundForUser:
                       <th width="40%" align='left'><a href='https://cwr.su/'><img 
                       src='./manager_cw_bot_api/styles/logo_email.png'></a></th>
                       <th width="60%" align='right'>
-                        <h5>CODEWRITER COMPANY\nSELF-EMPLOYED LAPTEV ALEXANDER A.\nTEL.: +7 995 024-61-04, CWR.SU</h5>
+                        <h5>CODEWRITER COMPANY\nSELF-EMPLOYED LAPTEV ALEXANDER A.\nTEL.: +7 995 
+                        024-61-04, CWR.SU</h5>
                       </th>
                     </tr>
                   </thead>
                 </table>
                 </section>
-                  <font size="22"><p align='left'>Receipt for the refund of funds from the Manager CW Bot<br>
+                  <font size="22"><p align='left'>Receipt for the refund of funds from the Manager 
+                  CW Bot<br>
                   Квитанция о возврате денежных средств от Manager CW бота</p></font>
-                  <p><b>""" + name + """</b>, below you can see your receipt for the refund of funds for the 
+                  <p><b>""" + name + """</b>, below you can see your receipt for the refund of 
+                  funds for the 
                   subscription "CW PREMIUM" from the 
                   <a href='https://t.me/helper_cwBot'>Manager CW Bot</a>.<br><br>
                   The date and time when the document was generated (Moscow time | MSK UTC+3): 
                   """ + time + """.</p>
-                  <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-                  - - - - - - - - - - - - - - - - - - - - - - -</p>
+                  <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+                  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
                   <p>\uf000</p>
                   <table width="100%">
                     <thead>
@@ -286,8 +359,10 @@ class GenerateReceiptRefundForUser:
                   
                   <p>Your data is <b>always safe</b>!</p>
                   
-                  <p><b>Important!</b> Using CW services (CWR.SU ) - you accept all the rules and the agreement written 
-                  on the website <a href='https://acdn.cwr.su/'><b>acdn.cwr.su</b></a> in the corresponding section 
+                  <p><b>Important!</b> Using CW services (CWR.SU ) - you accept all the rules and 
+                  the agreement written on the website <a href='https://acdn.cwr.su/'>
+                  <b>acdn.cwr.su</b></a> in the 
+                  corresponding section 
                   on the main page.<br>
                   <i>If</i> you <i>don't agree with them (agreement / rules)</i>, 
                   <i>destroy this document</i> and stop using CW services.</p>
@@ -306,13 +381,18 @@ class GenerateReceiptRefundForUser:
                   <br>
                   On cooperation issues: <a href='mailto:cwr@cwr.su'>cwr@cwr.su</a>.
                   <br>
-                  For technical issues and problems: <a href='mailto:help@cwr.su'>help@cwr.su</a>.</i>
+                  For technical issues and problems: <a href='mailto:help@cwr.su'>help@cwr.su</a>.
+                  </i>
                   <br>
                   <br></p>
-                  <p>Director and developer, creator, designer of the CW product: Laptev Alexander A.</p>
+                  <p>Director and developer, creator, designer of the CW product: Laptev 
+                  Alexander A.</p>
                   <br>
-                  <center><img src="./manager_cw_bot_api/styles/stamp.png" width=100 height=100></center>
-                  <p><i>*This document is valid due to the stamp at the end of the contents of this document.</i></p>
+                  <center>
+                    <img src="./manager_cw_bot_api/styles/stamp.png" width=100 height=100>
+                  </center>
+                  <p><i>*This document is valid due to the stamp at the end of the contents of 
+                  this document.</i></p>
                   <p align='center'>© CW | All rights reserved | 2023 - 2024.</p>
                 """, tag_styles={
             "a": FontFace(color="#390085")

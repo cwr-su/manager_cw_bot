@@ -26,8 +26,13 @@ from manager_cw_bot_api.handler_successful_payment import HandlerSP
 from manager_cw_bot_api.mysql_connection import Connection
 from manager_cw_bot_api.refund import Refund, router_refund
 from manager_cw_bot_api.send_invoice import ChooseMethodOfPayment, router_send_invoice
-from manager_cw_bot_api.tickets import (TicketAnswersToUsers, TicketAnswersToAdmin, TicketUserView, TicketAdminView,
-                                        router)
+from manager_cw_bot_api.tickets import (
+    TicketAnswersToUsers,
+    TicketAnswersToAdmin,
+    TicketUserView,
+    TicketAdminView,
+    router
+)
 
 
 class PrivacyMessagesSector:
@@ -80,13 +85,14 @@ class PrivacyMessagesSector:
             message_id=call_query.message.message_id,
             chat_id=call_query.from_user.id,
             text=f"🇬🇧 ENG: https://acdn.cwr.su/src/acdn/new_user_agreement_manager_cw_bot.pdf "
-                 f"🗣 <b>{call_query.from_user.first_name}</b>, you must follow these rules, which are indicated in "
-                 f"the attached document. It also indicates what we charge, what data we transfer to the "
-                 f"server for data processing / analysis, and the like.\n"
-                 f"You also <b>automatically</b> accept the user agreement specified in the attachment.\n\n"
-                 f"👑 The rules for signing up for a CW PREMIUM ➕ subscription are listed <a "
-                 f"href='https://acdn.cwr.su/src/acdn/Agreement_and_Terms_of_Use_for_the_Manager_CW_Bot_Service.pdf'"
-                 f">here</a>.\n\n🔥 The paid CW PREMIUM ➕subscription period is 30 days.\nCW PREMIUM's price:\n"
+                 f"🗣 <b>{call_query.from_user.first_name}</b>, you must follow these rules, "
+                 f"which are indicated in the attached document. It also indicates what we "
+                 f"charge, what data we transfer to the server for data processing / analysis, "
+                 f"and the like.\nYou also <b>automatically</b> accept the user agreement "
+                 f"specified in the attachment.\n\n👑 The rules for signing up for a CW PREMIUM "
+                 f"➕ subscription are listed <a href='https://acdn.cwr.su/src/acdn/Agreement_and_"
+                 f"Terms_of_Use_for_the_Manager_CW_Bot_Service.pdf'>here</a>.\n\n🔥 The paid CW "
+                 f"PREMIUM ➕subscription period is 30 days.\nCW PREMIUM's price:\n"
                  f"⭐ 15 XTR (TGStar);\n"
                  f"💳 5 RUB - Different payment options are available.\n\n"
                  f"#UserAgreement #privacy_manager_cw_bot_and_include_api\n"
@@ -111,14 +117,14 @@ class PrivacyMessagesSector:
             chat_id=call_query.from_user.id,
             message_id=call_query.message.message_id,
             text=f"🇷🇺 RUS: https://acdn.cwr.su/src/acdn/new_user_agreement_manager_cw_bot.pdf "
-                 f"🗣 <b>{call_query.from_user.first_name}</b>, вы должны соблюдать эти правила, которые указаны в "
-                 f"прикреплённом док-те. Там также указано какие данные мы собираем и передаем на "
-                 f"сервер для обработки / анализа и т.п.\n"
-                 f"Вы также автоматически принимаете пользовательское соглашение, указанное во вложении.\n\n"
-                 f"👑 Смотрите перечисленные правила оформления подписки CW PREMIUM ➕ <a "
-                 f"href='https://acdn.cwr.su/src/acdn/Agreement_and_Terms_of_Use_for_the_Manager_CW_Bot_Service.pdf'"
-                 f">здесь</a>.\n\n🔥 Срок действия платной подписки CW PREMIUM ➕ составляет 30 дней.\nПРАЙС CW "
-                 f"PREMIUM'а:\n⭐ 15 XTR (TGStar);\n"
+                 f"🗣 <b>{call_query.from_user.first_name}</b>, вы должны соблюдать эти правила, "
+                 f"которые указаны в прикреплённом док-те. Там также указано какие данные мы "
+                 f"собираем и передаем на сервер для обработки / анализа и т.п.\n"
+                 f"Вы также автоматически принимаете пользовательское соглашение, указанное во "
+                 f"вложении.\n\n👑 Смотрите перечисленные правила оформления подписки CW PREMIUM "
+                 f"➕ <a href='https://acdn.cwr.su/src/acdn/Agreement_and_Terms_of_Use_for_the_"
+                 f"Manager_CW_Bot_Service.pdf'>здесь</a>.\n\n🔥 Срок действия платной подписки CW "
+                 f"PREMIUM ➕ составляет 30 дней.\nПРАЙС CW PREMIUM'а:\n⭐ 15 XTR (TGStar);\n"
                  f"💳 5 RUB - Доступны различные варианты оплаты.\n\n"
                  f"#UserAgreement #privacy_manager_cw_bot_and_include_api\n"
                  f"#privacy_bot #privacy",
@@ -216,8 +222,8 @@ class TicketsSector:
         else:
             await bot.send_message(
                 chat_id=message.from_user.id,
-                text=f"Sorry! It's not ID Ticket, because length of your message isn't 5 symbols!\n"
-                     f"Your message: {message.text}",
+                text=f"Sorry! It's not ID Ticket, because length of your message isn't 5 symbols!"
+                     f"\nYour message: {message.text}",
                 reply_markup=var.as_markup()
             )
 
@@ -306,10 +312,9 @@ class TicketsSector:
         else:
             var: InlineKeyboardBuilder = await Buttons.get_add_new_email()
             await bot.edit_message_text(
-                text=f"🤔 <b>{call_query.from_user.first_name}</b>, sorry! But your email address is not in the system."
-                     f"\n"
-                     f"<em>Add your email address to manage TicketSystem in <b>CWBot UI</b>, click on the button below!"
-                     f"</em>.",
+                text=f"🤔 <b>{call_query.from_user.first_name}</b>, sorry! But your email address "
+                     f"is not in the system.\n<em>Add your email address to manage TicketSystem "
+                     f"in <b>CWBot UI</b>, click on the button below!</em>.",
                 message_id=call_query.message.message_id,
                 chat_id=call_query.from_user.id,
                 parse_mode="HTML",
@@ -385,12 +390,13 @@ class PremiumFunctionsSector:
                     var: InlineKeyboardBuilder = await Buttons.get_premium()
                     await bot.edit_message_text(
                         chat_id=call_query.from_user.id,
-                        text=f"💡 To <b>get a subscription with an invitation discount</b>, <b>click on the button</b> "
-                             f"below. If you have "
-                             f"any questions or would like to clarify something, write to us: @{admin_username}."
-                             f"\n\nℹ If you want to <i>test</i> the CW Premium (<i>5 days is a trial period</i>), "
-                             f"please, write to the admin about it (@{admin_username} | help@cwr.su).\n"
-                             f"<i>By registering the CW Premium, you agree to the terms of use of the service.</i>\n\n"
+                        text=f"💡 To <b>get a subscription with an invitation discount</b>, "
+                             f"<b>click on the button</b> below. If you have "
+                             f"any questions or would like to clarify something, write to us: "
+                             f"@{admin_username}.\n\nℹ If you want to <i>test</i> the CW Premium "
+                             f"(<i>5 days is a trial period</i>), please, write to the admin "
+                             f"about it (@{admin_username} | help@cwr.su).\n<i>By registering the "
+                             f"CW Premium, you agree to the terms of use of the service.</i>\n\n"
                              f"#️⃣ My ID: <code>{call_query.from_user.id}</code>",
                         message_id=call_query.message.message_id,
                         reply_markup=var.as_markup(),
@@ -411,8 +417,8 @@ class PremiumFunctionsSector:
                     if refund_token:
                         await bot.edit_message_text(
                             chat_id=call_query.from_user.id,
-                            text=f"🔥 <b>{call_query.from_user.first_name}</b>, the subscription is "
-                                 f"still active <b>{remains} {d}</b>.\n\n"
+                            text=f"🔥 <b>{call_query.from_user.first_name}</b>, the subscription "
+                                 f"is still active <b>{remains} {d}</b>.\n\n"
                                  f"🔐 My REFUND Token: <code>{refund_token}</code>.\n"
                                  f"#️⃣ My ID: <code>{call_query.from_user.id}</code>",
                             message_id=call_query.message.message_id,
@@ -422,8 +428,8 @@ class PremiumFunctionsSector:
                     else:
                         await bot.edit_message_text(
                             chat_id=call_query.from_user.id,
-                            text=f"🔥 <b>{call_query.from_user.first_name}</b>, the subscription is "
-                                 f"still active <b>{remains} {d}</b>.\n\n"
+                            text=f"🔥 <b>{call_query.from_user.first_name}</b>, the subscription "
+                                 f"is still active <b>{remains} {d}</b>.\n\n"
                                  f"💡 Ask the admin for your token.\n"
                                  f"#️⃣ My ID: <code>{call_query.from_user.id}</code>",
                             message_id=call_query.message.message_id,
@@ -433,10 +439,10 @@ class PremiumFunctionsSector:
             else:
                 var: InlineKeyboardBuilder = await Buttons.get_add_new_email()
                 await bot.edit_message_text(
-                    text=f"🤔 <b>{call_query.from_user.first_name}</b>, sorry! But your email address is not in the "
-                         f"system.\n"
-                         f"<em>Add your email address to manage your CW PREMIUM in <b>CWBot UI</b>, click on the "
-                         f"button below!</em>.",
+                    text=f"🤔 <b>{call_query.from_user.first_name}</b>, sorry! But your email "
+                         f"address is not in the system.\n"
+                         f"<em>Add your email address to manage your CW PREMIUM in <b>CWBot UI</b>"
+                         f", click on the button below!</em>.",
                     message_id=call_query.message.message_id,
                     chat_id=call_query.from_user.id,
                     parse_mode="HTML",
@@ -501,8 +507,8 @@ class PremiumFunctionsSector:
         await bot.edit_message_text(
             chat_id=call_query.from_user.id,
             message_id=call_query.message.message_id,
-            text=f"🔥 <b>{call_query.from_user.first_name}</b>, you are in the main menu of the your Business "
-                 f"functionality and money (and promo-datas).\n"
+            text=f"🔥 <b>{call_query.from_user.first_name}</b>, you are in the main menu of the "
+                 f"your Business functionality and money (and promo-datas).\n"
                  f"⚡ Please select the appropriate item for you to fulfill your task / desire.",
             reply_markup=var.as_markup(),
             parse_mode="HTML"
@@ -556,8 +562,9 @@ class PromoFunctionsSector:
             var: InlineKeyboardBuilder = await Buttons.back_on_main()
             await bot.edit_message_text(
                 chat_id=call.from_user.id,
-                text=f"💖 {call.from_user.first_name}, you have already been a CW PREMIUM subscriber ➕.\n"
-                     f"💡 The *promo* code is only *for those users who have never used promo* codes in our system.",
+                text=f"💖 {call.from_user.first_name}, you have already been a CW PREMIUM "
+                     f"subscriber ➕.\n💡 The *promo* code is only *for those users who have "
+                     f"never used promo* codes in our system.",
                 message_id=call.message.message_id,
                 reply_markup=var.as_markup(),
                 parse_mode="Markdown"
@@ -629,7 +636,8 @@ class FinanceSector:
             chat_id=call.from_user.id,
             text=f"⚠️ {call.from_user.first_name}, are you sure?"
                  f"\n\nAfter the star(s) are returned, the *subscription will be disabled*!\n"
-                 f"But *user can resume* it at any other time by clicking on *Get CW PREMIUM* in main menu.",
+                 f"But *user can resume* it at any other time by clicking on *Get CW PREMIUM* "
+                 f"in main menu.",
             message_id=call.message.message_id,
             parse_mode="Markdown",
             reply_markup=var.as_markup()
@@ -702,7 +710,8 @@ class AISector:
         if checked[0] is False:
             await bot.answer_callback_query(
                 callback_query_id=call.id,
-                text=f"{call.from_user.first_name}, if you want to use this feature 🔥, subscribe to CW PREMIUM!",
+                text=f"{call.from_user.first_name}, if you want to use this feature 🔥, subscribe "
+                     f"to CW PREMIUM!",
                 show_alert=True
             )
         elif checked[0] is True:
@@ -735,17 +744,19 @@ class AISector:
             await bot.edit_message_text(
                 chat_id=call_query.from_user.id,
                 message_id=call_query.message.message_id,
-                text=f"🔥 <b>{call_query.from_user.first_name}</b>, you are in the main menu of the AI functionality.\n"
-                     f"⚡ Please select the appropriate item for you to fulfill your task / desire.",
+                text=f"🔥 <b>{call_query.from_user.first_name}</b>, you are in the main menu of "
+                     f"the AI functionality.\n⚡ Please select the appropriate item for you to "
+                     f"fulfill your task / desire.",
                 reply_markup=var.as_markup(),
                 parse_mode="HTML"
             )
         else:
             var: InlineKeyboardBuilder = await Buttons.get_add_new_email()
             await bot.edit_message_text(
-                text=f"🤔 <b>{call_query.from_user.first_name}</b>, sorry! But your email address is not in the system."
-                     f"\n"
-                     f"<em>Add your email address to manage your AI-Functions in <b>CWBot UI</b>, click on the button "
+                text=f"🤔 <b>{call_query.from_user.first_name}</b>, sorry! But your email "
+                     f"address is not in the system.\n"
+                     f"<em>Add your email address to manage your AI-Functions in <b>CWBot UI</b>, "
+                     f"click on the button "
                      f"below!</em>.",
                 message_id=call_query.message.message_id,
                 chat_id=call_query.from_user.id,
@@ -805,10 +816,10 @@ class EmailSector:
         else:
             var: InlineKeyboardBuilder = await Buttons.get_add_new_email()
             await bot.edit_message_text(
-                text=f"🤔 <b>{call_query.from_user.first_name}</b>, sorry! But your email address is not in the system."
-                     f"\n"
-                     f"<em>Add your email address to manage your AI-Functions in <b>CWBot UI</b>, click on the button "
-                     f"below!</em>.",
+                text=f"🤔 <b>{call_query.from_user.first_name}</b>, sorry! But your email "
+                     f"address is not in the system.\n"
+                     f"<em>Add your email address to manage your AI-Functions in <b>CWBot UI</b>, "
+                     f"click on the button below!</em>.",
                 message_id=call_query.message.message_id,
                 chat_id=call_query.from_user.id,
                 parse_mode="HTML",
@@ -840,10 +851,10 @@ class MenuSector:
             var: InlineKeyboardBuilder = await Buttons.get_menu_admin()
             await bot.edit_message_text(
                 chat_id=call.from_user.id,
-                text=f"👑 *{call.from_user.first_name}*,\nYou are in the main menu. Select the desired item below!\n"
-                     f"\nUsing the services CWR.SU (CW), you accept all the rules and the agreement. [SEE]("
-                     f"https://acdn.cwr.su/src/acdn/Agreement_and_Terms_of_Use_for_the_Manager_CW_Bot_Service.pdf)."
-                     f"",
+                text=f"👑 *{call.from_user.first_name}*,\nYou are in the main menu. Select the "
+                     f"desired item below!\n\nUsing the services CWR.SU (CW), you accept all the "
+                     f"rules and the agreement. [SEE](https://acdn.cwr.su/src/acdn/Agreement_and_"
+                     f"Terms_of_Use_for_the_Manager_CW_Bot_Service.pdf).",
                 message_id=call.message.message_id,
                 reply_markup=var.as_markup(),
                 parse_mode="Markdown"
@@ -855,9 +866,9 @@ class MenuSector:
                 await bot.edit_message_text(
                     chat_id=call.from_user.id,
                     text="💡 You are in the main menu. Select the desired item below!\n"
-                         f"\nUsing the services CWR.SU (CW), you accept all the rules and the agreement. [SEE]("
-                         f"https://acdn.cwr.su/src/acdn/Agreement_and_Terms_of_Use_for_the_Manager_CW_Bot_Service.pdf)."
-                         f"",
+                         f"\nUsing the services CWR.SU (CW), you accept all the rules and the "
+                         f"agreement. [SEE](https://acdn.cwr.su/src/acdn/Agreement_and_Terms_of_"
+                         f"Use_for_the_Manager_CW_Bot_Service.pdf).",
                     message_id=call.message.message_id,
                     reply_markup=var.as_markup(),
                     parse_mode="Markdown"
@@ -868,9 +879,9 @@ class MenuSector:
                     chat_id=call.from_user.id,
                     text=f"👑 *{call.from_user.first_name}*,\n"
                          f"You are in the main menu. Select the desired item below!\n"
-                         f"\nUsing the services CWR.SU (CW), you accept all the rules and the agreement. [SEE]("
-                         f"https://acdn.cwr.su/src/acdn/Agreement_and_Terms_of_Use_for_the_Manager_CW_Bot_Service.pdf)."
-                         f"",
+                         f"\nUsing the services CWR.SU (CW), you accept all the rules and the "
+                         f"agreement. [SEE](https://acdn.cwr.su/src/acdn/Agreement_and_Terms_of_"
+                         f"Use_for_the_Manager_CW_Bot_Service.pdf).",
                     message_id=call.message.message_id,
                     reply_markup=var.as_markup(),
                     parse_mode="Markdown"
@@ -903,9 +914,10 @@ class MenuSector:
             var: InlineKeyboardBuilder = await Buttons.get_menu_admin()
             await bot.send_message(
                 chat_id=message.from_user.id,
-                text=f"👑 *{message.from_user.first_name}*,\nYou are in the main menu. Select the desired item below!\n"
-                     f"\nUsing the services CWR.SU (CW), you accept all the rules and the agreement. [SEE]("
-                     f"https://acdn.cwr.su/src/acdn/new_user_agreement_manager_cw_bot.pdf).",
+                text=f"👑 *{message.from_user.first_name}*,\nYou are in the main menu. Select "
+                     f"the desired item below!\n\nUsing the services CWR.SU (CW), you accept all "
+                     f"the rules and the agreement. [SEE](https://acdn.cwr.su/src/acdn/new_user_"
+                     f"agreement_manager_cw_bot.pdf).",
                 reply_markup=var.as_markup(),
                 parse_mode="Markdown"
             )
@@ -916,8 +928,9 @@ class MenuSector:
                 await bot.send_message(
                     chat_id=message.from_user.id,
                     text="💡 You are in the main menu. Select the desired item below!\n"
-                         f"\nUsing the services CWR.SU (CW), you accept all the rules and the agreement. [SEE]("
-                         f"https://acdn.cwr.su/src/acdn/new_user_agreement_manager_cw_bot.pdf).",
+                         f"\nUsing the services CWR.SU (CW), you accept all the rules and the "
+                         f"agreement. [SEE](https://acdn.cwr.su/src/acdn/new_user_agreement_"
+                         f"manager_cw_bot.pdf).",
                     reply_markup=var.as_markup(),
                     parse_mode="Markdown"
                 )
@@ -927,8 +940,9 @@ class MenuSector:
                     chat_id=message.from_user.id,
                     text=f"👑 *{message.from_user.first_name}*,\n"
                          f"You are in the main menu. Select the desired item below!\n"
-                         f"\nUsing the services CWR.SU (CW), you accept all the rules and the agreement. [SEE]("
-                         f"https://acdn.cwr.su/src/acdn/new_user_agreement_manager_cw_bot.pdf).",
+                         f"\nUsing the services CWR.SU (CW), you accept all the rules and the "
+                         f"agreement. [SEE](https://acdn.cwr.su/src/acdn/new_user_agreement_"
+                         f"manager_cw_bot.pdf).",
                     reply_markup=var.as_markup(),
                     parse_mode="Markdown"
                 )
@@ -1007,7 +1021,8 @@ class Manager(Bot):
         var: InlineKeyboardBuilder = await Buttons.back_on_main()
         await self.send_message(
             chat_id=message.from_user.id,
-            text=f"⚡ *{message.from_user.first_name}*, click on the button below to *go to the main menu*.",
+            text=f"⚡ *{message.from_user.first_name}*, click on the button below to *go to the "
+                 f"main menu*.",
             parse_mode="Markdown",
             reply_markup=var.as_markup()
         )
@@ -1027,7 +1042,11 @@ class Manager(Bot):
             self, message
         )
 
-    async def __explore_show_users_ticket(self, call_query: types.CallbackQuery, state: FSMContext) -> None:
+    async def __explore_show_users_ticket(
+            self,
+            call_query: types.CallbackQuery,
+            state: FSMContext
+    ) -> None:
         """
         Explore to show user's ticket by id.
 
@@ -1040,7 +1059,11 @@ class Manager(Bot):
             self, call_query, state
         )
 
-    async def __get_id_ticket_for_show(self, message: types.Message, state: FSMContext) -> None:
+    async def __get_id_ticket_for_show(
+            self,
+            message: types.Message,
+            state: FSMContext
+    ) -> None:
         """
         Get id ticket for admin answer/view or user view.
 
@@ -1053,7 +1076,11 @@ class Manager(Bot):
             self, message, state, self.__mysql_data
         )
 
-    async def __explore_answer_users_ticket(self, call_query: types.CallbackQuery, state: FSMContext) -> None:
+    async def __explore_answer_users_ticket(
+            self,
+            call_query: types.CallbackQuery,
+            state: FSMContext
+    ) -> None:
         """
         Handler (call-handler) for get id ticket for answer to user.
 
@@ -1066,7 +1093,11 @@ class Manager(Bot):
             self, call_query, state, self.__admin_id, self.__mysql_data
         )
 
-    async def __explore_answer_admin_by_ticket(self, call_query: types.CallbackQuery, state: FSMContext) -> None:
+    async def __explore_answer_admin_by_ticket(
+            self,
+            call_query: types.CallbackQuery,
+            state: FSMContext
+    ) -> None:
         """
         Handler (call-handler) for get id ticket for answer to admin.
 
@@ -1079,7 +1110,10 @@ class Manager(Bot):
             self, call_query, state, self.__admin_id, self.__mysql_data
         )
 
-    async def __user_menu_tickets(self, call_query: types.CallbackQuery) -> None:
+    async def __user_menu_tickets(
+            self,
+            call_query: types.CallbackQuery
+    ) -> None:
         """
         Handler (callback-handler) for go to the Tickets-Menu.
 
@@ -1090,7 +1124,10 @@ class Manager(Bot):
             self, call_query, self.__mysql_data
         )
 
-    async def __admin_menu_tickets(self, call_query: types.CallbackQuery) -> None:
+    async def __admin_menu_tickets(
+            self,
+            call_query: types.CallbackQuery
+    ) -> None:
         """
         Handler (callback-handler) for show tickets to admin.
 
@@ -1101,7 +1138,10 @@ class Manager(Bot):
             self, call_query, self.__mysql_data
         )
 
-    async def __analytic_data(self, call_query: types.CallbackQuery) -> None:
+    async def __analytic_data(
+            self,
+            call_query: types.CallbackQuery
+    ) -> None:
         """
         Handler of the analytic-menu (UI) for admin.
 
@@ -1114,16 +1154,24 @@ class Manager(Bot):
         )
         await analytic.analyse()
 
-    async def __business_handler(self, call_query: types.CallbackQuery) -> None:
+    async def __business_handler(
+            self,
+            call_query: types.CallbackQuery
+    ) -> None:
         """
         Handler (call-query) for admin (with business) - start main handler.
 
         :param call_query: Callback Query.
         :return: None.
         """
-        await PremiumFunctionsSector.business_handler(self, call_query)
+        await PremiumFunctionsSector.business_handler(
+            self, call_query
+        )
 
-    async def __get_or_lk_premium(self, call_query: types.CallbackQuery) -> None:
+    async def __get_or_lk_premium(
+            self,
+            call_query: types.CallbackQuery
+    ) -> None:
         """
         Get CW PREMIUM or view (look at) "MY PREMIUM".
 
@@ -1134,7 +1182,10 @@ class Manager(Bot):
             self, call_query, self.__admin_id, self.__admin_username
         )
 
-    async def __continue_subscribe_premium(self, call_query: types.CallbackQuery) -> None:
+    async def __continue_subscribe_premium(
+            self,
+            call_query: types.CallbackQuery
+    ) -> None:
         """
         Continue to subscribe CW PREMIUM. Choose method of payment.
 
@@ -1145,16 +1196,24 @@ class Manager(Bot):
             self, call_query, self.__admin_id
         )
 
-    async def __business_and_money(self, call_query: types.CallbackQuery) -> None:
+    async def __business_and_money(
+            self,
+            call_query: types.CallbackQuery
+    ) -> None:
         """
         Handler (callback-handler) for explore to BusinessAndMoney-menu.
 
         :param call_query: Callback Query.
         :return: None.
         """
-        await PremiumFunctionsSector.business_and_money(self, call_query)
+        await PremiumFunctionsSector.business_and_money(
+            self, call_query
+        )
 
-    async def __show_promo_menu_admin(self, call_query: types.CallbackQuery) -> None:
+    async def __show_promo_menu_admin(
+            self,
+            call_query: types.CallbackQuery
+    ) -> None:
         """
         Show PROMO Menu. | Control ADMIN.
 
@@ -1165,7 +1224,11 @@ class Manager(Bot):
             self, call_query, self.__admin_id
         )
 
-    async def __enter_promo_code(self, call: types.CallbackQuery, state: FSMContext) -> None:
+    async def __enter_promo_code(
+            self,
+            call: types.CallbackQuery,
+            state: FSMContext
+    ) -> None:
         """
         Func 'ENTER' a promo code from user. | Step 1.
 
@@ -1178,7 +1241,10 @@ class Manager(Bot):
             self, call, state, self.__admin_id
         )
 
-    async def __pre_checkout_query(self, pre_checkout_query: types.PreCheckoutQuery) -> None:
+    async def __pre_checkout_query(
+            self,
+            pre_checkout_query: types.PreCheckoutQuery
+    ) -> None:
         """
         Pre-Checkout TelegramPay Function.
 
@@ -1189,7 +1255,10 @@ class Manager(Bot):
             self, pre_checkout_query
         )
 
-    async def __successful_payment(self, message: types.Message) -> None:
+    async def __successful_payment(
+            self,
+            message: types.Message
+    ) -> None:
         """
         Handler for successful payment.
 
@@ -1200,7 +1269,10 @@ class Manager(Bot):
             self, message, self.__admin_id
         )
 
-    async def __refund(self, call: types.CallbackQuery) -> None:
+    async def __refund(
+            self,
+            call: types.CallbackQuery
+    ) -> None:
         """
         Refund-menu for admin use / control.
 
@@ -1211,7 +1283,11 @@ class Manager(Bot):
             self, call
         )
 
-    async def __refunding_step1(self, call: types.CallbackQuery, state: FSMContext) -> None:
+    async def __refunding_step1(
+            self,
+            call: types.CallbackQuery,
+            state: FSMContext
+    ) -> None:
         """
         Call-Handler for refund stars | Step 1.
 
@@ -1224,7 +1300,10 @@ class Manager(Bot):
             self, call, state
         )
 
-    async def __ai_assistance(self, call_query: types.CallbackQuery) -> None:
+    async def __ai_assistance(
+            self,
+            call_query: types.CallbackQuery
+    ) -> None:
         """
         Handler (callback-handler) for go to the AI-Menu.
 
@@ -1235,7 +1314,11 @@ class Manager(Bot):
             self, call_query
         )
 
-    async def __generate_image_for_premium_user(self, call: types.CallbackQuery, state: FSMContext) -> None:
+    async def __generate_image_for_premium_user(
+            self,
+            call: types.CallbackQuery,
+            state: FSMContext
+    ) -> None:
         """
         Generate image for premium-user.
 
@@ -1248,7 +1331,10 @@ class Manager(Bot):
             self, call, state
         )
 
-    async def __ai_two_in_one_main_menu(self, call_query: types.CallbackQuery) -> None:
+    async def __ai_two_in_one_main_menu(
+            self,
+            call_query: types.CallbackQuery
+    ) -> None:
         """
         Handler (callback-handler) for explore to AI-menu.
 
@@ -1259,7 +1345,10 @@ class Manager(Bot):
             self, call_query, self.__admin_id
         )
 
-    async def __back_on_main(self, call: types.CallbackQuery) -> None:
+    async def __back_on_main(
+            self,
+            call: types.CallbackQuery
+    ) -> None:
         """
         Handler for return to main-menu.
 
@@ -1270,7 +1359,10 @@ class Manager(Bot):
             self, call, self.__admin_id
         )
 
-    async def __get_main_menu(self, message: types.Message) -> None:
+    async def __get_main_menu(
+            self,
+            message: types.Message
+    ) -> None:
         """
         Handler for go to main-menu.
 
@@ -1281,7 +1373,11 @@ class Manager(Bot):
             self, message, self.__admin_id
         )
 
-    async def __add_new_email(self, call_query: types.CallbackQuery, state: FSMContext) -> None:
+    async def __add_new_email(
+            self,
+            call_query: types.CallbackQuery,
+            state: FSMContext
+    ) -> None:
         """
         Handler (callback-handler) for add a new EMail.
 
@@ -1294,7 +1390,10 @@ class Manager(Bot):
             self, call_query, state, self.__admin_id
         )
 
-    async def __email_settings_menu(self, call_query: types.CallbackQuery) -> None:
+    async def __email_settings_menu(
+            self,
+            call_query: types.CallbackQuery
+    ) -> None:
         """
         Menu of EMail Settings for any users and admin.
 
@@ -1493,15 +1592,24 @@ async def run() -> None:
     """
     try:
         data: dict = get_data()
-        if data["business_connection_is_enabled"] == "True" and len(data["ADMIN_EMAIL_FOR_CHECK"]) >= 7:
-            bot: Manager = Manager(data["BOT_TOKEN"], data["business_connection_id"],
-                                   data["ADMIN_ID"], data["MYSQL"], data["GIGACHAT"], data["ADMIN_USERNAME"])
+        if (data["business_connection_is_enabled"] == "True" and
+                len(data["ADMIN_EMAIL_FOR_CHECK"]) >= 7):
+            bot: Manager = Manager(
+                data["BOT_TOKEN"],
+                data["business_connection_id"],
+                data["ADMIN_ID"],
+                data["MYSQL"],
+                data["GIGACHAT"],
+                data["ADMIN_USERNAME"]
+            )
             await bot.run()
 
         else:
-            print("Business Connection isn't enabled!")
+            raise ValueError("Business connection is unavailable or the length of your EMail "
+                             "is incorrect!")
     except Exception as ex:
         with open("logs.txt", 'a') as logs:
             logs.write(f"\n{datetime.datetime.now()} | {ex} | The error in run-function of "
                        f"business.py.\n")
-        print(f"The Error (ex-run-func): {ex}")
+        raise ValueError("Error in bot.json configuration file! You may not have filled in all "
+                         "required fields.")

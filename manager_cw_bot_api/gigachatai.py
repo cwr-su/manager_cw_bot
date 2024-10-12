@@ -272,7 +272,7 @@ class BaseNewFSMContext(abc.ABC):
     """
 
     def __init__(self, bot: Bot) -> None:
-        pass
+        self.__bot: Bot = bot
 
     @abc.abstractmethod
     async def set(self, state: FSMContext) -> None:
@@ -284,9 +284,9 @@ class BaseNewFSMContext(abc.ABC):
         """
 
     @abc.abstractmethod
-    async def chat_dialog_light(self, message: types.Message, state: FSMContext) -> None:
+    async def chat_dialog(self, message: types.Message, state: FSMContext) -> None:
         """
-        GLV Chat-Dialog function.
+        Chat-Dialog function.
 
         :param message: Message of user / query.
         :param state: FSM.
@@ -295,15 +295,15 @@ class BaseNewFSMContext(abc.ABC):
         """
 
 
-class NewFSMContextLight:
+class NewFSMContextLight(BaseNewFSMContext):
     """
     The class for create new state (FSM) - GVL.
     """
 
     def __init__(self, bot: Bot) -> None:
-        self.__bot: Bot = bot
+        super().__init__(bot)
         router_chat_ai.message.register(
-            self.chat_dialog_light,
+            self.chat_dialog,
             GetProcessQueryCDLight.query
         )
 
@@ -316,7 +316,7 @@ class NewFSMContextLight:
         """
         await state.set_state(GetProcessQueryCDLight.query)
 
-    async def chat_dialog_light(self, message: types.Message, state: FSMContext) -> None:
+    async def chat_dialog(self, message: types.Message, state: FSMContext) -> None:
         """
         GLV Chat-Dialog function.
 
@@ -329,15 +329,14 @@ class NewFSMContextLight:
         await cd.chat_dialog(message, state)
 
 
-class NewFSMContextPro:
+class NewFSMContextPro(BaseNewFSMContext):
     """
     The class for create new state (FSM) - GVL.
     """
-
     def __init__(self, bot: Bot) -> None:
-        self.__bot: Bot = bot
+        super().__init__(bot)
         router_chat_ai.message.register(
-            self.chat_dialog_pro,
+            self.chat_dialog,
             GetProcessQueryCDPro.query
         )
 
@@ -350,7 +349,7 @@ class NewFSMContextPro:
         """
         await state.set_state(GetProcessQueryCDPro.query)
 
-    async def chat_dialog_pro(self, message: types.Message, state: FSMContext) -> None:
+    async def chat_dialog(self, message: types.Message, state: FSMContext) -> None:
         """
         GLV Chat-Dialog function.
 
