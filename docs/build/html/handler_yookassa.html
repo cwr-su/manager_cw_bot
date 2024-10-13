@@ -1,0 +1,308 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="_static/favicons/FaviconSVG_ManagerCWBotAPI.svg" type="image/svg+xml">
+    <link rel="icon" sizes="16x16" href="_static/favicons/favicon/favicon-16x16.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="_static/favicons/favicon/favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon" sizes="180x180" href="_static/favicons/favicon/apple-touch-icon-180x180.png" type="image/png">
+    <link rel="mask-icon" href="_static/favicons/favicon/safari-pinned-tab.svg" color="#5bbad5" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Handler Yookassa &mdash; Manager CW Bot 6.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="MySQL Connector" href="mysql_connection.html" />
+    <link rel="prev" title="Handler successful payment" href="handler_successful_payment.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Manager CW Bot
+          
+
+          
+            
+            <img src="_static/manager_cw_bot_logo_black_and_cw-white_200pxX200px.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                6.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Methods and functions:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation lib, configuration and run the bot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_updates.html">Information about last update | August update!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analytics.html">Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="business.html">Business</a></li>
+<li class="toctree-l1"><a class="reference internal" href="business_answers.html">Business handler for answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="business_handler.html">Business handler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="buttons.html">Buttons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="create_table.html">Create Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fsm_handler.html">Handler of FSM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example_bot_json.html">Example of a bot.json file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get_business_conn_and_info_conn.html">Get business connection and info conn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="giga_images.html">Giga Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="giga_request.html">Giga Request</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gigachatai.html">Giga Chat AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="handler_db_sub_operations.html">Handler database and subscribe operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="handler_email.html">Handler EMail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="handler_email_sender.html">Handler EMail-Sender</a></li>
+<li class="toctree-l1"><a class="reference internal" href="handler_promo.html">Handler promo data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="handler_successful_payment.html">Handler successful payment</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Handler Yookassa</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-handler_yookassa">Manage Yookassa-Payment System</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mysql_connection.html">MySQL Connector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pdf_generate_data.html">PDF Generate Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="refund.html">Handler refund</a></li>
+<li class="toctree-l1"><a class="reference internal" href="send_invoice.html">Handler send invoice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests.html">Tests (UnitTest)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tickets.html">Tickets</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Manager CW Bot</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Handler Yookassa</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="handler-yookassa">
+<h1>Handler Yookassa<a class="headerlink" href="#handler-yookassa" title="Permalink to this heading"><span>#</span></a></h1>
+<section id="module-handler_yookassa">
+<span id="manage-yookassa-payment-system"></span><h2>Manage Yookassa-Payment System<a class="headerlink" href="#module-handler_yookassa" title="Permalink to this heading"><span>#</span></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="handler_yookassa.Yookassa">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">handler_yookassa.</span></span><span class="sig-name descname"><span class="pre">Yookassa</span></span><a class="reference internal" href="_modules/handler_yookassa.html#Yookassa"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#handler_yookassa.Yookassa" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Class of manage operations for Yookassa.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="handler_yookassa.Yookassa.auth">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">auth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'bot.json'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/handler_yookassa.html#Yookassa.auth"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#handler_yookassa.Yookassa.auth" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Authorization in Yookassa API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_path</strong> – File path.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="handler_yookassa.Yookassa.check_payment">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">check_payment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payment_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tg_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/handler_yookassa.html#Yookassa.check_payment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#handler_yookassa.Yookassa.check_payment" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Check payment by confirmation id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>payment_id</strong> (<em>str</em>) – Payment confirmation id.</p></li>
+<li><p><strong>tg_id</strong> (<em>int</em>) – TG ID.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tuple with result.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="handler_yookassa.Yookassa.create_payment">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_payment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">email</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/handler_yookassa.html#Yookassa.create_payment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#handler_yookassa.Yookassa.create_payment" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Create yookassa-payment and send the receipt to the customer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>email</strong> (<em>str</em>) – Email of the user.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tuple with data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="mysql_connection.html" class="btn btn-neutral float-right" title="MySQL Connector" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="handler_successful_payment.html" class="btn btn-neutral float-left" title="Handler successful payment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2024, Alexander Laptev, CW.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

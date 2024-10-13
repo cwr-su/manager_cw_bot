@@ -1,0 +1,693 @@
+/**
+
+  CHANGES FOR CUSTOM.CSS SHOULD BE MADE INSIDE CUSTOM.SCSS
+
+  
+
+  Requirements:
+
+  - pip install compile-scss https://pypi.org/project/compile-scss/
+
+
+
+To make changes to styling, first run the following in the root of the project:
+
+    - pip install -e .[dev]
+
+
+
+Then you can edit and make changes to this file and see the results by doing the following:
+
+  Steps:
+
+  - Run:  compile_scss --watch from inside /renku_sphinx_theme
+
+  - That command will compile scss changes into css.
+
+  - After doing changes commit scss and css files.
+
+*/
+
+
+@font-face {
+    font-family: 'JetBrainsMonoNL-Regular';
+    src: url('fonts/JetBrains/ttf/JetBrainsMonoNL-Regular.ttf');
+}
+@font-face {
+    font-family: 'JetBrainsMonoNL-MediumItalic';
+    src: url('fonts/JetBrains/ttf/JetBrainsMonoNL-MediumItalic.ttf');
+}
+@font-face {
+    font-family: 'JetBrainsMonoNL-Light';
+    src: url('fonts/JetBrains/ttf/JetBrainsMonoNL-Light.ttf');
+}
+@font-face {
+    font-family: 'JetBrainsMonoNL-LightItalic';
+    src: url('fonts/JetBrains/ttf/JetBrainsMonoNL-LightItalic.ttf');
+}
+@font-face {
+    font-family: 'JetBrainsMonoNL-Thin';
+    src: url('fonts/JetBrains/ttf/JetBrainsMonoNL-Thin.ttf');
+}
+@font-face {
+    font-family: 'JetBrainsMonoNL-ExtraBold';
+    src: url('fonts/JetBrains/ttf/JetBrainsMonoNL-ExtraBold.ttf');
+}
+
+html.writer-html4 .rst-content dl:not(.docutils) .descclassname, html.writer-html4 .rst-content dl:not(.docutils) .descname, html.writer-html4 .rst-content dl:not(.docutils) .sig-name, html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple) .descclassname, html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple) .descname, html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple) .sig-name {
+    font-family: JetBrainsMonoNL-Regular, monospace;
+    color: #000;
+}
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple) .sig-param{
+    font-family: JetBrainsMonoNL-MediumItalic, monospace;
+    color: #000;
+}
+
+p {
+    font-size: .9215rem;
+    font-family: JetBrainsMonoNL-Light, monospace;
+}
+.rst-content dl dt {
+    font-family: JetBrainsMonoNL-Light;
+}
+.rst-content dl dd {
+    font-family: JetBrainsMonoNL-Light;
+    font-size: .9215rem;
+}
+.rst-content dl dd p em{
+    font-style: normal;
+    font-size: .9215rem;
+}
+
+
+.rst-content .linenodiv pre, .rst-content div[class^=highlight] pre, .rst-content pre.literal-block {
+    font-family: JetBrainsMonoNL-Regular, monospace;
+    font-size: 15px;
+}
+.rst-content div[class^=highlight], .rst-content pre.literal-block {
+    border-radius: 1rem;
+}
+
+/* Nav panel */
+@media screen and (max-width: 768px) {
+    .wy-nav-content-wrap.shift {
+        top: unset;
+    }
+}
+
+.wy-menu-vertical li.toctree-l3, .wy-menu-vertical li.toctree-l4 {
+    font-size: 1em;
+    padding: .35em;
+}
+
+.rst-content code, .rst-content tt, code {
+    white-space: normal;
+    font-family: JetBrainsMonoNL-Regular, monospace;
+    word-break: break-word;
+    font-size: 90%;
+}
+
+
+
+/*main panel top*/
+@media screen and (max-width: 768px) {
+    .wy-nav-content-wrap.shift {
+        left: 0;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .wy-nav-content-wrap.shift {
+        z-index: 2000;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .wy-nav-side.shift {
+        width: 100%;
+        z-index: 3000;
+    }
+}
+
+.wy-side-nav-search .wy-dropdown>a.icon img.logo, .wy-side-nav-search>a.icon img.logo {
+    margin-top: 1.2em;
+}
+
+
+.wy-nav-top i {
+    padding-top: 0;
+    margin-top: 21.5px;
+}
+
+.fa-bars,
+.fa-bars::before,
+.fa-bars::after {
+    display: block;
+    background-color: #25004d;
+    height: 4px;
+    width: 30px;
+    transition: transform ease-out .3s;
+    border-radius: 2px;
+    z-index: 5001;
+    position: fixed;
+    z-index: 5000;
+    left: 90%;
+    margin-left: -13.5px;
+}
+.fa-bars::before {
+    content: '';
+    margin-top: -8px;
+}
+
+.fa-bars::after {
+    content: '';
+    margin-top: 8px;
+}
+
+/*SHIFT*/
+.wy-nav-content-wrap.shift>.wy-nav-top>.fa-bars::before {
+    margin-top: 0px;
+    transform: rotate(-45deg);
+    transition: transform ease-out .3s;
+}
+.wy-nav-content-wrap.shift>.wy-nav-top>.fa-bars::after {
+    margin-top: 0px;
+    transform: rotate(45deg);
+    transition: transform ease-out .3s;
+}
+.wy-nav-content-wrap.shift>.wy-nav-top>.fa-bars {
+    background: rgba(255, 255, 255, 0);
+    transition: transform ease-out .3s;
+    z-index: 50000;
+}
+
+.icon:before {
+    display: none;
+}
+
+.wy-side-nav-search .wy-dropdown>a, .wy-side-nav-search>a {
+    margin: 6px;
+}
+
+/*tags seealso and others - start*/
+.rst-content .note, .rst-content .seealso, .rst-content .wy-alert-info.admonition, .rst-content .wy-alert-info.admonition-todo, .rst-content .wy-alert-info.attention, .rst-content .wy-alert-info.caution, .rst-content .wy-alert-info.danger, .rst-content .wy-alert-info.error, .rst-content .wy-alert-info.hint, .rst-content .wy-alert-info.important, .rst-content .wy-alert-info.tip, .rst-content .wy-alert-info.warning, .wy-alert.wy-alert-info {
+    background: #e7f2fa;
+}
+.rst-content .note .admonition-title, .rst-content .note .wy-alert-title, .rst-content .seealso .admonition-title, .rst-content .seealso .wy-alert-title, .rst-content .wy-alert-info.admonition-todo .admonition-title, .rst-content .wy-alert-info.admonition-todo .wy-alert-title, .rst-content .wy-alert-info.admonition .admonition-title, .rst-content .wy-alert-info.admonition .wy-alert-title, .rst-content .wy-alert-info.attention .admonition-title, .rst-content .wy-alert-info.attention .wy-alert-title, .rst-content .wy-alert-info.caution .admonition-title, .rst-content .wy-alert-info.caution .wy-alert-title, .rst-content .wy-alert-info.danger .admonition-title, .rst-content .wy-alert-info.danger .wy-alert-title, .rst-content .wy-alert-info.error .admonition-title, .rst-content .wy-alert-info.error .wy-alert-title, .rst-content .wy-alert-info.hint .admonition-title, .rst-content .wy-alert-info.hint .wy-alert-title, .rst-content .wy-alert-info.important .admonition-title, .rst-content .wy-alert-info.important .wy-alert-title, .rst-content .wy-alert-info.tip .admonition-title, .rst-content .wy-alert-info.tip .wy-alert-title, .rst-content .wy-alert-info.warning .admonition-title, .rst-content .wy-alert-info.warning .wy-alert-title, .rst-content .wy-alert.wy-alert-info .admonition-title, .wy-alert.wy-alert-info .rst-content .admonition-title, .wy-alert.wy-alert-info .wy-alert-title {
+    background: #6ab0de;
+    border-radius: 1rem;
+}
+.rst-content .admonition, .rst-content .admonition-todo, .rst-content .attention, .rst-content .caution, .rst-content .danger, .rst-content .error, .rst-content .hint, .rst-content .important, .rst-content .note, .rst-content .seealso, .rst-content .tip, .rst-content .warning {
+    clear: both;
+    border-radius: 1rem;
+}
+.rst-content .hint .admonition-title, .rst-content .hint .wy-alert-title, .rst-content .important .admonition-title, .rst-content .important .wy-alert-title, .rst-content .tip .admonition-title, .rst-content .tip .wy-alert-title, .rst-content .wy-alert-success.admonition-todo .admonition-title, .rst-content .wy-alert-success.admonition-todo .wy-alert-title, .rst-content .wy-alert-success.admonition .admonition-title, .rst-content .wy-alert-success.admonition .wy-alert-title, .rst-content .wy-alert-success.attention .admonition-title, .rst-content .wy-alert-success.attention .wy-alert-title, .rst-content .wy-alert-success.caution .admonition-title, .rst-content .wy-alert-success.caution .wy-alert-title, .rst-content .wy-alert-success.danger .admonition-title, .rst-content .wy-alert-success.danger .wy-alert-title, .rst-content .wy-alert-success.error .admonition-title, .rst-content .wy-alert-success.error .wy-alert-title, .rst-content .wy-alert-success.note .admonition-title, .rst-content .wy-alert-success.note .wy-alert-title, .rst-content .wy-alert-success.seealso .admonition-title, .rst-content .wy-alert-success.seealso .wy-alert-title, .rst-content .wy-alert-success.warning .admonition-title, .rst-content .wy-alert-success.warning .wy-alert-title, .rst-content .wy-alert.wy-alert-success .admonition-title, .wy-alert.wy-alert-success .rst-content .admonition-title, .wy-alert.wy-alert-success .wy-alert-title {
+    background: #1abc9c;
+    border-radius: 1rem;
+}
+
+.rst-content .admonition-todo .admonition-title, .rst-content .admonition-todo .wy-alert-title, .rst-content .attention .admonition-title, .rst-content .attention .wy-alert-title, .rst-content .caution .admonition-title, .rst-content .caution .wy-alert-title, .rst-content .warning .admonition-title, .rst-content .warning .wy-alert-title, .rst-content .wy-alert-warning.admonition .admonition-title, .rst-content .wy-alert-warning.admonition .wy-alert-title, .rst-content .wy-alert-warning.danger .admonition-title, .rst-content .wy-alert-warning.danger .wy-alert-title, .rst-content .wy-alert-warning.error .admonition-title, .rst-content .wy-alert-warning.error .wy-alert-title, .rst-content .wy-alert-warning.hint .admonition-title, .rst-content .wy-alert-warning.hint .wy-alert-title, .rst-content .wy-alert-warning.important .admonition-title, .rst-content .wy-alert-warning.important .wy-alert-title, .rst-content .wy-alert-warning.note .admonition-title, .rst-content .wy-alert-warning.note .wy-alert-title, .rst-content .wy-alert-warning.seealso .admonition-title, .rst-content .wy-alert-warning.seealso .wy-alert-title, .rst-content .wy-alert-warning.tip .admonition-title, .rst-content .wy-alert-warning.tip .wy-alert-title, .rst-content .wy-alert.wy-alert-warning .admonition-title, .wy-alert.wy-alert-warning .rst-content .admonition-title, .wy-alert.wy-alert-warning .wy-alert-title {
+    background: #f0b37e;
+    border-radius: 1rem;
+}
+/* tags seealso and others - end */
+
+.wy-menu-vertical li.current>a button.toctree-expand, .wy-menu-vertical li.on a button.toctree-expand,
+.wy-menu-vertical li.toctree-l2 button.toctree-expand {
+    color: #d5d5d5;
+}
+.wy-menu-vertical ul {
+    padding: .35rem;
+}
+
+html.writer-html4 .rst-content dl:not(.docutils)>dt:first-child, html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple)>dt:first-child {
+    border-radius: .5rem;
+}
+
+html.writer-html5 .rst-content dl.field-list {
+  display: block;
+}
+html.writer-html5 .rst-content dl.citation, html.writer-html5 .rst-content dl.field-list, html.writer-html5 .rst-content dl.footnote {
+    display: block;
+}
+
+.rst-content dl dd {
+    margin: 0 0 12px 12px;
+    line-height: 24px;
+}
+.rst-content .viewcode-back, .rst-content .viewcode-link {
+    color: #08afb9;
+}
+
+html.writer-html4 .rst-content dl:not(.docutils) dl:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple)>dt, html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple) dl:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple)>dt {
+    margin-bottom: 6px;
+    border: none;
+    border-left: 3px solid #ccc;
+    background: #f0f0f0;
+    color: #555;
+    word-break: break-word;
+}
+
+html.writer-html4 .rst-content dl:not(.docutils)>dt, html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple)>dt {
+    display: table;
+    margin: 6px 0;
+    font-size: 90%;
+    line-height: normal;
+    background: #f1e7fa;
+    color: #5b29b9;
+    border-top: 3px solid #876ade;
+    padding: 6px;
+    position: relative;
+    word-break: break-word;
+}
+
+@media screen and (max-width: 768px) {
+  .wy-nav-content-wrap .wy-nav-content {
+    padding: 1.618em;
+    background: #fff;
+    margin: 15px;
+    margin-top: 80px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .wy-nav-content-wrap .wy-nav-content {
+    padding: 1em;
+    background: #fff;
+    margin: 8px;
+    margin-top: 80px;
+  }
+}
+
+
+.wy-nav-content-wrap {
+  margin-left: 315px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  margin-right: 15px;
+  background: #f2eeff;
+}
+
+@media screen and (max-width: 768px) {
+  .wy-nav-content-wrap {
+    margin-left: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    margin-right: 0;
+  }
+}
+
+.wy-side-nav-search .wy-dropdown>a:hover, .wy-side-nav-search>a:hover {
+  background: none;
+}
+
+.wy-nav-side {
+  padding-bottom: 1em;
+  transition: all 0.3s ease 0s;
+  margin-top: 62.94px;
+  -webkit-backdrop-filter: blur(10px) contrast(100%) saturate(180%);
+  backdrop-filter: saturate(180%) blur(10px) contrast(100%);
+  background-color: rgba(255, 255, 255, .75);
+}
+
+@media screen and (max-width: 768px) {
+    .wy-side-nav-search>.icon-home {
+        display: none;
+    }
+
+    .wy-nav-side {
+        padding-bottom: 5em;
+    }
+
+}
+@media screen and (min-width: 768px) {
+    .wy-nav-side {
+        margin-top: 0px;
+    }
+}
+
+.wy-menu-vertical li.current {
+    background: #e7e7e7;
+    border-radius: .5rem;
+}
+
+
+.wy-body-for-nav {
+  background: #f2eeff;
+}
+
+.wy-nav-content {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  margin-top: 25px;
+  background: #fff;
+}
+@media screen and (min-width: 1100px) {
+  .wy-nav-content {
+     margin: auto;
+     margin-top: 25px
+  }
+}
+
+
+
+
+
+// custom ^
+
+@media screen and (min-width: 1100px) {
+  .wy-nav-content-wrap {
+      background: #f2eeff;
+  }
+}
+
+a {
+  color: #370071;
+}
+
+a:hover {
+  color: #370071;
+}
+
+a:visited {
+  color: #370071;
+}
+
+.rst-content {
+  color: #3d3d3d;
+}
+
+.rst-content code.literal {
+  color: #d26a98;
+  border-radius: .5rem;
+}
+
+.rst-content tt.literal {
+  color: #d26a98;
+}
+
+.rst-content .note {
+  color: #003274;
+  background: #ccddf3;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.rst-content .note .admonition-title {
+  display: none;
+}
+
+.rst-content .warning {
+  color: #605000;
+  background: #fcf4cc;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.rst-content .warning .admonition-title {
+  display: none;
+}
+
+.rst-content .highlight {
+  background: #f5f5f5;
+}
+
+.wy-side-nav-search {
+  -webkit-backdrop-filter: blur(10px) contrast(100%) saturate(180%);
+  backdrop-filter: saturate(180%) blur(10px) contrast(100%);
+  background-color: rgba(255, 255, 255, .75);
+}
+
+.wy-side-nav-search input[type="text"] {
+  width: 100%;
+  border-radius: 15px;
+  padding: 6px 12px;
+  border-color: #e3d0ff;
+  font-family: JetBrainsMonoNL-Light, monospace;
+}
+.wy-side-nav-search input[type="text"]:focus {
+  border-color: #aa00ff;
+}
+
+.wy-menu-vertical a {
+  font-size: 85%;
+  color: #0d0014;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  background-color: inherit;
+  font-family: JetBrainsMonoNL-Light, monospace;
+}
+
+.wy-menu-vertical a:hover {
+  background-color: unset;
+  opacity: 1;
+}
+
+.wy-menu-vertical li.current > a {
+  background-color: #30024f;
+  color: white;
+}
+
+.wy-menu-vertical li.current > a span.toctree-expand {
+  display: block;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+.wy-menu-vertical li.current > a span.toctree-expand:before {
+  display: block;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+.wy-menu-vertical li.current > a span.toctree-expand:hover {
+  color: white;
+  transition: all .2s ease-in;
+}
+
+.wy-menu-vertical li.current > a:hover {
+  background-color: #01192d;
+  color: white;
+  transition: all .2s ease-in;
+}
+
+.wy-menu-vertical li.current > a:hover span.toctree-expand {
+  color: white;
+}
+
+.wy-menu-vertical .toctree-l1 {
+  opacity: 0.5;
+}
+
+.wy-menu-vertical .toctree-l1:hover {
+  opacity: 1;
+  background-color: inherit;
+  transition: all .2s ease-in;
+}
+
+.wy-menu-vertical li.toctree-l1.current {
+  opacity: 1;
+  background-color: inherit;
+}
+
+.wy-menu-vertical li.toctree-l1.current > a {
+  border: 0px;
+  border-radius: .5rem;
+}
+
+.wy-menu-vertical .toctree-l2:hover {
+  background-color: none;
+  transition: all .2s ease-in;
+}
+
+.wy-menu-vertical li.toctree-l2.current > a {
+  background-color: #510085;
+  color: white;
+}
+
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a {
+  background-color: #7000b9;
+  border-radius: .5rem;
+}
+
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a:hover {
+  color: white;
+  background-color: #bb90d1;
+  transition: all .2s ease-in;
+}
+
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a:hover span.toctree-expand {
+  color: white;
+}
+
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3.current > a {
+  color: white;
+}
+
+.wy-menu-vertical li.toctree-l2 a {
+  border: 0px;
+  background-color: #59227f;
+  color: white;
+  border-radius: .5rem;
+}
+
+.wy-menu-vertical li.toctree-l2 a span.toctree-expand {
+  display: block;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+.wy-menu-vertical li.toctree-l2 a span.toctree-expand:before {
+  display: block;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+.wy-menu-vertical li.toctree-l2 a span.toctree-expand:hover {
+  color: white;
+  transition: all .2s ease-in;
+}
+
+.wy-menu-vertical li.current a:hover {
+    background: #bb90d1;
+    transition: all .2s ease-in;
+}
+
+.wy-menu-vertical li.toctree-l2 a:hover span.toctree-expand {
+  color: white;
+}
+
+.wy-menu-vertical li.toctree-l3.current > a {
+  background-color: #e4e7ea;
+  color: #838383;
+}
+
+.wy-menu-vertical li.toctree-l3.current li.toctree-l4 > a {
+  background-color: #9410e9;
+  color: #fff;
+}
+.wy-menu-vertical li.toctree-l3.current li.toctree-l4 > a:hover {
+  background-color: #bb90d1;
+  color: #fff;
+  transition: all .2s ease-in;
+}
+
+.wy-menu-vertical li.toctree-l3.current li.toctree-l4.current > a {
+  background-color: #b66ae7;
+  color: #fff;
+}
+
+.wy-nav-top {
+    background-color: rgba(255, 255, 255, .75);
+    top: 0;
+    position: fixed;
+    width: 100%;
+    -webkit-backdrop-filter: blur(10px) contrast(100%) saturate(180%);
+    backdrop-filter: saturate(180%) blur(10px) contrast(100%);
+    z-index: 6000;
+}
+
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #3d3d3d;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  box-shadow: unset;
+}
+
+.btn-neutral {
+  background: unset !important;
+  color: #838383 !important;
+}
+
+.btn-neutral:active {
+  padding: 0.375rem 0.75rem;
+  box-shadow: unset;
+}
+
+.wy-menu-vertical li.toctree-l3.current li.toctree-l4>a {
+    padding: .4045em 1.618em .4045em 3.663em;
+}
+
+.rst-content .section ul li li li, .rst-content .toctree-wrapper ul li li li, .rst-content section ul li li li, .wy-plain-list-disc li li li, article ul li li li {
+    padding-top: .35rem;
+}
+
+.wy-side-nav-search>div.version {
+    font-family: JetBrainsMonoNL-Light, monospace;
+    color: hsl(288.52deg 100% 23.3% / 77%);
+    font-size: .9rem;
+}
+
+footer {
+    text-align: center;
+    font-family: JetBrainsMonoNL-Light, monospace;
+    font-size: .9215rem;
+}
+
+.rst-content .section ol li>:first-child, .rst-content .section ul li>:first-child, .rst-content .toctree-wrapper ol li>:first-child, .rst-content .toctree-wrapper ul li>:first-child, .rst-content section ol li>:first-child, .rst-content section ul li>:first-child {
+    font-family: JetBrainsMonoNL-Light, monospace;
+    font-size: .9215rem;
+}
+
+.wy-breadcrumbs {
+    font-family: JetBrainsMonoNL-Light, monospace;
+    font-size: .9215rem;
+}
+
+.wy-breadcrumbs>li {
+    line-height: 1.1rem;
+}
+h1, h2, h3, h4, h5, h6,
+.rst-content .toctree-wrapper>p.caption, h1, h2, h3, h4, h5, h6, legend {
+    font-family: JetBrainsMonoNL-Light, monospace;
+}
+.wy-nav-top a,
+.icon {
+    font-family: JetBrainsMonoNL-ExtraBold, monospace;
+    color: #370071;
+}
+.wy-menu-vertical header, .wy-menu-vertical p.caption {
+    color: #b56ef3;
+}
+
+.rst-content .hint .admonition-title, .rst-content .hint .wy-alert-title, .rst-content .important .admonition-title, .rst-content .important .wy-alert-title, .rst-content .tip .admonition-title, .rst-content .tip .wy-alert-title, .rst-content .wy-alert-success.admonition-todo .admonition-title, .rst-content .wy-alert-success.admonition-todo .wy-alert-title, .rst-content .wy-alert-success.admonition .admonition-title, .rst-content .wy-alert-success.admonition .wy-alert-title, .rst-content .wy-alert-success.attention .admonition-title, .rst-content .wy-alert-success.attention .wy-alert-title, .rst-content .wy-alert-success.caution .admonition-title, .rst-content .wy-alert-success.caution .wy-alert-title, .rst-content .wy-alert-success.danger .admonition-title, .rst-content .wy-alert-success.danger .wy-alert-title, .rst-content .wy-alert-success.error .admonition-title, .rst-content .wy-alert-success.error .wy-alert-title, .rst-content .wy-alert-success.note .admonition-title, .rst-content .wy-alert-success.note .wy-alert-title, .rst-content .wy-alert-success.seealso .admonition-title, .rst-content .wy-alert-success.seealso .wy-alert-title, .rst-content .wy-alert-success.warning .admonition-title, .rst-content .wy-alert-success.warning .wy-alert-title, .rst-content .wy-alert.wy-alert-success .admonition-title, .wy-alert.wy-alert-success .rst-content .admonition-title, .wy-alert.wy-alert-success .wy-alert-title,
+.rst-content .note .admonition-title, .rst-content .note .wy-alert-title, .rst-content .seealso .admonition-title, .rst-content .seealso .wy-alert-title, .rst-content .wy-alert-info.admonition-todo .admonition-title, .rst-content .wy-alert-info.admonition-todo .wy-alert-title, .rst-content .wy-alert-info.admonition .admonition-title, .rst-content .wy-alert-info.admonition .wy-alert-title, .rst-content .wy-alert-info.attention .admonition-title, .rst-content .wy-alert-info.attention .wy-alert-title, .rst-content .wy-alert-info.caution .admonition-title, .rst-content .wy-alert-info.caution .wy-alert-title, .rst-content .wy-alert-info.danger .admonition-title, .rst-content .wy-alert-info.danger .wy-alert-title, .rst-content .wy-alert-info.error .admonition-title, .rst-content .wy-alert-info.error .wy-alert-title, .rst-content .wy-alert-info.hint .admonition-title, .rst-content .wy-alert-info.hint .wy-alert-title, .rst-content .wy-alert-info.important .admonition-title, .rst-content .wy-alert-info.important .wy-alert-title, .rst-content .wy-alert-info.tip .admonition-title, .rst-content .wy-alert-info.tip .wy-alert-title, .rst-content .wy-alert-info.warning .admonition-title, .rst-content .wy-alert-info.warning .wy-alert-title, .rst-content .wy-alert.wy-alert-info .admonition-title, .wy-alert.wy-alert-info .rst-content .admonition-title, .wy-alert.wy-alert-info .wy-alert-title,
+.rst-content .admonition-todo .admonition-title, .rst-content .admonition-todo .wy-alert-title, .rst-content .attention .admonition-title, .rst-content .attention .wy-alert-title, .rst-content .caution .admonition-title, .rst-content .caution .wy-alert-title, .rst-content .warning .admonition-title, .rst-content .warning .wy-alert-title, .rst-content .wy-alert-warning.admonition .admonition-title, .rst-content .wy-alert-warning.admonition .wy-alert-title, .rst-content .wy-alert-warning.danger .admonition-title, .rst-content .wy-alert-warning.danger .wy-alert-title, .rst-content .wy-alert-warning.error .admonition-title, .rst-content .wy-alert-warning.error .wy-alert-title, .rst-content .wy-alert-warning.hint .admonition-title, .rst-content .wy-alert-warning.hint .wy-alert-title, .rst-content .wy-alert-warning.important .admonition-title, .rst-content .wy-alert-warning.important .wy-alert-title, .rst-content .wy-alert-warning.note .admonition-title, .rst-content .wy-alert-warning.note .wy-alert-title, .rst-content .wy-alert-warning.seealso .admonition-title, .rst-content .wy-alert-warning.seealso .wy-alert-title, .rst-content .wy-alert-warning.tip .admonition-title, .rst-content .wy-alert-warning.tip .wy-alert-title, .rst-content .wy-alert.wy-alert-warning .admonition-title, .wy-alert.wy-alert-warning .rst-content .admonition-title, .wy-alert.wy-alert-warning .wy-alert-title {
+    font-family: JetBrainsMonoNL-Light, monospace;
+    font-size: .9rem;
+}
+
+#search-results .search li {
+    font-family: JetBrainsMono-Thin, monospace;
+    font-size: .9215rem;
+}
+#search-results .search li a {
+    font-size: 105%;
+    word-break: break-word;
+}
+.rst-content .highlighted {
+    border-radius: .35rem;
+}
+.wy-side-nav-search .wy-dropdown>a, .wy-side-nav-search>a {
+    color: #370071;
+}

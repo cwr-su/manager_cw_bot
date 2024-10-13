@@ -1,0 +1,394 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>giga_images &mdash; Manager CW Bot 6.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/fonts.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Manager CW Bot
+          
+
+          
+            
+            <img src="../_static/manager_cw_bot_logo_black_and_cw-white_200pxX200px.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                6.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Methods and functions:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation lib, configuration and run the bot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../info_updates.html">Information about last update | August update!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analytics.html">Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../business.html">Business</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../business_answers.html">Business handler for answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../business_handler.html">Business handler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../buttons.html">Buttons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../create_table.html">Create Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fsm_handler.html">Handler of FSM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../example_bot_json.html">Example of a bot.json file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get_business_conn_and_info_conn.html">Get business connection and info conn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../giga_images.html">Giga Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../giga_request.html">Giga Request</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gigachatai.html">Giga Chat AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_db_sub_operations.html">Handler database and subscribe operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_email.html">Handler EMail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_email_sender.html">Handler EMail-Sender</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_promo.html">Handler promo data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_successful_payment.html">Handler successful payment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_yookassa.html">Handler Yookassa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mysql_connection.html">MySQL Connector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pdf_generate_data.html">PDF Generate Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../refund.html">Handler refund</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../send_invoice.html">Handler send invoice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tests.html">Tests (UnitTest)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tickets.html">Tickets</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Manager CW Bot</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Module code</a> &raquo;</li>
+        
+      <li>giga_images</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for giga_images</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
+
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">from</span> <span class="nn">aiogram</span> <span class="kn">import</span> <span class="n">types</span><span class="p">,</span> <span class="n">Bot</span><span class="p">,</span> <span class="n">Router</span><span class="p">,</span> <span class="n">F</span>
+<span class="kn">from</span> <span class="nn">aiogram.types.input_file</span> <span class="kn">import</span> <span class="n">FSInputFile</span>
+<span class="kn">from</span> <span class="nn">aiogram.fsm.context</span> <span class="kn">import</span> <span class="n">FSMContext</span>
+<span class="kn">from</span> <span class="nn">aiogram.utils.keyboard</span> <span class="kn">import</span> <span class="n">InlineKeyboardBuilder</span>
+
+<span class="kn">from</span> <span class="nn">manager_cw_bot_api.buttons</span> <span class="kn">import</span> <span class="n">Buttons</span>
+<span class="kn">from</span> <span class="nn">manager_cw_bot_api.giga_request</span> <span class="kn">import</span> <span class="n">VersionAIImagePro</span>
+<span class="kn">from</span> <span class="nn">manager_cw_bot_api.fsm_handler</span> <span class="kn">import</span> <span class="n">GigaImage</span>
+<span class="kn">from</span> <span class="nn">manager_cw_bot_api.handler_db_sub_operations</span> <span class="kn">import</span> <span class="n">HandlerDB</span>
+
+<span class="n">router_ai_img</span><span class="p">:</span> <span class="n">Router</span> <span class="o">=</span> <span class="n">Router</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="GigaCreator"><a class="viewcode-back" href="../giga_images.html#giga_images.GigaCreator">[docs]</a><span class="k">class</span> <span class="nc">GigaCreator</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class of create image for premium-user.&quot;&quot;&quot;</span>
+    <span class="n">__query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bot</span><span class="p">:</span> <span class="n">Bot</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="p">:</span> <span class="n">Bot</span> <span class="o">=</span> <span class="n">bot</span>
+
+        <span class="n">router_ai_img</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__check_generate_or_cancel</span><span class="p">,</span>
+            <span class="n">GigaImage</span><span class="o">.</span><span class="n">request</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="GigaCreator.get_query"><a class="viewcode-back" href="../giga_images.html#giga_images.GigaCreator.get_query">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">call</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">FSMContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Func of get query from premium-user for create image.</span>
+
+<span class="sd">        :param call: Callback Query.</span>
+<span class="sd">        :param state: FSM.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">await</span> <span class="n">state</span><span class="o">.</span><span class="n">set_state</span><span class="p">(</span><span class="n">GigaImage</span><span class="o">.</span><span class="n">request</span><span class="p">)</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+            <span class="n">chat_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;📸 Enter your query...&quot;</span><span class="p">,</span>
+            <span class="n">message_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span>
+        <span class="p">)</span></div>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">__check_generate_or_cancel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">Message</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">FSMContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check generation.</span>
+
+<span class="sd">        :param message: Query from user.</span>
+<span class="sd">        :param state: FSM.</span>
+
+<span class="sd">        :return: None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">await</span> <span class="n">state</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">generate_image</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__query</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">text</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+            <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">, are you want to *generate image*? &quot;</span>
+                 <span class="sa">f</span><span class="s2">&quot;Are you sure?&quot;</span><span class="p">,</span>
+            <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">(),</span>
+            <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span>
+        <span class="p">)</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">set_message_reaction</span><span class="p">(</span>
+            <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="n">message_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+            <span class="n">reaction</span><span class="o">=</span><span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">ReactionTypeEmoji</span><span class="p">(</span>
+                <span class="n">types</span><span class="o">=</span><span class="s1">&#39;emoji&#39;</span><span class="p">,</span>
+                <span class="n">emoji</span><span class="o">=</span><span class="s1">&#39;🫡&#39;</span>
+            <span class="p">)]</span>
+        <span class="p">)</span>
+        <span class="n">router_ai_img</span><span class="o">.</span><span class="n">callback_query</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__handler_query</span><span class="p">,</span>
+            <span class="n">F</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="s2">&quot;generate&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">__handler_query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">call</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Manage of query from premium-user for create image.</span>
+
+<span class="sd">        :param call: Call-Query.</span>
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__query</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">text</span><span class="o">=</span><span class="s2">&quot;💫 Please, wait! I&#39;m generating... ⏳&quot;</span><span class="p">,</span>
+                <span class="n">message_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span>
+            <span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The exception has arisen: </span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">text</span><span class="o">=</span><span class="s2">&quot;💫 Please, wait! I&#39;m generating... ⏳&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+
+        <span class="n">image_data</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bytes</span> <span class="o">=</span> <span class="k">await</span> <span class="n">VersionAIImagePro</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">image_data</span> <span class="o">==</span> <span class="s2">&quot;Sorry! I updated the data. Please, repeat your request :)&quot;</span><span class="p">:</span>
+                <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">back_on_main</span><span class="p">()</span>
+                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+                    <span class="n">chat_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                    <span class="n">text</span><span class="o">=</span><span class="n">image_data</span><span class="p">,</span>
+                    <span class="n">message_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+                    <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">image</span><span class="p">:</span> <span class="n">Image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">image_data</span><span class="p">))</span>
+                <span class="n">temp_image</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;AI_Photo_By_CW_PREMIUM_Version.jpg&#39;</span>
+                <span class="n">image</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">temp_image</span><span class="p">,</span> <span class="s1">&#39;JPEG&#39;</span><span class="p">)</span>
+
+                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_document</span><span class="p">(</span>
+                    <span class="n">chat_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                    <span class="n">document</span><span class="o">=</span><span class="n">FSInputFile</span><span class="p">(</span><span class="n">temp_image</span><span class="p">),</span>
+                    <span class="n">caption</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;&lt;b&gt;</span><span class="si">{</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">&lt;/b&gt;, the new photo has been generated&quot;</span>
+                            <span class="sa">f</span><span class="s2">&quot; according to your request: &lt;blockquote&gt;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__query</span><span class="si">}</span><span class="s2">&quot;</span>
+                            <span class="sa">f</span><span class="s2">&quot;&lt;/blockquote&gt;</span><span class="se">\n\n</span><span class="s2">✨ There are still generations left: ♾.</span><span class="se">\n\n</span><span class="s2">The &quot;</span>
+                            <span class="sa">f</span><span class="s2">&quot;photo is attached to the message as a file. Download it by clicking &quot;</span>
+                            <span class="sa">f</span><span class="s2">&quot;on the button above.</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+                            <span class="sa">f</span><span class="s2">&quot;#AI_Photo</span><span class="se">\n</span><span class="s2">Developer: @aleksandr_twitt.&quot;</span><span class="p">,</span>
+                    <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;HTML&quot;</span><span class="p">,</span>
+                    <span class="n">message_effect_id</span><span class="o">=</span><span class="s1">&#39;5104841245755180586&#39;</span>
+                <span class="p">)</span>
+
+                <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">temp_image</span><span class="p">)</span>
+
+                <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">back_on_main</span><span class="p">()</span>
+                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                    <span class="n">chat_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                    <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Return to main-menu:&quot;</span><span class="p">,</span>
+                    <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+                <span class="p">)</span>
+
+                <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">update_analytic_datas_count_ai_queries</span><span class="p">()</span>
+
+                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">delete_message</span><span class="p">(</span>
+                    <span class="n">chat_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                    <span class="n">message_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span>
+                <span class="p">)</span>
+
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The exception has arisen: </span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+            <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">back_on_main</span><span class="p">()</span>
+            <span class="k">if</span> <span class="p">(</span><span class="s2">&quot;cannot identify image file&quot;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">)</span> <span class="ow">or</span>
+                    <span class="s2">&quot;bytes-like object is required, not &#39;str&#39;&quot;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">)):</span>
+                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+                    <span class="n">chat_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                    <span class="n">text</span><span class="o">=</span><span class="n">image_data</span><span class="p">,</span>
+                    <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">(),</span>
+                    <span class="n">message_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+                    <span class="n">chat_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                    <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🤔 Oh, something wrong! 👌🏻 Please, don&#39;t worry! &quot;</span>
+                         <span class="s2">&quot;Write ticket or EMail: help@cwr.su.&quot;</span><span class="p">,</span>
+                    <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">(),</span>
+                    <span class="n">message_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span>
+                <span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2024, Alexander Laptev, CW.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

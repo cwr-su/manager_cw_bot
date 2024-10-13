@@ -1,0 +1,724 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>handler_promo &mdash; Manager CW Bot 6.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/fonts.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Manager CW Bot
+          
+
+          
+            
+            <img src="../_static/manager_cw_bot_logo_black_and_cw-white_200pxX200px.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                6.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Methods and functions:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation lib, configuration and run the bot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../info_updates.html">Information about last update | August update!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analytics.html">Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../business.html">Business</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../business_answers.html">Business handler for answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../business_handler.html">Business handler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../buttons.html">Buttons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../create_table.html">Create Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fsm_handler.html">Handler of FSM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../example_bot_json.html">Example of a bot.json file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get_business_conn_and_info_conn.html">Get business connection and info conn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../giga_images.html">Giga Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../giga_request.html">Giga Request</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gigachatai.html">Giga Chat AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_db_sub_operations.html">Handler database and subscribe operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_email.html">Handler EMail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_email_sender.html">Handler EMail-Sender</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_promo.html">Handler promo data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_successful_payment.html">Handler successful payment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_yookassa.html">Handler Yookassa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mysql_connection.html">MySQL Connector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pdf_generate_data.html">PDF Generate Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../refund.html">Handler refund</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../send_invoice.html">Handler send invoice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tests.html">Tests (UnitTest)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tickets.html">Tickets</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Manager CW Bot</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Module code</a> &raquo;</li>
+        
+      <li>handler_promo</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for handler_promo</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Promo-control module.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="kn">from</span> <span class="nn">aiogram</span> <span class="kn">import</span> <span class="n">types</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">Router</span><span class="p">,</span> <span class="n">Bot</span>
+<span class="kn">from</span> <span class="nn">aiogram.fsm.context</span> <span class="kn">import</span> <span class="n">FSMContext</span>
+<span class="kn">from</span> <span class="nn">aiogram.utils.keyboard</span> <span class="kn">import</span> <span class="n">InlineKeyboardBuilder</span>
+
+<span class="kn">from</span> <span class="nn">manager_cw_bot_api.buttons</span> <span class="kn">import</span> <span class="n">Buttons</span>
+<span class="kn">from</span> <span class="nn">manager_cw_bot_api.fsm_handler</span> <span class="kn">import</span> <span class="p">(</span><span class="n">ProcessEnteringPromoST1</span><span class="p">,</span> <span class="n">ProcessAddNewPromoPromoST2</span><span class="p">,</span>
+                                            <span class="n">ProcessDeletePromoPromoST2</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">manager_cw_bot_api.handler_db_sub_operations</span> <span class="kn">import</span> <span class="n">HandlerDB</span>
+
+<span class="n">router_promo</span><span class="p">:</span> <span class="n">Router</span> <span class="o">=</span> <span class="n">Router</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="HandlerEP"><a class="viewcode-back" href="../handler_promo.html#handler_promo.HandlerEP">[docs]</a><span class="k">class</span> <span class="nc">HandlerEP</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class for get premium if user has a promo code.&quot;&quot;&quot;</span>
+    <span class="n">__promo_code</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bot</span><span class="p">:</span> <span class="n">Bot</span><span class="p">,</span> <span class="n">admin_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="p">:</span> <span class="n">Bot</span> <span class="o">=</span> <span class="n">bot</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__admin_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">admin_id</span>
+
+        <span class="n">router_promo</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__entering_promo_step1</span><span class="p">,</span>
+            <span class="n">ProcessEnteringPromoST1</span><span class="o">.</span><span class="n">promo</span>
+        <span class="p">)</span>
+        <span class="n">router_promo</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__add_new_promo_admin_ctrl_step2</span><span class="p">,</span>
+            <span class="n">ProcessAddNewPromoPromoST2</span><span class="o">.</span><span class="n">promo</span>
+        <span class="p">)</span>
+        <span class="n">router_promo</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__delete_promo_data_admin_ctrl_step2</span><span class="p">,</span>
+            <span class="n">ProcessDeletePromoPromoST2</span><span class="o">.</span><span class="n">promo</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="HandlerEP.enter_promo"><a class="viewcode-back" href="../handler_promo.html#handler_promo.HandlerEP.enter_promo">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">enter_promo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">call</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">FSMContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Function for get a promo code from user.</span>
+
+<span class="sd">        :param call: Callback Query.</span>
+<span class="sd">        :param state: FSM.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">await</span> <span class="n">state</span><span class="o">.</span><span class="n">set_state</span><span class="p">(</span><span class="n">ProcessEnteringPromoST1</span><span class="o">.</span><span class="n">promo</span><span class="p">)</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+            <span class="n">chat_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🎫 Enter a promo code...&quot;</span><span class="p">,</span>
+            <span class="n">message_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span>
+        <span class="p">)</span></div>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">__entering_promo_step1</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">Message</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">FSMContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get promo code (text format).</span>
+
+<span class="sd">        :param message: A promo code.</span>
+<span class="sd">        :param state: FSM.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">await</span> <span class="n">state</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+        <span class="n">promo</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">text</span>
+        <span class="n">checked</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">check_promo_code</span><span class="p">(</span><span class="n">promo</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">checked</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+            <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">back_on_main</span><span class="p">()</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">text</span><span class="o">=</span><span class="s2">&quot;❌ *Invalid promo code*.&quot;</span><span class="p">,</span>
+                <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span><span class="p">,</span>
+                <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+            <span class="p">)</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Invalid promo code (which was entering by user to activate). &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;User ID: </span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="n">checked</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">type_promo</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">checked</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="n">type_promo</span> <span class="o">==</span> <span class="s2">&quot;premium_month&quot;</span><span class="p">:</span>
+                <span class="n">count_days</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">30</span>
+            <span class="k">elif</span> <span class="n">type_promo</span> <span class="o">==</span> <span class="s2">&quot;premium_five_days&quot;</span><span class="p">:</span>
+                <span class="n">count_days</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span>
+            <span class="k">elif</span> <span class="n">type_promo</span> <span class="o">==</span> <span class="s2">&quot;premium_one_week&quot;</span><span class="p">:</span>
+                <span class="n">count_days</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">7</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">count_days</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+
+            <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">sure_apply_promo</span><span class="p">()</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;⚠️ Are you sure you want to *apply this promo code* &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;`</span><span class="si">{</span><span class="n">promo</span><span class="si">}</span><span class="s2">`? You&#39;ll receive </span><span class="si">{</span><span class="n">count_days</span><span class="si">}</span><span class="s2"> days of CW PREMIUM.&quot;</span><span class="p">,</span>
+                <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span><span class="p">,</span>
+                <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+            <span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__promo_code</span> <span class="o">=</span> <span class="n">promo</span>
+
+            <span class="n">router_promo</span><span class="o">.</span><span class="n">callback_query</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">__entering_promo_step2</span><span class="p">,</span>
+                <span class="n">F</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="s2">&quot;apply_promo&quot;</span>
+            <span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">__entering_promo_step2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">call</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Confirmation of apply a promo code.</span>
+
+<span class="sd">        :param call: Callback Query.</span>
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">checked_sub</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">|</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">sub_promo_code</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__promo_code</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">checked_sub</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">count_days</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+
+            <span class="n">checked</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">check_promo_code</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__promo_code</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">checked</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+
+                <span class="n">type_promo</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">checked</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">type_promo</span> <span class="o">==</span> <span class="s2">&quot;premium_month&quot;</span><span class="p">:</span>
+                    <span class="n">count_days</span> <span class="o">=</span> <span class="mi">30</span>
+                <span class="k">elif</span> <span class="n">type_promo</span> <span class="o">==</span> <span class="s2">&quot;premium_five_days&quot;</span><span class="p">:</span>
+                    <span class="n">count_days</span> <span class="o">=</span> <span class="mi">5</span>
+                <span class="k">elif</span> <span class="n">type_promo</span> <span class="o">==</span> <span class="s2">&quot;premium_one_week&quot;</span><span class="p">:</span>
+                    <span class="n">count_days</span> <span class="o">=</span> <span class="mi">7</span>
+
+            <span class="n">res</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">insert_new_record_for_subscribe</span><span class="p">(</span>
+                <span class="n">message</span><span class="o">=</span><span class="n">call</span><span class="p">,</span>
+                <span class="n">days</span><span class="o">=</span><span class="n">count_days</span><span class="p">,</span>
+                <span class="n">promo</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__promo_code</span>
+            <span class="p">)</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+                <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">back_on_main</span><span class="p">()</span>
+                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+                    <span class="n">chat_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                    <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;✅ Successful! Done!</span><span class="se">\n</span><span class="s2">Your CW PREMIUM is *activated*!</span><span class="se">\n\n</span><span class="s2">Now you can:&quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">- Use 💥 Kandinsky AI | Generate IMG 🖼</span><span class="se">\n</span><span class="s2">&quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;- 🧠 Use AI-Assistance</span><span class="se">\n</span><span class="s2">- and more; only MORE!&quot;</span><span class="p">,</span>
+                    <span class="n">message_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+                    <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span><span class="p">,</span>
+                    <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+                <span class="p">)</span>
+
+                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                    <span class="n">chat_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__admin_id</span><span class="p">,</span>
+                    <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;🆕 Admin, CW PREMIUM +1 person! 🔥 | With PROMO: &quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;`</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__promo_code</span><span class="si">}</span><span class="s2">` | &quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;Days: </span><span class="si">{</span><span class="n">count_days</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">,</span>
+                    <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span><span class="p">,</span>
+                    <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+                <span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">checked_sub</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;none&quot;</span><span class="p">:</span>
+                    <span class="n">delete</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">delete_promo_code</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__promo_code</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">delete</span><span class="p">:</span>
+                        <span class="k">pass</span>
+
+                <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Successfully activated promo code: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__promo_code</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;User ID: </span><span class="si">{</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+                    <span class="n">chat_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                    <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;❌ Failed!</span><span class="se">\n</span><span class="s2">Your CW PREMIUM *isn&#39;t activated*!</span><span class="se">\n\n</span><span class="s2">Now you should:&quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">- write on EMail: help@cwr.su.&quot;</span><span class="p">,</span>
+                    <span class="n">message_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+                    <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span>
+                <span class="p">)</span>
+
+                <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Failed activated promo code: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__promo_code</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;User ID: </span><span class="si">{</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">checked_sub</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;❌ Failed!</span><span class="se">\n</span><span class="s2">Your CW PREMIUM *isn&#39;t activated*!</span><span class="se">\n\n</span><span class="s2">Now you should:&quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">- write on EMail: help@cwr.su.&quot;</span><span class="p">,</span>
+                <span class="n">message_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+                <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span>
+            <span class="p">)</span>
+
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Failed activated promo code: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__promo_code</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;User ID: </span><span class="si">{</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+
+<div class="viewcode-block" id="HandlerEP.show_promo_menu_admin"><a class="viewcode-back" href="../handler_promo.html#handler_promo.HandlerEP.show_promo_menu_admin">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">show_promo_menu_admin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">call_query</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Show PROMO Menu. | Control ADMIN.</span>
+
+<span class="sd">        :param call_query: Callback Query.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">get_menu_admin_promos</span><span class="p">()</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+            <span class="n">chat_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;👑 &lt;b&gt;</span><span class="si">{</span><span class="n">call_query</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">&lt;/b&gt;, &quot;</span>
+                 <span class="sa">f</span><span class="s2">&quot;select the item you need below.</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="n">message_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+            <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">(),</span>
+            <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;HTML&quot;</span>
+        <span class="p">)</span>
+
+        <span class="n">router_promo</span><span class="o">.</span><span class="n">callback_query</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__add_new_promo_code_admin_ctrl</span><span class="p">,</span>
+            <span class="n">F</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="s2">&quot;add_new_promo&quot;</span>
+        <span class="p">)</span>
+        <span class="n">router_promo</span><span class="o">.</span><span class="n">callback_query</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__show_promo_datas_admin_ctrl</span><span class="p">,</span>
+            <span class="n">F</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="s2">&quot;show_promo_datas&quot;</span>
+        <span class="p">)</span>
+        <span class="n">router_promo</span><span class="o">.</span><span class="n">callback_query</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__delete_promo_data_admin_ctrl</span><span class="p">,</span>
+            <span class="n">F</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="s2">&quot;delete_promo_data&quot;</span>
+        <span class="p">)</span></div>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">__show_promo_datas_admin_ctrl</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">call</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Show PROMO datas. | Control ADMIN.</span>
+
+<span class="sd">        :param call: Callback Query.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">datas</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">|</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">show_promo_datas</span><span class="p">()</span>
+        <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">back_in_promo_menu</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">datas</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">text</span><span class="o">=</span><span class="n">datas</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                <span class="n">message_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+                <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;HTML&quot;</span><span class="p">,</span>
+                <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="n">datas</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;🌐 Promo codes *have not been added*.&quot;</span><span class="p">,</span>
+                <span class="n">message_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+                <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span><span class="p">,</span>
+                <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+            <span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">__add_new_promo_code_admin_ctrl</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">call</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add a new promo. | Control ADMIN. | Confirmation.</span>
+
+<span class="sd">        :param call: Callback Query.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">sure_add_new_promo</span><span class="p">()</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+            <span class="n">chat_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;⚠️ Are you sure you want to *add a new promo code*?&quot;</span><span class="p">,</span>
+            <span class="n">message_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+            <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span><span class="p">,</span>
+            <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+        <span class="p">)</span>
+
+        <span class="n">router_promo</span><span class="o">.</span><span class="n">callback_query</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__add_new_promo_admin_ctrl_step1</span><span class="p">,</span>
+            <span class="n">F</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="s2">&quot;add_new_promo_confirmation&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">__add_new_promo_admin_ctrl_step1</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">call</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span><span class="p">,</span>
+            <span class="n">state</span><span class="p">:</span> <span class="n">FSMContext</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add a new promo. | Control ADMIN. | Step 1.</span>
+
+<span class="sd">        :param call: Callback Query.</span>
+<span class="sd">        :param state: FSM.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">await</span> <span class="n">state</span><span class="o">.</span><span class="n">set_state</span><span class="p">(</span><span class="n">ProcessAddNewPromoPromoST2</span><span class="o">.</span><span class="n">promo</span><span class="p">)</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+            <span class="n">chat_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;👌🏻 *</span><span class="si">{</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">*, OK. Create a new promo-data explore &quot;</span>
+                 <span class="sa">f</span><span class="s2">&quot;this format:</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+                 <span class="sa">f</span><span class="s2">&quot;*FORMAT*:</span><span class="se">\n</span><span class="s2">&quot;</span>
+                 <span class="sa">f</span><span class="s2">&quot;```Example NEW_PROMO_CODE ~ NUM_USES ~ TYPE_PROMO```</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+                 <span class="sa">f</span><span class="s2">&quot;Types of promo codes:</span><span class="se">\n</span><span class="s2">&quot;</span>
+                 <span class="sa">f</span><span class="s2">&quot;1. `premium_one_week`;</span><span class="se">\n</span><span class="s2">&quot;</span>
+                 <span class="sa">f</span><span class="s2">&quot;2. `premium_five_days`;</span><span class="se">\n</span><span class="s2">&quot;</span>
+                 <span class="sa">f</span><span class="s2">&quot;3. `premium_month`;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="n">message_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+            <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">__add_new_promo_admin_ctrl_step2</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">message</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">Message</span><span class="p">,</span>
+            <span class="n">state</span><span class="p">:</span> <span class="n">FSMContext</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add a new promo. | Control ADMIN. | Step 2.</span>
+
+<span class="sd">        :param message: Message from the admin with PROMO-data.</span>
+<span class="sd">        :param state: FSM.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">await</span> <span class="n">state</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+        <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">try_again_add_new_promo_or_back_on_main</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; ~ &quot;</span><span class="p">))</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">promo</span><span class="p">,</span> <span class="n">num_uses</span><span class="p">,</span> <span class="n">type_promo</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; ~ &quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">num_uses</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">promo</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="n">checked</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">add_new_promo_code</span><span class="p">(</span><span class="n">promo</span><span class="p">,</span> <span class="n">num_uses</span><span class="p">,</span> <span class="n">type_promo</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">checked</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+                    <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">back_in_promo_menu</span><span class="p">()</span>
+                    <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                        <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                        <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;✅ *Successful*! Done!</span><span class="se">\n\n</span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">, &quot;</span>
+                             <span class="sa">f</span><span class="s2">&quot;*the promo data has been added*!&quot;</span><span class="p">,</span>
+                        <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span><span class="p">,</span>
+                        <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+                    <span class="p">)</span>
+
+                    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;Successfully has been added promo data &quot;</span>
+                        <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">promo</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">num_uses</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">type_promo</span><span class="si">}</span><span class="s2">)&quot;</span>
+                    <span class="p">)</span>
+                <span class="k">elif</span> <span class="n">checked</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">checked</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;already_exist&quot;</span><span class="p">:</span>
+                        <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">back_in_promo_menu</span><span class="p">()</span>
+                        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                            <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                            <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;❌ *</span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">*, the promo data &quot;</span>
+                                 <span class="sa">f</span><span class="s2">&quot;*already exists*!&quot;</span><span class="p">,</span>
+                            <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span><span class="p">,</span>
+                            <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+                        <span class="p">)</span>
+                        <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                            <span class="sa">f</span><span class="s2">&quot;The Promo data hasn&#39;t been added &quot;</span>
+                            <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">promo</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">num_uses</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">type_promo</span><span class="si">}</span><span class="s2">); Already Exist!&quot;</span>
+                        <span class="p">)</span>
+                    <span class="k">elif</span> <span class="n">checked</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;invalid_type&quot;</span><span class="p">:</span>
+                        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                            <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                            <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;❌ *</span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">*, the type of promo &quot;</span>
+                                 <span class="sa">f</span><span class="s2">&quot;is *invalid*!&quot;</span><span class="p">,</span>
+                            <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span><span class="p">,</span>
+                            <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+                        <span class="p">)</span>
+                        <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                            <span class="sa">f</span><span class="s2">&quot;The Promo data hasn&#39;t been added &quot;</span>
+                            <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">promo</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">num_uses</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">type_promo</span><span class="si">}</span><span class="s2">); Invalid Type!&quot;</span>
+                        <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                    <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                    <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;❌ *</span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">*, sorry. But i can&#39;t add &quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;your PROMO data!</span><span class="se">\n\n</span><span class="s2">*Number of uses* must be *&gt;= 1* and *length* of &quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;promo code must be *&gt;= 3*!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
+                    <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span><span class="p">,</span>
+                    <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+                <span class="p">)</span>
+                <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;The Promo data hasn&#39;t been added &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">promo</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">num_uses</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">type_promo</span><span class="si">}</span><span class="s2">); Invalid num_uses/length of promo code!&quot;</span>
+                <span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;❌ *</span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">*, sorry. But i can&#39;t &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;split your message!</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;*FORMAT*:</span><span class="se">\n</span><span class="s2">&quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;```Example NEW_PROMO_CODE ~ NUM_USES ~ TYPE_PROMO```</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;Types of promo codes:</span><span class="se">\n</span><span class="s2">&quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;1. `premium_one_week`;</span><span class="se">\n</span><span class="s2">&quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;2. `premium_five_days`;</span><span class="se">\n</span><span class="s2">&quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;3. `premium_month`;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
+                <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span><span class="p">,</span>
+                <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+            <span class="p">)</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;The Promo data hasn&#39;t been added;&quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;Can&#39;t split message!&quot;</span>
+            <span class="p">)</span>
+
+            <span class="n">router_promo</span><span class="o">.</span><span class="n">callback_query</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">__add_new_promo_admin_ctrl_step1</span><span class="p">,</span>
+                <span class="n">F</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="s2">&quot;try_again_add_new_promo&quot;</span>
+            <span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">__delete_promo_data_admin_ctrl</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">call</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Delete promo. | Control ADMIN. | Confirmation.</span>
+
+<span class="sd">        :param call: Callback Query.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">sure_delete_promo</span><span class="p">()</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+            <span class="n">chat_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;⚠️ Are you sure you want to *delete a promo code*?&quot;</span><span class="p">,</span>
+            <span class="n">message_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+            <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span><span class="p">,</span>
+            <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+        <span class="p">)</span>
+
+        <span class="n">router_promo</span><span class="o">.</span><span class="n">callback_query</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__delete_promo_data_admin_ctrl_step1</span><span class="p">,</span>
+            <span class="n">F</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="s2">&quot;delete_promo_confirmation&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">__delete_promo_data_admin_ctrl_step1</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">call</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span><span class="p">,</span>
+            <span class="n">state</span><span class="p">:</span> <span class="n">FSMContext</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Delete promo. | Control ADMIN. | Step 1.</span>
+
+<span class="sd">        :param call: Callback Query.</span>
+<span class="sd">        :param state: FSM.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">await</span> <span class="n">state</span><span class="o">.</span><span class="n">set_state</span><span class="p">(</span><span class="n">ProcessDeletePromoPromoST2</span><span class="o">.</span><span class="n">promo</span><span class="p">)</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+            <span class="n">chat_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;👌🏻 *</span><span class="si">{</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">*, OK. Send me the promo code that you &quot;</span>
+                 <span class="sa">f</span><span class="s2">&quot;want to delete.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="n">message_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+            <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">__delete_promo_data_admin_ctrl_step2</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">message</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">Message</span><span class="p">,</span>
+            <span class="n">state</span><span class="p">:</span> <span class="n">FSMContext</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Delete promo. | Control ADMIN. | Step 2.</span>
+
+<span class="sd">        :param message: Message from the admin with PROMO-data.</span>
+<span class="sd">        :param state: FSM.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">await</span> <span class="n">state</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+        <span class="n">promo</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">text</span>
+        <span class="n">checked</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">delete_promo_code</span><span class="p">(</span><span class="n">promo</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">checked</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">back_in_promo_menu</span><span class="p">()</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;✅ *Successful*! Done!</span><span class="se">\n\n</span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">, *the promo &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;data has been deleted*!&quot;</span><span class="p">,</span>
+                <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span><span class="p">,</span>
+                <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+            <span class="p">)</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Successfully has been deleted promo data &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;(promo-code:</span><span class="si">{</span><span class="n">promo</span><span class="si">}</span><span class="s2">)&quot;</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">try_again_delete_promo_or_back_on_main</span><span class="p">()</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;❌ *</span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">*, the promo data *doesn&#39;t exist*!</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;Or there was some kind of error when deleting the record. &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;ANSWER: (checked) </span><span class="si">{</span><span class="n">checked</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">,</span>
+                <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span><span class="p">,</span>
+                <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+            <span class="p">)</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;The Promo data hasn&#39;t been deleted &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;(promo-code:</span><span class="si">{</span><span class="n">promo</span><span class="si">}</span><span class="s2">); Maybe this promo code doesn&#39;t exist.&quot;</span>
+            <span class="p">)</span>
+
+            <span class="n">router_promo</span><span class="o">.</span><span class="n">callback_query</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">__delete_promo_data_admin_ctrl_step1</span><span class="p">,</span>
+                <span class="n">F</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="s2">&quot;try_again_delete_promo&quot;</span>
+            <span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2024, Alexander Laptev, CW.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,594 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="_static/favicons/FaviconSVG_ManagerCWBotAPI.svg" type="image/svg+xml">
+    <link rel="icon" sizes="16x16" href="_static/favicons/favicon/favicon-16x16.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="_static/favicons/favicon/favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon" sizes="180x180" href="_static/favicons/favicon/apple-touch-icon-180x180.png" type="image/png">
+    <link rel="mask-icon" href="_static/favicons/favicon/safari-pinned-tab.svg" color="#5bbad5" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Giga Chat AI &mdash; Manager CW Bot 6.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Handler database and subscribe operations" href="handler_db_sub_operations.html" />
+    <link rel="prev" title="Giga Request" href="giga_request.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Manager CW Bot
+          
+
+          
+            
+            <img src="_static/manager_cw_bot_logo_black_and_cw-white_200pxX200px.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                6.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Methods and functions:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation lib, configuration and run the bot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_updates.html">Information about last update | August update!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analytics.html">Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="business.html">Business</a></li>
+<li class="toctree-l1"><a class="reference internal" href="business_answers.html">Business handler for answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="business_handler.html">Business handler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="buttons.html">Buttons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="create_table.html">Create Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fsm_handler.html">Handler of FSM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example_bot_json.html">Example of a bot.json file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get_business_conn_and_info_conn.html">Get business connection and info conn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="giga_images.html">Giga Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="giga_request.html">Giga Request</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Giga Chat AI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-gigachatai">Processing and sending responses to requests to the AI model.</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="handler_db_sub_operations.html">Handler database and subscribe operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="handler_email.html">Handler EMail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="handler_email_sender.html">Handler EMail-Sender</a></li>
+<li class="toctree-l1"><a class="reference internal" href="handler_promo.html">Handler promo data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="handler_successful_payment.html">Handler successful payment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="handler_yookassa.html">Handler Yookassa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mysql_connection.html">MySQL Connector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pdf_generate_data.html">PDF Generate Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="refund.html">Handler refund</a></li>
+<li class="toctree-l1"><a class="reference internal" href="send_invoice.html">Handler send invoice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests.html">Tests (UnitTest)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tickets.html">Tickets</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Manager CW Bot</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Giga Chat AI</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="giga-chat-ai">
+<h1>Giga Chat AI<a class="headerlink" href="#giga-chat-ai" title="Permalink to this heading"><span>#</span></a></h1>
+<section id="module-gigachatai">
+<span id="processing-and-sending-responses-to-requests-to-the-ai-model"></span><h2>Processing and sending responses to requests to the AI model.<a class="headerlink" href="#module-gigachatai" title="Permalink to this heading"><span>#</span></a></h2>
+<p>Module of the GigaChatAI.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="gigachatai.BaseChatDialog">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gigachatai.</span></span><span class="sig-name descname"><span class="pre">BaseChatDialog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gigachatai.html#BaseChatDialog"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gigachatai.BaseChatDialog" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>The class for Chat-Dialog function (Base Class-Sector).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>bot</strong> (<em>Bot</em>) – </p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="gigachatai.BaseChatDialog.chat_dialog">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">chat_dialog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gigachatai.html#BaseChatDialog.chat_dialog"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gigachatai.BaseChatDialog.chat_dialog" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Basic Chat-Dialog function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>message</strong> (<em>Message</em>) – Message of user / query.</p></li>
+<li><p><strong>state</strong> (<em>FSMContext</em>) – FSM.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gigachatai.BaseNewFSMContext">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gigachatai.</span></span><span class="sig-name descname"><span class="pre">BaseNewFSMContext</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gigachatai.html#BaseNewFSMContext"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gigachatai.BaseNewFSMContext" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>The base-class for create new state (FSM).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>bot</strong> (<em>Bot</em>) – </p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="gigachatai.BaseNewFSMContext.chat_dialog">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">chat_dialog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gigachatai.html#BaseNewFSMContext.chat_dialog"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gigachatai.BaseNewFSMContext.chat_dialog" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Chat-Dialog function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>message</strong> (<em>Message</em>) – Message of user / query.</p></li>
+<li><p><strong>state</strong> (<em>FSMContext</em>) – FSM.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gigachatai.BaseNewFSMContext.set">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gigachatai.html#BaseNewFSMContext.set"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gigachatai.BaseNewFSMContext.set" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Set state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>state</strong> (<em>FSMContext</em>) – FSM.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gigachatai.ChatDialogGigaVersionLight">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gigachatai.</span></span><span class="sig-name descname"><span class="pre">ChatDialogGigaVersionLight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gigachatai.html#ChatDialogGigaVersionLight"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gigachatai.ChatDialogGigaVersionLight" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>The class for Chat-Dialog function (GigaLight V. dialog).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>bot</strong> (<em>Bot</em>) – </p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="gigachatai.ChatDialogGigaVersionLight.chat_dialog">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">chat_dialog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gigachatai.html#ChatDialogGigaVersionLight.chat_dialog"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gigachatai.ChatDialogGigaVersionLight.chat_dialog" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>GLV Chat-Dialog function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>message</strong> (<em>Message</em>) – Message of user / query.</p></li>
+<li><p><strong>state</strong> (<em>FSMContext</em>) – FSM.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gigachatai.ChatDialogGigaVersionPro">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gigachatai.</span></span><span class="sig-name descname"><span class="pre">ChatDialogGigaVersionPro</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gigachatai.html#ChatDialogGigaVersionPro"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gigachatai.ChatDialogGigaVersionPro" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>The class for Chat-Dialog function (GigaPro V. dialog).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>bot</strong> (<em>Bot</em>) – </p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="gigachatai.ChatDialogGigaVersionPro.chat_dialog">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">chat_dialog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gigachatai.html#ChatDialogGigaVersionPro.chat_dialog"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gigachatai.ChatDialogGigaVersionPro.chat_dialog" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>GLV Chat-Dialog function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>message</strong> (<em>Message</em>) – Message of user / query.</p></li>
+<li><p><strong>state</strong> (<em>FSMContext</em>) – FSM.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gigachatai.GigaChatAI">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gigachatai.</span></span><span class="sig-name descname"><span class="pre">GigaChatAI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gigachatai.html#GigaChatAI"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gigachatai.GigaChatAI" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Class of the helper for the users and admin - GigaChat.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bot</strong> (<em>Bot</em>) – </p></li>
+<li><p><strong>call_query</strong> (<em>CallbackQuery</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="gigachatai.GigaChatAI.__chat_dialog_light">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__chat_dialog_light</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gigachatai.GigaChatAI.__chat_dialog_light" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>GLV Chat-Dialog function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>message</strong> (<em>Message</em>) – Message of user / query.</p></li>
+<li><p><strong>state</strong> (<em>FSMContext</em>) – FSM.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gigachatai.GigaChatAI.__chat_dialog_pro">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__chat_dialog_pro</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gigachatai.GigaChatAI.__chat_dialog_pro" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>GPV Chat-Dialog function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>message</strong> (<em>Message</em>) – Message of user / query.</p></li>
+<li><p><strong>state</strong> (<em>FSMContext</em>) – FSM.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gigachatai.GigaChatAI.__giga_version_1">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__giga_version_1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gigachatai.GigaChatAI.__giga_version_1" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Handler of the callback query by click on the btn1: LightVersion of GigaChat.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Query (by click on the button) with callback.</p></li>
+<li><p><strong>state</strong> (<em>FSMContext</em>) – FSM.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gigachatai.GigaChatAI.__giga_version_2">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__giga_version_2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gigachatai.GigaChatAI.__giga_version_2" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Handler of the callback query by click on the btn1: PROVersion of GigaChat.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Query (by click on the button) with callback.</p></li>
+<li><p><strong>state</strong> (<em>FSMContext</em>) – FSM.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gigachatai.GigaChatAI.choosing_ai_model">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">choosing_ai_model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/gigachatai.html#GigaChatAI.choosing_ai_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gigachatai.GigaChatAI.choosing_ai_model" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Choosing AI-Model (PRO/Light) before Chat-Dialog function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gigachatai.NewFSMContextLight">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gigachatai.</span></span><span class="sig-name descname"><span class="pre">NewFSMContextLight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gigachatai.html#NewFSMContextLight"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gigachatai.NewFSMContextLight" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>The class for create new state (FSM) - GVL.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>bot</strong> (<em>Bot</em>) – </p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="gigachatai.NewFSMContextLight.chat_dialog">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">chat_dialog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gigachatai.html#NewFSMContextLight.chat_dialog"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gigachatai.NewFSMContextLight.chat_dialog" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>GLV Chat-Dialog function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>message</strong> (<em>Message</em>) – Message of user / query.</p></li>
+<li><p><strong>state</strong> (<em>FSMContext</em>) – FSM.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gigachatai.NewFSMContextLight.set">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gigachatai.html#NewFSMContextLight.set"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gigachatai.NewFSMContextLight.set" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Set state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>state</strong> (<em>FSMContext</em>) – FSM.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gigachatai.NewFSMContextPro">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gigachatai.</span></span><span class="sig-name descname"><span class="pre">NewFSMContextPro</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gigachatai.html#NewFSMContextPro"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gigachatai.NewFSMContextPro" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>The class for create new state (FSM) - GVL.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>bot</strong> (<em>Bot</em>) – </p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="gigachatai.NewFSMContextPro.chat_dialog">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">chat_dialog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gigachatai.html#NewFSMContextPro.chat_dialog"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gigachatai.NewFSMContextPro.chat_dialog" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>GLV Chat-Dialog function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>message</strong> (<em>Message</em>) – Message of user / query.</p></li>
+<li><p><strong>state</strong> (<em>FSMContext</em>) – FSM.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gigachatai.NewFSMContextPro.set">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gigachatai.html#NewFSMContextPro.set"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gigachatai.NewFSMContextPro.set" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Set state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>state</strong> (<em>FSMContext</em>) – FSM.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="handler_db_sub_operations.html" class="btn btn-neutral float-right" title="Handler database and subscribe operations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="giga_request.html" class="btn btn-neutral float-left" title="Giga Request" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2024, Alexander Laptev, CW.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

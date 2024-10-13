@@ -1,0 +1,608 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>gigachatai &mdash; Manager CW Bot 6.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/fonts.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Manager CW Bot
+          
+
+          
+            
+            <img src="../_static/manager_cw_bot_logo_black_and_cw-white_200pxX200px.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                6.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Methods and functions:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation lib, configuration and run the bot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../info_updates.html">Information about last update | August update!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analytics.html">Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../business.html">Business</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../business_answers.html">Business handler for answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../business_handler.html">Business handler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../buttons.html">Buttons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../create_table.html">Create Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fsm_handler.html">Handler of FSM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../example_bot_json.html">Example of a bot.json file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get_business_conn_and_info_conn.html">Get business connection and info conn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../giga_images.html">Giga Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../giga_request.html">Giga Request</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gigachatai.html">Giga Chat AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_db_sub_operations.html">Handler database and subscribe operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_email.html">Handler EMail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_email_sender.html">Handler EMail-Sender</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_promo.html">Handler promo data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_successful_payment.html">Handler successful payment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_yookassa.html">Handler Yookassa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mysql_connection.html">MySQL Connector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pdf_generate_data.html">PDF Generate Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../refund.html">Handler refund</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../send_invoice.html">Handler send invoice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tests.html">Tests (UnitTest)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tickets.html">Tickets</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Manager CW Bot</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Module code</a> &raquo;</li>
+        
+      <li>gigachatai</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for gigachatai</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Module of the GigaChatAI.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">abc</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="kn">from</span> <span class="nn">aiogram</span> <span class="kn">import</span> <span class="n">Bot</span><span class="p">,</span> <span class="n">types</span><span class="p">,</span> <span class="n">Router</span><span class="p">,</span> <span class="n">F</span>
+<span class="kn">from</span> <span class="nn">aiogram.fsm.context</span> <span class="kn">import</span> <span class="n">FSMContext</span>
+<span class="kn">from</span> <span class="nn">aiogram.utils.keyboard</span> <span class="kn">import</span> <span class="n">InlineKeyboardBuilder</span>
+
+<span class="kn">from</span> <span class="nn">manager_cw_bot_api.buttons</span> <span class="kn">import</span> <span class="n">Buttons</span>
+<span class="kn">from</span> <span class="nn">manager_cw_bot_api.giga_request</span> <span class="kn">import</span> <span class="n">VersionAIPro</span><span class="p">,</span> <span class="n">VersionAILight</span>
+<span class="kn">from</span> <span class="nn">manager_cw_bot_api.handler_db_sub_operations</span> <span class="kn">import</span> <span class="n">HandlerDB</span>
+<span class="kn">from</span> <span class="nn">manager_cw_bot_api.fsm_handler</span> <span class="kn">import</span> <span class="n">GetProcessQueryCDLight</span><span class="p">,</span> <span class="n">GetProcessQueryCDPro</span>
+
+<span class="n">router_chat_ai</span><span class="p">:</span> <span class="n">Router</span> <span class="o">=</span> <span class="n">Router</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="GigaChatAI"><a class="viewcode-back" href="../gigachatai.html#gigachatai.GigaChatAI">[docs]</a><span class="k">class</span> <span class="nc">GigaChatAI</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Class of the helper for the users and admin - GigaChat.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">msg_bot</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">Message</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">request_user</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">bot</span><span class="p">:</span> <span class="n">Bot</span><span class="p">,</span>
+            <span class="n">call_query</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="p">:</span> <span class="n">Bot</span> <span class="o">=</span> <span class="n">bot</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__call_query</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span> <span class="o">=</span> <span class="n">call_query</span>
+
+        <span class="n">router_chat_ai</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__chat_dialog_light</span><span class="p">,</span>
+            <span class="n">GetProcessQueryCDLight</span><span class="o">.</span><span class="n">query</span>
+        <span class="p">)</span>
+
+        <span class="n">router_chat_ai</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__chat_dialog_pro</span><span class="p">,</span>
+            <span class="n">GetProcessQueryCDPro</span><span class="o">.</span><span class="n">query</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="GigaChatAI.choosing_ai_model"><a class="viewcode-back" href="../gigachatai.html#gigachatai.GigaChatAI.choosing_ai_model">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">choosing_ai_model</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Choosing AI-Model (PRO/Light) before Chat-Dialog function.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">get_var_giga_version</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__call_query</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">msg_bot</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__call_query</span><span class="o">.</span><span class="n">message</span>
+
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+            <span class="n">chat_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__call_query</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="n">message_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+            <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">__call_query</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">, please, &quot;</span>
+                 <span class="sa">f</span><span class="s2">&quot;select the required 🧠 AI-Model, click below.&quot;</span><span class="p">,</span>
+            <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">set_message_reaction</span><span class="p">(</span>
+            <span class="n">chat_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__call_query</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="n">message_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+            <span class="n">reaction</span><span class="o">=</span><span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">ReactionTypeEmoji</span><span class="p">(</span>
+                <span class="n">types</span><span class="o">=</span><span class="s1">&#39;emoji&#39;</span><span class="p">,</span>
+                <span class="n">emoji</span><span class="o">=</span><span class="s1">&#39;🫡&#39;</span>
+            <span class="p">)]</span>
+        <span class="p">)</span>
+
+        <span class="n">result</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">check_subscription</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__call_query</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">router_chat_ai</span><span class="o">.</span><span class="n">callback_query</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">__giga_version_1</span><span class="p">,</span>
+                <span class="n">F</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="s2">&quot;gigachat_version_light&quot;</span>
+            <span class="p">)</span>
+            <span class="n">router_chat_ai</span><span class="o">.</span><span class="n">callback_query</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">__giga_version_2</span><span class="p">,</span>
+                <span class="n">F</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="s2">&quot;gigachat_version_pro&quot;</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">router_chat_ai</span><span class="o">.</span><span class="n">callback_query</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">__giga_version_1</span><span class="p">,</span>
+                <span class="n">F</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="s2">&quot;gigachat_version_light&quot;</span>
+            <span class="p">)</span></div>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">__giga_version_1</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">call_query</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">FSMContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Handler of the callback query by click on the btn1: LightVersion of GigaChat.</span>
+
+<span class="sd">        :param call_query: Query (by click on the button) with callback.</span>
+<span class="sd">        :param state: FSM.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">await</span> <span class="n">state</span><span class="o">.</span><span class="n">set_state</span><span class="p">(</span><span class="n">GetProcessQueryCDLight</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Hello! I&#39;m ready to help you! What question are you interested in? 😎</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+                 <span class="s2">&quot;_STOP-Command_: `//stop`.&quot;</span><span class="p">,</span>
+            <span class="n">chat_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="n">message_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">msg_bot</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+            <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span>
+        <span class="p">)</span>
+
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="s2">&quot;AI dialogue in Light mode - activated!&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">__chat_dialog_light</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">Message</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">FSMContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        GLV Chat-Dialog function.</span>
+
+<span class="sd">        :param message: Message of user / query.</span>
+<span class="sd">        :param state: FSM.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cd</span><span class="p">:</span> <span class="n">ChatDialogGigaVersionLight</span> <span class="o">=</span> <span class="n">ChatDialogGigaVersionLight</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="p">)</span>
+        <span class="k">await</span> <span class="n">cd</span><span class="o">.</span><span class="n">chat_dialog</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">state</span><span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">__giga_version_2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">call_query</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">FSMContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Handler of the callback query by click on the btn1: PROVersion of GigaChat.</span>
+
+<span class="sd">        :param call_query: Query (by click on the button) with callback.</span>
+<span class="sd">        :param state: FSM.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">await</span> <span class="n">state</span><span class="o">.</span><span class="n">set_state</span><span class="p">(</span><span class="n">GetProcessQueryCDPro</span><span class="o">.</span><span class="n">query</span><span class="p">)</span>
+
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Hello! I&#39;m ready to help you! What question are you interested in? 😎</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+                 <span class="s2">&quot;_STOP-Command_: `//stop`.&quot;</span><span class="p">,</span>
+            <span class="n">chat_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="n">message_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">msg_bot</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+            <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span>
+        <span class="p">)</span>
+
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="s2">&quot;AI dialogue in PRO mode - activated!&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">__chat_dialog_pro</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">Message</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">FSMContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        GPV Chat-Dialog function.</span>
+
+<span class="sd">        :param message: Message of user / query.</span>
+<span class="sd">        :param state: FSM.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cd</span><span class="p">:</span> <span class="n">ChatDialogGigaVersionPro</span> <span class="o">=</span> <span class="n">ChatDialogGigaVersionPro</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="p">)</span>
+        <span class="k">await</span> <span class="n">cd</span><span class="o">.</span><span class="n">chat_dialog</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">state</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="BaseChatDialog"><a class="viewcode-back" href="../gigachatai.html#gigachatai.BaseChatDialog">[docs]</a><span class="k">class</span> <span class="nc">BaseChatDialog</span><span class="p">(</span><span class="n">abc</span><span class="o">.</span><span class="n">ABC</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The class for Chat-Dialog function (Base Class-Sector).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bot</span><span class="p">:</span> <span class="n">Bot</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bot</span><span class="p">:</span> <span class="n">Bot</span> <span class="o">=</span> <span class="n">bot</span>
+
+<div class="viewcode-block" id="BaseChatDialog.chat_dialog"><a class="viewcode-back" href="../gigachatai.html#gigachatai.BaseChatDialog.chat_dialog">[docs]</a>    <span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">chat_dialog</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">Message</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">FSMContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Basic Chat-Dialog function.</span>
+
+<span class="sd">        :param message: Message of user / query.</span>
+<span class="sd">        :param state: FSM.</span>
+<span class="sd">        </span>
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span></div></div>
+
+
+<div class="viewcode-block" id="ChatDialogGigaVersionLight"><a class="viewcode-back" href="../gigachatai.html#gigachatai.ChatDialogGigaVersionLight">[docs]</a><span class="k">class</span> <span class="nc">ChatDialogGigaVersionLight</span><span class="p">(</span><span class="n">BaseChatDialog</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The class for Chat-Dialog function (GigaLight V. dialog).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ChatDialogGigaVersionLight.chat_dialog"><a class="viewcode-back" href="../gigachatai.html#gigachatai.ChatDialogGigaVersionLight.chat_dialog">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">chat_dialog</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">Message</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">FSMContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        GLV Chat-Dialog function.</span>
+
+<span class="sd">        :param message: Message of user / query.</span>
+<span class="sd">        :param state: FSM.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">!=</span> <span class="s2">&quot;//stop&quot;</span><span class="p">:</span>
+            <span class="n">router_chat_ai</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+                <span class="n">ChatDialogGigaVersionLight</span><span class="o">.</span><span class="n">chat_dialog</span><span class="p">,</span>
+                <span class="n">GetProcessQueryCDLight</span><span class="o">.</span><span class="n">query</span>
+            <span class="p">)</span>
+
+            <span class="n">response</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="k">await</span> <span class="n">VersionAILight</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="n">response</span><span class="p">,</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;*If you want to stop this chat, write* `//stop`.</span><span class="se">\n</span><span class="s2">(Light mode is enabled)&quot;</span><span class="p">,</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+
+            <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">update_analytic_datas_count_ai_queries</span><span class="p">()</span>
+
+            <span class="k">await</span> <span class="n">state</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+            <span class="n">new_state</span><span class="p">:</span> <span class="n">NewFSMContextLight</span> <span class="o">=</span> <span class="n">NewFSMContextLight</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bot</span><span class="p">)</span>
+            <span class="k">await</span> <span class="n">new_state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">back_on_main</span><span class="p">()</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Got it! I have stopped (AI-Chat Dialog).&quot;</span><span class="p">,</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span><span class="p">,</span>
+                <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+            <span class="p">)</span>
+
+            <span class="k">await</span> <span class="n">state</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="s2">&quot;AI dialogue in Light mode - deactivated!&quot;</span>
+            <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="ChatDialogGigaVersionPro"><a class="viewcode-back" href="../gigachatai.html#gigachatai.ChatDialogGigaVersionPro">[docs]</a><span class="k">class</span> <span class="nc">ChatDialogGigaVersionPro</span><span class="p">(</span><span class="n">BaseChatDialog</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The class for Chat-Dialog function (GigaPro V. dialog).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ChatDialogGigaVersionPro.chat_dialog"><a class="viewcode-back" href="../gigachatai.html#gigachatai.ChatDialogGigaVersionPro.chat_dialog">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">chat_dialog</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">Message</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">FSMContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        GLV Chat-Dialog function.</span>
+
+<span class="sd">        :param message: Message of user / query.</span>
+<span class="sd">        :param state: FSM.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">!=</span> <span class="s2">&quot;//stop&quot;</span><span class="p">:</span>
+            <span class="n">router_chat_ai</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+                <span class="n">ChatDialogGigaVersionPro</span><span class="o">.</span><span class="n">chat_dialog</span><span class="p">,</span>
+                <span class="n">GetProcessQueryCDPro</span><span class="o">.</span><span class="n">query</span>
+            <span class="p">)</span>
+
+            <span class="n">response</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="k">await</span> <span class="n">VersionAIPro</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="n">response</span><span class="p">,</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;*If you want to stop this chat, write* `//stop`.</span><span class="se">\n</span><span class="s2">(Pro mode is enabled)&quot;</span><span class="p">,</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+
+            <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">update_analytic_datas_count_ai_queries</span><span class="p">()</span>
+
+            <span class="k">await</span> <span class="n">state</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+            <span class="n">new_state</span><span class="p">:</span> <span class="n">NewFSMContextPro</span> <span class="o">=</span> <span class="n">NewFSMContextPro</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bot</span><span class="p">)</span>
+            <span class="k">await</span> <span class="n">new_state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">back_on_main</span><span class="p">()</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Got it! I have stopped (AI-Chat Dialog-PRO).&quot;</span><span class="p">,</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span><span class="p">,</span>
+                <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+            <span class="p">)</span>
+
+            <span class="k">await</span> <span class="n">state</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="s2">&quot;AI dialogue in PRO mode - deactivated!&quot;</span>
+            <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="BaseNewFSMContext"><a class="viewcode-back" href="../gigachatai.html#gigachatai.BaseNewFSMContext">[docs]</a><span class="k">class</span> <span class="nc">BaseNewFSMContext</span><span class="p">(</span><span class="n">abc</span><span class="o">.</span><span class="n">ABC</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The base-class for create new state (FSM).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bot</span><span class="p">:</span> <span class="n">Bot</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="p">:</span> <span class="n">Bot</span> <span class="o">=</span> <span class="n">bot</span>
+
+<div class="viewcode-block" id="BaseNewFSMContext.set"><a class="viewcode-back" href="../gigachatai.html#gigachatai.BaseNewFSMContext.set">[docs]</a>    <span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">FSMContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set state.</span>
+
+<span class="sd">        :param state: FSM.</span>
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+
+<div class="viewcode-block" id="BaseNewFSMContext.chat_dialog"><a class="viewcode-back" href="../gigachatai.html#gigachatai.BaseNewFSMContext.chat_dialog">[docs]</a>    <span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">chat_dialog</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">Message</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">FSMContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Chat-Dialog function.</span>
+
+<span class="sd">        :param message: Message of user / query.</span>
+<span class="sd">        :param state: FSM.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span></div></div>
+
+
+<div class="viewcode-block" id="NewFSMContextLight"><a class="viewcode-back" href="../gigachatai.html#gigachatai.NewFSMContextLight">[docs]</a><span class="k">class</span> <span class="nc">NewFSMContextLight</span><span class="p">(</span><span class="n">BaseNewFSMContext</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The class for create new state (FSM) - GVL.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bot</span><span class="p">:</span> <span class="n">Bot</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">bot</span><span class="p">)</span>
+        <span class="n">router_chat_ai</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">chat_dialog</span><span class="p">,</span>
+            <span class="n">GetProcessQueryCDLight</span><span class="o">.</span><span class="n">query</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="NewFSMContextLight.set"><a class="viewcode-back" href="../gigachatai.html#gigachatai.NewFSMContextLight.set">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">FSMContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set state.</span>
+<span class="sd">        </span>
+<span class="sd">        :param state: FSM.</span>
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">await</span> <span class="n">state</span><span class="o">.</span><span class="n">set_state</span><span class="p">(</span><span class="n">GetProcessQueryCDLight</span><span class="o">.</span><span class="n">query</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="NewFSMContextLight.chat_dialog"><a class="viewcode-back" href="../gigachatai.html#gigachatai.NewFSMContextLight.chat_dialog">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">chat_dialog</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">Message</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">FSMContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        GLV Chat-Dialog function.</span>
+
+<span class="sd">        :param message: Message of user / query.</span>
+<span class="sd">        :param state: FSM.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cd</span><span class="p">:</span> <span class="n">ChatDialogGigaVersionLight</span> <span class="o">=</span> <span class="n">ChatDialogGigaVersionLight</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="p">)</span>
+        <span class="k">await</span> <span class="n">cd</span><span class="o">.</span><span class="n">chat_dialog</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">state</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="NewFSMContextPro"><a class="viewcode-back" href="../gigachatai.html#gigachatai.NewFSMContextPro">[docs]</a><span class="k">class</span> <span class="nc">NewFSMContextPro</span><span class="p">(</span><span class="n">BaseNewFSMContext</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The class for create new state (FSM) - GVL.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bot</span><span class="p">:</span> <span class="n">Bot</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">bot</span><span class="p">)</span>
+        <span class="n">router_chat_ai</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">chat_dialog</span><span class="p">,</span>
+            <span class="n">GetProcessQueryCDPro</span><span class="o">.</span><span class="n">query</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="NewFSMContextPro.set"><a class="viewcode-back" href="../gigachatai.html#gigachatai.NewFSMContextPro.set">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">FSMContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set state.</span>
+<span class="sd">        </span>
+<span class="sd">        :param state: FSM.</span>
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">await</span> <span class="n">state</span><span class="o">.</span><span class="n">set_state</span><span class="p">(</span><span class="n">GetProcessQueryCDPro</span><span class="o">.</span><span class="n">query</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="NewFSMContextPro.chat_dialog"><a class="viewcode-back" href="../gigachatai.html#gigachatai.NewFSMContextPro.chat_dialog">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">chat_dialog</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">Message</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">FSMContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        GLV Chat-Dialog function.</span>
+
+<span class="sd">        :param message: Message of user / query.</span>
+<span class="sd">        :param state: FSM.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cd</span><span class="p">:</span> <span class="n">ChatDialogGigaVersionPro</span> <span class="o">=</span> <span class="n">ChatDialogGigaVersionPro</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="p">)</span>
+        <span class="k">await</span> <span class="n">cd</span><span class="o">.</span><span class="n">chat_dialog</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">state</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2024, Alexander Laptev, CW.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

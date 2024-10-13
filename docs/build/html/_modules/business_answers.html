@@ -1,0 +1,543 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>business_answers &mdash; Manager CW Bot 6.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/fonts.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Manager CW Bot
+          
+
+          
+            
+            <img src="../_static/manager_cw_bot_logo_black_and_cw-white_200pxX200px.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                6.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Methods and functions:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation lib, configuration and run the bot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../info_updates.html">Information about last update | August update!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analytics.html">Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../business.html">Business</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../business_answers.html">Business handler for answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../business_handler.html">Business handler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../buttons.html">Buttons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../create_table.html">Create Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fsm_handler.html">Handler of FSM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../example_bot_json.html">Example of a bot.json file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get_business_conn_and_info_conn.html">Get business connection and info conn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../giga_images.html">Giga Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../giga_request.html">Giga Request</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gigachatai.html">Giga Chat AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_db_sub_operations.html">Handler database and subscribe operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_email.html">Handler EMail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_email_sender.html">Handler EMail-Sender</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_promo.html">Handler promo data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_successful_payment.html">Handler successful payment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_yookassa.html">Handler Yookassa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mysql_connection.html">MySQL Connector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pdf_generate_data.html">PDF Generate Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../refund.html">Handler refund</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../send_invoice.html">Handler send invoice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tests.html">Tests (UnitTest)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tickets.html">Tickets</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Manager CW Bot</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Module code</a> &raquo;</li>
+        
+      <li>business_answers</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for business_answers</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Module of the answers.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">abc</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="kn">from</span> <span class="nn">aiogram</span> <span class="kn">import</span> <span class="n">types</span><span class="p">,</span> <span class="n">Bot</span>
+
+
+<div class="viewcode-block" id="ChatAction"><a class="viewcode-back" href="../business_answers.html#business_answers.ChatAction">[docs]</a><span class="k">class</span> <span class="nc">ChatAction</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The class for set some action for message.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ChatAction.chat_action"><a class="viewcode-back" href="../business_answers.html#business_answers.ChatAction.chat_action">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">chat_action</span><span class="p">(</span><span class="n">bot</span><span class="p">:</span> <span class="n">Bot</span><span class="p">,</span> <span class="n">chat_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">str</span><span class="p">,</span> <span class="n">action</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                          <span class="n">business_connection_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Send chat action.</span>
+
+<span class="sd">        :param bot: The Bot Object.</span>
+<span class="sd">        :param chat_id: Chat ID.</span>
+<span class="sd">        :param action: Action.</span>
+<span class="sd">        :param business_connection_id: Business connection ID.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">await</span> <span class="n">bot</span><span class="o">.</span><span class="n">send_chat_action</span><span class="p">(</span>
+            <span class="n">chat_id</span><span class="o">=</span><span class="n">chat_id</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="n">action</span><span class="p">,</span>
+            <span class="n">business_connection_id</span><span class="o">=</span><span class="n">business_connection_id</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="Answers"><a class="viewcode-back" href="../business_answers.html#business_answers.Answers">[docs]</a><span class="k">class</span> <span class="nc">Answers</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Answers-Class.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">business_connection_id</span><span class="p">,</span> <span class="n">admin_id</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__business_connection_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">business_connection_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__admin_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">admin_id</span>
+
+<div class="viewcode-block" id="Answers.answer_to_user"><a class="viewcode-back" href="../business_answers.html#business_answers.Answers.answer_to_user">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">answer_to_user</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bot</span><span class="p">:</span> <span class="n">Bot</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">Message</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Answer to a user from admin-account (as admin).</span>
+
+<span class="sd">        :param bot: The Bot Object.</span>
+<span class="sd">        :param message: Message of a user.</span>
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">chat_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span>
+        <span class="n">action</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;typing&quot;</span>
+
+        <span class="k">if</span> <span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__admin_id</span><span class="p">:</span>
+
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;bot.json&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+                <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+
+            <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;BUSINESS_HANDLER&quot;</span><span class="p">]</span>
+
+            <span class="n">thanks_sticker</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;THANKS&quot;</span><span class="p">][</span><span class="s2">&quot;THANKS_STICKER&quot;</span><span class="p">]</span>
+            <span class="n">congratulation_sticker</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;CONGRATULATION&quot;</span><span class="p">][</span><span class="s2">&quot;CONGRATULATION_STICKER&quot;</span><span class="p">]</span>
+            <span class="n">problem_with_bot_sticker</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;PROBLEM_WITH_BOT&quot;</span><span class="p">][</span><span class="s2">&quot;PROBLEM_WITH_BOT_STICKER&quot;</span><span class="p">]</span>
+
+            <span class="n">thanks_text</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;THANKS&quot;</span><span class="p">][</span><span class="s2">&quot;THANKS_TEXT&quot;</span><span class="p">]</span>
+            <span class="n">congratulation_text</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;CONGRATULATION&quot;</span><span class="p">][</span><span class="s2">&quot;CONGRATULATION_TEXT&quot;</span><span class="p">]</span>
+            <span class="n">problem_with_bot_text</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;PROBLEM_WITH_BOT&quot;</span><span class="p">][</span><span class="s2">&quot;PROBLEM_WITH_BOT_TEXT&quot;</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="s2">&quot;пасиб&quot;</span> <span class="ow">in</span> <span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">or</span> <span class="s2">&quot;thank&quot;</span> <span class="ow">in</span> <span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> \
+                    <span class="ow">or</span> <span class="s2">&quot;благодарю&quot;</span> <span class="ow">in</span> <span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">or</span> <span class="s2">&quot;спасиб&quot;</span> <span class="ow">in</span> <span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+                <span class="n">thanks_func_sector</span><span class="p">:</span> <span class="n">FunctionBusinessAnswerThanksSector</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="n">FunctionBusinessAnswerThanksSector</span><span class="p">(</span>
+                        <span class="n">bot</span><span class="p">,</span>
+                        <span class="n">chat_id</span><span class="p">,</span>
+                        <span class="n">action</span><span class="p">,</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">__business_connection_id</span><span class="p">,</span>
+                        <span class="n">thanks_text</span><span class="p">,</span>
+                        <span class="n">thanks_sticker</span><span class="p">,</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">__admin_id</span>
+                    <span class="p">)</span>
+                <span class="p">)</span>
+                <span class="k">await</span> <span class="n">thanks_func_sector</span><span class="o">.</span><span class="n">pattern</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="s2">&quot;с днём рожден&quot;</span> <span class="ow">in</span> <span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">or</span> <span class="s2">&quot;happy birthday&quot;</span> <span class="ow">in</span> \
+                    <span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">or</span> <span class="s2">&quot;с праздник&quot;</span> <span class="ow">in</span> <span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">or</span> \
+                    <span class="s2">&quot;с днем рожден&quot;</span> <span class="ow">in</span> <span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">or</span> <span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;с др&quot;</span><span class="p">:</span>
+                <span class="n">congratulation_func_sector</span><span class="p">:</span> <span class="n">FunctionBusinessAnswerCongratulationSector</span> <span class="o">=</span> \
+                    <span class="n">FunctionBusinessAnswerCongratulationSector</span><span class="p">(</span>
+                        <span class="n">bot</span><span class="p">,</span>
+                        <span class="n">chat_id</span><span class="p">,</span>
+                        <span class="n">action</span><span class="p">,</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">__business_connection_id</span><span class="p">,</span>
+                        <span class="n">congratulation_text</span><span class="p">,</span>
+                        <span class="n">congratulation_sticker</span><span class="p">,</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">__admin_id</span>
+                    <span class="p">)</span>
+                <span class="k">await</span> <span class="n">congratulation_func_sector</span><span class="o">.</span><span class="n">pattern</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;не работает бот&#39;</span> <span class="ow">in</span> <span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">or</span> <span class="s1">&#39;бот не работает&#39;</span> <span class="ow">in</span>
+                    <span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">or</span> <span class="s2">&quot;bot doesn&#39;t work&quot;</span> <span class="ow">in</span> <span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">or</span>
+                    <span class="s2">&quot;bot doesnt work&quot;</span> <span class="ow">in</span> <span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()):</span>
+                <span class="n">bot_doesnt_work_func_sector</span><span class="p">:</span> <span class="n">FunctionBusinessAnswerBotDoesntWorkSector</span> <span class="o">=</span> \
+                    <span class="n">FunctionBusinessAnswerBotDoesntWorkSector</span><span class="p">(</span>
+                        <span class="n">bot</span><span class="p">,</span>
+                        <span class="n">chat_id</span><span class="p">,</span>
+                        <span class="n">action</span><span class="p">,</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">__business_connection_id</span><span class="p">,</span>
+                        <span class="n">problem_with_bot_text</span><span class="p">,</span>
+                        <span class="n">problem_with_bot_sticker</span><span class="p">,</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">__admin_id</span>
+                    <span class="p">)</span>
+                <span class="k">await</span> <span class="n">bot_doesnt_work_func_sector</span><span class="o">.</span><span class="n">pattern</span><span class="p">()</span></div></div>
+
+
+<div class="viewcode-block" id="BaseFunctionBusinessAnswerSector"><a class="viewcode-back" href="../business_answers.html#business_answers.BaseFunctionBusinessAnswerSector">[docs]</a><span class="k">class</span> <span class="nc">BaseFunctionBusinessAnswerSector</span><span class="p">(</span><span class="n">abc</span><span class="o">.</span><span class="n">ABC</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The basic class-sector of function business answer (by some patterns).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">bot</span><span class="p">:</span> <span class="n">Bot</span><span class="p">,</span>
+            <span class="n">chat_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">str</span><span class="p">,</span>
+            <span class="n">action</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+            <span class="n">b_c_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+            <span class="n">text_pattern</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
+            <span class="n">sticker_pattern</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+            <span class="n">admin_id</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_bot</span><span class="p">:</span> <span class="n">Bot</span> <span class="o">=</span> <span class="n">bot</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_chat_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">chat_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_action</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">action</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_business_connection_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">b_c_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_text_pattern</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="n">text_pattern</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_sticker_pattern</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">sticker_pattern</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_admin_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">admin_id</span>
+
+<div class="viewcode-block" id="BaseFunctionBusinessAnswerSector.pattern"><a class="viewcode-back" href="../business_answers.html#business_answers.BaseFunctionBusinessAnswerSector.pattern">[docs]</a>    <span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">pattern</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Pattern-function for business answers.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span></div></div>
+
+
+<div class="viewcode-block" id="FunctionBusinessAnswerThanksSector"><a class="viewcode-back" href="../business_answers.html#business_answers.FunctionBusinessAnswerThanksSector">[docs]</a><span class="k">class</span> <span class="nc">FunctionBusinessAnswerThanksSector</span><span class="p">(</span><span class="n">BaseFunctionBusinessAnswerSector</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The class-sector of function business answer (by pattern &quot;thanks&quot;).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="FunctionBusinessAnswerThanksSector.pattern"><a class="viewcode-back" href="../business_answers.html#business_answers.FunctionBusinessAnswerThanksSector.pattern">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">pattern</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Pattern-function for business answers by phrases-type: &quot;thanks&quot;.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">await</span> <span class="n">ChatAction</span><span class="o">.</span><span class="n">chat_action</span><span class="p">(</span>
+            <span class="n">bot</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_bot</span><span class="p">,</span>
+            <span class="n">chat_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_chat_id</span><span class="p">,</span>
+            <span class="n">action</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_action</span><span class="p">,</span>
+            <span class="n">business_connection_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_business_connection_id</span>
+        <span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_text_pattern</span><span class="p">[</span><span class="s2">&quot;MSG&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;NONE&quot;</span><span class="p">:</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_text_pattern</span><span class="p">[</span><span class="s2">&quot;OFFSET&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;NONE&quot;</span><span class="p">:</span>
+                    <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                        <span class="n">business_connection_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_business_connection_id</span><span class="p">,</span>
+                        <span class="n">chat_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_chat_id</span><span class="p">,</span>
+                        <span class="n">text</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_text_pattern</span><span class="p">[</span><span class="s2">&quot;MSG&quot;</span><span class="p">],</span>
+                        <span class="n">entities</span><span class="o">=</span><span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">MessageEntity</span><span class="p">(</span>
+                            <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;custom_emoji&#39;</span><span class="p">,</span>
+                            <span class="n">offset</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_text_pattern</span><span class="p">[</span><span class="s2">&quot;OFFSET&quot;</span><span class="p">],</span>
+                            <span class="n">length</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_text_pattern</span><span class="p">[</span><span class="s2">&quot;LENGTH&quot;</span><span class="p">],</span>
+                            <span class="n">custom_emoji_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_text_pattern</span><span class="p">[</span><span class="s2">&quot;C_E_ID&quot;</span><span class="p">]</span>
+                        <span class="p">)]</span>
+                    <span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                        <span class="n">business_connection_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_business_connection_id</span><span class="p">,</span>
+                        <span class="n">chat_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_chat_id</span><span class="p">,</span>
+                        <span class="n">text</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_text_pattern</span><span class="p">[</span><span class="s2">&quot;MSG&quot;</span><span class="p">]</span>
+                    <span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_admin_id</span><span class="p">,</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Sorry! The message (THANKS_TEXT) can&#39;t send!</span><span class="se">\n</span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The exception has arisen: </span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sticker_pattern</span> <span class="o">!=</span> <span class="s2">&quot;NONE&quot;</span><span class="p">:</span>
+                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bot</span><span class="o">.</span><span class="n">send_sticker</span><span class="p">(</span>
+                    <span class="n">business_connection_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_business_connection_id</span><span class="p">,</span>
+                    <span class="n">chat_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_chat_id</span><span class="p">,</span>
+                    <span class="n">sticker</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_sticker_pattern</span>
+                <span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_admin_id</span><span class="p">,</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Sorry! The message (THANKS_STICKER) can&#39;t send!</span><span class="se">\n</span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The exception has arisen: </span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="FunctionBusinessAnswerCongratulationSector"><a class="viewcode-back" href="../business_answers.html#business_answers.FunctionBusinessAnswerCongratulationSector">[docs]</a><span class="k">class</span> <span class="nc">FunctionBusinessAnswerCongratulationSector</span><span class="p">(</span><span class="n">BaseFunctionBusinessAnswerSector</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The class-sector of function business answer (by pattern &quot;congratulation&quot;).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="FunctionBusinessAnswerCongratulationSector.pattern"><a class="viewcode-back" href="../business_answers.html#business_answers.FunctionBusinessAnswerCongratulationSector.pattern">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">pattern</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Pattern-function for business answers by phrases-type: &quot;congratulation&quot;.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">await</span> <span class="n">ChatAction</span><span class="o">.</span><span class="n">chat_action</span><span class="p">(</span>
+            <span class="n">bot</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_bot</span><span class="p">,</span>
+            <span class="n">chat_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_chat_id</span><span class="p">,</span>
+            <span class="n">action</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_action</span><span class="p">,</span>
+            <span class="n">business_connection_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_business_connection_id</span>
+        <span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_text_pattern</span><span class="p">[</span><span class="s2">&quot;MSG&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;NONE&quot;</span><span class="p">:</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_text_pattern</span><span class="p">[</span><span class="s2">&quot;OFFSET&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;NONE&quot;</span><span class="p">:</span>
+                    <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                        <span class="n">business_connection_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_business_connection_id</span><span class="p">,</span>
+                        <span class="n">chat_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_chat_id</span><span class="p">,</span>
+                        <span class="n">text</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_text_pattern</span><span class="p">[</span><span class="s2">&quot;MSG&quot;</span><span class="p">],</span>
+                        <span class="n">entities</span><span class="o">=</span><span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">MessageEntity</span><span class="p">(</span>
+                            <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;custom_emoji&#39;</span><span class="p">,</span>
+                            <span class="n">offset</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_text_pattern</span><span class="p">[</span><span class="s2">&quot;OFFSET&quot;</span><span class="p">],</span>
+                            <span class="n">length</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_text_pattern</span><span class="p">[</span><span class="s2">&quot;LENGTH&quot;</span><span class="p">],</span>
+                            <span class="n">custom_emoji_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_text_pattern</span><span class="p">[</span><span class="s2">&quot;C_E_ID&quot;</span><span class="p">]</span>
+                        <span class="p">)]</span>
+                    <span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                        <span class="n">business_connection_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_business_connection_id</span><span class="p">,</span>
+                        <span class="n">chat_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_chat_id</span><span class="p">,</span>
+                        <span class="n">text</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_text_pattern</span><span class="p">[</span><span class="s2">&quot;MSG&quot;</span><span class="p">]</span>
+                    <span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_admin_id</span><span class="p">,</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Sorry! The message (CONGRATULATION_TEXT) can&#39;t send!</span><span class="se">\n</span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The exception has arisen: </span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sticker_pattern</span> <span class="o">!=</span> <span class="s2">&quot;NONE&quot;</span><span class="p">:</span>
+                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bot</span><span class="o">.</span><span class="n">send_sticker</span><span class="p">(</span>
+                    <span class="n">business_connection_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_business_connection_id</span><span class="p">,</span>
+                    <span class="n">chat_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_chat_id</span><span class="p">,</span>
+                    <span class="n">sticker</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_sticker_pattern</span>
+                <span class="p">)</span>
+
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_admin_id</span><span class="p">,</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Sorry! The message (CONGRATULATION_STICKER) can&#39;t send!</span><span class="se">\n</span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The exception has arisen: </span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="FunctionBusinessAnswerBotDoesntWorkSector"><a class="viewcode-back" href="../business_answers.html#business_answers.FunctionBusinessAnswerBotDoesntWorkSector">[docs]</a><span class="k">class</span> <span class="nc">FunctionBusinessAnswerBotDoesntWorkSector</span><span class="p">(</span><span class="n">BaseFunctionBusinessAnswerSector</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The class-sector of function business answer (by pattern &quot;bot doesn&#39;t work&quot;).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="FunctionBusinessAnswerBotDoesntWorkSector.pattern"><a class="viewcode-back" href="../business_answers.html#business_answers.FunctionBusinessAnswerBotDoesntWorkSector.pattern">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">pattern</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Pattern-function for business answers by phrases-type: &quot;bot doesn&#39;t work&quot;.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">await</span> <span class="n">ChatAction</span><span class="o">.</span><span class="n">chat_action</span><span class="p">(</span>
+            <span class="n">bot</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_bot</span><span class="p">,</span>
+            <span class="n">chat_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_chat_id</span><span class="p">,</span>
+            <span class="n">action</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_action</span><span class="p">,</span>
+            <span class="n">business_connection_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_business_connection_id</span>
+        <span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_text_pattern</span><span class="p">[</span><span class="s2">&quot;MSG&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;NONE&quot;</span><span class="p">:</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_text_pattern</span><span class="p">[</span><span class="s2">&quot;OFFSET&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;NONE&quot;</span><span class="p">:</span>
+                    <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                        <span class="n">business_connection_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_business_connection_id</span><span class="p">,</span>
+                        <span class="n">chat_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_chat_id</span><span class="p">,</span>
+                        <span class="n">text</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_text_pattern</span><span class="p">[</span><span class="s2">&quot;MSG&quot;</span><span class="p">],</span>
+                        <span class="n">entities</span><span class="o">=</span><span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">MessageEntity</span><span class="p">(</span>
+                            <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;custom_emoji&#39;</span><span class="p">,</span>
+                            <span class="n">offset</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_text_pattern</span><span class="p">[</span><span class="s2">&quot;OFFSET&quot;</span><span class="p">],</span>
+                            <span class="n">length</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_text_pattern</span><span class="p">[</span><span class="s2">&quot;LENGTH&quot;</span><span class="p">],</span>
+                            <span class="n">custom_emoji_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_text_pattern</span><span class="p">[</span><span class="s2">&quot;C_E_ID&quot;</span><span class="p">]</span>
+                        <span class="p">)]</span>
+                    <span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                        <span class="n">business_connection_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_business_connection_id</span><span class="p">,</span>
+                        <span class="n">chat_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_chat_id</span><span class="p">,</span>
+                        <span class="n">text</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_text_pattern</span><span class="p">[</span><span class="s2">&quot;MSG&quot;</span><span class="p">]</span>
+                    <span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_admin_id</span><span class="p">,</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Sorry! The message (PROBLEM_WITH_BOT_TEXT) can&#39;t send!</span><span class="se">\n</span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The exception has arisen: </span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sticker_pattern</span> <span class="o">!=</span> <span class="s2">&quot;NONE&quot;</span><span class="p">:</span>
+                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bot</span><span class="o">.</span><span class="n">send_sticker</span><span class="p">(</span>
+                    <span class="n">business_connection_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_business_connection_id</span><span class="p">,</span>
+                    <span class="n">chat_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_chat_id</span><span class="p">,</span>
+                    <span class="n">sticker</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_sticker_pattern</span>
+                <span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_admin_id</span><span class="p">,</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Sorry! The message (PROBLEM_WITH_BOT_STICKER) can&#39;t send!</span><span class="se">\n</span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The exception has arisen: </span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2024, Alexander Laptev, CW.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

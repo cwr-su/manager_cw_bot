@@ -1,0 +1,694 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>giga_request &mdash; Manager CW Bot 6.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/fonts.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Manager CW Bot
+          
+
+          
+            
+            <img src="../_static/manager_cw_bot_logo_black_and_cw-white_200pxX200px.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                6.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Methods and functions:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation lib, configuration and run the bot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../info_updates.html">Information about last update | August update!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analytics.html">Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../business.html">Business</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../business_answers.html">Business handler for answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../business_handler.html">Business handler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../buttons.html">Buttons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../create_table.html">Create Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fsm_handler.html">Handler of FSM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../example_bot_json.html">Example of a bot.json file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get_business_conn_and_info_conn.html">Get business connection and info conn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../giga_images.html">Giga Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../giga_request.html">Giga Request</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gigachatai.html">Giga Chat AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_db_sub_operations.html">Handler database and subscribe operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_email.html">Handler EMail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_email_sender.html">Handler EMail-Sender</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_promo.html">Handler promo data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_successful_payment.html">Handler successful payment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_yookassa.html">Handler Yookassa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mysql_connection.html">MySQL Connector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pdf_generate_data.html">PDF Generate Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../refund.html">Handler refund</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../send_invoice.html">Handler send invoice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tests.html">Tests (UnitTest)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tickets.html">Tickets</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Manager CW Bot</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Module code</a> &raquo;</li>
+        
+      <li>giga_request</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for giga_request</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Module of the GigaChatAI model.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">abc</span>
+
+
+<div class="viewcode-block" id="BaseGetData"><a class="viewcode-back" href="../giga_request.html#giga_request.BaseGetData">[docs]</a><span class="k">class</span> <span class="nc">BaseGetData</span><span class="p">(</span><span class="n">abc</span><span class="o">.</span><span class="n">ABC</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The base class for retrieving configuration data.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="BaseGetData.get_data"><a class="viewcode-back" href="../giga_request.html#giga_request.BaseGetData.get_data">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Base function for getting data (from conf-file, which created by admin).</span>
+
+<span class="sd">        :param file_path: File Path of JSON-API-keys for Bot and settings for the GIGACHAT.</span>
+<span class="sd">        :return: Dict with data.</span>
+<span class="sd">        &quot;&quot;&quot;</span></div></div>
+
+
+<div class="viewcode-block" id="BaseVersionAI"><a class="viewcode-back" href="../giga_request.html#giga_request.BaseVersionAI">[docs]</a><span class="k">class</span> <span class="nc">BaseVersionAI</span><span class="p">(</span><span class="n">abc</span><span class="o">.</span><span class="n">ABC</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Base class for selecting the AI version.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="BaseVersionAI.request"><a class="viewcode-back" href="../giga_request.html#giga_request.BaseVersionAI.request">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        AI Version. Return answer to the user (str).</span>
+
+<span class="sd">        :param request: Request from the user.</span>
+<span class="sd">        :return: Answer (tuple) pro-version (&quot;deep&quot; answer).</span>
+<span class="sd">        &quot;&quot;&quot;</span></div></div>
+
+
+<div class="viewcode-block" id="BaseGetToken"><a class="viewcode-back" href="../giga_request.html#giga_request.BaseGetToken">[docs]</a><span class="k">class</span> <span class="nc">BaseGetToken</span><span class="p">(</span><span class="n">abc</span><span class="o">.</span><span class="n">ABC</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The base class for obtaining a token AI-API&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="BaseGetToken.get_token"><a class="viewcode-back" href="../giga_request.html#giga_request.BaseGetToken.get_token">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_token</span><span class="p">(</span><span class="n">auth_token_giga</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get token for admin-AI-Account.</span>
+
+<span class="sd">        :param auth_token_giga: Authorization token.</span>
+<span class="sd">        :return: Access (Auth) Token (answer).</span>
+<span class="sd">        &quot;&quot;&quot;</span></div></div>
+
+
+<div class="viewcode-block" id="GetAuthTokenSber"><a class="viewcode-back" href="../giga_request.html#giga_request.GetAuthTokenSber">[docs]</a><span class="k">class</span> <span class="nc">GetAuthTokenSber</span><span class="p">(</span><span class="n">BaseGetToken</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The base class for obtaining a token AI SBER API (GigaChat API).&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="GetAuthTokenSber.get_token"><a class="viewcode-back" href="../giga_request.html#giga_request.GetAuthTokenSber.get_token">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_token</span><span class="p">(</span><span class="n">auth_token_giga</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get token for admin-AI-Account GigaChat.</span>
+
+<span class="sd">        :param auth_token_giga: Authorization token for GigaChatAI (requests only now).</span>
+<span class="sd">        :return: Access (Auth) Token for GigaChatAI (answers).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;https://ngw.devices.sberbank.ru:9443/api/v2/oauth&quot;</span>
+
+        <span class="n">payload</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;scope=GIGACHAT_API_PERS&#39;</span>
+        <span class="n">headers</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/x-www-form-urlencoded&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Accept&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;RqUID&#39;</span><span class="p">:</span> <span class="s1">&#39;7d0518ce-47eb-47be-8d2d-4d817e351aae&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Authorization&#39;</span><span class="p">:</span> <span class="s1">&#39;Basic &#39;</span> <span class="o">+</span> <span class="n">auth_token_giga</span>
+        <span class="p">}</span>
+
+        <span class="n">response</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span>
+            <span class="n">method</span><span class="o">=</span><span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+            <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
+            <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span>
+            <span class="n">verify</span><span class="o">=</span><span class="kc">False</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">response</span><span class="p">[</span><span class="s1">&#39;access_token&#39;</span><span class="p">]</span></div></div>
+
+
+<div class="viewcode-block" id="BaseAIText"><a class="viewcode-back" href="../giga_request.html#giga_request.BaseAIText">[docs]</a><span class="k">class</span> <span class="nc">BaseAIText</span><span class="p">(</span><span class="n">abc</span><span class="o">.</span><span class="n">ABC</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;AI text-chat-model base class.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="BaseAIText.request"><a class="viewcode-back" href="../giga_request.html#giga_request.BaseAIText.request">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">request</span><span class="p">(</span><span class="n">request_of_user</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">token_giga</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">temperature_giga</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+                      <span class="n">top_p_giga</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">n_giga</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">auth_token_giga</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Answer for the user from the request (from the user) by some AI Model.</span>
+
+<span class="sd">        :param request_of_user: Request from the user.</span>
+<span class="sd">        :param token_giga: Token of some AI Model.</span>
+<span class="sd">        :param temperature_giga: Temperature of an answer.</span>
+<span class="sd">        :param top_p_giga: Alternative to temperature.</span>
+<span class="sd">        :param n_giga: Quality and count answer for the generated.</span>
+<span class="sd">        :param auth_token_giga: Authorization token of some AI Model.</span>
+
+<span class="sd">        :return: Result.</span>
+<span class="sd">        &quot;&quot;&quot;</span></div></div>
+
+
+<div class="viewcode-block" id="BaseAIImage"><a class="viewcode-back" href="../giga_request.html#giga_request.BaseAIImage">[docs]</a><span class="k">class</span> <span class="nc">BaseAIImage</span><span class="p">(</span><span class="n">abc</span><span class="o">.</span><span class="n">ABC</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;AI image-generate-model base class.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="BaseAIImage.request"><a class="viewcode-back" href="../giga_request.html#giga_request.BaseAIImage.request">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">request</span><span class="p">(</span><span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">auth_token_giga</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">token_giga</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create image for some users.</span>
+
+<span class="sd">        :param query: Query from the user.</span>
+<span class="sd">        :param auth_token_giga: Authorization token for some AI Model.</span>
+<span class="sd">        :param token_giga: Token for requests.</span>
+
+<span class="sd">        :return: Image data.</span>
+<span class="sd">        &quot;&quot;&quot;</span></div></div>
+
+
+<div class="viewcode-block" id="GigaChatPro"><a class="viewcode-back" href="../giga_request.html#giga_request.GigaChatPro">[docs]</a><span class="k">class</span> <span class="nc">GigaChatPro</span><span class="p">(</span><span class="n">BaseAIText</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The class of AI-text model GigaChat.</span>
+<span class="sd">    Version of the AI-assistance: GigaPro.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GigaChatPro.request"><a class="viewcode-back" href="../giga_request.html#giga_request.GigaChatPro.request">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">request</span><span class="p">(</span><span class="n">request_of_user</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">token_giga</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">temperature_giga</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+                      <span class="n">top_p_giga</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">n_giga</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">auth_token_giga</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Answer for the user from the request (from the user) by GigaChatPRO.</span>
+<span class="sd">        Limited Version of the Answers for the user. Premium answers (PRO).</span>
+
+<span class="sd">        :param request_of_user: Request from the user.</span>
+<span class="sd">        :param token_giga: Token of the GigaChatAI.</span>
+<span class="sd">        :param temperature_giga: Temperature of an answer.</span>
+<span class="sd">        :param top_p_giga: Alternative to temperature.</span>
+<span class="sd">        :param n_giga: Quality and count answer for the generated.</span>
+<span class="sd">        :param auth_token_giga: Authorization token of the GigaChatAI.</span>
+
+<span class="sd">        :return: Result.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;https://gigachat.devices.sberbank.ru/api/v1/chat/completions&quot;</span>
+
+        <span class="n">headers</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Accept&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Authorization&#39;</span><span class="p">:</span> <span class="s1">&#39;Bearer &#39;</span> <span class="o">+</span> <span class="n">token_giga</span>
+        <span class="p">}</span>
+
+        <span class="n">body</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span>
+            <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;GigaChat-Pro&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">request_of_user</span>
+                <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="n">temperature_giga</span><span class="p">,</span>
+            <span class="s2">&quot;top_p&quot;</span><span class="p">:</span> <span class="n">top_p_giga</span><span class="p">,</span>
+            <span class="s2">&quot;n&quot;</span><span class="p">:</span> <span class="n">n_giga</span>
+        <span class="p">})</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Sending a request to retrieve text in PRO mode at the user&#39;s request&quot;</span><span class="p">)</span>
+            <span class="n">response</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span>
+                <span class="n">method</span><span class="o">=</span><span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+                <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
+                <span class="n">data</span><span class="o">=</span><span class="n">body</span><span class="p">,</span>
+                <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
+                <span class="n">verify</span><span class="o">=</span><span class="kc">False</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Successful! I return the answer as text / lines&quot;</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">response</span><span class="p">[</span><span class="s1">&#39;choices&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;message&#39;</span><span class="p">][</span><span class="s1">&#39;content&#39;</span><span class="p">]</span>
+
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="n">new_token</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="k">await</span> <span class="n">GetAuthTokenSber</span><span class="o">.</span><span class="n">get_token</span><span class="p">(</span><span class="n">auth_token_giga</span><span class="p">)</span>
+
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;bot.json&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">dt</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+            <span class="n">dt</span><span class="p">[</span><span class="s2">&quot;GIGACHAT&quot;</span><span class="p">][</span><span class="s2">&quot;TOKEN&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_token</span>
+
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;bot.json&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fl</span><span class="p">:</span>
+                <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">dt</span><span class="p">,</span> <span class="n">fl</span><span class="p">,</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;The AI token has expired. But it&#39;s already been updated. Write the &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;AI model enquiry again. The exception has arisen: </span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+
+            <span class="k">return</span> <span class="s2">&quot;Sorry! I updated the data. Please, repeat your request :)&quot;</span></div></div>
+
+
+<div class="viewcode-block" id="GigaChatLight"><a class="viewcode-back" href="../giga_request.html#giga_request.GigaChatLight">[docs]</a><span class="k">class</span> <span class="nc">GigaChatLight</span><span class="p">(</span><span class="n">BaseAIText</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The class of AI-text model GigaChat.</span>
+<span class="sd">    Version of the AI-assistance: GigaLight.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GigaChatLight.request"><a class="viewcode-back" href="../giga_request.html#giga_request.GigaChatLight.request">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">request</span><span class="p">(</span><span class="n">request_of_user</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">token_giga</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">temperature_giga</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+                      <span class="n">top_p_giga</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">n_giga</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">auth_token_giga</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Answer for the user from the request (from the user) by GigaChatLight.</span>
+<span class="sd">        Light answers (&#39;Really&#39; Light).</span>
+
+<span class="sd">        :param request_of_user: Request from the user.</span>
+<span class="sd">        :param token_giga: Token of the GigaChatAI.</span>
+<span class="sd">        :param temperature_giga: Temperature of an answer.</span>
+<span class="sd">        :param top_p_giga: Alternative to temperature.</span>
+<span class="sd">        :param n_giga: Quality and count answer for the generated.</span>
+<span class="sd">        :param auth_token_giga: Authorization token of the GigaChatAI.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;https://gigachat.devices.sberbank.ru/api/v1/chat/completions&quot;</span>
+
+        <span class="n">headers</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Accept&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Authorization&#39;</span><span class="p">:</span> <span class="s1">&#39;Bearer &#39;</span> <span class="o">+</span> <span class="n">token_giga</span>
+        <span class="p">}</span>
+
+        <span class="n">body</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span>
+            <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;GigaChat&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">request_of_user</span>
+                <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="n">temperature_giga</span><span class="p">,</span>
+            <span class="s2">&quot;top_p&quot;</span><span class="p">:</span> <span class="n">top_p_giga</span><span class="p">,</span>
+            <span class="s2">&quot;n&quot;</span><span class="p">:</span> <span class="n">n_giga</span>
+        <span class="p">})</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Sending a request to retrieve text in PRO mode at the user&#39;s request&quot;</span><span class="p">)</span>
+            <span class="n">response</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span>
+                <span class="n">method</span><span class="o">=</span><span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+                <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
+                <span class="n">data</span><span class="o">=</span><span class="n">body</span><span class="p">,</span>
+                <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
+                <span class="n">verify</span><span class="o">=</span><span class="kc">False</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Successful! I return the answer as text / lines&quot;</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">response</span><span class="p">[</span><span class="s1">&#39;choices&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;message&#39;</span><span class="p">][</span><span class="s1">&#39;content&#39;</span><span class="p">]</span>
+
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="n">new_token</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="k">await</span> <span class="n">GetAuthTokenSber</span><span class="o">.</span><span class="n">get_token</span><span class="p">(</span><span class="n">auth_token_giga</span><span class="p">)</span>
+
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;bot.json&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">dt</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+            <span class="n">dt</span><span class="p">[</span><span class="s2">&quot;GIGACHAT&quot;</span><span class="p">][</span><span class="s2">&quot;TOKEN&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_token</span>
+
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;bot.json&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fl</span><span class="p">:</span>
+                <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">dt</span><span class="p">,</span> <span class="n">fl</span><span class="p">,</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;The AI token has expired. But it&#39;s already been updated. Write the &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;AI model enquiry again. The exception has arisen: </span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+
+            <span class="k">return</span> <span class="s2">&quot;Sorry! I updated the data. Please, repeat your request :)&quot;</span></div></div>
+
+
+<div class="viewcode-block" id="GigaImagePro"><a class="viewcode-back" href="../giga_request.html#giga_request.GigaImagePro">[docs]</a><span class="k">class</span> <span class="nc">GigaImagePro</span><span class="p">(</span><span class="n">BaseAIImage</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class of generate images for premium-users.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GigaImagePro.request"><a class="viewcode-back" href="../giga_request.html#giga_request.GigaImagePro.request">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">auth_token_giga</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">token_giga</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span> <span class="o">|</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create image for Premium users.</span>
+
+<span class="sd">        :param request: Request / Query from the user.</span>
+<span class="sd">        :param auth_token_giga: Authorization token for GigaChatAI (requests only now).</span>
+<span class="sd">        :param token_giga: Token for requests.</span>
+
+<span class="sd">        :return: Image data | Result (str).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;https://gigachat.devices.sberbank.ru/api/v1/chat/completions&quot;</span>
+        <span class="n">payload</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span>
+            <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;GigaChat-Pro&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;system&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Ты — Василий Кандинский&quot;</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">request</span>
+                <span class="p">},</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;function_call&quot;</span><span class="p">:</span> <span class="s2">&quot;auto&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;best&quot;</span>
+        <span class="p">})</span>
+        <span class="n">headers</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Accept&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Authorization&#39;</span><span class="p">:</span> <span class="s1">&#39;Bearer &#39;</span> <span class="o">+</span> <span class="n">token_giga</span>
+        <span class="p">}</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="s2">&quot;Sending a request to get the AI image at the user&#39;s request&quot;</span>
+            <span class="p">)</span>
+            <span class="n">response</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span>
+                <span class="n">method</span><span class="o">=</span><span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+                <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
+                <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
+                <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span>
+                <span class="n">verify</span><span class="o">=</span><span class="kc">False</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+            <span class="k">if</span> <span class="s2">&quot;&lt;img&quot;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">response</span><span class="p">[</span><span class="s2">&quot;choices&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;message&quot;</span><span class="p">][</span><span class="s2">&quot;content&quot;</span><span class="p">]):</span>
+                <span class="n">src</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">response</span><span class="p">[</span><span class="s2">&quot;choices&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;message&quot;</span><span class="p">][</span><span class="s2">&quot;content&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;&quot;&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+
+                <span class="n">url_get_data</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;https://gigachat.devices.sberbank.ru/api/v1/files/&quot;</span> <span class="o">+</span> \
+                                    <span class="n">src</span> <span class="o">+</span> <span class="s2">&quot;/content&quot;</span>
+                <span class="n">headers_get_data</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s1">&#39;Accept&#39;</span><span class="p">:</span> <span class="s1">&#39;application/jpg&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;Authorization&#39;</span><span class="p">:</span> <span class="s1">&#39;Bearer &#39;</span> <span class="o">+</span> <span class="n">token_giga</span>
+                <span class="p">}</span>
+
+                <span class="n">response</span><span class="p">:</span> <span class="nb">bytes</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span>
+                    <span class="n">method</span><span class="o">=</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+                    <span class="n">url</span><span class="o">=</span><span class="n">url_get_data</span><span class="p">,</span>
+                    <span class="n">headers</span><span class="o">=</span><span class="n">headers_get_data</span><span class="p">,</span>
+                    <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                    <span class="n">verify</span><span class="o">=</span><span class="kc">False</span>
+                <span class="p">)</span><span class="o">.</span><span class="n">content</span>
+
+                <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                    <span class="s2">&quot;Successful! The picture was generated, I am returning the response as bytes &quot;</span>
+                    <span class="s2">&quot;(later converted to a file)&quot;</span>
+                <span class="p">)</span>
+
+                <span class="k">return</span> <span class="n">response</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">src</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">response</span><span class="p">[</span><span class="s2">&quot;choices&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;message&quot;</span><span class="p">][</span><span class="s2">&quot;content&quot;</span><span class="p">])</span>
+
+                <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                    <span class="s2">&quot;Something wrong. Perhaps the user did not request an image, but entered a &quot;</span>
+                    <span class="s2">&quot;text generation request&quot;</span>
+                <span class="p">)</span>
+
+                <span class="k">return</span> <span class="n">src</span>
+
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="n">new_token</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="k">await</span> <span class="n">GetAuthTokenSber</span><span class="o">.</span><span class="n">get_token</span><span class="p">(</span><span class="n">auth_token_giga</span><span class="p">)</span>
+
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;bot.json&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">dt</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+            <span class="n">dt</span><span class="p">[</span><span class="s2">&quot;GIGACHAT&quot;</span><span class="p">][</span><span class="s2">&quot;TOKEN&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_token</span>
+
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;bot.json&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fl</span><span class="p">:</span>
+                <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">dt</span><span class="p">,</span> <span class="n">fl</span><span class="p">,</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;The AI token has expired. But it&#39;s already been updated. Write the &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;AI model enquiry again. The exception has arisen: </span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+
+            <span class="k">return</span> <span class="s2">&quot;Sorry! I updated the data. Please, repeat your request :)&quot;</span></div></div>
+
+
+<div class="viewcode-block" id="GetData"><a class="viewcode-back" href="../giga_request.html#giga_request.GetData">[docs]</a><span class="k">class</span> <span class="nc">GetData</span><span class="p">(</span><span class="n">BaseGetData</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The class-sector for getting conf-data from conf-file.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GetData.get_data"><a class="viewcode-back" href="../giga_request.html#giga_request.GetData.get_data">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="n">file_path</span><span class="o">=</span><span class="s2">&quot;bot.json&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get data of the GigaChatSettings.</span>
+
+<span class="sd">        :param file_path: File Path of JSON-API-keys for Bot and settings for the GIGACHAT.</span>
+<span class="sd">        :return: Dict with data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+
+            <span class="n">token</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;GIGACHAT&quot;</span><span class="p">][</span><span class="s2">&quot;TOKEN&quot;</span><span class="p">]</span>
+            <span class="n">auth_token</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;GIGACHAT&quot;</span><span class="p">][</span><span class="s2">&quot;AUTH_TOKEN&quot;</span><span class="p">]</span>
+
+            <span class="n">temperature</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;GIGACHAT&quot;</span><span class="p">][</span><span class="s2">&quot;ANSWER_SETTING&quot;</span><span class="p">][</span><span class="s2">&quot;TEMPERATURE&quot;</span><span class="p">]</span>
+            <span class="n">top_p</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;GIGACHAT&quot;</span><span class="p">][</span><span class="s2">&quot;ANSWER_SETTING&quot;</span><span class="p">][</span><span class="s2">&quot;TOP_P&quot;</span><span class="p">]</span>
+            <span class="n">n</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;GIGACHAT&quot;</span><span class="p">][</span><span class="s2">&quot;ANSWER_SETTING&quot;</span><span class="p">][</span><span class="s2">&quot;N&quot;</span><span class="p">]</span>
+
+            <span class="n">response</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="n">token</span><span class="p">,</span>
+                <span class="s2">&quot;auth_token&quot;</span><span class="p">:</span> <span class="n">auth_token</span><span class="p">,</span>
+                <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="n">temperature</span><span class="p">,</span>
+                <span class="s2">&quot;top_p&quot;</span><span class="p">:</span> <span class="n">top_p</span><span class="p">,</span>
+                <span class="s2">&quot;n&quot;</span><span class="p">:</span> <span class="n">n</span>
+            <span class="p">}</span>
+
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="s2">&quot;The request to retrieve AI-model data from the configuration file was successful&quot;</span>
+            <span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">response</span></div></div>
+
+
+<div class="viewcode-block" id="VersionAIImagePro"><a class="viewcode-back" href="../giga_request.html#giga_request.VersionAIImagePro">[docs]</a><span class="k">class</span> <span class="nc">VersionAIImagePro</span><span class="p">(</span><span class="n">BaseVersionAI</span><span class="p">):</span>
+<div class="viewcode-block" id="VersionAIImagePro.request"><a class="viewcode-back" href="../giga_request.html#giga_request.VersionAIImagePro.request">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span> <span class="o">|</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a new image for premium-user.</span>
+
+<span class="sd">        :param request: Request/Query from premium-user.</span>
+<span class="sd">        :return: Image data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="k">await</span> <span class="n">GetData</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+
+        <span class="n">img_data</span><span class="p">:</span> <span class="nb">bytes</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">=</span> <span class="k">await</span> <span class="n">GigaImagePro</span><span class="o">.</span><span class="n">request</span><span class="p">(</span>
+            <span class="n">request</span><span class="p">,</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">&quot;auth_token&quot;</span><span class="p">],</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">&quot;token&quot;</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">img_data</span></div></div>
+
+
+<div class="viewcode-block" id="VersionAIPro"><a class="viewcode-back" href="../giga_request.html#giga_request.VersionAIPro">[docs]</a><span class="k">class</span> <span class="nc">VersionAIPro</span><span class="p">(</span><span class="n">BaseVersionAI</span><span class="p">):</span>
+<div class="viewcode-block" id="VersionAIPro.request"><a class="viewcode-back" href="../giga_request.html#giga_request.VersionAIPro.request">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        GigaChatPro Version. Return answer to the user (str).</span>
+
+<span class="sd">        :param request: Request from the user.</span>
+<span class="sd">        :return: Answer (tuple) pro-version (&quot;deep&quot; answer).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="k">await</span> <span class="n">GetData</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+        <span class="n">answer</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="k">await</span> <span class="n">GigaChatPro</span><span class="o">.</span><span class="n">request</span><span class="p">(</span>
+            <span class="n">request</span><span class="p">,</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">&quot;token&quot;</span><span class="p">],</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">&quot;temperature&quot;</span><span class="p">],</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">&quot;top_p&quot;</span><span class="p">],</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">&quot;n&quot;</span><span class="p">],</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">&quot;auth_token&quot;</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">answer</span></div></div>
+
+
+<div class="viewcode-block" id="VersionAILight"><a class="viewcode-back" href="../giga_request.html#giga_request.VersionAILight">[docs]</a><span class="k">class</span> <span class="nc">VersionAILight</span><span class="p">(</span><span class="n">BaseVersionAI</span><span class="p">):</span>
+<div class="viewcode-block" id="VersionAILight.request"><a class="viewcode-back" href="../giga_request.html#giga_request.VersionAILight.request">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        GigaChatLight Version. Return answer to the user (str).</span>
+
+<span class="sd">        :param request: Request from the user.</span>
+<span class="sd">        :return: Answer (tuple) light-version (&quot;low&quot; answer).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="k">await</span> <span class="n">GetData</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+        <span class="n">answer</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="k">await</span> <span class="n">GigaChatLight</span><span class="o">.</span><span class="n">request</span><span class="p">(</span>
+            <span class="n">request</span><span class="p">,</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">&quot;token&quot;</span><span class="p">],</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">&quot;temperature&quot;</span><span class="p">],</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">&quot;top_p&quot;</span><span class="p">],</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">&quot;n&quot;</span><span class="p">],</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">&quot;auth_token&quot;</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">answer</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2024, Alexander Laptev, CW.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

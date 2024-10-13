@@ -1,0 +1,647 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>pdf_generate_data &mdash; Manager CW Bot 6.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/fonts.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Manager CW Bot
+          
+
+          
+            
+            <img src="../_static/manager_cw_bot_logo_black_and_cw-white_200pxX200px.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                6.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Methods and functions:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation lib, configuration and run the bot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../info_updates.html">Information about last update | August update!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analytics.html">Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../business.html">Business</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../business_answers.html">Business handler for answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../business_handler.html">Business handler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../buttons.html">Buttons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../create_table.html">Create Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fsm_handler.html">Handler of FSM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../example_bot_json.html">Example of a bot.json file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get_business_conn_and_info_conn.html">Get business connection and info conn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../giga_images.html">Giga Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../giga_request.html">Giga Request</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gigachatai.html">Giga Chat AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_db_sub_operations.html">Handler database and subscribe operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_email.html">Handler EMail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_email_sender.html">Handler EMail-Sender</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_promo.html">Handler promo data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_successful_payment.html">Handler successful payment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_yookassa.html">Handler Yookassa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mysql_connection.html">MySQL Connector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pdf_generate_data.html">PDF Generate Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../refund.html">Handler refund</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../send_invoice.html">Handler send invoice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tests.html">Tests (UnitTest)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tickets.html">Tickets</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Manager CW Bot</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Module code</a> &raquo;</li>
+        
+      <li>pdf_generate_data</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pdf_generate_data</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Module for generate PDF-system documents.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="kn">from</span> <span class="nn">fpdf</span> <span class="kn">import</span> <span class="n">FPDF</span><span class="p">,</span> <span class="n">FontFace</span>
+
+
+<div class="viewcode-block" id="GenerateTicketDataUniversal"><a class="viewcode-back" href="../pdf_generate_data.html#pdf_generate_data.GenerateTicketDataUniversal">[docs]</a><span class="k">class</span> <span class="nc">GenerateTicketDataUniversal</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class for generate ticket-data for any users.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GenerateTicketDataUniversal.generate"><a class="viewcode-back" href="../pdf_generate_data.html#pdf_generate_data.GenerateTicketDataUniversal.generate">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">text_data</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate ticket-data.</span>
+
+<span class="sd">        :param name: Name.</span>
+<span class="sd">        :param text_data: Ticket Data (big-format).</span>
+
+<span class="sd">        :return: Title of file.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">pdf</span> <span class="o">=</span> <span class="n">FPDF</span><span class="p">()</span>
+
+        <span class="n">pdf</span><span class="o">.</span><span class="n">add_font</span><span class="p">(</span>
+            <span class="n">family</span><span class="o">=</span><span class="s2">&quot;DinCWFont_TTF&quot;</span><span class="p">,</span>
+            <span class="n">style</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="n">fname</span><span class="o">=</span><span class="s2">&quot;./manager_cw_bot_api/styles/DIN2014-Regular.ttf&quot;</span><span class="p">,</span>
+            <span class="n">uni</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">)</span>
+        <span class="n">pdf</span><span class="o">.</span><span class="n">add_font</span><span class="p">(</span>
+            <span class="n">family</span><span class="o">=</span><span class="s2">&quot;DinCWFont_TTF&quot;</span><span class="p">,</span>
+            <span class="n">style</span><span class="o">=</span><span class="s2">&quot;I&quot;</span><span class="p">,</span>
+            <span class="n">fname</span><span class="o">=</span><span class="s2">&quot;./manager_cw_bot_api/styles/DIN2014-Italic.ttf&quot;</span><span class="p">,</span>
+            <span class="n">uni</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">)</span>
+        <span class="n">pdf</span><span class="o">.</span><span class="n">add_font</span><span class="p">(</span>
+            <span class="n">family</span><span class="o">=</span><span class="s2">&quot;DinCWFont_TTF&quot;</span><span class="p">,</span>
+            <span class="n">style</span><span class="o">=</span><span class="s2">&quot;B&quot;</span><span class="p">,</span>
+            <span class="n">fname</span><span class="o">=</span><span class="s2">&quot;./manager_cw_bot_api/styles/DIN2014-Bold.ttf&quot;</span><span class="p">,</span>
+            <span class="n">uni</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">)</span>
+        <span class="n">pdf</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span>
+            <span class="n">family</span><span class="o">=</span><span class="s2">&quot;DinCWFont_TTF&quot;</span><span class="p">,</span>
+            <span class="n">style</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="n">size</span><span class="o">=</span><span class="mi">13</span>
+        <span class="p">)</span>
+
+        <span class="n">pdf</span><span class="o">.</span><span class="n">add_page</span><span class="p">()</span>
+
+        <span class="n">time</span> <span class="o">=</span> <span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span>
+                <span class="n">now</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">3</span><span class="p">)))</span><span class="o">.</span>
+                <span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1">.%m.%Y | %H:%M:%S&#39;</span><span class="p">))</span>
+
+        <span class="n">pdf</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        &lt;section&gt;</span>
+<span class="s2">        &lt;table width=&quot;100%&quot;&gt;</span>
+<span class="s2">          &lt;thead&gt;</span>
+<span class="s2">            &lt;tr&gt;</span>
+<span class="s2">              &lt;th width=&quot;40%&quot; align=&#39;left&#39;&gt;&lt;a href=&#39;https://cwr.su/&#39;&gt;&lt;img </span>
+<span class="s2">              src=&#39;./manager_cw_bot_api/styles/logo_email.png&#39;&gt;&lt;/a&gt;&lt;/th&gt;</span>
+<span class="s2">              &lt;th width=&quot;60%&quot; align=&#39;right&#39;&gt;</span>
+<span class="s2">                &lt;h5&gt;CODEWRITER COMPANY</span><span class="se">\n</span><span class="s2">SELF-EMPLOYED LAPTEV ALEXANDER A.</span><span class="se">\n</span><span class="s2">TEL.: +7 995 024-61-04, </span>
+<span class="s2">                CWR.SU&lt;/h5&gt;</span>
+<span class="s2">              &lt;/th&gt;</span>
+<span class="s2">            &lt;/tr&gt;</span>
+<span class="s2">          &lt;/thead&gt;</span>
+<span class="s2">        &lt;/table&gt;</span>
+<span class="s2">        &lt;/section&gt;</span>
+<span class="s2">          &lt;font size=&quot;22&quot;&gt;&lt;p align=&#39;left&#39;&gt;Ticket Data from Manager CW Bot&#39;s Ticket System&lt;br&gt;</span>
+<span class="s2">          Данные из Тикет Системы Manager CW бота&lt;/p&gt;&lt;/font&gt;</span>
+<span class="s2">          &lt;p&gt;&lt;b&gt;&quot;&quot;&quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;&quot;&quot;&lt;/b&gt;, below you can see your TicketData, which you have </span>
+<span class="s2">          requested in the &lt;a href=&#39;https://t.me/helper_cwBot&#39;&gt;Manager CW Bot&lt;/a&gt;.&lt;br&gt;&lt;br&gt;</span>
+<span class="s2">          The date and time when the document was generated (Moscow time | MSK UTC+3): </span>
+<span class="s2">          &quot;&quot;&quot;</span> <span class="o">+</span> <span class="n">time</span> <span class="o">+</span> <span class="s2">&quot;&quot;&quot;.&lt;/p&gt;</span>
+<span class="s2">          &lt;p&gt;- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </span>
+<span class="s2">          - - - - - - - - - - - - - - - - - - - - - - - - - - - - -&lt;/p&gt;</span>
+<span class="s2">          &lt;p&gt;</span><span class="se">\uf000</span><span class="s2">&lt;/p&gt;</span>
+<span class="s2">          &lt;table width=&quot;100%&quot;&gt;</span>
+<span class="s2">            &lt;thead&gt;</span>
+<span class="s2">              &lt;tr&gt;</span>
+<span class="s2">                &lt;th width=&quot;20%&quot;&gt;ID | Идентификатор&lt;/th&gt;</span>
+<span class="s2">                &lt;th width=&quot;30%&quot;&gt;Sender | Отправитель&lt;/th&gt;</span>
+<span class="s2">                &lt;th width=&quot;25%&quot;&gt;Subject* | Тема&lt;/th&gt;</span>
+<span class="s2">                &lt;th width=&quot;25%&quot;&gt;Created | Дата/Время создания&lt;/th&gt;</span>
+<span class="s2">              &lt;/tr&gt;</span>
+<span class="s2">            &lt;/thead&gt;</span>
+<span class="s2">            &lt;tbody&gt;</span>
+<span class="s2">              &quot;&quot;&quot;</span> <span class="o">+</span> <span class="n">text_data</span> <span class="o">+</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">            &lt;/tbody&gt;</span>
+<span class="s2">          &lt;/table&gt;</span>
+<span class="s2">          &lt;p&gt;*&quot;Subject&quot; (the word) in this case refers to the first 25 characters of the letter. </span>
+<span class="s2">          To view the entire email / ticket, go to &lt;a href=&#39;https://t.me/helper_cwBot&#39;&gt;Manager CW </span>
+<span class="s2">          Bot&lt;/a&gt;.&lt;br&gt;</span>
+<span class="s2">          This document does not provide for the display of emojis or other other symbols.&lt;/p&gt;</span>
+
+<span class="s2">          &lt;p&gt;Your data is &lt;b&gt;always safe&lt;/b&gt;!&lt;br&gt;</span>
+<span class="s2">          If you have not requested this type of document, please contact technical support by </span>
+<span class="s2">          writing to the email listed below.&lt;/p&gt;</span>
+<span class="s2">          &lt;p&gt;&lt;b&gt;Important!&lt;/b&gt; Using CW services (CWR.SU ) - you accept all the rules and the </span>
+<span class="s2">          agreement written on </span>
+<span class="s2">          the website &lt;a href=&#39;https://acdn.cwr.su/&#39;&gt;&lt;b&gt;acdn.cwr.su&lt;/b&gt;&lt;/a&gt; in the corresponding </span>
+<span class="s2">          section on the main page.&lt;br&gt;</span>
+<span class="s2">          &lt;i&gt;If&lt;/i&gt; you &lt;i&gt;don&#39;t agree with them (agreement / rules)&lt;/i&gt;, </span>
+<span class="s2">          &lt;i&gt;destroy this document&lt;/i&gt; and stop using CW services.&lt;/p&gt;</span>
+<span class="s2">        &quot;&quot;&quot;</span><span class="p">,</span> <span class="n">tag_styles</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="n">FontFace</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#390085&quot;</span><span class="p">),</span>
+            <span class="s2">&quot;h5&quot;</span><span class="p">:</span> <span class="n">FontFace</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#424242&quot;</span><span class="p">,</span> <span class="n">size_pt</span><span class="o">=</span><span class="mi">17</span><span class="p">)</span>
+        <span class="p">})</span>
+
+        <span class="n">pdf</span><span class="o">.</span><span class="n">add_page</span><span class="p">()</span>
+
+        <span class="n">pdf</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        &lt;p&gt;&lt;i&gt;Sincerely, the CW team.</span>
+<span class="s2">          &lt;br&gt;&lt;br&gt;</span>
+<span class="s2">          If you have any questions about purchasing a product, please contact: </span>
+<span class="s2">          &lt;a href=&#39;mailto:b2b@cwr.su&#39;&gt;b2b@cwr.su&lt;/a&gt;.</span>
+<span class="s2">          &lt;br&gt;</span>
+<span class="s2">          On cooperation issues: &lt;a href=&#39;mailto:cwr@cwr.su&#39;&gt;cwr@cwr.su&lt;/a&gt;.</span>
+<span class="s2">          &lt;br&gt;</span>
+<span class="s2">          For technical issues and problems: &lt;a href=&#39;mailto:help@cwr.su&#39;&gt;help@cwr.su&lt;/a&gt;.&lt;/i&gt;</span>
+<span class="s2">          &lt;br&gt;</span>
+<span class="s2">          &lt;br&gt;&lt;/p&gt;</span>
+<span class="s2">          &lt;p&gt;Director and developer, creator, designer of the CW product: Laptev Alexander A.&lt;/p&gt;</span>
+<span class="s2">          &lt;br&gt;</span>
+<span class="s2">          &lt;center&gt;&lt;img src=&quot;./manager_cw_bot_api/styles/stamp.png&quot; width=100 height=100&gt;&lt;/center&gt;</span>
+<span class="s2">          &lt;p&gt;&lt;i&gt;*This document is valid due to the stamp at the end of the contents of this </span>
+<span class="s2">          document.&lt;/i&gt;&lt;/p&gt;</span>
+<span class="s2">          &lt;p align=&#39;center&#39;&gt;© CW | All rights reserved | 2023 - 2024.&lt;/p&gt;</span>
+<span class="s2">        &quot;&quot;&quot;</span><span class="p">,</span> <span class="n">tag_styles</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="n">FontFace</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#390085&quot;</span><span class="p">)</span>
+        <span class="p">})</span>
+
+        <span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;ticket_data_from_manager_cw_bot.pdf&quot;</span>
+        <span class="n">pdf</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="s2">&quot;Successful PDF file generation&quot;</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">file_path</span></div></div>
+
+
+<div class="viewcode-block" id="GenerateReceiptForUser"><a class="viewcode-back" href="../pdf_generate_data.html#pdf_generate_data.GenerateReceiptForUser">[docs]</a><span class="k">class</span> <span class="nc">GenerateReceiptForUser</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class for generate a receipt to the user.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GenerateReceiptForUser.generate"><a class="viewcode-back" href="../pdf_generate_data.html#pdf_generate_data.GenerateReceiptForUser.generate">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">receipt_data</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate Receipt-data.</span>
+
+<span class="sd">        :param name: Name.</span>
+<span class="sd">        :param receipt_data: Receipt Data.</span>
+
+<span class="sd">        :return: Title of file.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">pdf</span> <span class="o">=</span> <span class="n">FPDF</span><span class="p">()</span>
+
+        <span class="n">pdf</span><span class="o">.</span><span class="n">add_font</span><span class="p">(</span>
+            <span class="n">family</span><span class="o">=</span><span class="s2">&quot;DinCWFont_TTF&quot;</span><span class="p">,</span>
+            <span class="n">style</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="n">fname</span><span class="o">=</span><span class="s2">&quot;./manager_cw_bot_api/styles/DIN2014-Regular.ttf&quot;</span><span class="p">,</span>
+            <span class="n">uni</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">)</span>
+        <span class="n">pdf</span><span class="o">.</span><span class="n">add_font</span><span class="p">(</span>
+            <span class="n">family</span><span class="o">=</span><span class="s2">&quot;DinCWFont_TTF&quot;</span><span class="p">,</span>
+            <span class="n">style</span><span class="o">=</span><span class="s2">&quot;I&quot;</span><span class="p">,</span>
+            <span class="n">fname</span><span class="o">=</span><span class="s2">&quot;./manager_cw_bot_api/styles/DIN2014-Italic.ttf&quot;</span><span class="p">,</span>
+            <span class="n">uni</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">)</span>
+        <span class="n">pdf</span><span class="o">.</span><span class="n">add_font</span><span class="p">(</span>
+            <span class="n">family</span><span class="o">=</span><span class="s2">&quot;DinCWFont_TTF&quot;</span><span class="p">,</span>
+            <span class="n">style</span><span class="o">=</span><span class="s2">&quot;B&quot;</span><span class="p">,</span>
+            <span class="n">fname</span><span class="o">=</span><span class="s2">&quot;./manager_cw_bot_api/styles/DIN2014-Bold.ttf&quot;</span><span class="p">,</span>
+            <span class="n">uni</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">)</span>
+        <span class="n">pdf</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span>
+            <span class="n">family</span><span class="o">=</span><span class="s2">&quot;DinCWFont_TTF&quot;</span><span class="p">,</span>
+            <span class="n">style</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="n">size</span><span class="o">=</span><span class="mi">13</span>
+        <span class="p">)</span>
+
+        <span class="n">pdf</span><span class="o">.</span><span class="n">add_page</span><span class="p">()</span>
+
+        <span class="n">time</span> <span class="o">=</span> <span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span>
+                <span class="n">now</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">3</span><span class="p">)))</span><span class="o">.</span>
+                <span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1">.%m.%Y | %H:%M:%S&#39;</span><span class="p">))</span>
+
+        <span class="n">pdf</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                &lt;section&gt;</span>
+<span class="s2">                &lt;table width=&quot;100%&quot;&gt;</span>
+<span class="s2">                  &lt;thead&gt;</span>
+<span class="s2">                    &lt;tr&gt;</span>
+<span class="s2">                      &lt;th width=&quot;40%&quot; align=&#39;left&#39;&gt;&lt;a href=&#39;https://cwr.su/&#39;&gt;&lt;img </span>
+<span class="s2">                      src=&#39;./manager_cw_bot_api/styles/logo_email.png&#39;&gt;&lt;/a&gt;&lt;/th&gt;</span>
+<span class="s2">                      &lt;th width=&quot;60%&quot; align=&#39;right&#39;&gt;</span>
+<span class="s2">                        &lt;h5&gt;CODEWRITER COMPANY</span><span class="se">\n</span><span class="s2">SELF-EMPLOYED LAPTEV ALEXANDER A.</span><span class="se">\n</span><span class="s2">TEL.: </span>
+<span class="s2">                        +7 995 024-61-04, CWR.SU&lt;/h5&gt;</span>
+<span class="s2">                      &lt;/th&gt;</span>
+<span class="s2">                    &lt;/tr&gt;</span>
+<span class="s2">                  &lt;/thead&gt;</span>
+<span class="s2">                &lt;/table&gt;</span>
+<span class="s2">                &lt;/section&gt;</span>
+<span class="s2">                  &lt;font size=&quot;22&quot;&gt;&lt;p align=&#39;left&#39;&gt;Payment Receipt from the Manager CW Bot&lt;br&gt;</span>
+<span class="s2">                  Квитанция об оплате из Manager CW бота&lt;/p&gt;&lt;/font&gt;</span>
+<span class="s2">                  &lt;p&gt;&lt;b&gt;&quot;&quot;&quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;&quot;&quot;&lt;/b&gt;, below you can see your Subscription &quot;CW PREMIUM&quot; </span>
+<span class="s2">                  Payment Receipt from the &lt;a href=&#39;https://t.me/helper_cwBot&#39;&gt;Manager CW Bot&lt;/a&gt;.</span>
+<span class="s2">                  &lt;br&gt;&lt;br&gt;</span>
+<span class="s2">                  The date and time when the document was generated (Moscow time | MSK UTC+3): </span>
+<span class="s2">                  &quot;&quot;&quot;</span> <span class="o">+</span> <span class="n">time</span> <span class="o">+</span> <span class="s2">&quot;&quot;&quot;.&lt;/p&gt;</span>
+<span class="s2">                  &lt;p&gt;- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </span>
+<span class="s2">                  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -&lt;/p&gt;</span>
+<span class="s2">                  &lt;p&gt;</span><span class="se">\uf000</span><span class="s2">&lt;/p&gt;</span>
+<span class="s2">                  &lt;table width=&quot;100%&quot;&gt;</span>
+<span class="s2">                    &lt;thead&gt;</span>
+<span class="s2">                      &lt;tr&gt;</span>
+<span class="s2">                        &lt;th width=&quot;20%&quot;&gt;Payment ID* | Идентификатор оплаты&lt;/th&gt;</span>
+<span class="s2">                        &lt;th width=&quot;20%&quot;&gt;Payer | Плательщик&lt;/th&gt;</span>
+<span class="s2">                        &lt;th width=&quot;20%&quot;&gt;Product** | Продукт (Цифровой товар)&lt;/th&gt;</span>
+<span class="s2">                        &lt;th width=&quot;20%&quot;&gt;Payment Date/Time | Дата/Время оплаты&lt;/th&gt;</span>
+<span class="s2">                        &lt;th width=&quot;20%&quot;&gt;Payment method | Способ оплаты&lt;/th&gt;</span>
+<span class="s2">                      &lt;/tr&gt;</span>
+<span class="s2">                    &lt;/thead&gt;</span>
+<span class="s2">                    &lt;tbody&gt;</span>
+<span class="s2">                      &quot;&quot;&quot;</span> <span class="o">+</span> <span class="n">receipt_data</span> <span class="o">+</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                    &lt;/tbody&gt;</span>
+<span class="s2">                  &lt;/table&gt;</span>
+<span class="s2">                  &lt;p&gt;*Currently, you can only purchase digital goods in the </span>
+<span class="s2">                  &lt;a href=&#39;https://t.me/helper_cwBot&#39;&gt;Manager CW Bot&lt;/a&gt;.&lt;/p&gt;</span>
+
+<span class="s2">                  &lt;p&gt;Your data is &lt;b&gt;always safe&lt;/b&gt;!&lt;br&gt;</span>
+<span class="s2">                  *Payment ID is a unique token that is used to refund TGStars (XTR) or funds </span>
+<span class="s2">                  (RUB / USD / and more).</span>
+<span class="s2">                  &lt;br&gt;</span>
+<span class="s2">                  **This receipt document was generated automatically. Please keep it, as it may </span>
+<span class="s2">                  be needed in case of rejection of this digital product.&lt;/p&gt;</span>
+<span class="s2">                  &lt;p&gt;&lt;b&gt;Important!&lt;/b&gt; Using CW services (CWR.SU ) - you accept all the rules and </span>
+<span class="s2">                  the agreement written </span>
+<span class="s2">                  on the website &lt;a href=&#39;https://acdn.cwr.su/&#39;&gt;&lt;b&gt;acdn.cwr.su&lt;/b&gt;&lt;/a&gt; in the </span>
+<span class="s2">                  corresponding section on the main page.&lt;br&gt;</span>
+<span class="s2">                  &lt;i&gt;If&lt;/i&gt; you &lt;i&gt;don&#39;t agree with them (agreement / rules)&lt;/i&gt;, </span>
+<span class="s2">                  &lt;i&gt;destroy this document&lt;/i&gt; and stop using CW services.&lt;/p&gt;</span>
+<span class="s2">                &quot;&quot;&quot;</span><span class="p">,</span> <span class="n">tag_styles</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="n">FontFace</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#390085&quot;</span><span class="p">),</span>
+            <span class="s2">&quot;h5&quot;</span><span class="p">:</span> <span class="n">FontFace</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#424242&quot;</span><span class="p">,</span> <span class="n">size_pt</span><span class="o">=</span><span class="mi">17</span><span class="p">)</span>
+        <span class="p">})</span>
+
+        <span class="n">pdf</span><span class="o">.</span><span class="n">add_page</span><span class="p">()</span>
+
+        <span class="n">pdf</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                &lt;p&gt;&lt;i&gt;Sincerely, the CW team.</span>
+<span class="s2">                  &lt;br&gt;&lt;br&gt;</span>
+<span class="s2">                  If you have any questions about purchasing a product, please contact: </span>
+<span class="s2">                  &lt;a href=&#39;mailto:b2b@cwr.su&#39;&gt;b2b@cwr.su&lt;/a&gt;.</span>
+<span class="s2">                  &lt;br&gt;</span>
+<span class="s2">                  On cooperation issues: &lt;a href=&#39;mailto:cwr@cwr.su&#39;&gt;cwr@cwr.su&lt;/a&gt;.</span>
+<span class="s2">                  &lt;br&gt;</span>
+<span class="s2">                  For technical issues and problems: &lt;a href=&#39;mailto:help@cwr.su&#39;&gt;help@cwr.su&lt;/a&gt;.</span>
+<span class="s2">                  &lt;/i&gt;</span>
+<span class="s2">                  &lt;br&gt;</span>
+<span class="s2">                  &lt;br&gt;&lt;/p&gt;</span>
+<span class="s2">                  &lt;p&gt;Director and developer, creator, designer of the CW product: Laptev </span>
+<span class="s2">                  Alexander A.&lt;/p&gt;</span>
+<span class="s2">                  &lt;br&gt;</span>
+<span class="s2">                  &lt;center&gt;</span>
+<span class="s2">                    &lt;img src=&quot;./manager_cw_bot_api/styles/stamp.png&quot; width=100 height=100&gt;</span>
+<span class="s2">                  &lt;/center&gt;</span>
+<span class="s2">                  &lt;p&gt;&lt;i&gt;*This document is valid due to the stamp at the end of the contents of </span>
+<span class="s2">                  this document.&lt;/i&gt;&lt;/p&gt;</span>
+<span class="s2">                  &lt;p align=&#39;center&#39;&gt;© CW | All rights reserved | 2023 - 2024.&lt;/p&gt;</span>
+<span class="s2">                &quot;&quot;&quot;</span><span class="p">,</span> <span class="n">tag_styles</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="n">FontFace</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#390085&quot;</span><span class="p">)</span>
+        <span class="p">})</span>
+
+        <span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;receipt_data_from_manager_cw_bot.pdf&quot;</span>
+        <span class="n">pdf</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="s2">&quot;Successful PDF file generation&quot;</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">file_path</span></div></div>
+
+
+<div class="viewcode-block" id="GenerateReceiptRefundForUser"><a class="viewcode-back" href="../pdf_generate_data.html#pdf_generate_data.GenerateReceiptRefundForUser">[docs]</a><span class="k">class</span> <span class="nc">GenerateReceiptRefundForUser</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class for generate a receipt to the user for refund.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="GenerateReceiptRefundForUser.generate"><a class="viewcode-back" href="../pdf_generate_data.html#pdf_generate_data.GenerateReceiptRefundForUser.generate">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">receipt_data</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate Receipt-data.</span>
+
+<span class="sd">        :param name: Name.</span>
+<span class="sd">        :param receipt_data: Receipt Data.</span>
+
+<span class="sd">        :return: Title of file.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">pdf</span> <span class="o">=</span> <span class="n">FPDF</span><span class="p">()</span>
+
+        <span class="n">pdf</span><span class="o">.</span><span class="n">add_font</span><span class="p">(</span>
+            <span class="n">family</span><span class="o">=</span><span class="s2">&quot;DinCWFont_TTF&quot;</span><span class="p">,</span>
+            <span class="n">style</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="n">fname</span><span class="o">=</span><span class="s2">&quot;./manager_cw_bot_api/styles/DIN2014-Regular.ttf&quot;</span><span class="p">,</span>
+            <span class="n">uni</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">)</span>
+        <span class="n">pdf</span><span class="o">.</span><span class="n">add_font</span><span class="p">(</span>
+            <span class="n">family</span><span class="o">=</span><span class="s2">&quot;DinCWFont_TTF&quot;</span><span class="p">,</span>
+            <span class="n">style</span><span class="o">=</span><span class="s2">&quot;I&quot;</span><span class="p">,</span>
+            <span class="n">fname</span><span class="o">=</span><span class="s2">&quot;./manager_cw_bot_api/styles/DIN2014-Italic.ttf&quot;</span><span class="p">,</span>
+            <span class="n">uni</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">)</span>
+        <span class="n">pdf</span><span class="o">.</span><span class="n">add_font</span><span class="p">(</span>
+            <span class="n">family</span><span class="o">=</span><span class="s2">&quot;DinCWFont_TTF&quot;</span><span class="p">,</span>
+            <span class="n">style</span><span class="o">=</span><span class="s2">&quot;B&quot;</span><span class="p">,</span>
+            <span class="n">fname</span><span class="o">=</span><span class="s2">&quot;./manager_cw_bot_api/styles/DIN2014-Bold.ttf&quot;</span><span class="p">,</span>
+            <span class="n">uni</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">)</span>
+        <span class="n">pdf</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span>
+            <span class="n">family</span><span class="o">=</span><span class="s2">&quot;DinCWFont_TTF&quot;</span><span class="p">,</span>
+            <span class="n">style</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="n">size</span><span class="o">=</span><span class="mi">13</span>
+        <span class="p">)</span>
+
+        <span class="n">pdf</span><span class="o">.</span><span class="n">add_page</span><span class="p">()</span>
+
+        <span class="n">time</span> <span class="o">=</span> <span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span>
+                <span class="n">now</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">3</span><span class="p">)))</span><span class="o">.</span>
+                <span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1">.%m.%Y | %H:%M:%S&#39;</span><span class="p">))</span>
+
+        <span class="n">pdf</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                &lt;section&gt;</span>
+<span class="s2">                &lt;table width=&quot;100%&quot;&gt;</span>
+<span class="s2">                  &lt;thead&gt;</span>
+<span class="s2">                    &lt;tr&gt;</span>
+<span class="s2">                      &lt;th width=&quot;40%&quot; align=&#39;left&#39;&gt;&lt;a href=&#39;https://cwr.su/&#39;&gt;&lt;img </span>
+<span class="s2">                      src=&#39;./manager_cw_bot_api/styles/logo_email.png&#39;&gt;&lt;/a&gt;&lt;/th&gt;</span>
+<span class="s2">                      &lt;th width=&quot;60%&quot; align=&#39;right&#39;&gt;</span>
+<span class="s2">                        &lt;h5&gt;CODEWRITER COMPANY</span><span class="se">\n</span><span class="s2">SELF-EMPLOYED LAPTEV ALEXANDER A.</span><span class="se">\n</span><span class="s2">TEL.: +7 995 </span>
+<span class="s2">                        024-61-04, CWR.SU&lt;/h5&gt;</span>
+<span class="s2">                      &lt;/th&gt;</span>
+<span class="s2">                    &lt;/tr&gt;</span>
+<span class="s2">                  &lt;/thead&gt;</span>
+<span class="s2">                &lt;/table&gt;</span>
+<span class="s2">                &lt;/section&gt;</span>
+<span class="s2">                  &lt;font size=&quot;22&quot;&gt;&lt;p align=&#39;left&#39;&gt;Receipt for the refund of funds from the Manager </span>
+<span class="s2">                  CW Bot&lt;br&gt;</span>
+<span class="s2">                  Квитанция о возврате денежных средств от Manager CW бота&lt;/p&gt;&lt;/font&gt;</span>
+<span class="s2">                  &lt;p&gt;&lt;b&gt;&quot;&quot;&quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;&quot;&quot;&lt;/b&gt;, below you can see your receipt for the refund of </span>
+<span class="s2">                  funds for the </span>
+<span class="s2">                  subscription &quot;CW PREMIUM&quot; from the </span>
+<span class="s2">                  &lt;a href=&#39;https://t.me/helper_cwBot&#39;&gt;Manager CW Bot&lt;/a&gt;.&lt;br&gt;&lt;br&gt;</span>
+<span class="s2">                  The date and time when the document was generated (Moscow time | MSK UTC+3): </span>
+<span class="s2">                  &quot;&quot;&quot;</span> <span class="o">+</span> <span class="n">time</span> <span class="o">+</span> <span class="s2">&quot;&quot;&quot;.&lt;/p&gt;</span>
+<span class="s2">                  &lt;p&gt;- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </span>
+<span class="s2">                  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -&lt;/p&gt;</span>
+<span class="s2">                  &lt;p&gt;</span><span class="se">\uf000</span><span class="s2">&lt;/p&gt;</span>
+<span class="s2">                  &lt;table width=&quot;100%&quot;&gt;</span>
+<span class="s2">                    &lt;thead&gt;</span>
+<span class="s2">                      &lt;tr&gt;</span>
+<span class="s2">                        &lt;th width=&quot;20%&quot;&gt;Refund ID | Идентификатор возврата&lt;/th&gt;</span>
+<span class="s2">                        &lt;th width=&quot;20%&quot;&gt;Recipient | Получатель&lt;/th&gt;</span>
+<span class="s2">                        &lt;th width=&quot;20%&quot;&gt;Ref. Amount | Сумма возврата&lt;/th&gt;</span>
+<span class="s2">                        &lt;th width=&quot;20%&quot;&gt;Ref. Date/Time | Дата/Время возврата&lt;/th&gt;</span>
+<span class="s2">                        &lt;th width=&quot;20%&quot;&gt;Ref. method | Способ возврата&lt;/th&gt;</span>
+<span class="s2">                      &lt;/tr&gt;</span>
+<span class="s2">                    &lt;/thead&gt;</span>
+<span class="s2">                    &lt;tbody&gt;</span>
+<span class="s2">                      &quot;&quot;&quot;</span> <span class="o">+</span> <span class="n">receipt_data</span> <span class="o">+</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                    &lt;/tbody&gt;</span>
+<span class="s2">                  &lt;/table&gt;</span>
+<span class="s2">                  </span>
+<span class="s2">                  &lt;p&gt;Your data is &lt;b&gt;always safe&lt;/b&gt;!&lt;/p&gt;</span>
+<span class="s2">                  </span>
+<span class="s2">                  &lt;p&gt;&lt;b&gt;Important!&lt;/b&gt; Using CW services (CWR.SU ) - you accept all the rules and </span>
+<span class="s2">                  the agreement written on the website &lt;a href=&#39;https://acdn.cwr.su/&#39;&gt;</span>
+<span class="s2">                  &lt;b&gt;acdn.cwr.su&lt;/b&gt;&lt;/a&gt; in the </span>
+<span class="s2">                  corresponding section </span>
+<span class="s2">                  on the main page.&lt;br&gt;</span>
+<span class="s2">                  &lt;i&gt;If&lt;/i&gt; you &lt;i&gt;don&#39;t agree with them (agreement / rules)&lt;/i&gt;, </span>
+<span class="s2">                  &lt;i&gt;destroy this document&lt;/i&gt; and stop using CW services.&lt;/p&gt;</span>
+<span class="s2">                &quot;&quot;&quot;</span><span class="p">,</span> <span class="n">tag_styles</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="n">FontFace</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#390085&quot;</span><span class="p">),</span>
+            <span class="s2">&quot;h5&quot;</span><span class="p">:</span> <span class="n">FontFace</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#424242&quot;</span><span class="p">,</span> <span class="n">size_pt</span><span class="o">=</span><span class="mi">17</span><span class="p">)</span>
+        <span class="p">})</span>
+
+        <span class="n">pdf</span><span class="o">.</span><span class="n">add_page</span><span class="p">()</span>
+
+        <span class="n">pdf</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                &lt;p&gt;&lt;i&gt;Sincerely, the CW team.</span>
+<span class="s2">                  &lt;br&gt;&lt;br&gt;</span>
+<span class="s2">                  If you have any questions about purchasing a product, please contact: </span>
+<span class="s2">                  &lt;a href=&#39;mailto:b2b@cwr.su&#39;&gt;b2b@cwr.su&lt;/a&gt;.</span>
+<span class="s2">                  &lt;br&gt;</span>
+<span class="s2">                  On cooperation issues: &lt;a href=&#39;mailto:cwr@cwr.su&#39;&gt;cwr@cwr.su&lt;/a&gt;.</span>
+<span class="s2">                  &lt;br&gt;</span>
+<span class="s2">                  For technical issues and problems: &lt;a href=&#39;mailto:help@cwr.su&#39;&gt;help@cwr.su&lt;/a&gt;.</span>
+<span class="s2">                  &lt;/i&gt;</span>
+<span class="s2">                  &lt;br&gt;</span>
+<span class="s2">                  &lt;br&gt;&lt;/p&gt;</span>
+<span class="s2">                  &lt;p&gt;Director and developer, creator, designer of the CW product: Laptev </span>
+<span class="s2">                  Alexander A.&lt;/p&gt;</span>
+<span class="s2">                  &lt;br&gt;</span>
+<span class="s2">                  &lt;center&gt;</span>
+<span class="s2">                    &lt;img src=&quot;./manager_cw_bot_api/styles/stamp.png&quot; width=100 height=100&gt;</span>
+<span class="s2">                  &lt;/center&gt;</span>
+<span class="s2">                  &lt;p&gt;&lt;i&gt;*This document is valid due to the stamp at the end of the contents of </span>
+<span class="s2">                  this document.&lt;/i&gt;&lt;/p&gt;</span>
+<span class="s2">                  &lt;p align=&#39;center&#39;&gt;© CW | All rights reserved | 2023 - 2024.&lt;/p&gt;</span>
+<span class="s2">                &quot;&quot;&quot;</span><span class="p">,</span> <span class="n">tag_styles</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="n">FontFace</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#390085&quot;</span><span class="p">)</span>
+        <span class="p">})</span>
+
+        <span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;receipt_refund_data_from_manager_cw_bot.pdf&quot;</span>
+        <span class="n">pdf</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="s2">&quot;Successful PDF file generation&quot;</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">file_path</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2024, Alexander Laptev, CW.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

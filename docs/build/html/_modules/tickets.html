@@ -1,0 +1,1067 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>tickets &mdash; Manager CW Bot 6.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/fonts.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Manager CW Bot
+          
+
+          
+            
+            <img src="../_static/manager_cw_bot_logo_black_and_cw-white_200pxX200px.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                6.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Methods and functions:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation lib, configuration and run the bot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../info_updates.html">Information about last update | August update!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analytics.html">Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../business.html">Business</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../business_answers.html">Business handler for answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../business_handler.html">Business handler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../buttons.html">Buttons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../create_table.html">Create Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fsm_handler.html">Handler of FSM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../example_bot_json.html">Example of a bot.json file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get_business_conn_and_info_conn.html">Get business connection and info conn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../giga_images.html">Giga Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../giga_request.html">Giga Request</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gigachatai.html">Giga Chat AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_db_sub_operations.html">Handler database and subscribe operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_email.html">Handler EMail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_email_sender.html">Handler EMail-Sender</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_promo.html">Handler promo data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_successful_payment.html">Handler successful payment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_yookassa.html">Handler Yookassa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mysql_connection.html">MySQL Connector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pdf_generate_data.html">PDF Generate Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../refund.html">Handler refund</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../send_invoice.html">Handler send invoice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tests.html">Tests (UnitTest)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tickets.html">Tickets</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Manager CW Bot</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Module code</a> &raquo;</li>
+        
+      <li>tickets</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for tickets</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Module of the ticket-system with work in DB MySQL.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">string</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="kn">import</span> <span class="nn">pymysql</span>
+<span class="kn">from</span> <span class="nn">aiogram</span> <span class="kn">import</span> <span class="n">Bot</span><span class="p">,</span> <span class="n">types</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">Router</span>
+<span class="kn">from</span> <span class="nn">aiogram.fsm.context</span> <span class="kn">import</span> <span class="n">FSMContext</span>
+<span class="kn">from</span> <span class="nn">aiogram.types.input_file</span> <span class="kn">import</span> <span class="n">FSInputFile</span>
+<span class="kn">from</span> <span class="nn">aiogram.utils.keyboard</span> <span class="kn">import</span> <span class="n">InlineKeyboardBuilder</span>
+
+<span class="kn">from</span> <span class="nn">manager_cw_bot_api.buttons</span> <span class="kn">import</span> <span class="n">Buttons</span>
+<span class="kn">from</span> <span class="nn">manager_cw_bot_api.handler_db_sub_operations</span> <span class="kn">import</span> <span class="n">HandlerDB</span>
+<span class="kn">from</span> <span class="nn">manager_cw_bot_api.mysql_connection</span> <span class="kn">import</span> <span class="n">Connection</span>
+<span class="kn">from</span> <span class="nn">manager_cw_bot_api.handler_email_sender</span> <span class="kn">import</span> <span class="n">SenderEmail</span>
+<span class="kn">from</span> <span class="nn">manager_cw_bot_api.pdf_generate_data</span> <span class="kn">import</span> <span class="n">GenerateTicketDataUniversal</span>
+<span class="kn">from</span> <span class="nn">manager_cw_bot_api.fsm_handler</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">GetDataForSendNewTicket</span><span class="p">,</span>
+    <span class="n">GetTicketDataForAnswerToUser</span><span class="p">,</span>
+    <span class="n">GetTicketDataForAnswerToAdmin</span>
+<span class="p">)</span>
+
+<span class="n">router</span><span class="p">:</span> <span class="n">Router</span> <span class="o">=</span> <span class="n">Router</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="TicketUserView"><a class="viewcode-back" href="../tickets.html#tickets.TicketUserView">[docs]</a><span class="k">class</span> <span class="nc">TicketUserView</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Class of the ticket system UI for users.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__response_big</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bot</span><span class="p">:</span> <span class="n">Bot</span><span class="p">,</span> <span class="n">mysql_data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="p">:</span> <span class="n">Bot</span> <span class="o">=</span> <span class="n">bot</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__mysql_data</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="n">mysql_data</span>
+
+        <span class="n">router</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__sending_ticket</span><span class="p">,</span>
+            <span class="n">GetDataForSendNewTicket</span><span class="o">.</span><span class="n">ticket_data</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="TicketUserView.show_user_menu"><a class="viewcode-back" href="../tickets.html#tickets.TicketUserView.show_user_menu">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">show_user_menu</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">call_query</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Function of the show user&#39;s menu.</span>
+
+<span class="sd">        :param call_query: Callback Query by click on the button.</span>
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">get_menu_user_tickets</span><span class="p">()</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔹 You&#39;re in the TicketSystem Menu (USER UI | CWBot UI).&quot;</span><span class="p">,</span>
+            <span class="n">chat_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="n">message_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+            <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="n">router</span><span class="o">.</span><span class="n">callback_query</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__show_user_tickets</span><span class="p">,</span>
+            <span class="n">F</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="s2">&quot;show_user_tickets&quot;</span>
+        <span class="p">)</span>
+        <span class="n">router</span><span class="o">.</span><span class="n">callback_query</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__send_new_ticket</span><span class="p">,</span>
+            <span class="n">F</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="s2">&quot;send_new_ticket&quot;</span>
+        <span class="p">)</span></div>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">__show_user_tickets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">call_query</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Show user&#39;s tickets in the Menu with mini-UI.</span>
+
+<span class="sd">        :param call_query: Callback Query.</span>
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">response</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">get_user_tickets</span><span class="p">(</span>
+            <span class="n">call_query</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">response</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;🔹 Tickets (USER UI | CWBot UI)</span><span class="se">\n</span><span class="s2">----------------------------------------&quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">response</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">message_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+                <span class="n">reply_markup</span><span class="o">=</span><span class="n">response</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">as_markup</span><span class="p">(),</span>
+                <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;HTML&quot;</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="n">response</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__response_big</span> <span class="o">=</span> <span class="n">response</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">response</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;🔹 Tickets (USER UI | CWBot UI)</span><span class="se">\n</span><span class="s2">----------------------------------------&quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">I&#39;m sorry, but &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;I can&#39;t send the details of all tickets. More characters &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;are required. Will you allow me to send the details of the remaining &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;tickets to your email?</span><span class="se">\n\n</span><span class="s2">&lt;b&gt;Available Data look after click on the &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;button (which you need)&lt;/b&gt;.&quot;</span><span class="p">,</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">message_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+                <span class="n">reply_markup</span><span class="o">=</span><span class="n">response</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">as_markup</span><span class="p">(),</span>
+                <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;HTML&quot;</span>
+            <span class="p">)</span>
+
+            <span class="n">router</span><span class="o">.</span><span class="n">callback_query</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">__allow_send_email_ticket_data_user</span><span class="p">,</span>
+                <span class="n">F</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="s2">&quot;allow_send_email_ticket_data_user&quot;</span>
+            <span class="p">)</span>
+            <span class="n">router</span><span class="o">.</span><span class="n">callback_query</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">__not_allow_send_email_ticket_data_user</span><span class="p">,</span>
+                <span class="n">F</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="s2">&quot;not_allow_send_email_ticket_data_user&quot;</span>
+            <span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">__allow_send_email_ticket_data_user</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">call_query</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Allow to send email for ticket data (big) for user.</span>
+
+<span class="sd">        :param call_query: CallbackQuery.</span>
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">get_menu_user_tickets_again</span><span class="p">()</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;🔹 Tickets (USER UI | CWBot UI)</span><span class="se">\n</span><span class="s2">----------------------------------------</span><span class="se">\n</span><span class="s2">&quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;⚡ &lt;b&gt;Available Data&lt;/b&gt;:&quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__response_big</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">message_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+                <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">(),</span>
+                <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;HTML&quot;</span>
+            <span class="p">)</span>
+
+            <span class="n">result</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">get_email_data</span><span class="p">(</span><span class="n">call_query</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+                <span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="k">await</span> <span class="n">GenerateTicketDataUniversal</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span>
+                    <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__response_big</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+                <span class="p">)</span>
+                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_document</span><span class="p">(</span>
+                    <span class="n">chat_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                    <span class="n">document</span><span class="o">=</span><span class="n">FSInputFile</span><span class="p">(</span><span class="n">file_path</span><span class="p">),</span>
+                    <span class="n">caption</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;✅ </span><span class="si">{</span><span class="n">call_query</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">, see TicketData in the &quot;</span>
+                            <span class="sa">f</span><span class="s2">&quot;attachment below. Also, for convenience, I am sending you an &quot;</span>
+                            <span class="sa">f</span><span class="s2">&quot;email with the same file, in the official format.&quot;</span>
+                <span class="p">)</span>
+                <span class="k">await</span> <span class="n">SenderEmail</span><span class="o">.</span><span class="n">send_others_ticket_data_in_email_format</span><span class="p">(</span>
+                    <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+                    <span class="sa">f</span><span class="s2">&quot;👤 TicketData from Manager CW for </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> | CWR.SU&quot;</span><span class="p">,</span>
+                    <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span>
+                    <span class="n">file_path</span>
+                <span class="p">)</span>
+                <span class="n">msg_temp</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">Message</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                    <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;✅ The data sent!&quot;</span><span class="p">,</span>
+                    <span class="n">chat_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">id</span>
+                <span class="p">)</span>
+
+                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">delete_message</span><span class="p">(</span>
+                    <span class="n">chat_id</span><span class="o">=</span><span class="n">msg_temp</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                    <span class="n">message_id</span><span class="o">=</span><span class="n">msg_temp</span><span class="o">.</span><span class="n">message_id</span>
+                <span class="p">)</span>
+
+                <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">back_on_main</span><span class="p">()</span>
+                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                    <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;🔐 You&#39;ve all the data and they&#39;re safe. To go to the main, click on &quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;the button below.&quot;</span><span class="p">,</span>
+                    <span class="n">chat_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                    <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">(),</span>
+                    <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;HTML&quot;</span>
+                <span class="p">)</span>
+
+                <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Successful! Sent data to user&#39;s EMail. &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;User ID: </span><span class="si">{</span><span class="n">call_query</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The exception has arisen: </span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">__not_allow_send_email_ticket_data_user</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">call_query</span><span class="p">:</span>
+            <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Not allow to send email for ticket data (big) for user.</span>
+
+<span class="sd">        :param call_query: CallbackQuery.</span>
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">get_menu_user_tickets_again</span><span class="p">()</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;🔹 Tickets (USER UI | CWBot UI)</span><span class="se">\n</span><span class="s2">----------------------------------------</span><span class="se">\n</span><span class="s2">&quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;⚡ &lt;b&gt;Available Data&lt;/b&gt;:&quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__response_big</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">message_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+                <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">(),</span>
+                <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;HTML&quot;</span>
+            <span class="p">)</span>
+
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The exception has arisen: </span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">__send_new_ticket</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">call_query</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">FSMContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Send ticket to admin via Manager Bot in the Menu with mini-UI.</span>
+
+<span class="sd">        :param call_query: Callback Query.</span>
+<span class="sd">        :param state: FSM.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">await</span> <span class="n">state</span><span class="o">.</span><span class="n">set_state</span><span class="p">(</span><span class="n">GetDataForSendNewTicket</span><span class="o">.</span><span class="n">ticket_data</span><span class="p">)</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;👌🏻 Please, send your message. System use special &quot;</span>
+                 <span class="s2">&quot;parse-mode here!</span><span class="se">\n</span><span class="s2">----------------------------------------</span><span class="se">\n</span><span class="s2">&quot;</span>
+                 <span class="s2">&quot;1. IF YOU WANT *TO ATTACH THE PHOTO use this free website* (we checked &quot;</span>
+                 <span class="s2">&quot;it!): &quot;</span>
+                 <span class="s2">&quot;https://imgbly.com/;</span><span class="se">\n</span><span class="s2">&quot;</span>
+                 <span class="s2">&quot;2. IF YOU WANT *TO ATTACH THE DOCUMENT-FILE use this free website* (we &quot;</span>
+                 <span class="s2">&quot;checked it!): https://www.file.io/;</span><span class="se">\n</span><span class="s2">&quot;</span>
+                 <span class="s2">&quot;3. IF YOU WANT *TO USE THE SYMBOL*: ``` &#39;  ``` - *USE THIS* (backquote): ``` `  &quot;</span>
+                 <span class="s2">&quot;```&quot;</span>
+                 <span class="s2">&quot;4. IF YOU WANT *TO USE THE SYMBOL*: ``` </span><span class="se">\\</span><span class="s2">  ``` - *USE THIS* (double slash): &quot;</span>
+                 <span class="s2">&quot;``` </span><span class="se">\\\\</span><span class="s2">  ```&quot;</span>
+                 <span class="s2">&quot;But when you&#39;ll send, you agree with rules of &quot;</span>
+                 <span class="s2">&quot;&#39;SENDER&#39;.</span><span class="se">\n\n</span><span class="s2">_1. Please, don&#39;t send spam or other ticket as spam</span><span class="se">\n</span><span class="s2">&quot;</span>
+                 <span class="s2">&quot;2. Don&#39;t use TicketSystem like personal messenger!_&quot;</span><span class="p">,</span>
+            <span class="n">chat_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="n">message_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+            <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">__sending_ticket</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">Message</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="n">FSMContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sending the ticket from the user to admin and save data of ticket in the DB (MySQL).</span>
+
+<span class="sd">        :param message: Message (data ticket) of the user.</span>
+<span class="sd">        :param state: FSM.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">get_menu_user_tickets_again</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">message</span><span class="o">.</span><span class="n">content_type</span> <span class="o">!=</span> <span class="s2">&quot;text&quot;</span><span class="p">:</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">, it isn&#39;t only text-format (type)! Please, &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;explore the rules and tips given above, if you want to send a ticket.&quot;</span><span class="p">,</span>
+                <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+            <span class="p">)</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Unsuccessful adding data to the database. &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;Message contains not only text-format. &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;User ID: </span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">25</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">2500</span><span class="p">):</span>
+                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                    <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                    <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;❌ </span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">, your message doesn&#39;t have &quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;25 &lt;= symbols &lt;= 2500! &quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;Please, explore the rules and tips given above, &quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;if you want to send a ticket.&quot;</span><span class="p">,</span>
+                    <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+                <span class="p">)</span>
+                <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Unsuccessful adding data to the database. Message of the user doesn&#39;t have &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;25 &lt;= symbols &lt;= 2500. &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;User ID: </span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">id_ticket</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_letters</span> <span class="o">+</span> <span class="n">string</span><span class="o">.</span><span class="n">digits</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+                    <span class="n">subject</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="p">[:</span><span class="mi">24</span><span class="p">]</span>
+                    <span class="n">username</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">username</span>
+                    <span class="n">tg_id_sender</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span>
+                    <span class="n">ticket_data</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;--User: </span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="n">create_at</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="p">(</span>
+                        <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span>
+                        <span class="n">now</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">3</span><span class="p">)))</span><span class="o">.</span>
+                        <span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1">.%m.%Y | %H:%M:%S MSK+3&#39;</span><span class="p">)</span>
+                    <span class="p">)</span>
+
+                    <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">add_new_ticket_data</span><span class="p">(</span>
+                        <span class="n">id_ticket</span><span class="p">,</span> 
+                        <span class="n">username</span><span class="p">,</span> 
+                        <span class="n">tg_id_sender</span><span class="p">,</span> 
+                        <span class="n">ticket_data</span><span class="p">,</span>
+                        <span class="n">create_at</span><span class="p">,</span> 
+                        <span class="n">subject</span>
+                    <span class="p">)</span>
+
+                    <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                        <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                        <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;✅ Successful! </span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">, your ticket added &quot;</span>
+                             <span class="sa">f</span><span class="s2">&quot;and sent.&quot;</span><span class="p">,</span>
+                        <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+                    <span class="p">)</span>
+
+                    <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">update_analytic_datas_count_tickets_system</span><span class="p">()</span>
+
+                    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;Successful! Updated data in the database. &quot;</span>
+                        <span class="sa">f</span><span class="s2">&quot;User ID: </span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="p">)</span>
+
+                <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+                    <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The exception has arisen: </span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+                    <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                        <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                        <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;❌ We have a problem! </span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">, your ticket &quot;</span>
+                             <span class="sa">f</span><span class="s2">&quot;didn&#39;t add and didn&#39;t send. Please, repeat later.&quot;</span><span class="p">,</span>
+                        <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+                    <span class="p">)</span>
+
+        <span class="k">await</span> <span class="n">state</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="TicketAdminView"><a class="viewcode-back" href="../tickets.html#tickets.TicketAdminView">[docs]</a><span class="k">class</span> <span class="nc">TicketAdminView</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Class of the ticket system UI for admin.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__response_big</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bot</span><span class="p">:</span> <span class="n">Bot</span><span class="p">,</span> <span class="n">mysql_data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="p">:</span> <span class="n">Bot</span> <span class="o">=</span> <span class="n">bot</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__mysql_data</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="n">mysql_data</span>
+
+<div class="viewcode-block" id="TicketAdminView.show_admin_menu"><a class="viewcode-back" href="../tickets.html#tickets.TicketAdminView.show_admin_menu">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">show_admin_menu</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">call_query</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Function of the show menu of admin.</span>
+
+<span class="sd">        :param call_query: Callback Query by click on the button.</span>
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">get_ticket_menu_admin</span><span class="p">()</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔹 You&#39;re in the TicketSystem Menu (ADMIN UI | CWBot UI).&quot;</span><span class="p">,</span>
+            <span class="n">chat_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="n">message_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+            <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+        <span class="p">)</span>
+
+        <span class="n">router</span><span class="o">.</span><span class="n">callback_query</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__show_admin_users_tickets</span><span class="p">,</span>
+            <span class="n">F</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="s2">&quot;show_tickets_for_admin_menu&quot;</span>
+        <span class="p">)</span></div>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">__show_admin_users_tickets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">call_query</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Function of the show tickets to admin.</span>
+
+<span class="sd">        :param call_query: Callback Query by click on the button.</span>
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">response</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">get_users_tickets_for_admin</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">response</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">response</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+                    <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;🔹 Tickets (ADMIN UI | CWBot UI)</span><span class="se">\n</span><span class="s2">&quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;----------------------------------------</span><span class="se">\n</span><span class="si">{</span><span class="n">response</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                    <span class="n">chat_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                    <span class="n">message_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+                    <span class="n">reply_markup</span><span class="o">=</span><span class="n">response</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">as_markup</span><span class="p">(),</span>
+                    <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;HTML&quot;</span>
+                <span class="p">)</span>
+            <span class="k">elif</span> <span class="n">response</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__response_big</span> <span class="o">=</span> <span class="n">response</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">response</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+
+                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+                    <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;🔹 Tickets (ADMIN UI | CWBot UI)</span><span class="se">\n</span><span class="s2">&quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;----------------------------------------</span><span class="se">\n</span><span class="s2">I&#39;m sorry, but &quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;I can&#39;t send the details of all tickets. More characters &quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;are required. Will you allow me to send the details of the &quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;remaining tickets to your email?&quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&lt;b&gt;Available Data look after click on the button &quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;(which you need)&lt;/b&gt;.&quot;</span><span class="p">,</span>
+                    <span class="n">chat_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                    <span class="n">message_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+                    <span class="n">reply_markup</span><span class="o">=</span><span class="n">response</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">as_markup</span><span class="p">(),</span>
+                    <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;HTML&quot;</span>
+                <span class="p">)</span>
+
+                <span class="n">router</span><span class="o">.</span><span class="n">callback_query</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">__allow_send_email_ticket_data_admin</span><span class="p">,</span>
+                    <span class="n">F</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="s2">&quot;allow_send_email_ticket_data_admin&quot;</span>
+                <span class="p">)</span>
+                <span class="n">router</span><span class="o">.</span><span class="n">callback_query</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">__not_allow_send_email_ticket_data_admin</span><span class="p">,</span>
+                    <span class="n">F</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="s2">&quot;not_allow_send_email_ticket_data_admin&quot;</span>
+                <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+                    <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;🔹 Tickets (ADMIN UI | CWBot UI)</span><span class="se">\n</span><span class="s2">&quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;----------------------------------------</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;It&#39;s still empty here!&quot;</span><span class="p">,</span>
+                    <span class="n">chat_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                    <span class="n">message_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+                    <span class="n">reply_markup</span><span class="o">=</span><span class="n">response</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">as_markup</span><span class="p">(),</span>
+                    <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;HTML&quot;</span>
+                <span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">__allow_send_email_ticket_data_admin</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">call_query</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Allow to send email for ticket data (big) for admin.</span>
+
+<span class="sd">        :param call_query: CallbackQuery.</span>
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">back_on_main</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;🔹 Tickets (ADMIN UI | CWBot UI)</span><span class="se">\n</span><span class="s2">&quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;----------------------------------------</span><span class="se">\n</span><span class="s2">&quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;⚡ &lt;b&gt;Available Data&lt;/b&gt;:&quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__response_big</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">message_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+                <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">(),</span>
+                <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;HTML&quot;</span>
+            <span class="p">)</span>
+
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;bot.json&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+                <span class="n">admin_email</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;EMAIL_DATA&quot;</span><span class="p">][</span><span class="s2">&quot;ADMIN_EMAIL&quot;</span><span class="p">]</span>
+                <span class="n">admin_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;business_connection&quot;</span><span class="p">][</span><span class="s2">&quot;user&quot;</span><span class="p">][</span><span class="s2">&quot;first_name&quot;</span><span class="p">]</span>
+
+            <span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="k">await</span> <span class="n">GenerateTicketDataUniversal</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span>
+                <span class="n">admin_name</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__response_big</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="p">)</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_document</span><span class="p">(</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">document</span><span class="o">=</span><span class="n">FSInputFile</span><span class="p">(</span><span class="n">file_path</span><span class="p">),</span>
+                <span class="n">caption</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;✅ </span><span class="si">{</span><span class="n">call_query</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">, see TicketData in the attachment &quot;</span>
+                        <span class="sa">f</span><span class="s2">&quot;below. Also, for convenience, I am sending you an email with &quot;</span>
+                        <span class="sa">f</span><span class="s2">&quot;the same file, in the official format.&quot;</span>
+            <span class="p">)</span>
+            <span class="k">await</span> <span class="n">SenderEmail</span><span class="o">.</span><span class="n">send_others_ticket_data_in_email_format</span><span class="p">(</span>
+                <span class="n">admin_email</span><span class="p">,</span>
+                <span class="s2">&quot;👤 TicketData from Manager CW for ADMIN | CWR.SU&quot;</span><span class="p">,</span>
+                <span class="n">admin_name</span><span class="p">,</span>
+                <span class="n">file_path</span>
+            <span class="p">)</span>
+            <span class="n">msg_temp</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">Message</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;✅ The data sent!&quot;</span><span class="p">,</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">id</span>
+            <span class="p">)</span>
+
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">delete_message</span><span class="p">(</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">msg_temp</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">message_id</span><span class="o">=</span><span class="n">msg_temp</span><span class="o">.</span><span class="n">message_id</span>
+            <span class="p">)</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;🔐 You&#39;ve all the data and they&#39;re safe. &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;To go to the main, click on the button below.&quot;</span><span class="p">,</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">(),</span>
+                <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;HTML&quot;</span>
+            <span class="p">)</span>
+
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Successful! Sent data to user / admin EMail. &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;User ID: </span><span class="si">{</span><span class="n">call_query</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The exception has arisen: </span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">__not_allow_send_email_ticket_data_admin</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">call_query</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Not allow to send email for ticket data (big) for admin.</span>
+
+<span class="sd">        :param call_query: CallbackQuery.</span>
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">back_on_main</span><span class="p">()</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;🔹 Tickets (ADMIN UI | CWBot UI)</span><span class="se">\n</span><span class="s2">&quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;----------------------------------------</span><span class="se">\n</span><span class="s2">&quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;⚡ &lt;b&gt;Available Data&lt;/b&gt;:&quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__response_big</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">message_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+                <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">(),</span>
+                <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;HTML&quot;</span>
+            <span class="p">)</span>
+
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The exception has arisen: </span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="TicketAnswersToUsers"><a class="viewcode-back" href="../tickets.html#tickets.TicketAnswersToUsers">[docs]</a><span class="k">class</span> <span class="nc">TicketAnswersToUsers</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class for manage answers to users by ticket-system.&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bot</span><span class="p">:</span> <span class="n">Bot</span><span class="p">,</span> <span class="n">admin_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">mysql_data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="p">:</span> <span class="n">Bot</span> <span class="o">=</span> <span class="n">bot</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__admin_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">admin_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__mysql_data</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="n">mysql_data</span>
+
+        <span class="n">router</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__get_ticket_data_for_answer</span><span class="p">,</span>
+            <span class="n">GetTicketDataForAnswerToUser</span><span class="o">.</span><span class="n">ticket_data</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="TicketAnswersToUsers.explore_answer_users_ticket"><a class="viewcode-back" href="../tickets.html#tickets.TicketAnswersToUsers.explore_answer_users_ticket">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">explore_answer_users_ticket</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">call_query</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span><span class="p">,</span>
+            <span class="n">state</span><span class="p">:</span> <span class="n">FSMContext</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Handler (call-handler) for get id ticket for answer to user.</span>
+
+<span class="sd">        :param call_query: Callback Query.</span>
+<span class="sd">        :param state: FSM.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">await</span> <span class="n">state</span><span class="o">.</span><span class="n">set_state</span><span class="p">(</span><span class="n">GetTicketDataForAnswerToUser</span><span class="o">.</span><span class="n">ticket_data</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">call_query</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">__admin_id</span><span class="p">:</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;👌🏻 Please, tell me ID Ticket, your message and new status of the ticket, &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;which you want to answer. System use special &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;parse-mode here!</span><span class="se">\n</span><span class="s2">----------------------------------------</span><span class="se">\n</span><span class="s2">&quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;FORMAT your message: ``` ID_TICKET ~ MESSAGE ~ &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;NEW_STATUS  ```</span><span class="se">\n</span><span class="s2">&quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;1. IF YOU WANT *TO ATTACH THE PHOTO use this free website* (we checked &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;it!): &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;https://imgbly.com/;</span><span class="se">\n</span><span class="s2">&quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;2. IF YOU WANT *TO ATTACH THE DOCUMENT-FILE use this free website* (we &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;checked it!): https://www.file.io/;</span><span class="se">\n</span><span class="s2">&quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;3. IF YOU WANT *TO USE THE SYMBOL*: ``` &#39;  ``` - *USE THIS* (backquote): &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;``` `  &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;```&quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;4. IF YOU WANT *TO USE THE SYMBOL*: ``` </span><span class="se">\\</span><span class="s2">  ``` - *USE THIS* &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;(double slash): &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;``` </span><span class="se">\\\\</span><span class="s2">  ```&quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;But when you&#39;ll send, you agree with rules of &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;&#39;SENDER&#39;.</span><span class="se">\n\n</span><span class="s2">_1. Please, don&#39;t send spam or other ticket as spam</span><span class="se">\n</span><span class="s2">&quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;2. Don&#39;t use TicketSystem like personal messenger!_&quot;</span><span class="p">,</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">message_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+                <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span>
+            <span class="p">)</span></div>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">__get_ticket_data_for_answer</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">message</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">Message</span><span class="p">,</span>
+            <span class="n">state</span><span class="p">:</span> <span class="n">FSMContext</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get ticket-data for answer to user and sending answer to the user.</span>
+
+<span class="sd">        :param message: Message of the user.</span>
+<span class="sd">        :param state: FSM.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">await</span> <span class="n">state</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+        <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">back_on_main</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">connection</span><span class="p">:</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">connections</span><span class="o">.</span><span class="n">Connection</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Connection</span><span class="o">.</span><span class="n">get_connection</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">__mysql_data</span>
+            <span class="p">)</span>
+            <span class="n">cursor</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+            <span class="n">id_ticket</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; ~ &#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">message_for_ticket</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; ~ &#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">new_status</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; ~ &#39;</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">id_ticket</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+                <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;SELECT tg_id_sender, ticket_data, subject</span>
+<span class="s2">                             FROM users WHERE id_ticket = %s;&quot;&quot;&quot;</span>
+                <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="p">(</span><span class="n">id_ticket</span><span class="p">,))</span>
+                <span class="n">result</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="k">await</span> <span class="n">message</span><span class="o">.</span><span class="n">answer</span><span class="p">(</span>
+                        <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Sorry! Data is none!</span><span class="se">\n</span><span class="s2">&quot;</span>
+                             <span class="sa">f</span><span class="s2">&quot;Your message: </span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="p">)</span>
+                    <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;Unsuccessful adding data to the database. Data is none. &quot;</span>
+                        <span class="sa">f</span><span class="s2">&quot;User ID: </span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="p">)</span>
+
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">response</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+                    <span class="n">tg_id_sender</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">response</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                    <span class="n">content_ticket_data</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">response</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+                    <span class="n">subject</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">response</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+                    <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                        <span class="n">chat_id</span><span class="o">=</span><span class="n">tg_id_sender</span><span class="p">,</span>
+                        <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;👤 &lt;b&gt;ANSWER FROM ADMIN&lt;/b&gt;</span><span class="se">\n</span><span class="s2">&quot;</span>
+                             <span class="sa">f</span><span class="s2">&quot;----------------------------------------</span><span class="se">\n</span><span class="s2">&quot;</span>
+                             <span class="sa">f</span><span class="s2">&quot;#️⃣ ID Ticket: &lt;code&gt;</span><span class="si">{</span><span class="n">id_ticket</span><span class="si">}</span><span class="s2">&lt;/code&gt;</span><span class="se">\n</span><span class="s2">&quot;</span>
+                             <span class="sa">f</span><span class="s2">&quot;🌐 STATUS: &lt;b&gt;</span><span class="si">{</span><span class="n">new_status</span><span class="si">}</span><span class="s2">&lt;/b&gt;</span><span class="se">\n</span><span class="s2">&quot;</span>
+                             <span class="sa">f</span><span class="s2">&quot;✉ Subject: </span><span class="si">{</span><span class="n">subject</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+                             <span class="sa">f</span><span class="s2">&quot;📩 Content of message: </span><span class="se">\n\n</span><span class="s2">      </span><span class="si">{</span><span class="n">message_for_ticket</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                        <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">(),</span>
+                        <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;HTML&quot;</span>
+                    <span class="p">)</span>
+                    <span class="n">msg</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">Message</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                        <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                        <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;✅ SUCCESSFUL! Your message has been delivered!&quot;</span>
+                    <span class="p">)</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">content_ticket_data</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">message_for_ticket</span><span class="p">))</span> <span class="o">&lt;=</span> <span class="mi">3800</span><span class="p">:</span>
+                        <span class="n">new_content_data</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">content_ticket_data</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+                                                 <span class="sa">f</span><span class="s2">&quot;--Admin: </span><span class="si">{</span><span class="n">message_for_ticket</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">new_content_data</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">message_for_ticket</span><span class="si">}</span><span class="s2">&quot;</span>
+
+                    <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;UPDATE users SET ticket_data = &#39;</span><span class="si">{</span><span class="n">new_content_data</span><span class="si">}</span><span class="s2">&#39;, </span>
+<span class="s2">                                 status = &#39;</span><span class="si">{</span><span class="n">new_status</span><span class="si">}</span><span class="s2">&#39; WHERE id_ticket = %s;&quot;&quot;&quot;</span>
+                    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="p">(</span><span class="n">id_ticket</span><span class="p">,))</span>
+                    <span class="n">connection</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+                    <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+                        <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                        <span class="n">message_id</span><span class="o">=</span><span class="n">msg</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+                        <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;✅ SUCCESSFUL! Updated DB-data for ID: </span><span class="si">{</span><span class="n">id_ticket</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">,</span>
+                        <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+                    <span class="p">)</span>
+
+                    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;Successful! Updated data in the database. &quot;</span>
+                        <span class="sa">f</span><span class="s2">&quot;User ID: </span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="p">)</span>
+
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                    <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                    <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Sorry! It&#39;s not ID Ticket, because length of your message isn&#39;t 5 &quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;symbols!</span><span class="se">\n</span><span class="s2">Your message: </span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                    <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+                <span class="p">)</span>
+
+                <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Error: It&#39;s not ID Ticket, because length of user&#39;s message isn&#39;t 5 &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;symbols! </span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2">. UserID: </span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+
+            <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The exception has arisen: </span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;❌ FAIL! Please, follow the rules!&quot;</span><span class="p">,</span>
+                <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+            <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="TicketAnswersToAdmin"><a class="viewcode-back" href="../tickets.html#tickets.TicketAnswersToAdmin">[docs]</a><span class="k">class</span> <span class="nc">TicketAnswersToAdmin</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class for manage answers to admin by ticket-system.&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bot</span><span class="p">:</span> <span class="n">Bot</span><span class="p">,</span> <span class="n">admin_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">mysql_data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="p">:</span> <span class="n">Bot</span> <span class="o">=</span> <span class="n">bot</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__admin_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">admin_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__mysql_data</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="n">mysql_data</span>
+
+        <span class="n">router</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__get_ticket_data_for_answer_to_admin</span><span class="p">,</span>
+            <span class="n">GetTicketDataForAnswerToAdmin</span><span class="o">.</span><span class="n">ticket_data</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="TicketAnswersToAdmin.explore_answer_admin_by_ticket"><a class="viewcode-back" href="../tickets.html#tickets.TicketAnswersToAdmin.explore_answer_admin_by_ticket">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">explore_answer_admin_by_ticket</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">call_query</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span><span class="p">,</span>
+            <span class="n">state</span><span class="p">:</span> <span class="n">FSMContext</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Handler (call-handler) for get id ticket for answer to admin.</span>
+
+<span class="sd">        :param call_query: Callback Query.</span>
+<span class="sd">        :param state: FSM.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">await</span> <span class="n">state</span><span class="o">.</span><span class="n">set_state</span><span class="p">(</span><span class="n">GetTicketDataForAnswerToAdmin</span><span class="o">.</span><span class="n">ticket_data</span><span class="p">)</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;👌🏻 Please, tell me ID Ticket, your message of the ticket, &quot;</span>
+                 <span class="sa">f</span><span class="s2">&quot;which you want to answer. System use special &quot;</span>
+                 <span class="sa">f</span><span class="s2">&quot;parse-mode here!</span><span class="se">\n</span><span class="s2">----------------------------------------</span><span class="se">\n</span><span class="s2">&quot;</span>
+                 <span class="sa">f</span><span class="s2">&quot;FORMAT your message: ``` ID_TICKET ~ MESSAGE  ```</span><span class="se">\n</span><span class="s2">&quot;</span>
+                 <span class="sa">f</span><span class="s2">&quot;1. IF YOU WANT *TO ATTACH THE PHOTO use this free website* (we checked &quot;</span>
+                 <span class="sa">f</span><span class="s2">&quot;it!): &quot;</span>
+                 <span class="sa">f</span><span class="s2">&quot;https://imgbly.com/;</span><span class="se">\n</span><span class="s2">&quot;</span>
+                 <span class="sa">f</span><span class="s2">&quot;2. IF YOU WANT *TO ATTACH THE DOCUMENT-FILE use this free website* (we &quot;</span>
+                 <span class="sa">f</span><span class="s2">&quot;checked it!): https://www.file.io/;</span><span class="se">\n</span><span class="s2">&quot;</span>
+                 <span class="sa">f</span><span class="s2">&quot;3. IF YOU WANT *TO USE THE SYMBOL*: ``` &#39;  ``` - *USE THIS* (backquote): &quot;</span>
+                 <span class="sa">f</span><span class="s2">&quot;``` `  ```&quot;</span>
+                 <span class="sa">f</span><span class="s2">&quot;4. IF YOU WANT *TO USE THE SYMBOL*: ``` </span><span class="se">\\</span><span class="s2">  ``` - *USE THIS* (double slash): &quot;</span>
+                 <span class="sa">f</span><span class="s2">&quot;``` </span><span class="se">\\\\</span><span class="s2">  ```&quot;</span>
+                 <span class="sa">f</span><span class="s2">&quot;But when you&#39;ll send, you agree with rules of &quot;</span>
+                 <span class="sa">f</span><span class="s2">&quot;&#39;SENDER&#39;.</span><span class="se">\n\n</span><span class="s2">_1. Please, don&#39;t send spam or other ticket as spam</span><span class="se">\n</span><span class="s2">&quot;</span>
+                 <span class="sa">f</span><span class="s2">&quot;2. Don&#39;t use TicketSystem like personal messenger!_&quot;</span><span class="p">,</span>
+            <span class="n">chat_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="n">message_id</span><span class="o">=</span><span class="n">call_query</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+            <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span>
+        <span class="p">)</span></div>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">__get_ticket_data_for_answer_to_admin</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">message</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">Message</span><span class="p">,</span>
+            <span class="n">state</span><span class="p">:</span> <span class="n">FSMContext</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get ticket-data for answer to user and sending answer to admin.</span>
+
+<span class="sd">        :param message: Message of the user.</span>
+<span class="sd">        :param state: FSM.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">await</span> <span class="n">state</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+        <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">back_on_main</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">connection</span><span class="p">:</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">connections</span><span class="o">.</span><span class="n">Connection</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Connection</span><span class="o">.</span><span class="n">get_connection</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">__mysql_data</span>
+            <span class="p">)</span>
+            <span class="n">cursor</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+            <span class="n">id_ticket</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; ~ &#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">message_for_ticket</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; ~ &#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">id_ticket</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+                <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;SELECT tg_id_sender, ticket_data, status, subject</span>
+<span class="s2">                             FROM users WHERE id_ticket = %s;&quot;&quot;&quot;</span>
+                <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="p">(</span><span class="n">id_ticket</span><span class="p">,))</span>
+                <span class="n">result</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="k">await</span> <span class="n">message</span><span class="o">.</span><span class="n">answer</span><span class="p">(</span>
+                        <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Sorry! Data is none!</span><span class="se">\n</span><span class="s2">&quot;</span>
+                             <span class="sa">f</span><span class="s2">&quot;Your message: </span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="p">)</span>
+
+                    <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;Unsuccessful adding data to the database. Data is none.&quot;</span>
+                        <span class="sa">f</span><span class="s2">&quot;User ID: </span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="p">)</span>
+
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">response</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+                    <span class="n">tg_id_sender</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">response</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                    <span class="n">content_ticket_data</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">response</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+                    <span class="n">status</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">response</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+                    <span class="n">subject</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">response</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+
+                    <span class="k">if</span> <span class="n">tg_id_sender</span> <span class="o">==</span> <span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">:</span>
+                        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                            <span class="n">chat_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__admin_id</span><span class="p">,</span>
+                            <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;👤 &lt;b&gt;ANSWER FROM USER&lt;/b&gt;</span><span class="se">\n</span><span class="s2">&quot;</span>
+                                 <span class="sa">f</span><span class="s2">&quot;----------------------------------------</span><span class="se">\n</span><span class="s2">&quot;</span>
+                                 <span class="sa">f</span><span class="s2">&quot;#️⃣ ID Ticket: &lt;code&gt;</span><span class="si">{</span><span class="n">id_ticket</span><span class="si">}</span><span class="s2">&lt;/code&gt;</span><span class="se">\n</span><span class="s2">&quot;</span>
+                                 <span class="sa">f</span><span class="s2">&quot;🌐 STATUS: &lt;b&gt;</span><span class="si">{</span><span class="n">status</span><span class="si">}</span><span class="s2">&lt;/b&gt;</span><span class="se">\n</span><span class="s2">&quot;</span>
+                                 <span class="sa">f</span><span class="s2">&quot;✉ Subject: </span><span class="si">{</span><span class="n">subject</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+                                 <span class="sa">f</span><span class="s2">&quot;📩 Content of message: </span><span class="se">\n\n</span><span class="s2">      </span><span class="si">{</span><span class="n">message_for_ticket</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                            <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">(),</span>
+                            <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;HTML&quot;</span>
+                        <span class="p">)</span>
+
+                        <span class="n">msg</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">Message</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                            <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                            <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;✅ SUCCESSFUL! Your message has been delivered!&quot;</span>
+                        <span class="p">)</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">content_ticket_data</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">message_for_ticket</span><span class="p">))</span> <span class="o">&lt;=</span> <span class="mi">3800</span><span class="p">:</span>
+                            <span class="n">new_content_data</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">content_ticket_data</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+                                                     <span class="sa">f</span><span class="s2">&quot;--User: </span><span class="si">{</span><span class="n">message_for_ticket</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">new_content_data</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">message_for_ticket</span><span class="si">}</span><span class="s2">&quot;</span>
+
+                        <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                                     UPDATE users SET ticket_data = &#39;</span><span class="si">{</span><span class="n">new_content_data</span><span class="si">}</span><span class="s2">&#39; </span>
+<span class="s2">                                     WHERE id_ticket = %s;</span>
+<span class="s2">                                     &quot;&quot;&quot;</span>
+                        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="p">(</span><span class="n">id_ticket</span><span class="p">,))</span>
+                        <span class="n">connection</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+                        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+                            <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                            <span class="n">message_id</span><span class="o">=</span><span class="n">msg</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+                            <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;✅ SUCCESSFUL! Updated DB-data for ID: </span><span class="si">{</span><span class="n">id_ticket</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">,</span>
+                            <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+                        <span class="p">)</span>
+
+                        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                            <span class="sa">f</span><span class="s2">&quot;Successful! Updated data in the database. &quot;</span>
+                            <span class="sa">f</span><span class="s2">&quot;User ID: </span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span>
+                        <span class="p">)</span>
+
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                            <span class="n">chat_id</span><span class="o">=</span><span class="n">tg_id_sender</span><span class="p">,</span>
+                            <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;🚫 ERROR 43! </span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">, forbidden!&quot;</span><span class="p">,</span>
+                            <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span><span class="p">,</span>
+                            <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+                        <span class="p">)</span>
+
+                        <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+                            <span class="sa">f</span><span class="s2">&quot;Error: 43 Forbidden. UserID: </span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span>
+                        <span class="p">)</span>
+
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                    <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                    <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Sorry! It&#39;s not ID Ticket, because length of your message isn&#39;t 5 &quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;symbols!</span><span class="se">\n</span><span class="s2">Your message: </span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                    <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+                <span class="p">)</span>
+
+                <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Error: It&#39;s not ID Ticket, because length of user&#39;s message isn&#39;t 5 &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;symbols! </span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2">. UserID: </span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+
+            <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The exception has arisen: </span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;❌ FAIL! Please, follow the rules!&quot;</span><span class="p">,</span>
+                <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+            <span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2024, Alexander Laptev, CW.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

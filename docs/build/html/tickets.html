@@ -1,0 +1,561 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="_static/favicons/FaviconSVG_ManagerCWBotAPI.svg" type="image/svg+xml">
+    <link rel="icon" sizes="16x16" href="_static/favicons/favicon/favicon-16x16.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="_static/favicons/favicon/favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon" sizes="180x180" href="_static/favicons/favicon/apple-touch-icon-180x180.png" type="image/png">
+    <link rel="mask-icon" href="_static/favicons/favicon/safari-pinned-tab.svg" color="#5bbad5" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Tickets &mdash; Manager CW Bot 6.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Tests (UnitTest)" href="tests.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Manager CW Bot
+          
+
+          
+            
+            <img src="_static/manager_cw_bot_logo_black_and_cw-white_200pxX200px.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                6.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Methods and functions:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation lib, configuration and run the bot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_updates.html">Information about last update | August update!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analytics.html">Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="business.html">Business</a></li>
+<li class="toctree-l1"><a class="reference internal" href="business_answers.html">Business handler for answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="business_handler.html">Business handler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="buttons.html">Buttons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="create_table.html">Create Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fsm_handler.html">Handler of FSM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example_bot_json.html">Example of a bot.json file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get_business_conn_and_info_conn.html">Get business connection and info conn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="giga_images.html">Giga Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="giga_request.html">Giga Request</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gigachatai.html">Giga Chat AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="handler_db_sub_operations.html">Handler database and subscribe operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="handler_email.html">Handler EMail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="handler_email_sender.html">Handler EMail-Sender</a></li>
+<li class="toctree-l1"><a class="reference internal" href="handler_promo.html">Handler promo data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="handler_successful_payment.html">Handler successful payment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="handler_yookassa.html">Handler Yookassa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mysql_connection.html">MySQL Connector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pdf_generate_data.html">PDF Generate Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="refund.html">Handler refund</a></li>
+<li class="toctree-l1"><a class="reference internal" href="send_invoice.html">Handler send invoice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests.html">Tests (UnitTest)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tickets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-tickets">CW Ticket System for the admin-user / user-admin</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Manager CW Bot</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Tickets</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="tickets">
+<h1>Tickets<a class="headerlink" href="#tickets" title="Permalink to this heading"><span>#</span></a></h1>
+<section id="module-tickets">
+<span id="cw-ticket-system-for-the-admin-user-user-admin"></span><h2>CW Ticket System for the admin-user / user-admin<a class="headerlink" href="#module-tickets" title="Permalink to this heading"><span>#</span></a></h2>
+<p>Module of the ticket-system with work in DB MySQL.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="tickets.TicketAdminView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tickets.</span></span><span class="sig-name descname"><span class="pre">TicketAdminView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mysql_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tickets.html#TicketAdminView"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tickets.TicketAdminView" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Class of the ticket system UI for admin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bot</strong> (<em>Bot</em>) – </p></li>
+<li><p><strong>mysql_data</strong> (<em>dict</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="tickets.TicketAdminView.__allow_send_email_ticket_data_admin">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__allow_send_email_ticket_data_admin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tickets.TicketAdminView.__allow_send_email_ticket_data_admin" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Allow to send email for ticket data (big) for admin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call_query</strong> (<em>CallbackQuery</em>) – CallbackQuery.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tickets.TicketAdminView.__not_allow_send_email_ticket_data_admin">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__not_allow_send_email_ticket_data_admin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tickets.TicketAdminView.__not_allow_send_email_ticket_data_admin" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Not allow to send email for ticket data (big) for admin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call_query</strong> (<em>CallbackQuery</em>) – CallbackQuery.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tickets.TicketAdminView.__show_admin_users_tickets">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__show_admin_users_tickets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tickets.TicketAdminView.__show_admin_users_tickets" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Function of the show tickets to admin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query by click on the button.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tickets.TicketAdminView.show_admin_menu">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">show_admin_menu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tickets.html#TicketAdminView.show_admin_menu"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tickets.TicketAdminView.show_admin_menu" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Function of the show menu of admin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query by click on the button.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="tickets.TicketAnswersToAdmin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tickets.</span></span><span class="sig-name descname"><span class="pre">TicketAnswersToAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mysql_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tickets.html#TicketAnswersToAdmin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tickets.TicketAnswersToAdmin" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Class for manage answers to admin by ticket-system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bot</strong> (<em>Bot</em>) – </p></li>
+<li><p><strong>admin_id</strong> (<em>int</em>) – </p></li>
+<li><p><strong>mysql_data</strong> (<em>dict</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="tickets.TicketAnswersToAdmin.__get_ticket_data_for_answer_to_admin">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__get_ticket_data_for_answer_to_admin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tickets.TicketAnswersToAdmin.__get_ticket_data_for_answer_to_admin" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Get ticket-data for answer to user and sending answer to admin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>message</strong> (<em>Message</em>) – Message of the user.</p></li>
+<li><p><strong>state</strong> (<em>FSMContext</em>) – FSM.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tickets.TicketAnswersToAdmin.explore_answer_admin_by_ticket">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">explore_answer_admin_by_ticket</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tickets.html#TicketAnswersToAdmin.explore_answer_admin_by_ticket"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tickets.TicketAnswersToAdmin.explore_answer_admin_by_ticket" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Handler (call-handler) for get id ticket for answer to admin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p></li>
+<li><p><strong>state</strong> (<em>FSMContext</em>) – FSM.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="tickets.TicketAnswersToUsers">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tickets.</span></span><span class="sig-name descname"><span class="pre">TicketAnswersToUsers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mysql_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tickets.html#TicketAnswersToUsers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tickets.TicketAnswersToUsers" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Class for manage answers to users by ticket-system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bot</strong> (<em>Bot</em>) – </p></li>
+<li><p><strong>admin_id</strong> (<em>int</em>) – </p></li>
+<li><p><strong>mysql_data</strong> (<em>dict</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="tickets.TicketAnswersToUsers.__get_ticket_data_for_answer">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__get_ticket_data_for_answer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tickets.TicketAnswersToUsers.__get_ticket_data_for_answer" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Get ticket-data for answer to user and sending answer to the user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>message</strong> (<em>Message</em>) – Message of the user.</p></li>
+<li><p><strong>state</strong> (<em>FSMContext</em>) – FSM.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tickets.TicketAnswersToUsers.explore_answer_users_ticket">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">explore_answer_users_ticket</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tickets.html#TicketAnswersToUsers.explore_answer_users_ticket"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tickets.TicketAnswersToUsers.explore_answer_users_ticket" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Handler (call-handler) for get id ticket for answer to user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p></li>
+<li><p><strong>state</strong> (<em>FSMContext</em>) – FSM.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="tickets.TicketUserView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tickets.</span></span><span class="sig-name descname"><span class="pre">TicketUserView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mysql_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tickets.html#TicketUserView"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tickets.TicketUserView" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Class of the ticket system UI for users.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bot</strong> (<em>Bot</em>) – </p></li>
+<li><p><strong>mysql_data</strong> (<em>dict</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="tickets.TicketUserView.__allow_send_email_ticket_data_user">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__allow_send_email_ticket_data_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tickets.TicketUserView.__allow_send_email_ticket_data_user" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Allow to send email for ticket data (big) for user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call_query</strong> (<em>CallbackQuery</em>) – CallbackQuery.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tickets.TicketUserView.__not_allow_send_email_ticket_data_user">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__not_allow_send_email_ticket_data_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tickets.TicketUserView.__not_allow_send_email_ticket_data_user" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Not allow to send email for ticket data (big) for user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call_query</strong> (<em>CallbackQuery</em>) – CallbackQuery.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tickets.TicketUserView.__send_new_ticket">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__send_new_ticket</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tickets.TicketUserView.__send_new_ticket" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Send ticket to admin via Manager Bot in the Menu with mini-UI.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p></li>
+<li><p><strong>state</strong> (<em>FSMContext</em>) – FSM.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tickets.TicketUserView.__sending_ticket">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__sending_ticket</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tickets.TicketUserView.__sending_ticket" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Sending the ticket from the user to admin and save data of ticket in the DB (MySQL).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>message</strong> (<em>Message</em>) – Message (data ticket) of the user.</p></li>
+<li><p><strong>state</strong> (<em>FSMContext</em>) – FSM.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tickets.TicketUserView.__show_user_tickets">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__show_user_tickets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tickets.TicketUserView.__show_user_tickets" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Show user’s tickets in the Menu with mini-UI.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tickets.TicketUserView.show_user_menu">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">show_user_menu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tickets.html#TicketUserView.show_user_menu"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tickets.TicketUserView.show_user_menu" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Function of the show user’s menu.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query by click on the button.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="tests.html" class="btn btn-neutral float-left" title="Tests (UnitTest)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2024, Alexander Laptev, CW.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

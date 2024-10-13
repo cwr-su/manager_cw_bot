@@ -1,0 +1,1153 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>handler_db_sub_operations &mdash; Manager CW Bot 6.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/fonts.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Manager CW Bot
+          
+
+          
+            
+            <img src="../_static/manager_cw_bot_logo_black_and_cw-white_200pxX200px.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                6.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Methods and functions:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation lib, configuration and run the bot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../info_updates.html">Information about last update | August update!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analytics.html">Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../business.html">Business</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../business_answers.html">Business handler for answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../business_handler.html">Business handler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../buttons.html">Buttons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../create_table.html">Create Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fsm_handler.html">Handler of FSM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../example_bot_json.html">Example of a bot.json file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get_business_conn_and_info_conn.html">Get business connection and info conn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../giga_images.html">Giga Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../giga_request.html">Giga Request</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gigachatai.html">Giga Chat AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_db_sub_operations.html">Handler database and subscribe operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_email.html">Handler EMail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_email_sender.html">Handler EMail-Sender</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_promo.html">Handler promo data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_successful_payment.html">Handler successful payment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_yookassa.html">Handler Yookassa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mysql_connection.html">MySQL Connector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pdf_generate_data.html">PDF Generate Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../refund.html">Handler refund</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../send_invoice.html">Handler send invoice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tests.html">Tests (UnitTest)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tickets.html">Tickets</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Manager CW Bot</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Module code</a> &raquo;</li>
+        
+      <li>handler_db_sub_operations</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for handler_db_sub_operations</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Module for control the database.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">pymysql</span>
+
+<span class="kn">from</span> <span class="nn">aiogram.utils.keyboard</span> <span class="kn">import</span> <span class="n">InlineKeyboardBuilder</span>
+<span class="kn">from</span> <span class="nn">aiogram</span> <span class="kn">import</span> <span class="n">types</span>
+
+<span class="kn">from</span> <span class="nn">manager_cw_bot_api.mysql_connection</span> <span class="kn">import</span> <span class="n">Connection</span>
+
+
+<div class="viewcode-block" id="HandlerDB"><a class="viewcode-back" href="../handler_db_sub_operations.html#handler_db_sub_operations.HandlerDB">[docs]</a><span class="k">class</span> <span class="nc">HandlerDB</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Handler-class for manage database.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="HandlerDB.get_data"><a class="viewcode-back" href="../handler_db_sub_operations.html#handler_db_sub_operations.HandlerDB.get_data">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="n">file_path</span><span class="o">=</span><span class="s2">&quot;bot.json&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get data of the ADMIN Manager Bot.</span>
+
+<span class="sd">        :param file_path: File Path of JSON-API-keys for Bot.</span>
+<span class="sd">        :return: Dict with data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+
+            <span class="n">dct</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+            <span class="n">dct</span><span class="p">[</span><span class="s2">&quot;MYSQL&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;MYSQL&quot;</span><span class="p">]</span>
+
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="s2">&quot;Obtained MySQL DB data from the conf. file for communication with the database&quot;</span>
+            <span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">dct</span><span class="p">[</span><span class="s2">&quot;MYSQL&quot;</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="HandlerDB.get_admin_email_from_file"><a class="viewcode-back" href="../handler_db_sub_operations.html#handler_db_sub_operations.HandlerDB.get_admin_email_from_file">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_admin_email_from_file</span><span class="p">(</span><span class="n">file_path</span><span class="o">=</span><span class="s2">&quot;bot.json&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get data of the ADMIN Manager Bot.</span>
+
+<span class="sd">        :param file_path: File Path of JSON-API-keys for Bot.</span>
+<span class="sd">        :return: Dict with data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+            <span class="n">admin_email</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;EMAIL_DATA&quot;</span><span class="p">][</span><span class="s2">&quot;ADMIN_EMAIL&quot;</span><span class="p">]</span>
+
+            <span class="k">return</span> <span class="n">admin_email</span></div>
+
+<div class="viewcode-block" id="HandlerDB.yookassa_up_query"><a class="viewcode-back" href="../handler_db_sub_operations.html#handler_db_sub_operations.HandlerDB.yookassa_up_query">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">yookassa_up_query</span><span class="p">(</span><span class="n">confirmation_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">tg_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Yookassa fast-query for update data.</span>
+
+<span class="sd">        :param confirmation_id: Confirmation ID.</span>
+<span class="sd">        :param tg_id: TG ID.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">connection</span><span class="p">:</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">Connection</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Connection</span><span class="o">.</span><span class="n">get_connection</span><span class="p">(</span>
+            <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="n">cursor</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+        <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;UPDATE email_addresses SET yookassa_conf_id = &#39;</span><span class="si">{</span><span class="n">confirmation_id</span><span class="si">}</span><span class="s2">&#39; </span>
+<span class="s2">        WHERE tg_id_sender = &#39;</span><span class="si">{</span><span class="n">tg_id</span><span class="si">}</span><span class="s2">&#39;;&quot;&quot;&quot;</span>
+
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+        <span class="n">connection</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+        <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="HandlerDB.update_yookassa_data"><a class="viewcode-back" href="../handler_db_sub_operations.html#handler_db_sub_operations.HandlerDB.update_yookassa_data">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">update_yookassa_data</span><span class="p">(</span>
+            <span class="n">call</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span><span class="p">,</span>
+            <span class="n">confirmation_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+            <span class="n">admin_id</span><span class="o">=</span><span class="s2">&quot;None&quot;</span><span class="p">,</span>
+            <span class="n">admin_email</span><span class="o">=</span><span class="s2">&quot;None&quot;</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update payment data of yookassa in DB.</span>
+
+<span class="sd">        :param call: Callback Query</span>
+<span class="sd">        :param confirmation_id: Confirmation ID.</span>
+<span class="sd">        :param admin_id: ID Admin.</span>
+<span class="sd">        :param admin_email: Admin EMail.</span>
+
+<span class="sd">        :return: Result.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">tg_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span>
+
+            <span class="k">if</span> <span class="n">tg_id</span> <span class="o">!=</span> <span class="n">admin_id</span><span class="p">:</span>
+                <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">yookassa_up_query</span><span class="p">(</span><span class="n">confirmation_id</span><span class="p">,</span> <span class="n">tg_id</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">email_data</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">get_email_data</span><span class="p">(</span><span class="n">tg_id</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">email_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">True</span> <span class="ow">and</span> <span class="n">email_data</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">admin_email</span><span class="p">:</span>
+                    <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">yookassa_up_query</span><span class="p">(</span><span class="n">confirmation_id</span><span class="p">,</span> <span class="n">tg_id</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">email_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+                    <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">add_new_email</span><span class="p">(</span>
+                        <span class="n">admin_email</span><span class="p">,</span>
+                        <span class="n">tg_id</span><span class="p">,</span>
+                        <span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">username</span><span class="p">,</span>
+                        <span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="p">,</span>
+                        <span class="kc">False</span>
+                    <span class="p">)</span>
+                    <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">yookassa_up_query</span><span class="p">(</span><span class="n">confirmation_id</span><span class="p">,</span> <span class="n">tg_id</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="kc">True</span><span class="p">,</span>
+
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;The exception has arisen: </span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+            <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="n">ex</span></div>
+
+<div class="viewcode-block" id="HandlerDB.yookassa_get_conf_id"><a class="viewcode-back" href="../handler_db_sub_operations.html#handler_db_sub_operations.HandlerDB.yookassa_get_conf_id">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">yookassa_get_conf_id</span><span class="p">(</span><span class="n">tg_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get yookassa payment confirmation id from DB by TG ID.</span>
+
+<span class="sd">        :param tg_id: TG ID.</span>
+<span class="sd">        :return: Tuple with data-result.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">connection</span><span class="p">:</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">Connection</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Connection</span><span class="o">.</span><span class="n">get_connection</span><span class="p">(</span>
+                <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+            <span class="p">)</span>
+            <span class="n">cursor</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+            <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;SELECT yookassa_conf_id FROM email_addresses WHERE tg_id_sender = </span><span class="si">%s</span><span class="s2">;&quot;</span>
+            <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">tg_id</span><span class="p">),))</span>
+            <span class="n">result</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;none&quot;</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;None&quot;</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;None&quot;</span>
+
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;The exception has arisen: </span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+            <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="n">ex</span></div>
+
+<div class="viewcode-block" id="HandlerDB.yookassa_delete_record_conf_id"><a class="viewcode-back" href="../handler_db_sub_operations.html#handler_db_sub_operations.HandlerDB.yookassa_delete_record_conf_id">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">yookassa_delete_record_conf_id</span><span class="p">(</span><span class="n">tg_id</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Fast delete record (confirmation-id of payment from yookassa).&quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">connection</span><span class="p">:</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">Connection</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Connection</span><span class="o">.</span><span class="n">get_connection</span><span class="p">(</span>
+                <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+            <span class="p">)</span>
+            <span class="n">cursor</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+            <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;UPDATE email_addresses SET yookassa_conf_id = &#39;none&#39; WHERE </span>
+<span class="s2">                         tg_id_sender = &#39;</span><span class="si">{</span><span class="n">tg_id</span><span class="si">}</span><span class="s2">&#39;;&quot;&quot;&quot;</span>
+            <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+            <span class="n">connection</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+            <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;The exception has arisen: </span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span></div>
+
+<div class="viewcode-block" id="HandlerDB.get_analytic_datas"><a class="viewcode-back" href="../handler_db_sub_operations.html#handler_db_sub_operations.HandlerDB.get_analytic_datas">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_analytic_datas</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get Analytics.</span>
+
+<span class="sd">        :return: Tuple with data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">connection</span><span class="p">:</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">Connection</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Connection</span><span class="o">.</span><span class="n">get_connection</span><span class="p">(</span>
+            <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="n">cursor</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+        <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;SELECT * FROM analytics;&quot;</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+        <span class="n">response</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+        <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">response</span></div>
+
+<div class="viewcode-block" id="HandlerDB.update_analytic_datas_count_ai_queries"><a class="viewcode-back" href="../handler_db_sub_operations.html#handler_db_sub_operations.HandlerDB.update_analytic_datas_count_ai_queries">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">update_analytic_datas_count_ai_queries</span><span class="p">(</span><span class="n">count</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update analytic datas. Update CAQ.</span>
+
+<span class="sd">        :param count: Count of AI queries.</span>
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">connection</span><span class="p">:</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">Connection</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Connection</span><span class="o">.</span><span class="n">get_connection</span><span class="p">(</span>
+            <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="n">cursor</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+        <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;SELECT count_of_ai_queries FROM analytics;&quot;</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+        <span class="n">count_of_ai_queries</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">count_of_ai_queries</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;INSERT INTO analytics (count_of_ai_queries)</span>
+<span class="s2">                         VALUES (</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2">);&quot;&quot;&quot;</span>
+            <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;UPDATE analytics SET </span>
+<span class="s2">                         count_of_ai_queries = </span><span class="si">{</span><span class="n">count_of_ai_queries</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">count</span><span class="si">}</span><span class="s2">;&quot;&quot;&quot;</span>
+            <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+
+        <span class="n">connection</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+        <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="HandlerDB.update_analytic_datas_count_tickets_system"><a class="viewcode-back" href="../handler_db_sub_operations.html#handler_db_sub_operations.HandlerDB.update_analytic_datas_count_tickets_system">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">update_analytic_datas_count_tickets_system</span><span class="p">(</span><span class="n">count</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update count of tickets. Update CTS.</span>
+
+<span class="sd">        :param count: Count of Tickets in the TSystem.</span>
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">connection</span><span class="p">:</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">Connection</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Connection</span><span class="o">.</span><span class="n">get_connection</span><span class="p">(</span>
+            <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="n">cursor</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+        <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;SELECT count_of_tickets_system FROM analytics;&quot;</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+        <span class="n">count_of_tickets_system</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">count_of_tickets_system</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;INSERT INTO analytics (count_of_tickets_system)</span>
+<span class="s2">                         VALUES (</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2">);&quot;&quot;&quot;</span>
+            <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;UPDATE analytics SET </span>
+<span class="s2">                         count_of_tickets_system = </span><span class="si">{</span><span class="n">count_of_tickets_system</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">count</span><span class="si">}</span><span class="s2">;&quot;&quot;&quot;</span>
+            <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+
+        <span class="n">connection</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+        <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="HandlerDB.get_email_data"><a class="viewcode-back" href="../handler_db_sub_operations.html#handler_db_sub_operations.HandlerDB.get_email_data">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_email_data</span><span class="p">(</span><span class="n">tg_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get email data by tg id.</span>
+
+<span class="sd">        :param tg_id: Tg ID.</span>
+<span class="sd">        :return: Tuple with EMail-data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">connection</span><span class="p">:</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">Connection</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Connection</span><span class="o">.</span><span class="n">get_connection</span><span class="p">(</span>
+            <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="n">cursor</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+        <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;SELECT email, firstname FROM email_addresses WHERE tg_id_sender = </span><span class="si">%s</span><span class="s2">;&quot;</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">tg_id</span><span class="p">),))</span>
+        <span class="n">result</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+        <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;waiting&quot;</span> <span class="ow">or</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;ADMIN&quot;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;None&quot;</span></div>
+
+<div class="viewcode-block" id="HandlerDB.get_temp_code_for_check_email"><a class="viewcode-back" href="../handler_db_sub_operations.html#handler_db_sub_operations.HandlerDB.get_temp_code_for_check_email">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_temp_code_for_check_email</span><span class="p">(</span><span class="n">tg_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get temp-code by tg id.</span>
+
+<span class="sd">        :param tg_id: Tg ID.</span>
+<span class="sd">        :return: Tuple with EMail-code-verification.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">connection</span><span class="p">:</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">Connection</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Connection</span><span class="o">.</span><span class="n">get_connection</span><span class="p">(</span>
+            <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="n">cursor</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+        <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;SELECT temp_check_code FROM email_addresses WHERE tg_id_sender = </span><span class="si">%s</span><span class="s2">;&quot;</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">tg_id</span><span class="p">),))</span>
+        <span class="n">result</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+        <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;None&quot;</span></div>
+
+<div class="viewcode-block" id="HandlerDB.update_temp_code_for_check_email"><a class="viewcode-back" href="../handler_db_sub_operations.html#handler_db_sub_operations.HandlerDB.update_temp_code_for_check_email">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">update_temp_code_for_check_email</span><span class="p">(</span>
+            <span class="n">tg_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+            <span class="n">code</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+            <span class="n">firstname</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+            <span class="n">username</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+            <span class="n">command</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+            <span class="n">admin_id</span><span class="o">=</span><span class="s2">&quot;None&quot;</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update temp-code by tg id.</span>
+
+<span class="sd">        :param tg_id: Tg ID.</span>
+<span class="sd">        :param code: Code for ver.</span>
+<span class="sd">        :param firstname: First name of user / admin.</span>
+<span class="sd">        :param username: Username.</span>
+<span class="sd">        :param command: Command</span>
+<span class="sd">        :param admin_id: ID Admin.</span>
+
+<span class="sd">        :return: Result.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">connection</span><span class="p">:</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">Connection</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Connection</span><span class="o">.</span><span class="n">get_connection</span><span class="p">(</span>
+            <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="n">cursor</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">command</span> <span class="o">==</span> <span class="s2">&quot;add&quot;</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">check</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">get_temp_code_for_check_email</span><span class="p">(</span><span class="n">tg_id</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">check</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">tg_id</span> <span class="o">!=</span> <span class="n">admin_id</span><span class="p">:</span>
+                        <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;INSERT INTO email_addresses (email, tg_id_sender, </span>
+<span class="s2">                        username, firstname, temp_check_code) VALUES (&#39;waiting&#39;, &#39;</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">tg_id</span><span class="p">)</span><span class="si">}</span><span class="s2">&#39;, </span>
+<span class="s2">                        &#39;</span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s2">&#39;, &#39;</span><span class="si">{</span><span class="n">firstname</span><span class="si">}</span><span class="s2">&#39;, &#39;</span><span class="si">{</span><span class="n">code</span><span class="si">}</span><span class="s2">&#39;);&quot;&quot;&quot;</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;INSERT INTO email_addresses (email, tg_id_sender, </span>
+<span class="s2">                        username, firstname, temp_check_code) VALUES (&#39;ADMIN&#39;, &#39;</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">tg_id</span><span class="p">)</span><span class="si">}</span><span class="s2">&#39;, </span>
+<span class="s2">                        &#39;</span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s2">&#39;, &#39;</span><span class="si">{</span><span class="n">firstname</span><span class="si">}</span><span class="s2">&#39;, &#39;</span><span class="si">{</span><span class="n">code</span><span class="si">}</span><span class="s2">&#39;);&quot;&quot;&quot;</span>
+                    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;UPDATE email_addresses SET temp_check_code = &#39;</span><span class="si">{</span><span class="n">code</span><span class="si">}</span><span class="s2">&#39; </span>
+<span class="s2">                                 WHERE tg_id_sender = &#39;</span><span class="si">{</span><span class="n">tg_id</span><span class="si">}</span><span class="s2">&#39;;&quot;&quot;&quot;</span>
+                    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+
+                <span class="n">connection</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+                <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+                <span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;Updated&quot;</span><span class="p">,</span> <span class="s2">&quot;add&quot;</span>
+
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+                <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;The exception has arisen: </span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+                <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="n">ex</span><span class="p">,</span> <span class="s2">&quot;add&quot;</span>
+
+        <span class="k">elif</span> <span class="n">command</span> <span class="o">==</span> <span class="s2">&quot;del&quot;</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">check</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">get_temp_code_for_check_email</span><span class="p">(</span><span class="n">tg_id</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">check</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">tg_id</span> <span class="o">!=</span> <span class="n">admin_id</span><span class="p">:</span>
+                        <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;UPDATE email_addresses SET temp_check_code = &#39;none&#39; </span>
+<span class="s2">                                     WHERE tg_id_sender = &#39;</span><span class="si">{</span><span class="n">tg_id</span><span class="si">}</span><span class="s2">&#39;;&quot;&quot;&quot;</span>
+                        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">admin_email</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">get_admin_email_from_file</span><span class="p">()</span>
+
+                        <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;UPDATE email_addresses SET temp_check_code = &#39;none&#39;, </span>
+<span class="s2">                        email = &#39;</span><span class="si">{</span><span class="n">admin_email</span><span class="si">}</span><span class="s2">&#39; WHERE tg_id_sender = &#39;</span><span class="si">{</span><span class="n">tg_id</span><span class="si">}</span><span class="s2">&#39;;&quot;&quot;&quot;</span>
+                        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+
+                    <span class="n">connection</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+                    <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+                    <span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;Updated&quot;</span><span class="p">,</span> <span class="s2">&quot;del&quot;</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+                    <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;None&quot;</span><span class="p">,</span> <span class="s2">&quot;del&quot;</span>
+
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+                <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;The exception has arisen: </span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+                <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="n">ex</span><span class="p">,</span> <span class="s2">&quot;del&quot;</span></div>
+
+<div class="viewcode-block" id="HandlerDB.add_new_email"><a class="viewcode-back" href="../handler_db_sub_operations.html#handler_db_sub_operations.HandlerDB.add_new_email">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">add_new_email</span><span class="p">(</span>
+            <span class="n">email</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+            <span class="n">tg_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+            <span class="n">username</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+            <span class="n">firstname</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+            <span class="n">exists_in_db</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add a new email to DB.</span>
+
+<span class="sd">        :param email: EMail.</span>
+<span class="sd">        :param tg_id: TG ID.</span>
+<span class="sd">        :param username: Username.</span>
+<span class="sd">        :param firstname: Firstname of user / admin.</span>
+<span class="sd">        :param exists_in_db: Bool-result from past-check.</span>
+
+<span class="sd">        :return: Result.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">connection</span><span class="p">:</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">Connection</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Connection</span><span class="o">.</span><span class="n">get_connection</span><span class="p">(</span>
+                <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+            <span class="p">)</span>
+            <span class="n">cursor</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">exists_in_db</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+                <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;UPDATE email_addresses SET email = &#39;</span><span class="si">{</span><span class="n">email</span><span class="si">}</span><span class="s2">&#39;, </span>
+<span class="s2">                username = &#39;</span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s2">&#39;, firstname = &#39;</span><span class="si">{</span><span class="n">firstname</span><span class="si">}</span><span class="s2">&#39; WHERE tg_id_sender = </span>
+<span class="s2">                &#39;</span><span class="si">{</span><span class="n">tg_id</span><span class="si">}</span><span class="s2">&#39;;&quot;&quot;&quot;</span>
+                <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;INSERT INTO email_addresses (email, username, tg_id_sender, </span>
+<span class="s2">                firstname) VALUES(&#39;</span><span class="si">{</span><span class="n">email</span><span class="si">}</span><span class="s2">&#39;, &#39;</span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s2">&#39;, &#39;</span><span class="si">{</span><span class="n">tg_id</span><span class="si">}</span><span class="s2">&#39;, &#39;</span><span class="si">{</span><span class="n">firstname</span><span class="si">}</span><span class="s2">&#39;);&quot;&quot;&quot;</span>
+                <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+
+            <span class="n">connection</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+            <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="k">return</span> <span class="kc">True</span>
+
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;The exception has arisen: </span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+            <span class="k">return</span> <span class="kc">False</span></div>
+        
+<div class="viewcode-block" id="HandlerDB.add_new_ticket_data"><a class="viewcode-back" href="../handler_db_sub_operations.html#handler_db_sub_operations.HandlerDB.add_new_ticket_data">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">add_new_ticket_data</span><span class="p">(</span>
+        <span class="n">id_ticket</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> 
+        <span class="n">username</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> 
+        <span class="n">tg_id_sender</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> 
+        <span class="n">ticket_data</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> 
+        <span class="n">create_at</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> 
+        <span class="n">subject</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Function for add new ticket data.</span>
+
+<span class="sd">        :param id_ticket: ID Ticket.</span>
+<span class="sd">        :param username: Sender&#39;s Telegram Username.</span>
+<span class="sd">        :param tg_id_sender: Sender&#39;s Telegram ID.</span>
+<span class="sd">        :param ticket_data: Data of the Ticket.</span>
+<span class="sd">        :param create_at: CREATE_AT - data of the ticket.</span>
+<span class="sd">        :param subject: Subject of the ticket.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">connection</span><span class="p">:</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">Connection</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Connection</span><span class="o">.</span><span class="n">get_connection</span><span class="p">(</span>
+            <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="n">cursor</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+        <span class="n">query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;INSERT INTO users (id_ticket, username, tg_id_sender, </span>
+<span class="s2">        ticket_data, create_at, subject) VALUES(&#39;</span><span class="si">{</span><span class="n">id_ticket</span><span class="si">}</span><span class="s2">&#39;, &#39;</span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s2">&#39;, </span>
+<span class="s2">        &#39;</span><span class="si">{</span><span class="n">tg_id_sender</span><span class="si">}</span><span class="s2">&#39;, &#39;</span><span class="si">{</span><span class="n">ticket_data</span><span class="si">}</span><span class="s2">&#39;, &#39;</span><span class="si">{</span><span class="n">create_at</span><span class="si">}</span><span class="s2">&#39;, </span>
+<span class="s2">        &#39;</span><span class="si">{</span><span class="n">subject</span><span class="si">}</span><span class="s2">&#39;);&quot;&quot;&quot;</span>
+
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+
+        <span class="n">connection</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+        <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="HandlerDB.get_ticket_data"><a class="viewcode-back" href="../handler_db_sub_operations.html#handler_db_sub_operations.HandlerDB.get_ticket_data">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_ticket_data</span><span class="p">(</span>
+            <span class="n">tg_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+            <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get ticket data.</span>
+
+<span class="sd">        :param tg_id: User&#39;s id -- tg_id.</span>
+<span class="sd">        :param builder: Builder.</span>
+
+<span class="sd">        :return: Tuple with data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">connection</span><span class="p">:</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">Connection</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Connection</span><span class="o">.</span><span class="n">get_connection</span><span class="p">(</span>
+            <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="n">cursor</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+        <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;SELECT id_ticket, create_at, subject FROM users WHERE </span>
+<span class="s2">                     tg_id_sender = %s ORDER BY create_at DESC;&quot;&quot;&quot;</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">tg_id</span><span class="p">),))</span>
+
+        <span class="n">result</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+        <span class="n">response</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="n">response_big</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="n">count_msg</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">result</span><span class="p">))):</span>
+                <span class="k">if</span> <span class="n">count_msg</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span>
+                    <span class="n">response</span> <span class="o">+=</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&lt;b&gt;</span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">&lt;/b&gt;. ID_TCK: &lt;code&gt;</span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&lt;/code&gt;| &quot;</span>
+                                 <span class="sa">f</span><span class="s2">&quot;CREATE_AT: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">| &quot;</span>
+                                 <span class="sa">f</span><span class="s2">&quot;Subject: &lt;blockquote&gt;&#39;</span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2">&#39;&lt;/blockquote&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="n">count_msg</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">response_big</span> <span class="o">+=</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&lt;tr&gt;&quot;</span>
+                                     <span class="sa">f</span><span class="s2">&quot;  &lt;td align=&#39;center&#39;&gt;&lt;code&gt;</span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&lt;/code&gt;&lt;/td&gt;&quot;</span>
+                                     <span class="sa">f</span><span class="s2">&quot;  &lt;td align=&#39;center&#39;&gt;You&lt;/td&gt;&quot;</span>
+                                     <span class="sa">f</span><span class="s2">&quot;  &lt;td align=&#39;center&#39;&gt;</span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2">&lt;/td&gt;&quot;</span>
+                                     <span class="sa">f</span><span class="s2">&quot;  &lt;td align=&#39;center&#39;&gt;</span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&lt;/td&gt;&quot;</span>
+                                     <span class="sa">f</span><span class="s2">&quot;&lt;/tr&gt;&quot;</span>
+                                     <span class="sa">f</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">count_msg</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span>
+                <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+                <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="n">response</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">response_big</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">btn1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Not Found&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;back_on_main&quot;</span>
+            <span class="p">)</span>
+            <span class="n">btn2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;🔙 Main&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;back_on_main&quot;</span>
+            <span class="p">)</span>
+            <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">btn1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">btn2</span><span class="p">)</span>
+            <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="HandlerDB.get_users_tickets_for_admin"><a class="viewcode-back" href="../handler_db_sub_operations.html#handler_db_sub_operations.HandlerDB.get_users_tickets_for_admin">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_users_tickets_for_admin</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get ticket data.</span>
+
+<span class="sd">        :return: Tuple with data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">connection</span><span class="p">:</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">Connection</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Connection</span><span class="o">.</span><span class="n">get_connection</span><span class="p">(</span>
+            <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="n">cursor</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+        <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;SELECT id_ticket, username, create_at, subject FROM </span>
+<span class="s2">                     users ORDER BY create_at DESC;&quot;&quot;&quot;</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+        <span class="n">result</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+        <span class="n">response</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="n">response_big</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="n">count_msg</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">result</span><span class="p">))):</span>
+                <span class="k">if</span> <span class="n">count_msg</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span>
+                    <span class="n">response</span> <span class="o">+=</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&lt;b&gt;</span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">&lt;/b&gt;. Sender: &quot;</span>
+                                 <span class="sa">f</span><span class="s2">&quot;@</span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">| ID_TCK: &lt;code&gt;</span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&lt;/code&gt;| &quot;</span>
+                                 <span class="sa">f</span><span class="s2">&quot;CREATE_AT: &quot;</span>
+                                 <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2">| Subject: &quot;</span>
+                                 <span class="sa">f</span><span class="s2">&quot;&lt;blockquote&gt;&#39;</span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s2">&#39;&lt;/blockquote&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="n">count_msg</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">response_big</span> <span class="o">+=</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&lt;tr&gt;&quot;</span>
+                                     <span class="sa">f</span><span class="s2">&quot;  &lt;td align=&#39;center&#39;&gt;&lt;code&gt;</span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&lt;/code&gt;&lt;/td&gt;&quot;</span>
+                                     <span class="sa">f</span><span class="s2">&quot;  &lt;td align=&#39;center&#39;&gt;@</span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&lt;/td&gt;&quot;</span>
+                                     <span class="sa">f</span><span class="s2">&quot;  &lt;td align=&#39;center&#39;&gt;</span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s2">&lt;/td&gt;&quot;</span>
+                                     <span class="sa">f</span><span class="s2">&quot;  &lt;td align=&#39;center&#39;&gt;</span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2">&lt;/td&gt;&quot;</span>
+                                     <span class="sa">f</span><span class="s2">&quot;&lt;/tr&gt;&quot;</span>
+                                     <span class="sa">f</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">count_msg</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span>
+                <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+                <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="n">response</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">response_big</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">btn1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Not Found&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;back_on_main&quot;</span>
+            <span class="p">)</span>
+            <span class="n">btn2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;🔙 Main&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;back_on_main&quot;</span>
+            <span class="p">)</span>
+            <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">btn1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">btn2</span><span class="p">)</span>
+            <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="HandlerDB.insert_new_record_for_subscribe"><a class="viewcode-back" href="../handler_db_sub_operations.html#handler_db_sub_operations.HandlerDB.insert_new_record_for_subscribe">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">insert_new_record_for_subscribe</span><span class="p">(</span>
+            <span class="n">message</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">Message</span> <span class="o">|</span> <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span><span class="p">,</span>
+            <span class="n">days</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+            <span class="n">token_successful_payment</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;PROMO&quot;</span><span class="p">,</span>
+            <span class="n">promo</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;none&quot;</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Insert a new record to database | CW PREMIUM Subscription.</span>
+
+<span class="sd">        :param message: Message from user.</span>
+<span class="sd">        :param days: Count of days for use CW PREMIUM.</span>
+<span class="sd">        :param token_successful_payment: Token of successful payment.</span>
+<span class="sd">        :param promo: A promo code.</span>
+
+<span class="sd">        :return: Result.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">time_of_pay</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
+        <span class="n">ex_time_for_sub</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">time_of_pay</span> <span class="o">+</span> <span class="k">await</span> <span class="n">SubOperations</span><span class="o">.</span><span class="n">days_to_sec</span><span class="p">(</span><span class="n">days</span><span class="p">)</span>
+
+        <span class="n">connection</span><span class="p">:</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">Connection</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Connection</span><span class="o">.</span><span class="n">get_connection</span><span class="p">(</span>
+            <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="n">cursor</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+        <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;SELECT subscribe_date FROM premium_users WHERE tg_id = %s;&quot;&quot;&quot;</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">),))</span>
+        <span class="n">result</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">insert_q</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;INSERT INTO premium_users (tg_id, username, firstname, cost_in_stars, </span>
+<span class="s2">                       refund_token, subscribe_date, promo_code) VALUES (&#39;</span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&#39;, </span>
+<span class="s2">                       &#39;</span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">username</span><span class="si">}</span><span class="s2">&#39;, &#39;</span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">&#39;, 15, </span>
+<span class="s2">                       &#39;</span><span class="si">{</span><span class="n">token_successful_payment</span><span class="si">}</span><span class="s2">&#39;, </span><span class="si">{</span><span class="n">ex_time_for_sub</span><span class="si">}</span><span class="s2">, &#39;</span><span class="si">{</span><span class="n">promo</span><span class="si">}</span><span class="s2">&#39;);&quot;&quot;&quot;</span>
+            <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">insert_q</span><span class="p">)</span>
+            <span class="n">connection</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+            <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+            <span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;was_not_sub&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">checked</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">check_subscription</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">checked</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">checked</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;ex_sub&quot;</span><span class="p">:</span>
+                    <span class="n">update_q</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;UPDATE premium_users SET </span>
+<span class="s2">                               username = &#39;</span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">username</span><span class="si">}</span><span class="s2">&#39;,</span>
+<span class="s2">                               firstname = &#39;</span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">&#39;, cost_in_stars = 15,</span>
+<span class="s2">                               refund_token = &#39;</span><span class="si">{</span><span class="n">token_successful_payment</span><span class="si">}</span><span class="s2">&#39;,</span>
+<span class="s2">                               subscribe_date = </span><span class="si">{</span><span class="n">ex_time_for_sub</span><span class="si">}</span><span class="s2"> WHERE </span>
+<span class="s2">                               tg_id = &#39;</span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&#39;;&quot;&quot;&quot;</span>
+                    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">update_q</span><span class="p">)</span>
+                    <span class="n">connection</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+                    <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+                    <span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;was_ex_sub&quot;</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+                    <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;error&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+                <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;error&quot;</span></div>
+
+<div class="viewcode-block" id="HandlerDB.delete_record_for_subscribe"><a class="viewcode-back" href="../handler_db_sub_operations.html#handler_db_sub_operations.HandlerDB.delete_record_for_subscribe">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">delete_record_for_subscribe</span><span class="p">(</span><span class="n">ref_token</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Delete a record from database | CW PREMIUM Subscription.</span>
+
+<span class="sd">        :param ref_token: REF-token.</span>
+
+<span class="sd">        :return: Result of delete.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">connection</span><span class="p">:</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">Connection</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Connection</span><span class="o">.</span><span class="n">get_connection</span><span class="p">(</span>
+            <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="n">cursor</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+        <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;SELECT tg_id, firstname FROM premium_users WHERE refund_token = </span><span class="si">%s</span><span class="s2">;&quot;</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="p">(</span><span class="n">ref_token</span><span class="p">,))</span>
+        <span class="n">result</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="k">return</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">tg_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">firstname</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+
+            <span class="n">del_q</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;DELETE FROM premium_users WHERE tg_id = </span><span class="si">%s</span><span class="s2">;&quot;</span>
+            <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">del_q</span><span class="p">,</span> <span class="p">(</span><span class="n">tg_id</span><span class="p">,))</span>
+            <span class="n">connection</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+            <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="n">tg_id</span><span class="p">,</span> <span class="n">firstname</span></div>
+
+<div class="viewcode-block" id="HandlerDB.check_subscription"><a class="viewcode-back" href="../handler_db_sub_operations.html#handler_db_sub_operations.HandlerDB.check_subscription">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">check_subscription</span><span class="p">(</span><span class="n">message</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">Message</span> <span class="o">|</span> <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check subscription by message from user.</span>
+
+<span class="sd">        :param message: Message from user | Callback Query.</span>
+
+<span class="sd">        :return: tuple.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">connection</span><span class="p">:</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">Connection</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Connection</span><span class="o">.</span><span class="n">get_connection</span><span class="p">(</span>
+            <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="n">cursor</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+        <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;SELECT subscribe_date FROM premium_users WHERE tg_id = %s;&quot;</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">),))</span>
+        <span class="n">result</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;not_sub&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">date</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
+
+            <span class="n">remains</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">date</span>
+
+            <span class="k">if</span> <span class="n">remains</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+                <span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="n">remains</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+                <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;ex_sub&quot;</span></div>
+
+<div class="viewcode-block" id="HandlerDB.check_subscription_by_refund_token"><a class="viewcode-back" href="../handler_db_sub_operations.html#handler_db_sub_operations.HandlerDB.check_subscription_by_refund_token">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">check_subscription_by_refund_token</span><span class="p">(</span><span class="n">refund_token</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check subscription by refund token from user.</span>
+
+<span class="sd">        :param refund_token: REF-token.</span>
+
+<span class="sd">        :return: Data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">connection</span><span class="p">:</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">Connection</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Connection</span><span class="o">.</span><span class="n">get_connection</span><span class="p">(</span>
+            <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="n">cursor</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+        <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;SELECT subscribe_date, tg_id FROM premium_users WHERE refund_token = %s;&quot;</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="p">(</span><span class="n">refund_token</span><span class="p">,))</span>
+        <span class="n">result</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;not_sub&quot;</span><span class="p">,</span> <span class="s2">&quot;none&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">date</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
+
+            <span class="n">remains</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">date</span>
+
+            <span class="k">if</span> <span class="n">remains</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+                <span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="n">remains</span><span class="p">,</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+                <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;ex_sub&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="HandlerDB.check_refund_token"><a class="viewcode-back" href="../handler_db_sub_operations.html#handler_db_sub_operations.HandlerDB.check_refund_token">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">check_refund_token</span><span class="p">(</span><span class="n">message</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">Message</span> <span class="o">|</span> <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check (look for) refund token from database.</span>
+
+<span class="sd">        :param message: Message from user | Callback Query.</span>
+<span class="sd">        :return: REF-Token or False (otherwise).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">connection</span><span class="p">:</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">Connection</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Connection</span><span class="o">.</span><span class="n">get_connection</span><span class="p">(</span>
+            <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="n">cursor</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+        <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;SELECT refund_token FROM premium_users WHERE tg_id = %s;&quot;</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">),))</span>
+        <span class="n">result</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">refund_token</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">refund_token</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="k">return</span> <span class="kc">False</span></div>
+
+<div class="viewcode-block" id="HandlerDB.check_promo_code"><a class="viewcode-back" href="../handler_db_sub_operations.html#handler_db_sub_operations.HandlerDB.check_promo_code">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">check_promo_code</span><span class="p">(</span><span class="n">promo</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span>  <span class="nb">tuple</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get and check promo code from database.</span>
+
+<span class="sd">        :param promo: Promo code from user.</span>
+<span class="sd">        :return: Result | Data of promo.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">connection</span><span class="p">:</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">Connection</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Connection</span><span class="o">.</span><span class="n">get_connection</span><span class="p">(</span>
+            <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="n">cursor</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+        <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;SELECT num_uses, type_promo FROM premium_promo_codes WHERE promo_code = </span><span class="si">%s</span><span class="s2">;&quot;</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="p">(</span><span class="n">promo</span><span class="p">,))</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+            <span class="k">return</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+            <span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="n">promo</span><span class="p">,</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="HandlerDB.sub_promo_code"><a class="viewcode-back" href="../handler_db_sub_operations.html#handler_db_sub_operations.HandlerDB.sub_promo_code">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">sub_promo_code</span><span class="p">(</span><span class="n">promo</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Subtract the number of subscription uses.</span>
+
+<span class="sd">        :param promo: Promo code.</span>
+<span class="sd">        :return: Result | Data of promo.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">connection</span><span class="p">:</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">Connection</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Connection</span><span class="o">.</span><span class="n">get_connection</span><span class="p">(</span>
+            <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="n">cursor</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+        <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;SELECT num_uses FROM premium_promo_codes WHERE promo_code = </span><span class="si">%s</span><span class="s2">;&quot;</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="p">(</span><span class="n">promo</span><span class="p">,))</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+            <span class="k">return</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;UPDATE premium_promo_codes SET num_uses = </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">;&quot;</span>
+                <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+                <span class="n">connection</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+                <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+                <span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;many&quot;</span>
+            <span class="k">elif</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;UPDATE premium_promo_codes SET num_uses = </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">;&quot;</span>
+                <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+                <span class="n">connection</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+                <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+                <span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;none&quot;</span></div>
+
+<div class="viewcode-block" id="HandlerDB.show_promo_datas"><a class="viewcode-back" href="../handler_db_sub_operations.html#handler_db_sub_operations.HandlerDB.show_promo_datas">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">show_promo_datas</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">bool</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Show promo datas from database without authorization.</span>
+
+<span class="sd">        :return: PROMO Data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">connection</span><span class="p">:</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">Connection</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Connection</span><span class="o">.</span><span class="n">get_connection</span><span class="p">(</span>
+            <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="n">cursor</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+        <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;SELECT promo_code, num_uses, type_promo FROM premium_promo_codes;&quot;</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+            <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;none&quot;</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">datas</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">)):</span>
+                <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">datas</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;&lt;b&gt;&lt;u&gt;</span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">&lt;/u&gt;&lt;/b&gt;)&quot;</span> \
+                             <span class="sa">f</span><span class="s2">&quot; 🎫 &lt;b&gt;Promo code&lt;/b&gt;: &lt;code&gt;</span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&lt;/code&gt;</span><span class="se">\n</span><span class="s2">&quot;</span> \
+                             <span class="sa">f</span><span class="s2">&quot;    🔢 &lt;b&gt;Number of uses&lt;/b&gt;: &lt;code&gt;</span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&lt;/code&gt;</span><span class="se">\n</span><span class="s2">&quot;</span> \
+                             <span class="sa">f</span><span class="s2">&quot;    🌀 &lt;b&gt;Type&lt;/b&gt;: &lt;code&gt;</span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2">&lt;/code&gt;&quot;</span> \
+                             <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">------------------------------------</span><span class="se">\n</span><span class="s2">&quot;</span>
+
+            <span class="k">if</span> <span class="n">datas</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;none&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="n">datas</span></div>
+
+<div class="viewcode-block" id="HandlerDB.add_new_promo_code"><a class="viewcode-back" href="../handler_db_sub_operations.html#handler_db_sub_operations.HandlerDB.add_new_promo_code">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">add_new_promo_code</span><span class="p">(</span><span class="n">promo</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">num_uses</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">type_promo</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Function for add a new promo code from admin. | Admin control.</span>
+
+<span class="sd">        :param promo: A new promo code.</span>
+<span class="sd">        :param num_uses: Number of uses the promo code.</span>
+<span class="sd">        :param type_promo: Type of the promo code.</span>
+
+<span class="sd">        :return: Result | Data of promo.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">connection</span><span class="p">:</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">Connection</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Connection</span><span class="o">.</span><span class="n">get_connection</span><span class="p">(</span>
+            <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="n">cursor</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+        <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;SELECT num_uses FROM premium_promo_codes WHERE promo_code = </span><span class="si">%s</span><span class="s2">;&quot;</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="p">(</span><span class="n">promo</span><span class="p">,))</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">type_promo</span> <span class="o">==</span> <span class="s2">&quot;premium_one_week&quot;</span> <span class="ow">or</span> <span class="n">type_promo</span> <span class="o">==</span> <span class="s2">&quot;premium_five_days&quot;</span> <span class="ow">or</span>
+                    <span class="n">type_promo</span> <span class="o">==</span> <span class="s2">&quot;premium_month&quot;</span><span class="p">):</span>
+                <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;INSERT INTO premium_promo_codes (promo_code, num_uses, </span>
+<span class="s2">                             type_promo) VALUES (&#39;</span><span class="si">{</span><span class="n">promo</span><span class="si">}</span><span class="s2">&#39;, </span><span class="si">{</span><span class="n">num_uses</span><span class="si">}</span><span class="s2">, &#39;</span><span class="si">{</span><span class="n">type_promo</span><span class="si">}</span><span class="s2">&#39;);&quot;&quot;&quot;</span>
+                <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+                <span class="n">connection</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+
+                <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+                <span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="n">promo</span><span class="p">,</span> <span class="n">num_uses</span><span class="p">,</span> <span class="n">type_promo</span>
+
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+                <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;invalid_type&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+            <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;already_exist&quot;</span></div>
+
+<div class="viewcode-block" id="HandlerDB.delete_promo_code"><a class="viewcode-back" href="../handler_db_sub_operations.html#handler_db_sub_operations.HandlerDB.delete_promo_code">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">delete_promo_code</span><span class="p">(</span><span class="n">promo</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Function for delete a promo code from admin. | Admin control.</span>
+
+<span class="sd">        :param promo: A promo code.</span>
+<span class="sd">        :return: Result of delete a promo code.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">connection</span><span class="p">:</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">Connection</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Connection</span><span class="o">.</span><span class="n">get_connection</span><span class="p">(</span>
+            <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="n">cursor</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+        <span class="n">query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;SELECT num_uses FROM premium_promo_codes WHERE promo_code = </span><span class="si">%s</span><span class="s2">;&quot;</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="p">(</span><span class="n">promo</span><span class="p">,))</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">del_query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;DELETE FROM premium_promo_codes WHERE promo_code = </span><span class="si">%s</span><span class="s2">;&quot;</span>
+            <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">del_query</span><span class="p">,</span> <span class="p">(</span><span class="n">promo</span><span class="p">,))</span>
+            <span class="n">connection</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+
+            <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+            <span class="k">return</span> <span class="kc">True</span></div></div>
+
+
+<div class="viewcode-block" id="SubOperations"><a class="viewcode-back" href="../handler_db_sub_operations.html#handler_db_sub_operations.SubOperations">[docs]</a><span class="k">class</span> <span class="nc">SubOperations</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Operations for manage subscription.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="SubOperations.days_to_sec"><a class="viewcode-back" href="../handler_db_sub_operations.html#handler_db_sub_operations.SubOperations.days_to_sec">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">days_to_sec</span><span class="p">(</span><span class="n">days</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Converter &#39;DAYS TO SECONDS&#39;.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">days</span> <span class="o">*</span> <span class="mi">86400</span></div>
+
+<div class="viewcode-block" id="SubOperations.sec_to_days"><a class="viewcode-back" href="../handler_db_sub_operations.html#handler_db_sub_operations.SubOperations.sec_to_days">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">sec_to_days</span><span class="p">(</span><span class="n">sec</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Converter &#39;SECONDS TO DAYS&#39;.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">sec</span> <span class="o">/</span> <span class="mi">86400</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2024, Alexander Laptev, CW.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

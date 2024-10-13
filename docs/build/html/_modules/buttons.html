@@ -1,0 +1,1217 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>buttons &mdash; Manager CW Bot 6.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/fonts.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Manager CW Bot
+          
+
+          
+            
+            <img src="../_static/manager_cw_bot_logo_black_and_cw-white_200pxX200px.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                6.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Methods and functions:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation lib, configuration and run the bot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../info_updates.html">Information about last update | August update!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analytics.html">Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../business.html">Business</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../business_answers.html">Business handler for answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../business_handler.html">Business handler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../buttons.html">Buttons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../create_table.html">Create Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fsm_handler.html">Handler of FSM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../example_bot_json.html">Example of a bot.json file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get_business_conn_and_info_conn.html">Get business connection and info conn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../giga_images.html">Giga Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../giga_request.html">Giga Request</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gigachatai.html">Giga Chat AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_db_sub_operations.html">Handler database and subscribe operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_email.html">Handler EMail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_email_sender.html">Handler EMail-Sender</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_promo.html">Handler promo data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_successful_payment.html">Handler successful payment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_yookassa.html">Handler Yookassa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mysql_connection.html">MySQL Connector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pdf_generate_data.html">PDF Generate Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../refund.html">Handler refund</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../send_invoice.html">Handler send invoice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tests.html">Tests (UnitTest)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tickets.html">Tickets</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Manager CW Bot</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Module code</a> &raquo;</li>
+        
+      <li>buttons</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for buttons</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Module of the create button for the menu and Bot in general.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">aiogram.utils.keyboard</span> <span class="kn">import</span> <span class="n">InlineKeyboardBuilder</span>
+<span class="kn">from</span> <span class="nn">aiogram</span> <span class="kn">import</span> <span class="n">types</span>
+
+<span class="kn">from</span> <span class="nn">manager_cw_bot_api.handler_db_sub_operations</span> <span class="kn">import</span> <span class="n">HandlerDB</span>
+<span class="kn">from</span> <span class="nn">manager_cw_bot_api.handler_email_sender</span> <span class="kn">import</span> <span class="n">SenderEmail</span>
+
+
+<div class="viewcode-block" id="Buttons"><a class="viewcode-back" href="../buttons.html#buttons.Buttons">[docs]</a><span class="k">class</span> <span class="nc">Buttons</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Class for get the buttons in chats.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="Buttons.get_language_privacy_menu"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.get_language_privacy_menu">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_language_privacy_menu</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        builder-button (Inline) of the lang-mode for privacy-menu.</span>
+
+<span class="sd">        :return: Builder-buttons.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+
+        <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🇬🇧 ENG&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;eng_privacy_mode&quot;</span><span class="p">)</span>
+        <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🇷🇺 RUS&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;rus_privacy_mode&quot;</span><span class="p">)</span>
+        <span class="n">builder</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="Buttons.get_email"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.get_email">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_email</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Builder-button (Inline) of the help.</span>
+
+<span class="sd">        :return: Builder-buttons.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+        <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;👆 Go&quot;</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="s2">&quot;t.me/aleksandr_work&quot;</span><span class="p">)</span>
+        <span class="n">builder</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="Buttons.get_add_new_email"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.get_add_new_email">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_add_new_email</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get menu for add a new email for user / admin.</span>
+
+<span class="sd">        :return: builder.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+        <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;➕ Add 📧&quot;</span><span class="p">,</span>
+            <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;add_new_email&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;❌ Cancel&quot;</span><span class="p">,</span>
+            <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;back_on_main&quot;</span>
+        <span class="p">)</span>
+        <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="Buttons.get_add_new_email_try_again"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.get_add_new_email_try_again">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_add_new_email_try_again</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get menu for add a new email for user / admin again.</span>
+
+<span class="sd">        :return: Builder.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+        <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔃 Try again 📧&quot;</span><span class="p">,</span>
+            <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;add_new_email&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;❌ Cancel&quot;</span><span class="p">,</span>
+            <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;back_on_main&quot;</span>
+        <span class="p">)</span>
+        <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="Buttons.get_add_new_email_or_check_ver_code_try_again"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.get_add_new_email_or_check_ver_code_try_again">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_add_new_email_or_check_ver_code_try_again</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get menu for add a new email for user / admin again or again check the ver. code.</span>
+
+<span class="sd">        :return: Builder.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+        <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔃 Try again | VERIFY CODE #️⃣&quot;</span><span class="p">,</span>
+            <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;check_verify_code_again&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔃 Try again | Add EMail 📧&quot;</span><span class="p">,</span>
+            <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;add_new_email&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var3</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;❌ Cancel&quot;</span><span class="p">,</span>
+            <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;back_on_main&quot;</span>
+        <span class="p">)</span>
+        <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var3</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="Buttons.get_var_giga_version"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.get_var_giga_version">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_var_giga_version</span><span class="p">(</span>
+        <span class="n">message</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">Message</span> <span class="o">|</span> <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Builder-button (Inline) of the choose version of the GigaChatAI</span>
+<span class="sd">        for the user.</span>
+
+<span class="sd">        :param message: Message.</span>
+<span class="sd">        :return: Builder-buttons.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+        <span class="n">result</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">|</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">check_subscription</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="s2">&quot;💡 GigaChatLight&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;gigachat_version_light&quot;</span>
+            <span class="p">)</span>
+            <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="s2">&quot;⚡ GigaChatPRO&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;gigachat_version_pro&quot;</span>
+            <span class="p">)</span>
+            <span class="n">var3</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Back to AI-Menu&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;ai_two_in_one_main_menu&quot;</span>
+            <span class="p">)</span>
+            <span class="n">var4</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Main&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;back_on_main&quot;</span>
+            <span class="p">)</span>
+            <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var3</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var4</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+            <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="s2">&quot;💡 GigaChatLight&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;gigachat_version_light&quot;</span>
+            <span class="p">)</span>
+            <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="s2">&quot;⚡ GigaChatPRO&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;get_or_lk_premium&quot;</span>
+            <span class="p">)</span>
+            <span class="n">var3</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Back to AI-Menu&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;ai_two_in_one_main_menu&quot;</span>
+            <span class="p">)</span>
+            <span class="n">var4</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Main&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;back_on_main&quot;</span>
+            <span class="p">)</span>
+            <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var3</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var4</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="Buttons.get_menu_user_tickets"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.get_menu_user_tickets">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_menu_user_tickets</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Builder-button (Inline) of the Bot Menu</span>
+<span class="sd">        for the user in &quot;TICKETS&quot;.</span>
+
+<span class="sd">        :return: Builder-buttons.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+        <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;💬 Show My tickets&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;show_user_tickets&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;💭 Send a new ticket&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;send_new_ticket&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var3</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;✉ Show the ticket by ID&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;explore_show_ticket_by_id&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var4</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🗣 Answer to the admin&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;explore_answer_to_admin&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var5</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Main&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;back_on_main&quot;</span>
+        <span class="p">)</span>
+        <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var3</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var4</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var5</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="Buttons.get_menu_user_tickets_again"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.get_menu_user_tickets_again">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_menu_user_tickets_again</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Builder-button (Inline) of the Bot AGAIN-Menu</span>
+<span class="sd">        for the user in &quot;TICKETS&quot;.</span>
+
+<span class="sd">        :return: Builder-buttons.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+
+        <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;💭 Send a new ticket&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;send_new_ticket&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Tickets Menu&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;explore_user_tickets_menu&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var3</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Main&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;back_on_main&quot;</span>
+        <span class="p">)</span>
+        <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var3</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="Buttons.get_user_tickets"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.get_user_tickets">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_user_tickets</span><span class="p">(</span><span class="n">tg_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Builder-button (Inline) of the Bot</span>
+<span class="sd">        for the user&#39;s history of &quot;TICKETS&quot;.</span>
+
+<span class="sd">        :param tg_id: User&#39;s id -- tg_id.</span>
+
+<span class="sd">        :return: Tuple with data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+        <span class="n">response</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">()</span>
+
+        <span class="n">result</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">|</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">get_ticket_data</span><span class="p">(</span><span class="n">tg_id</span><span class="p">,</span> <span class="n">builder</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="ow">is</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;Not Found. Please, click on the &#39;🔙 Main&#39; / &#39;🔙 TicketSystem&#39; - &quot;</span>
+                               <span class="s2">&quot;button.&quot;</span><span class="p">)</span>
+            <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">result</span>
+
+        <span class="k">elif</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">tuple</span><span class="p">)</span> <span class="ow">and</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">result</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+            <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="s2">&quot;✅ Allow&quot;</span><span class="p">,</span>
+                <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;allow_send_email_ticket_data_user&quot;</span>
+            <span class="p">)</span>
+            <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="s2">&quot;❌ No, just show available data&quot;</span><span class="p">,</span>
+                <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;not_allow_send_email_ticket_data_user&quot;</span>
+            <span class="p">)</span>
+            <span class="n">var3</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🗣 Answer to the admin&quot;</span><span class="p">,</span>
+                <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;explore_answer_to_admin&quot;</span>
+            <span class="p">)</span>
+            <span class="n">var4</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 TicketSystem&quot;</span><span class="p">,</span>
+                <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;explore_user_tickets_menu&quot;</span>
+            <span class="p">)</span>
+            <span class="n">var5</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Main&quot;</span><span class="p">,</span>
+                <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;back_on_main&quot;</span>
+            <span class="p">)</span>
+            <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var3</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var4</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var5</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">tuple</span><span class="p">)</span> <span class="ow">and</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🗣 Answer to the admin&quot;</span><span class="p">,</span>
+                <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;explore_answer_to_admin&quot;</span>
+            <span class="p">)</span>
+            <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 TicketSystem&quot;</span><span class="p">,</span>
+                <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;explore_user_tickets_menu&quot;</span>
+            <span class="p">)</span>
+            <span class="n">var3</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Main&quot;</span><span class="p">,</span>
+                <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;back_on_main&quot;</span>
+            <span class="p">)</span>
+            <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var3</span><span class="p">)</span>
+
+        <span class="n">results</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">builder</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">results</span></div>
+
+<div class="viewcode-block" id="Buttons.get_menu_admin"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.get_menu_admin">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_menu_admin</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Builder-button (Inline) of the Bot Menu</span>
+<span class="sd">        for admin.</span>
+
+<span class="sd">        :return: Builder-buttons.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+
+        <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🧠 AI | 2 in 1 🖼&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;ai_two_in_one_main_menu&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;👑 MY PREMIUM 🌟&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;get_or_lk_premium&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var3</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;ℹ TicketSystem 👨🏻‍💻&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;explore_admin_tickets_menu&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var4</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;💲 Business and Money 🌐&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;business_and_money&quot;</span>
+        <span class="p">)</span>
+        <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var3</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var4</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="Buttons.get_ticket_menu_admin"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.get_ticket_menu_admin">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_ticket_menu_admin</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get menu for admin - TicketSystem-Menu (TicketsMenu).</span>
+
+<span class="sd">        :return: Builder.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+
+        <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;📨 Show tickets&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;show_tickets_for_admin_menu&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;✉ Show the ticket by ID&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;explore_show_ticket_by_id&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var3</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🗣 Answer to the user&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;explore_answer_to_user&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var4</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Main&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;back_on_main&quot;</span>
+        <span class="p">)</span>
+        <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var3</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var4</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="Buttons.get_business_and_money_menu_admin"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.get_business_and_money_menu_admin">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_business_and_money_menu_admin</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get menu for admin - BusinessAndMoney-Menu.</span>
+
+<span class="sd">        :return: Builder.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+
+        <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;📈 Analytic&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;analytic_data&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🧑‍💼 Business Handler&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;business_handler&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var3</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;📧 EMail Settings 🔑&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;email_settings_menu&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var4</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;💱 PROMO 📲&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;show_menu_promo_admin&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var5</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔃 Refund 💸&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;start_refund&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var6</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Main&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;back_on_main&quot;</span>
+        <span class="p">)</span>
+        <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var3</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var4</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var5</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var6</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="Buttons.get_menu_email_settings"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.get_menu_email_settings">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_menu_email_settings</span><span class="p">(</span><span class="n">tg_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">admin_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get Builder-keyboard for menu of Email Settings.</span>
+
+<span class="sd">        :param tg_id: TG ID for check and create Builder.</span>
+<span class="sd">        :param admin_id: ID Admin.</span>
+
+<span class="sd">        :return: Builder.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">tg_id</span> <span class="o">==</span> <span class="n">admin_id</span><span class="p">:</span>
+            <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="k">await</span> <span class="n">SenderEmail</span><span class="o">.</span><span class="n">get_email_data_admin</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;ANSWER&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+                <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+                    <span class="n">text</span><span class="o">=</span><span class="s2">&quot;👁‍🗨 Show EMail&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;show_email_from_settings_menu&quot;</span>
+                <span class="p">)</span>
+                <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+                    <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Edit EMAil 💻&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;edit_email_from_settings_menu&quot;</span>
+                <span class="p">)</span>
+                <span class="n">var3</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+                    <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Main&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;back_on_main&quot;</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+                    <span class="n">text</span><span class="o">=</span><span class="s2">&quot;✨ Add Email&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;add_email_from_settings_menu&quot;</span>
+                <span class="p">)</span>
+                <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+                    <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Support 💻&quot;</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="s2">&quot;mailto:help@cwr.su&quot;</span>
+                <span class="p">)</span>
+                <span class="n">var3</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+                    <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Main&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;back_on_main&quot;</span>
+                <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">result</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">get_email_data</span><span class="p">(</span><span class="n">tg_id</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+                <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+                    <span class="n">text</span><span class="o">=</span><span class="s2">&quot;👁‍🗨 Show EMail&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;show_email_from_settings_menu&quot;</span>
+                <span class="p">)</span>
+                <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+                    <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Edit EMail 💻&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;edit_email_from_settings_menu&quot;</span>
+                <span class="p">)</span>
+                <span class="n">var3</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+                    <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Main&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;back_on_main&quot;</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+                    <span class="n">text</span><span class="o">=</span><span class="s2">&quot;✨ Add Email&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;add_email_from_settings_menu&quot;</span>
+                <span class="p">)</span>
+                <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+                    <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Support 💻&quot;</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="s2">&quot;mailto:help@cwr.su&quot;</span>
+                <span class="p">)</span>
+                <span class="n">var3</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+                    <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Main&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;back_on_main&quot;</span>
+                <span class="p">)</span>
+
+        <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var3</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="Buttons.get_menu_confirmation_for_edit_email"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.get_menu_confirmation_for_edit_email">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_menu_confirmation_for_edit_email</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get Builder-keyboard for confirmation to edit email of the user / admin.</span>
+
+<span class="sd">        :return: Builder.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+
+        <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;✅ I&#39;m sure 100%, OK&quot;</span><span class="p">,</span>
+            <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;confirmation_to_edit_email_from_email_settings&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;❌ Cancel&quot;</span><span class="p">,</span>
+            <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;email_settings_menu&quot;</span>
+        <span class="p">)</span>
+        <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="Buttons.get_menu_back_to_email_settings"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.get_menu_back_to_email_settings">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_menu_back_to_email_settings</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get Builder-keyboard for menu-back to EMailSettings-menu.</span>
+
+<span class="sd">        :return: Builder.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+
+        <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Back to EMailSettings&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;email_settings_menu&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Main&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;back_on_main&quot;</span>
+        <span class="p">)</span>
+        <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="Buttons.get_menu_admin_promos"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.get_menu_admin_promos">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_menu_admin_promos</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get Builder-keyboard for main-menu for admin.</span>
+
+<span class="sd">        :return: Builder.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+
+        <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🎫 Add a new PROMO data&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;add_new_promo&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Show PROMO datas 🌐&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;show_promo_datas&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var3</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🗑️ Delete a PROMO data&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;delete_promo_data&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var4</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Back to BusinessAndMoney&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;business_and_money&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var5</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Main&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;back_on_main&quot;</span>
+        <span class="p">)</span>
+
+        <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var3</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var4</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var5</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="Buttons.get_menu_back_to_business_and_money_for_admin"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.get_menu_back_to_business_and_money_for_admin">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_menu_back_to_business_and_money_for_admin</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get BACK-MENU for admin, for back to BusinessAndMoney-Menu.</span>
+
+<span class="sd">        :return: Builder.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+
+        <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Back to BusinessAndMoney&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;business_and_money&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Main&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;back_on_main&quot;</span>
+        <span class="p">)</span>
+        <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="Buttons.get_users_tickets_for_admin"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.get_users_tickets_for_admin">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_users_tickets_for_admin</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Builder-button (Inline) of the Bot</span>
+<span class="sd">        for the admin history of &quot;TICKETS&quot; of the users.</span>
+
+<span class="sd">        :return: tuple of the tickets and Builder-buttons.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+        <span class="n">response</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">()</span>
+
+        <span class="n">result</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">|</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">get_users_tickets_for_admin</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="ow">is</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+            <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">result</span>
+
+        <span class="k">elif</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">tuple</span><span class="p">)</span> <span class="ow">and</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">result</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+
+        <span class="k">elif</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">tuple</span><span class="p">)</span> <span class="ow">and</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+        <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;✅ Allow&quot;</span><span class="p">,</span>
+            <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;allow_send_email_ticket_data_admin&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;❌ No, just show available data&quot;</span><span class="p">,</span>
+            <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;not_allow_send_email_ticket_data_admin&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var3</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Main&quot;</span><span class="p">,</span>
+            <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;back_on_main&quot;</span>
+        <span class="p">)</span>
+        <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var3</span><span class="p">)</span>
+
+        <span class="n">results</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">builder</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">results</span></div>
+
+<div class="viewcode-block" id="Buttons.get_menu_business_handler"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.get_menu_business_handler">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_menu_business_handler</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get menu of business handler.</span>
+
+<span class="sd">        :return: Builder Buttons.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+
+        <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;💫 Thanks&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;handler_thanks_from_users&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Congratulation 🎉&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;handler_congratulation_from_users&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var3</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🤖 Problem with bot&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;handler_problem_with_bot_from_users&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var4</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Back to BusinessAndMoney&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;business_and_money&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var5</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Main&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;back_on_main&quot;</span>
+        <span class="p">)</span>
+
+        <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var3</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var4</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var5</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="Buttons.get_menu_business_handler_thanks"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.get_menu_business_handler_thanks">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_menu_business_handler_thanks</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get menu of business handler - ThanksCommandAnswer.</span>
+
+<span class="sd">        :return: Builder Buttons.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+
+        <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;💌 Only text&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;only_text_for_thanks_hdl&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Only Sticker 💗&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;only_sticker_for_thanks_hdl&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var3</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;💞 Both: Message and sticker&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;message_and_sticker_for_thanks_hdl&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var4</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Back to BusinessAndMoney&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;business_and_money&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var5</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Main&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;back_on_main&quot;</span>
+        <span class="p">)</span>
+
+        <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var3</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var4</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var5</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="Buttons.get_menu_business_handler_congratulation"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.get_menu_business_handler_congratulation">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_menu_business_handler_congratulation</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get menu of business handler - CongratulationCommandAnswer.</span>
+
+<span class="sd">        :return: Builder Buttons.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+
+        <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🎉 Only text&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;only_text_for_congratulation_hdl&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Only Sticker 💗&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;only_sticker_for_congratulation_hdl&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var3</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;💫 Both: Message and sticker&quot;</span><span class="p">,</span>
+            <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;message_and_sticker_for_congratulation_hdl&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var4</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Back to BusinessAndMoney&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;business_and_money&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var5</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Main&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;back_on_main&quot;</span>
+        <span class="p">)</span>
+
+        <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var3</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var4</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var5</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="Buttons.get_menu_business_handler_problem_with_bot"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.get_menu_business_handler_problem_with_bot">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_menu_business_handler_problem_with_bot</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get menu of business handler - ProblemWithBotCommandAnswer.</span>
+
+<span class="sd">        :return: Builder Buttons.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+
+        <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;💬 Only text&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;only_text_for_problem_with_bot_hdl&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Only Sticker ♨&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;only_sticker_for_problem_with_bot_hdl&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var3</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;💫 Both: Message and sticker&quot;</span><span class="p">,</span>
+            <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;message_and_sticker_for_problem_with_bot_hdl&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var4</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Back to BusinessAndMoney&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;business_and_money&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var5</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Main&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;back_on_main&quot;</span>
+        <span class="p">)</span>
+
+        <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var3</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var4</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var5</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="Buttons.sure_refund"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.sure_refund">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">sure_refund</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get Builder-keyboard for &#39;sure&#39; refund by admin.</span>
+
+<span class="sd">        :return: Builder.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+
+        <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;✅ I&#39;m sure&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;refund&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;❌ Cancel&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;back_on_main&quot;</span>
+        <span class="p">)</span>
+
+        <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="Buttons.sure_refund_confirmation"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.sure_refund_confirmation">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">sure_refund_confirmation</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get Builder-keyboard for &#39;sure&#39; refund by admin | Confirmation.</span>
+
+<span class="sd">        :return: Builder.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+
+        <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;✅ I&#39;m sure 100%&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;refund_confirmation&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;❌ Cancel&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;back_on_main&quot;</span>
+        <span class="p">)</span>
+
+        <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="Buttons.sure_emergency_refund_confirmation"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.sure_emergency_refund_confirmation">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">sure_emergency_refund_confirmation</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get Builder-keyboard for &#39;sure&#39; emergency refund by admin | Confirmation.</span>
+
+<span class="sd">        :return: Builder.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+
+        <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;✅ Emergency Refund | I&#39;m sure!&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;emergency_refund_confirmation&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;❌ Cancel&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;back_on_main&quot;</span>
+        <span class="p">)</span>
+
+        <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="Buttons.sure_apply_promo"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.sure_apply_promo">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">sure_apply_promo</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get Builder-keyboard for &#39;sure&#39; apply a promo code by user.</span>
+
+<span class="sd">        :return: Builder.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+
+        <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;✅ Yes, apply it. I&#39;m sure 100%&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;apply_promo&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;❌ Cancel&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;back_on_main&quot;</span>
+        <span class="p">)</span>
+
+        <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="Buttons.sure_add_new_promo"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.sure_add_new_promo">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">sure_add_new_promo</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get Builder-keyboard for &#39;sure&#39; add a promo code by ADMIN | Admin control.</span>
+
+<span class="sd">        :return: Builder.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+
+        <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;✅ Yes, add! I&#39;m sure.&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;add_new_promo_confirmation&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;❌ Cancel&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;show_menu_promo_admin&quot;</span>
+        <span class="p">)</span>
+
+        <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="Buttons.sure_delete_promo"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.sure_delete_promo">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">sure_delete_promo</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get Builder-keyboard for &#39;sure&#39; delete a promo code by ADMIN | Admin control.</span>
+
+<span class="sd">        :return: Builder.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+
+        <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;✅ Yes, delete! I&#39;m sure 100%.&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;delete_promo_confirmation&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;❌ Cancel&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;show_menu_promo_admin&quot;</span>
+        <span class="p">)</span>
+
+        <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="Buttons.try_again_add_new_promo_or_back_on_main"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.try_again_add_new_promo_or_back_on_main">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">try_again_add_new_promo_or_back_on_main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get Builder-keyboard for attempt add a new promo data or return in PROMO Menu.</span>
+
+<span class="sd">        :return: Builder.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+
+        <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔄 Try again&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;try_again_add_new_promo&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Back&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;show_menu_promo_admin&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var3</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Main&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;back_on_main&quot;</span>
+        <span class="p">)</span>
+        <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var3</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="Buttons.try_again_delete_promo_or_back_on_main"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.try_again_delete_promo_or_back_on_main">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">try_again_delete_promo_or_back_on_main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get Builder-keyboard for attempt delete a promo data or return in PROMO Menu.</span>
+
+<span class="sd">        :return: Builder.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+
+        <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔄 Try again&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;try_again_delete_promo&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Back&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;show_menu_promo_admin&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var3</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Main&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;back_on_main&quot;</span>
+        <span class="p">)</span>
+        <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var3</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="Buttons.back_in_promo_menu"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.back_in_promo_menu">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">back_in_promo_menu</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get Builder-keyboard for return in PROMO menu.</span>
+
+<span class="sd">        :return: Builder.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+
+        <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Back&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;show_menu_promo_admin&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Main&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;back_on_main&quot;</span>
+        <span class="p">)</span>
+        <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="Buttons.get_menu_without_premium"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.get_menu_without_premium">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_menu_without_premium</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get Builder-keyboard for main-menu for users without CW PREMIUM.</span>
+
+<span class="sd">        :return: Builder.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+
+        <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🧠 AI | 2 in 1 🖼&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;ai_two_in_one_main_menu&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Get CW PREMIUM 🔥&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;get_or_lk_premium&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var3</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;❔ Help | CWR.SU&quot;</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://cwr.su/&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var4</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;ℹ Help | TicketSystem 👨🏻‍💻&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;explore_user_tickets_menu&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var5</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;📧 EMail Settings 🔑&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;email_settings_menu&quot;</span>
+        <span class="p">)</span>
+        <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var3</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var4</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var5</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="Buttons.get_ai_menu"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.get_ai_menu">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_ai_menu</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get Builder-keyboard for main-menu of AI.</span>
+
+<span class="sd">        :return: Builder.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+
+        <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;✨ Generate IMG 🖼&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;kandinsky_generate&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🧠 Assistance (DIALOG 🆕*)&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;ai_assistance_request&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var3</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Main&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;back_on_main&quot;</span>
+        <span class="p">)</span>
+        <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var3</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="Buttons.get_menu_with_premium"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.get_menu_with_premium">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_menu_with_premium</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get Builder-keyboard for main-menu for users with CW PREMIUM.</span>
+
+<span class="sd">        :return: Builder.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+
+        <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🧠 ✨ AI | 2 in 1 🖼&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;ai_two_in_one_main_menu&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;👑 MY PREMIUM 🌟&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;get_or_lk_premium&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var3</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;❔ Help | CWR.SU&quot;</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://cwr.su/&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var4</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;ℹ Help | TicketSystem 👨🏻‍💻&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;explore_user_tickets_menu&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var5</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;📧 EMail Settings 🔑&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;email_settings_menu&quot;</span>
+        <span class="p">)</span>
+        <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var3</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var4</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var5</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="Buttons.generate_image"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.generate_image">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">generate_image</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get Builder-keyboard for generate image by GigaChat | V3 | For premium-user.</span>
+
+<span class="sd">        :return: Builder.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+
+        <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;✅ I&#39;m sure&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;generate&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;❌ Cancel&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;back_on_main&quot;</span>
+        <span class="p">)</span>
+
+        <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="Buttons.get_premium"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.get_premium">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_premium</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get Builder-keyboard for get status premium-user and get CW PREMIUM.</span>
+
+<span class="sd">        :return: Builder.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+
+        <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Get CW PREMIUM 💥 | -55%&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;continue_subscribe_premium&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;I have a promo code 🎫&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;continue_subscribe_premium_with_promo&quot;</span>
+        <span class="p">)</span>
+
+        <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="Buttons.get_premium_process_choosing"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.get_premium_process_choosing">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_premium_process_choosing</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get Builder-keyboard for get status premium-user and get CW PREMIUM | Process choosing.</span>
+
+<span class="sd">        :return: Builder.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+
+        <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;💳 ЮKassa | BankCard | FPS (СБП) | PhoneBalance&quot;</span><span class="p">,</span>
+            <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;continue_subscribe_premium_with_yookassa&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;⭐ Telegram Stars&quot;</span><span class="p">,</span>
+            <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;continue_subscribe_premium_with_telegram_stars&quot;</span>
+        <span class="p">)</span>
+        <span class="n">var3</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔑 Check payment&quot;</span><span class="p">,</span>
+            <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;check_pay_yookassa&quot;</span>
+        <span class="p">)</span>
+
+        <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var3</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="Buttons.get_menu_yookassa_payment"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.get_menu_yookassa_payment">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_menu_yookassa_payment</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get Builder-keyboard for pay with YOOKASSA.</span>
+
+<span class="sd">        :param url: URL.</span>
+<span class="sd">        :return: Builder.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+
+        <span class="n">var1</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;💳 Pay&quot;</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span>
+        <span class="p">)</span>
+        <span class="n">var2</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Check 🔑&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;check_pay_yookassa&quot;</span>
+        <span class="p">)</span>
+
+        <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">builder</span></div>
+
+<div class="viewcode-block" id="Buttons.back_on_main"><a class="viewcode-back" href="../buttons.html#buttons.Buttons.back_on_main">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">back_on_main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">InlineKeyboardBuilder</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get Builder-keyboard for return in main menu (on main).</span>
+
+<span class="sd">        :return: Builder.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="n">InlineKeyboardBuilder</span><span class="p">()</span>
+
+        <span class="n">var</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;🔙 Main&quot;</span><span class="p">,</span> <span class="n">callback_data</span><span class="o">=</span><span class="s2">&quot;back_on_main&quot;</span>
+        <span class="p">)</span>
+
+        <span class="n">builder</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">builder</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2024, Alexander Laptev, CW.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

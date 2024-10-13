@@ -1,0 +1,500 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>send_invoice &mdash; Manager CW Bot 6.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/fonts.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Manager CW Bot
+          
+
+          
+            
+            <img src="../_static/manager_cw_bot_logo_black_and_cw-white_200pxX200px.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                6.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Methods and functions:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation lib, configuration and run the bot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../info_updates.html">Information about last update | August update!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analytics.html">Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../business.html">Business</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../business_answers.html">Business handler for answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../business_handler.html">Business handler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../buttons.html">Buttons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../create_table.html">Create Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fsm_handler.html">Handler of FSM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../example_bot_json.html">Example of a bot.json file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get_business_conn_and_info_conn.html">Get business connection and info conn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../giga_images.html">Giga Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../giga_request.html">Giga Request</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gigachatai.html">Giga Chat AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_db_sub_operations.html">Handler database and subscribe operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_email.html">Handler EMail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_email_sender.html">Handler EMail-Sender</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_promo.html">Handler promo data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_successful_payment.html">Handler successful payment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_yookassa.html">Handler Yookassa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mysql_connection.html">MySQL Connector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pdf_generate_data.html">PDF Generate Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../refund.html">Handler refund</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../send_invoice.html">Handler send invoice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tests.html">Tests (UnitTest)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tickets.html">Tickets</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Manager CW Bot</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Module code</a> &raquo;</li>
+        
+      <li>send_invoice</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for send_invoice</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Module of send invoice to users.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="kn">from</span> <span class="nn">aiogram</span> <span class="kn">import</span> <span class="n">Bot</span><span class="p">,</span> <span class="n">types</span><span class="p">,</span> <span class="n">Router</span><span class="p">,</span> <span class="n">F</span>
+<span class="kn">from</span> <span class="nn">aiogram.utils.keyboard</span> <span class="kn">import</span> <span class="n">InlineKeyboardBuilder</span>
+
+<span class="kn">from</span> <span class="nn">manager_cw_bot_api.buttons</span> <span class="kn">import</span> <span class="n">Buttons</span>
+<span class="kn">from</span> <span class="nn">manager_cw_bot_api.handler_db_sub_operations</span> <span class="kn">import</span> <span class="n">HandlerDB</span>
+<span class="kn">from</span> <span class="nn">manager_cw_bot_api.handler_yookassa</span> <span class="kn">import</span> <span class="n">Yookassa</span>
+<span class="kn">from</span> <span class="nn">manager_cw_bot_api.handler_successful_payment</span> <span class="kn">import</span> <span class="n">HandlerSP</span>
+
+<span class="n">router_send_invoice</span><span class="p">:</span> <span class="n">Router</span> <span class="o">=</span> <span class="n">Router</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="ChooseMethodOfPayment"><a class="viewcode-back" href="../send_invoice.html#send_invoice.ChooseMethodOfPayment">[docs]</a><span class="k">class</span> <span class="nc">ChooseMethodOfPayment</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class for choose method of payment.&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">bot</span><span class="p">:</span> <span class="n">Bot</span><span class="p">,</span>
+            <span class="n">admin_id</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="p">:</span> <span class="n">Bot</span> <span class="o">=</span> <span class="n">bot</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__admin_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">admin_id</span>
+
+<div class="viewcode-block" id="ChooseMethodOfPayment.choose_step1"><a class="viewcode-back" href="../send_invoice.html#send_invoice.ChooseMethodOfPayment.choose_step1">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">choose_step1</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">call</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Choose method of payment. Step 1.</span>
+
+<span class="sd">        :param call: Callback Query.</span>
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">get_premium_process_choosing</span><span class="p">()</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;❤ &lt;b&gt;</span><span class="si">{</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">&lt;/b&gt;, please, choose the method of payment &quot;</span>
+                 <span class="sa">f</span><span class="s2">&quot;below.&quot;</span><span class="p">,</span>
+            <span class="n">chat_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="n">message_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+            <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">(),</span>
+            <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;HTML&quot;</span>
+        <span class="p">)</span>
+        <span class="n">router_send_invoice</span><span class="o">.</span><span class="n">callback_query</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__continue_subscribe_premium_with_yookassa</span><span class="p">,</span>
+            <span class="n">F</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="s2">&quot;continue_subscribe_premium_with_yookassa&quot;</span>
+        <span class="p">)</span>
+        <span class="n">router_send_invoice</span><span class="o">.</span><span class="n">callback_query</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__continue_subscribe_premium_with_telegram_stars</span><span class="p">,</span>
+            <span class="n">F</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="s2">&quot;continue_subscribe_premium_with_telegram_stars&quot;</span>
+        <span class="p">)</span>
+        <span class="n">router_send_invoice</span><span class="o">.</span><span class="n">callback_query</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">check_pay_yookassa</span><span class="p">,</span>
+            <span class="n">F</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="s2">&quot;check_pay_yookassa&quot;</span>
+        <span class="p">)</span></div>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">__continue_subscribe_premium_with_yookassa</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">call</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Continue payment. | Yookassa-Method.</span>
+
+<span class="sd">        :param call: Callback Query.</span>
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__admin_id</span><span class="p">:</span>
+                <span class="n">res</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">get_email_data</span><span class="p">(</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+                <span class="n">email</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">email</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">get_admin_email_from_file</span><span class="p">()</span>
+
+            <span class="n">payment_data</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Yookassa</span><span class="o">.</span><span class="n">create_payment</span><span class="p">(</span><span class="n">email</span><span class="p">)</span>
+            <span class="n">url</span> <span class="o">=</span> <span class="n">payment_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">confirmation_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">payment_data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+            <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">update_yookassa_data</span><span class="p">(</span>
+                <span class="n">call</span><span class="p">,</span> <span class="n">confirmation_id</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__admin_id</span><span class="p">,</span> <span class="n">email</span>
+            <span class="p">)</span>
+
+            <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">get_menu_yookassa_payment</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;✨ </span><span class="si">{</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">, perfect!</span><span class="se">\n\n</span><span class="s2">Click on the button below &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;(💳 &lt;b&gt;Pay&lt;/b&gt;) and then click on the &lt;b&gt;Check &lt;/b&gt;🔑.</span><span class="se">\n\n</span><span class="s2">If button &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;isn&#39;t activated, please, return to the main-menu (/start) and click on &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;the: &lt;b&gt;GET CW PREMIUM&lt;/b&gt; 🔥 (or &lt;b&gt;👑 MY CW PREMIUM 🌟&lt;/b&gt;) -&gt; &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;&lt;b&gt;Get CW PREMIUM 💥 | -55%&lt;/b&gt; -&gt; 🔑 &lt;b&gt;Check payment&lt;/b&gt;.</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;ID: &lt;code&gt;</span><span class="si">{</span><span class="n">confirmation_id</span><span class="si">}</span><span class="s2">&lt;/code&gt;&quot;</span><span class="p">,</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">message_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+                <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">(),</span>
+                <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;HTML&quot;</span>
+            <span class="p">)</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_photo</span><span class="p">(</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">photo</span><span class="o">=</span><span class="s2">&quot;https://telegra.ph/file/024c640166958255f5cab.jpg&quot;</span><span class="p">,</span>
+                <span class="n">message_effect_id</span><span class="o">=</span><span class="s2">&quot;5159385139981059251&quot;</span><span class="p">,</span>
+                <span class="n">caption</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;⚡ See the invoice for payment above (for one message) 👆🏻.&quot;</span>
+            <span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The exception has arisen: </span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="ChooseMethodOfPayment.check_pay_yookassa"><a class="viewcode-back" href="../send_invoice.html#send_invoice.ChooseMethodOfPayment.check_pay_yookassa">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">check_pay_yookassa</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">call</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check pay Yookassa.</span>
+
+<span class="sd">        :param call: Callback Query.</span>
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">result</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">yookassa_get_conf_id</span><span class="p">(</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+        <span class="n">payment_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">check_payment_obj</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Yookassa</span><span class="o">.</span><span class="n">check_payment</span><span class="p">(</span><span class="n">payment_id</span><span class="p">,</span> <span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">check_payment_obj</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">delete_message</span><span class="p">(</span>
+                    <span class="n">chat_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                    <span class="n">message_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span>
+                <span class="p">)</span>
+                <span class="k">await</span> <span class="n">HandlerSP</span><span class="o">.</span><span class="n">add_new_record</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="p">,</span> <span class="n">call</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__admin_id</span><span class="p">,</span> <span class="s2">&quot;Yookassa&quot;</span><span class="p">,</span> <span class="n">payment_id</span>
+                <span class="p">)</span>
+
+            <span class="k">elif</span> <span class="n">check_payment_obj</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">False</span> <span class="ow">and</span> <span class="n">check_payment_obj</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;canceled&quot;</span><span class="p">:</span>
+                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">answer_callback_query</span><span class="p">(</span>
+                    <span class="n">callback_query_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                    <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;❌ </span><span class="si">{</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">, fail! Payment was canceled by system.</span><span class="se">\n</span><span class="s2">&quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;❕ Please, write to admin.&quot;</span><span class="p">,</span>
+                    <span class="n">show_alert</span><span class="o">=</span><span class="kc">True</span>
+                <span class="p">)</span>
+                <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Payment verification - unsuccessful as it was canceled by system! User ID: &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">answer_callback_query</span><span class="p">(</span>
+                    <span class="n">callback_query_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                    <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;❌ </span><span class="si">{</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">, fail! It looks like you haven&#39;t paid &quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;the bill! Try again.</span><span class="se">\n</span><span class="s2">❕ If you are sure that you have paid for &quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;it, then write to the admin / TicketSystem.&quot;</span><span class="p">,</span>
+                    <span class="n">show_alert</span><span class="o">=</span><span class="kc">True</span>
+                <span class="p">)</span>
+                <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Payment verification - unsuccessful as it has not been paid! User ID: &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">False</span> <span class="ow">and</span> <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;None&quot;</span><span class="p">:</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">answer_callback_query</span><span class="p">(</span>
+                <span class="n">callback_query_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;❌ </span><span class="si">{</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">, fail! Payment wasn&#39;t created!</span><span class="se">\n</span><span class="s2">❕ &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;Please, write to admin.&quot;</span><span class="p">,</span>
+                <span class="n">show_alert</span><span class="o">=</span><span class="kc">True</span>
+            <span class="p">)</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Payment verification - unsuccessful as it has not been created! User ID: &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">answer_callback_query</span><span class="p">(</span>
+                <span class="n">callback_query_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;❌ </span><span class="si">{</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">, fail! Please, try again: return to &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;the main-menu (/start) and click on the: GET PREMIUM &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;🔥 -&gt; 🔑 Check payment.&quot;</span><span class="p">,</span>
+                <span class="n">show_alert</span><span class="o">=</span><span class="kc">True</span>
+            <span class="p">)</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Payment verification - unsuccessful! User ID: &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span></div>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">__continue_subscribe_premium_with_telegram_stars</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">call</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Continue payment. | TelegramStars-Method.</span>
+
+<span class="sd">        :param call: Callback Query.</span>
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">checked</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">check_subscription</span><span class="p">(</span><span class="n">call</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">checked</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;ex_sub&quot;</span><span class="p">:</span>
+            <span class="n">invoice_extend</span><span class="p">:</span> <span class="n">SendInvoice</span> <span class="o">=</span> <span class="n">SendInvoice</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="p">,</span> <span class="n">call</span>
+            <span class="p">)</span>
+            <span class="k">await</span> <span class="n">invoice_extend</span><span class="o">.</span><span class="n">send_invoice_extend</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">invoice</span><span class="p">:</span> <span class="n">SendInvoice</span> <span class="o">=</span> <span class="n">SendInvoice</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="p">,</span> <span class="n">call</span>
+            <span class="p">)</span>
+            <span class="k">await</span> <span class="n">invoice</span><span class="o">.</span><span class="n">send_invoice</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="SendInvoice"><a class="viewcode-back" href="../send_invoice.html#send_invoice.SendInvoice">[docs]</a><span class="k">class</span> <span class="nc">SendInvoice</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class of the send invoice to users for buy/pay premium-subscription.&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span> 
+            <span class="n">bot</span><span class="p">:</span> <span class="n">Bot</span><span class="p">,</span>
+            <span class="n">message</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">Message</span> <span class="o">|</span> <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="p">:</span> <span class="n">Bot</span> <span class="o">=</span> <span class="n">bot</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__message</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">Message</span> <span class="o">=</span> <span class="n">message</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__chat_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span>
+
+<div class="viewcode-block" id="SendInvoice.send_invoice"><a class="viewcode-back" href="../send_invoice.html#send_invoice.SendInvoice.send_invoice">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">send_invoice</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Send Invoice | First pay.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_invoice</span><span class="p">(</span>
+            <span class="n">chat_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__chat_id</span><span class="p">,</span>
+            <span class="n">title</span><span class="o">=</span><span class="s2">&quot;CW Premium&quot;</span><span class="p">,</span>
+            <span class="n">description</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Premium-functions for the user </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">__message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">,</span>
+            <span class="n">provider_token</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="n">currency</span><span class="o">=</span><span class="s2">&quot;XTR&quot;</span><span class="p">,</span>
+            <span class="n">prices</span><span class="o">=</span><span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">LabeledPrice</span><span class="p">(</span>
+                <span class="n">label</span><span class="o">=</span><span class="s2">&quot;CW Premium&quot;</span><span class="p">,</span>
+                <span class="n">amount</span><span class="o">=</span><span class="mi">15</span>
+            <span class="p">)],</span>
+            <span class="n">photo_url</span><span class="o">=</span><span class="s2">&quot;https://telegra.ph/file/024c640166958255f5cab.jpg&quot;</span><span class="p">,</span>
+            <span class="n">photo_size</span><span class="o">=</span><span class="mi">80000</span><span class="p">,</span>
+            <span class="n">photo_width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span>
+            <span class="n">photo_height</span><span class="o">=</span><span class="mi">610</span><span class="p">,</span>
+            <span class="n">payload</span><span class="o">=</span><span class="s2">&quot;Invoice&quot;</span><span class="p">,</span>
+            <span class="n">reply_markup</span><span class="o">=</span><span class="n">InlineKeyboardBuilder</span><span class="p">()</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;⭐️ Telegram Stars&quot;</span><span class="p">,</span> <span class="n">pay</span><span class="o">=</span><span class="kc">True</span>
+            <span class="p">))</span><span class="o">.</span><span class="n">as_markup</span><span class="p">(),</span>
+        <span class="p">)</span>
+
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="s2">&quot;Successful billing for Telegram XTR currency payment | First payment&quot;</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="SendInvoice.send_invoice_extend"><a class="viewcode-back" href="../send_invoice.html#send_invoice.SendInvoice.send_invoice_extend">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">send_invoice_extend</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Send invoice | Extend.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_invoice</span><span class="p">(</span>
+            <span class="n">chat_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__chat_id</span><span class="p">,</span>
+            <span class="n">title</span><span class="o">=</span><span class="s2">&quot;CW Premium&quot;</span><span class="p">,</span>
+            <span class="n">description</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;The subscription renewal. &quot;</span>
+                        <span class="sa">f</span><span class="s2">&quot;Premium-functions for the user </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">__message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">,</span>
+            <span class="n">payload</span><span class="o">=</span><span class="s2">&quot;Invoice&quot;</span><span class="p">,</span>
+            <span class="n">provider_token</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="n">currency</span><span class="o">=</span><span class="s2">&quot;XTR&quot;</span><span class="p">,</span>
+            <span class="n">prices</span><span class="o">=</span><span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">LabeledPrice</span><span class="p">(</span>
+                <span class="n">label</span><span class="o">=</span><span class="s2">&quot;CW Premium&quot;</span><span class="p">,</span>
+                <span class="n">amount</span><span class="o">=</span><span class="mi">15</span>
+            <span class="p">)],</span>
+            <span class="n">photo_url</span><span class="o">=</span><span class="s2">&quot;https://telegra.ph/file/024c640166958255f5cab.jpg&quot;</span><span class="p">,</span>
+            <span class="n">photo_size</span><span class="o">=</span><span class="mi">80000</span><span class="p">,</span>
+            <span class="n">photo_width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span>
+            <span class="n">photo_height</span><span class="o">=</span><span class="mi">610</span><span class="p">,</span>
+            <span class="n">reply_markup</span><span class="o">=</span><span class="n">InlineKeyboardBuilder</span><span class="p">()</span><span class="o">.</span><span class="n">row</span><span class="p">(</span><span class="n">types</span><span class="o">.</span><span class="n">InlineKeyboardButton</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;⭐️ Telegram Stars&quot;</span><span class="p">,</span> <span class="n">pay</span><span class="o">=</span><span class="kc">True</span>
+            <span class="p">))</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+        <span class="p">)</span>
+
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="s2">&quot;Successful billing for Telegram XTR currency payment | Second payment&quot;</span>
+        <span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2024, Alexander Laptev, CW.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

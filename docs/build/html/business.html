@@ -1,0 +1,1446 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="_static/favicons/FaviconSVG_ManagerCWBotAPI.svg" type="image/svg+xml">
+    <link rel="icon" sizes="16x16" href="_static/favicons/favicon/favicon-16x16.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="_static/favicons/favicon/favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon" sizes="180x180" href="_static/favicons/favicon/apple-touch-icon-180x180.png" type="image/png">
+    <link rel="mask-icon" href="_static/favicons/favicon/safari-pinned-tab.svg" color="#5bbad5" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Business &mdash; Manager CW Bot 6.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Business handler for answers" href="business_answers.html" />
+    <link rel="prev" title="Analytics" href="analytics.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Manager CW Bot
+          
+
+          
+            
+            <img src="_static/manager_cw_bot_logo_black_and_cw-white_200pxX200px.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                6.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Methods and functions:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation lib, configuration and run the bot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info_updates.html">Information about last update | August update!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analytics.html">Analytics</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Business</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-business">Business module. Manage main functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="business_answers.html">Business handler for answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="business_handler.html">Business handler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="buttons.html">Buttons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="create_table.html">Create Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fsm_handler.html">Handler of FSM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example_bot_json.html">Example of a bot.json file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get_business_conn_and_info_conn.html">Get business connection and info conn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="giga_images.html">Giga Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="giga_request.html">Giga Request</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gigachatai.html">Giga Chat AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="handler_db_sub_operations.html">Handler database and subscribe operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="handler_email.html">Handler EMail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="handler_email_sender.html">Handler EMail-Sender</a></li>
+<li class="toctree-l1"><a class="reference internal" href="handler_promo.html">Handler promo data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="handler_successful_payment.html">Handler successful payment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="handler_yookassa.html">Handler Yookassa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mysql_connection.html">MySQL Connector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pdf_generate_data.html">PDF Generate Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="refund.html">Handler refund</a></li>
+<li class="toctree-l1"><a class="reference internal" href="send_invoice.html">Handler send invoice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests.html">Tests (UnitTest)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tickets.html">Tickets</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Manager CW Bot</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Business</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="business">
+<h1>Business<a class="headerlink" href="#business" title="Permalink to this heading"><span>#</span></a></h1>
+<section id="module-business">
+<span id="business-module-manage-main-functions"></span><h2>Business module. Manage main functions<a class="headerlink" href="#module-business" title="Permalink to this heading"><span>#</span></a></h2>
+<p>Module of the Manager-Business-Helper Bot.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="business.AISector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">business.</span></span><span class="sig-name descname"><span class="pre">AISector</span></span><a class="reference internal" href="_modules/business.html#AISector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.AISector" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>AI Sector-class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="business.AISector.ai_assistance">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ai_assistance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/business.html#AISector.ai_assistance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.AISector.ai_assistance" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Handler (callback-handler) for go to the AI-Menu.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bot</strong> (<em>Bot</em>) – The Bot-object.</p></li>
+<li><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.AISector.ai_two_in_one_main_menu">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ai_two_in_one_main_menu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/business.html#AISector.ai_two_in_one_main_menu"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.AISector.ai_two_in_one_main_menu" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Handler (callback-handler) for explore to AI-menu.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bot</strong> (<em>Bot</em>) – The Bot-object.</p></li>
+<li><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p></li>
+<li><p><strong>admin_id</strong> (<em>int</em>) – Admin ID (telegram ID).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.AISector.generate_image_for_premium_user">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_image_for_premium_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">call</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/business.html#AISector.generate_image_for_premium_user"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.AISector.generate_image_for_premium_user" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Generate image for premium-user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bot</strong> (<em>Bot</em>) – The Bot-object.</p></li>
+<li><p><strong>call</strong> (<em>CallbackQuery</em>) – Callback Query.</p></li>
+<li><p><strong>state</strong> (<em>FSMContext</em>) – FSM.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="business.EmailSector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">business.</span></span><span class="sig-name descname"><span class="pre">EmailSector</span></span><a class="reference internal" href="_modules/business.html#EmailSector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.EmailSector" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Email sector-class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="business.EmailSector.add_new_email">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">add_new_email</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/business.html#EmailSector.add_new_email"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.EmailSector.add_new_email" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Handler (callback-handler) for add a new EMail.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bot</strong> – The Bot-object.</p></li>
+<li><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p></li>
+<li><p><strong>state</strong> (<em>FSMContext</em>) – FSM.</p></li>
+<li><p><strong>admin_id</strong> (<em>int</em>) – Admin ID (telegram ID).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.EmailSector.email_settings_menu">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">email_settings_menu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/business.html#EmailSector.email_settings_menu"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.EmailSector.email_settings_menu" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Menu of EMail Settings for any users and admin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bot</strong> – The Bot-object.</p></li>
+<li><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p></li>
+<li><p><strong>admin_id</strong> (<em>int</em>) – Admin ID (telegram ID).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="business.FinanceSector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">business.</span></span><span class="sig-name descname"><span class="pre">FinanceSector</span></span><a class="reference internal" href="_modules/business.html#FinanceSector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.FinanceSector" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Finance sector-class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="business.FinanceSector.pre_checkout_query">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pre_checkout_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pre_checkout_query</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/business.html#FinanceSector.pre_checkout_query"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.FinanceSector.pre_checkout_query" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Pre-Checkout TelegramPay Function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bot</strong> (<em>Bot</em>) – The Bot-object.</p></li>
+<li><p><strong>pre_checkout_query</strong> (<em>PreCheckoutQuery</em>) – Pre-Checkout-query.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.FinanceSector.refund">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">refund</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">call</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/business.html#FinanceSector.refund"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.FinanceSector.refund" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Refund-menu for admin use / control.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bot</strong> (<em>Bot</em>) – The Bot-object.</p></li>
+<li><p><strong>call</strong> (<em>CallbackQuery</em>) – Callback Query.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.FinanceSector.refunding_step1">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">refunding_step1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">call</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/business.html#FinanceSector.refunding_step1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.FinanceSector.refunding_step1" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Call-Handler for refund stars | Step 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bot</strong> (<em>Bot</em>) – The Bot-object.</p></li>
+<li><p><strong>call</strong> (<em>CallbackQuery</em>) – Callback Query.</p></li>
+<li><p><strong>state</strong> (<em>FSMContext</em>) – FSM.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.FinanceSector.successful_payment">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">successful_payment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/business.html#FinanceSector.successful_payment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.FinanceSector.successful_payment" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Handler for successful payment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bot</strong> (<em>Bot</em>) – The Bot-object.</p></li>
+<li><p><strong>message</strong> (<em>Message</em>) – Message from user.</p></li>
+<li><p><strong>admin_id</strong> (<em>int</em>) – Admin ID (telegram ID).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="business.Manager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">business.</span></span><span class="sig-name descname"><span class="pre">Manager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot_token</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">business_conn_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mysql_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gigachat_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_username</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/business.html#Manager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.Manager" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Manager of the Admin Account and helper ‘AI’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bot_token</strong> (<em>str</em>) – </p></li>
+<li><p><strong>business_conn_id</strong> (<em>str</em>) – </p></li>
+<li><p><strong>admin_id</strong> (<em>int</em>) – </p></li>
+<li><p><strong>mysql_data</strong> (<em>dict</em>) – </p></li>
+<li><p><strong>gigachat_data</strong> (<em>dict</em>) – </p></li>
+<li><p><strong>admin_username</strong> (<em>str</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__add_new_email">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__add_new_email</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__add_new_email" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Handler (callback-handler) for add a new EMail.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p></li>
+<li><p><strong>state</strong> (<em>FSMContext</em>) – FSM.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__admin_menu_tickets">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__admin_menu_tickets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__admin_menu_tickets" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Handler (callback-handler) for show tickets to admin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__ai_assistance">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__ai_assistance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__ai_assistance" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Handler (callback-handler) for go to the AI-Menu.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__ai_two_in_one_main_menu">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__ai_two_in_one_main_menu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__ai_two_in_one_main_menu" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Handler (callback-handler) for explore to AI-menu.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__analytic_data">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__analytic_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__analytic_data" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Handler of the analytic-menu (UI) for admin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__answer_to_user">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__answer_to_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__answer_to_user" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Answer to a user from admin-account (as admin).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>message</strong> (<em>Message</em>) – Message of a user.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__back_on_main">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__back_on_main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__back_on_main" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Handler for return to main-menu.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call</strong> (<em>CallbackQuery</em>) – Callback Query.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__business_and_money">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__business_and_money</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__business_and_money" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Handler (callback-handler) for explore to BusinessAndMoney-menu.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__business_handler">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__business_handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__business_handler" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Handler (call-query) for admin (with business) - start main handler.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__continue_subscribe_premium">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__continue_subscribe_premium</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__continue_subscribe_premium" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Continue to subscribe CW PREMIUM. Choose method of payment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__email_settings_menu">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__email_settings_menu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__email_settings_menu" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Menu of EMail Settings for any users and admin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__eng_privacy">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__eng_privacy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__eng_privacy" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Explore to show ENG Privacy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__enter_promo_code">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__enter_promo_code</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__enter_promo_code" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Func ‘ENTER’ a promo code from user. | Step 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>call</strong> (<em>CallbackQuery</em>) – CallbackQuery.</p></li>
+<li><p><strong>state</strong> (<em>FSMContext</em>) – FSM.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__explore_answer_admin_by_ticket">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__explore_answer_admin_by_ticket</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__explore_answer_admin_by_ticket" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Handler (call-handler) for get id ticket for answer to admin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p></li>
+<li><p><strong>state</strong> (<em>FSMContext</em>) – FSM.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__explore_answer_users_ticket">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__explore_answer_users_ticket</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__explore_answer_users_ticket" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Handler (call-handler) for get id ticket for answer to user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p></li>
+<li><p><strong>state</strong> (<em>FSMContext</em>) – FSM.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__explore_show_users_ticket">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__explore_show_users_ticket</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__explore_show_users_ticket" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Explore to show user’s ticket by id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p></li>
+<li><p><strong>state</strong> (<em>FSMContext</em>) – FSM.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__generate_image_for_premium_user">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__generate_image_for_premium_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__generate_image_for_premium_user" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Generate image for premium-user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>call</strong> (<em>CallbackQuery</em>) – Callback Query.</p></li>
+<li><p><strong>state</strong> (<em>FSMContext</em>) – FSM.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__get_id_ticket_for_show">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__get_id_ticket_for_show</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__get_id_ticket_for_show" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Get id ticket for admin answer/view or user view.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>message</strong> (<em>Message</em>) – Message (ID ticket) from admin/the user.</p></li>
+<li><p><strong>state</strong> (<em>FSMContext</em>) – FSM.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__get_main_menu">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__get_main_menu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__get_main_menu" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Handler for go to main-menu.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>message</strong> (<em>Message</em>) – Message.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__get_or_lk_premium">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__get_or_lk_premium</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__get_or_lk_premium" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Get CW PREMIUM or view (look at) “MY PREMIUM”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__pre_checkout_query">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__pre_checkout_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pre_checkout_query</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__pre_checkout_query" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Pre-Checkout TelegramPay Function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pre_checkout_query</strong> (<em>PreCheckoutQuery</em>) – Pre-Checkout-query.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__privacy">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__privacy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__privacy" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Privacy for the users.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>message</strong> (<em>Message</em>) – Message / Command Privacy.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__refund">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__refund</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__refund" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Refund-menu for admin use / control.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call</strong> (<em>CallbackQuery</em>) – Callback Query.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__refunding_step1">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__refunding_step1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__refunding_step1" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Call-Handler for refund stars | Step 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>call</strong> (<em>CallbackQuery</em>) – Callback Query.</p></li>
+<li><p><strong>state</strong> (<em>FSMContext</em>) – FSM.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__rus_privacy">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__rus_privacy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__rus_privacy" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Explore to show RUS Privacy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__show_promo_menu_admin">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__show_promo_menu_admin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__show_promo_menu_admin" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Show PROMO Menu. | Control ADMIN.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__standard_message">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__standard_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__standard_message" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Answer to the users and admin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>message</strong> (<em>Message</em>) – Message.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__successful_payment">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__successful_payment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__successful_payment" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Handler for successful payment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>message</strong> (<em>Message</em>) – Message from user.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.__user_menu_tickets">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__user_menu_tickets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#business.Manager.__user_menu_tickets" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Handler (callback-handler) for go to the Tickets-Menu.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.Manager.run">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/business.html#Manager.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.Manager.run" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Run-function Bot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="business.MenuSector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">business.</span></span><span class="sig-name descname"><span class="pre">MenuSector</span></span><a class="reference internal" href="_modules/business.html#MenuSector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.MenuSector" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>The class-sector of manage MENU-functions.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="business.MenuSector.back_on_main">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">back_on_main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">call</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/business.html#MenuSector.back_on_main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.MenuSector.back_on_main" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Handler for return to main-menu.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bot</strong> (<em>Bot</em>) – The Bot-object.</p></li>
+<li><p><strong>call</strong> (<em>CallbackQuery</em>) – Callback Query.</p></li>
+<li><p><strong>admin_id</strong> (<em>int</em>) – Admin ID (telegram ID).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.MenuSector.get_main_menu">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_main_menu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/business.html#MenuSector.get_main_menu"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.MenuSector.get_main_menu" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Handler for go to main-menu.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bot</strong> (<em>Bot</em>) – The Bot-object.</p></li>
+<li><p><strong>message</strong> (<em>Message</em>) – Message.</p></li>
+<li><p><strong>admin_id</strong> (<em>int</em>) – Admin ID (telegram ID).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="business.PremiumFunctionsSector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">business.</span></span><span class="sig-name descname"><span class="pre">PremiumFunctionsSector</span></span><a class="reference internal" href="_modules/business.html#PremiumFunctionsSector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.PremiumFunctionsSector" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Class for manage Premium functions</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="business.PremiumFunctionsSector.business_and_money">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">business_and_money</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/business.html#PremiumFunctionsSector.business_and_money"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.PremiumFunctionsSector.business_and_money" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Handler (callback-handler) for explore to BusinessAndMoney-menu.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bot</strong> (<em>Bot</em>) – The Bot-object.</p></li>
+<li><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.PremiumFunctionsSector.business_handler">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">business_handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/business.html#PremiumFunctionsSector.business_handler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.PremiumFunctionsSector.business_handler" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Handler (call-query) for admin (with business) - start main handler.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bot</strong> (<em>Bot</em>) – The Bot-object.</p></li>
+<li><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.PremiumFunctionsSector.continue_subscribe_premium">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">continue_subscribe_premium</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/business.html#PremiumFunctionsSector.continue_subscribe_premium"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.PremiumFunctionsSector.continue_subscribe_premium" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Continue to subscribe CW PREMIUM. Choose method of payment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bot</strong> (<em>Bot</em>) – The Bot-object.</p></li>
+<li><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p></li>
+<li><p><strong>admin_id</strong> (<em>int</em>) – Admin ID (telegram ID).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.PremiumFunctionsSector.get_or_lk_premium">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_or_lk_premium</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_username</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/business.html#PremiumFunctionsSector.get_or_lk_premium"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.PremiumFunctionsSector.get_or_lk_premium" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Get CW PREMIUM or view (look at) “MY PREMIUM”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bot</strong> (<em>Bot</em>) – The Bot-object.</p></li>
+<li><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p></li>
+<li><p><strong>admin_id</strong> (<em>int</em>) – Admin ID (telegram ID).</p></li>
+<li><p><strong>admin_username</strong> (<em>str</em>) – Admin USERNAME (telegram USERNAME).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.PremiumFunctionsSector.show_promo_menu_admin">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">show_promo_menu_admin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/business.html#PremiumFunctionsSector.show_promo_menu_admin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.PremiumFunctionsSector.show_promo_menu_admin" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Show PROMO Menu. | Control ADMIN.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bot</strong> (<em>Bot</em>) – The Bot-object.</p></li>
+<li><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p></li>
+<li><p><strong>admin_id</strong> (<em>int</em>) – Admin ID (telegram ID).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="business.PrivacyMessagesSector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">business.</span></span><span class="sig-name descname"><span class="pre">PrivacyMessagesSector</span></span><a class="reference internal" href="_modules/business.html#PrivacyMessagesSector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.PrivacyMessagesSector" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Sender-class of privacy messages.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="business.PrivacyMessagesSector.eng_privacy">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">eng_privacy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/business.html#PrivacyMessagesSector.eng_privacy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.PrivacyMessagesSector.eng_privacy" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Explore to show ENG Privacy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bot</strong> (<em>Bot</em>) – The bot object</p></li>
+<li><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.PrivacyMessagesSector.privacy">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">privacy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/business.html#PrivacyMessagesSector.privacy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.PrivacyMessagesSector.privacy" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Privacy for the users.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bot</strong> (<em>Bot</em>) – The bot object</p></li>
+<li><p><strong>message</strong> (<em>Message</em>) – Message / Command Privacy.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.PrivacyMessagesSector.rus_privacy">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rus_privacy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/business.html#PrivacyMessagesSector.rus_privacy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.PrivacyMessagesSector.rus_privacy" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Explore to show RUS Privacy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bot</strong> (<em>Bot</em>) – The bot object</p></li>
+<li><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="business.PromoFunctionsSector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">business.</span></span><span class="sig-name descname"><span class="pre">PromoFunctionsSector</span></span><a class="reference internal" href="_modules/business.html#PromoFunctionsSector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.PromoFunctionsSector" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>The class of Promo functions.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="business.PromoFunctionsSector.enter_promo_code">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">enter_promo_code</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">call</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/business.html#PromoFunctionsSector.enter_promo_code"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.PromoFunctionsSector.enter_promo_code" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Func ‘ENTER’ a promo code from user. | Step 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bot</strong> (<em>Bot</em>) – The Bot-object.</p></li>
+<li><p><strong>call</strong> (<em>CallbackQuery</em>) – CallbackQuery.</p></li>
+<li><p><strong>state</strong> (<em>FSMContext</em>) – FSM.</p></li>
+<li><p><strong>admin_id</strong> (<em>int</em>) – Admin ID (telegram ID).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.PromoFunctionsSector.show_promo_menu_admin">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">show_promo_menu_admin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/business.html#PromoFunctionsSector.show_promo_menu_admin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.PromoFunctionsSector.show_promo_menu_admin" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Show PROMO Menu. | Control ADMIN.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bot</strong> (<em>Bot</em>) – The Bot-object.</p></li>
+<li><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p></li>
+<li><p><strong>admin_id</strong> (<em>int</em>) – Admin ID (telegram ID).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="business.TicketsSector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">business.</span></span><span class="sig-name descname"><span class="pre">TicketsSector</span></span><a class="reference internal" href="_modules/business.html#TicketsSector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.TicketsSector" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Ticket-Manage Class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="business.TicketsSector.admin_menu_tickets">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">admin_menu_tickets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mysql_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/business.html#TicketsSector.admin_menu_tickets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.TicketsSector.admin_menu_tickets" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Handler (callback-handler) for show tickets to admin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bot</strong> (<em>Bot</em>) – The Bot-object.</p></li>
+<li><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p></li>
+<li><p><strong>mysql_data</strong> (<em>dict</em>) – MySQL (Database) data.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.TicketsSector.explore_answer_admin_by_ticket">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">explore_answer_admin_by_ticket</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mysql_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/business.html#TicketsSector.explore_answer_admin_by_ticket"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.TicketsSector.explore_answer_admin_by_ticket" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Handler (call-handler) for get id ticket for answer to admin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bot</strong> (<em>Bot</em>) – The Bot-object.</p></li>
+<li><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p></li>
+<li><p><strong>state</strong> (<em>FSMContext</em>) – FSM.</p></li>
+<li><p><strong>admin_id</strong> (<em>int</em>) – Admin ID (telegram ID).</p></li>
+<li><p><strong>mysql_data</strong> (<em>dict</em>) – MySQL (Database) data.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.TicketsSector.explore_answer_users_ticket">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">explore_answer_users_ticket</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mysql_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/business.html#TicketsSector.explore_answer_users_ticket"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.TicketsSector.explore_answer_users_ticket" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Handler (call-handler) for get id ticket for answer to user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bot</strong> (<em>Bot</em>) – The Bot-object.</p></li>
+<li><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p></li>
+<li><p><strong>state</strong> (<em>FSMContext</em>) – FSM.</p></li>
+<li><p><strong>admin_id</strong> (<em>int</em>) – Admin ID (telegram ID).</p></li>
+<li><p><strong>mysql_data</strong> (<em>dict</em>) – MySQL (Database) data.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.TicketsSector.explore_show_users_ticket">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">explore_show_users_ticket</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/business.html#TicketsSector.explore_show_users_ticket"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.TicketsSector.explore_show_users_ticket" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Explore to show user’s ticket by id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bot</strong> (<em>Bot</em>) – The Bot-object.</p></li>
+<li><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p></li>
+<li><p><strong>state</strong> (<em>FSMContext</em>) – FSM.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.TicketsSector.get_id_ticket_for_show">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_id_ticket_for_show</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mysql_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/business.html#TicketsSector.get_id_ticket_for_show"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.TicketsSector.get_id_ticket_for_show" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Get id ticket for admin answer/view or user view.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bot</strong> (<em>Bot</em>) – The Bot-object.</p></li>
+<li><p><strong>message</strong> (<em>Message</em>) – Message (ID ticket) from admin/the user.</p></li>
+<li><p><strong>state</strong> (<em>FSMContext</em>) – FSM.</p></li>
+<li><p><strong>mysql_data</strong> (<em>dict</em>) – MySQL (Database) data.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="business.TicketsSector.user_menu_tickets">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">user_menu_tickets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">call_query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mysql_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/business.html#TicketsSector.user_menu_tickets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.TicketsSector.user_menu_tickets" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Handler (callback-handler) for go to the Tickets-Menu.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bot</strong> (<em>Bot</em>) – The Bot-object.</p></li>
+<li><p><strong>call_query</strong> (<em>CallbackQuery</em>) – Callback Query.</p></li>
+<li><p><strong>mysql_data</strong> (<em>dict</em>) – MySQL (Database) data.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="business.get_data">
+<span class="sig-prename descclassname"><span class="pre">business.</span></span><span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'bot.json'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/business.html#get_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.get_data" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Get data of the Alex’s Manager Bot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_path</strong> – File Path of JSON-API-keys for Bot.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dict with data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="business.run">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">business.</span></span><span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/business.html#run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#business.run" title="Permalink to this definition"><span>#</span></a></dt>
+<dd><p>Run Function of the main-file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<hr class="docutils" />
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="./business_handler.html">How to manage the main functions of a business</a></p>
+</div>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="business_answers.html" class="btn btn-neutral float-right" title="Business handler for answers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="analytics.html" class="btn btn-neutral float-left" title="Analytics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2024, Alexander Laptev, CW.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

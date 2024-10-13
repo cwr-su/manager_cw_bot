@@ -1,0 +1,729 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>refund &mdash; Manager CW Bot 6.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/fonts.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Manager CW Bot
+          
+
+          
+            
+            <img src="../_static/manager_cw_bot_logo_black_and_cw-white_200pxX200px.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                6.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Methods and functions:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation lib, configuration and run the bot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../info_updates.html">Information about last update | August update!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analytics.html">Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../business.html">Business</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../business_answers.html">Business handler for answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../business_handler.html">Business handler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../buttons.html">Buttons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../create_table.html">Create Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fsm_handler.html">Handler of FSM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../example_bot_json.html">Example of a bot.json file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get_business_conn_and_info_conn.html">Get business connection and info conn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../giga_images.html">Giga Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../giga_request.html">Giga Request</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gigachatai.html">Giga Chat AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_db_sub_operations.html">Handler database and subscribe operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_email.html">Handler EMail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_email_sender.html">Handler EMail-Sender</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_promo.html">Handler promo data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_successful_payment.html">Handler successful payment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handler_yookassa.html">Handler Yookassa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mysql_connection.html">MySQL Connector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pdf_generate_data.html">PDF Generate Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../refund.html">Handler refund</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../send_invoice.html">Handler send invoice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tests.html">Tests (UnitTest)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tickets.html">Tickets</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Manager CW Bot</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Module code</a> &raquo;</li>
+        
+      <li>refund</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for refund</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Refunding module.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="kn">from</span> <span class="nn">aiogram</span> <span class="kn">import</span> <span class="n">types</span><span class="p">,</span> <span class="n">Bot</span><span class="p">,</span> <span class="n">Router</span><span class="p">,</span> <span class="n">F</span>
+<span class="kn">from</span> <span class="nn">aiogram.fsm.context</span> <span class="kn">import</span> <span class="n">FSMContext</span>
+<span class="kn">from</span> <span class="nn">aiogram.utils.keyboard</span> <span class="kn">import</span> <span class="n">InlineKeyboardBuilder</span>
+<span class="kn">from</span> <span class="nn">aiogram.types.input_file</span> <span class="kn">import</span> <span class="n">FSInputFile</span>
+
+<span class="kn">from</span> <span class="nn">manager_cw_bot_api.buttons</span> <span class="kn">import</span> <span class="n">Buttons</span>
+<span class="kn">from</span> <span class="nn">manager_cw_bot_api.fsm_handler</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">ProcessRefundingGetREFTokenST1</span><span class="p">,</span>
+    <span class="n">ProcessEmergencyRefundingGetREFTokenST1</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">manager_cw_bot_api.handler_db_sub_operations</span> <span class="kn">import</span> <span class="n">HandlerDB</span><span class="p">,</span> <span class="n">SubOperations</span>
+<span class="kn">from</span> <span class="nn">manager_cw_bot_api.handler_email_sender</span> <span class="kn">import</span> <span class="n">SenderEmail</span>
+<span class="kn">from</span> <span class="nn">manager_cw_bot_api.pdf_generate_data</span> <span class="kn">import</span> <span class="n">GenerateReceiptRefundForUser</span>
+
+<span class="n">router_refund</span><span class="p">:</span> <span class="n">Router</span> <span class="o">=</span> <span class="n">Router</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="Refund"><a class="viewcode-back" href="../refund.html#refund.Refund">[docs]</a><span class="k">class</span> <span class="nc">Refund</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class of a refund.&quot;&quot;&quot;</span>
+    <span class="n">__refund_token</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bot</span><span class="p">:</span> <span class="n">Bot</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="p">:</span> <span class="n">Bot</span> <span class="o">=</span> <span class="n">bot</span>
+
+        <span class="n">router_refund</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__refunding_step2_confirmation</span><span class="p">,</span>
+            <span class="n">ProcessRefundingGetREFTokenST1</span><span class="o">.</span><span class="n">token</span>
+        <span class="p">)</span>
+        <span class="n">router_refund</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__emergency_refunding_step2</span><span class="p">,</span>
+            <span class="n">ProcessEmergencyRefundingGetREFTokenST1</span><span class="o">.</span><span class="n">user_id</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="Refund.refunding_step1_confirmation"><a class="viewcode-back" href="../refund.html#refund.Refund.refunding_step1_confirmation">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">refunding_step1_confirmation</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">call</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span><span class="p">,</span>
+            <span class="n">state</span><span class="p">:</span> <span class="n">FSMContext</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Call-Handler for refund stars | Step 1 - Confirmation.</span>
+
+<span class="sd">        :param call: Callback Query.</span>
+<span class="sd">        :param state: FSM.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">await</span> <span class="n">state</span><span class="o">.</span><span class="n">set_state</span><span class="p">(</span><span class="n">ProcessRefundingGetREFTokenST1</span><span class="o">.</span><span class="n">token</span><span class="p">)</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+            <span class="n">chat_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="n">message_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+            <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Important! If the payment was made through the YooKassa system (as a payment &#39;</span>
+                 <span class="s1">&#39;method), then a refund (in this case) is possible only through a personal &#39;</span>
+                 <span class="s1">&#39;account on the site https://yookassa.ru / in the &quot;Refunds&quot; section.</span><span class="se">\n\n</span><span class="s1">&#39;</span>
+                 <span class="s1">&#39;🔐 Enter the *REFUND-token... (*only for Telegram Stars as a payment method)&#39;</span>
+        <span class="p">)</span></div>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">__refunding_step2_confirmation</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">message</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">Message</span><span class="p">,</span>
+            <span class="n">state</span><span class="p">:</span> <span class="n">FSMContext</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Refunding star(-s) to user | Step 2 - Confirmation.</span>
+
+<span class="sd">        :param message: Token from user.</span>
+<span class="sd">        :param state: FSM.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">await</span> <span class="n">state</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+        <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">sure_refund_confirmation</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__refund_token</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">text</span>
+
+        <span class="n">checked_promo</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">check_promo_code</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__refund_token</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">checked_promo</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+            <span class="n">checked</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">check_subscription_by_refund_token</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__refund_token</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">checked</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">checked</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;none&quot;</span><span class="p">:</span>
+                    <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                        <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                        <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;⚠️ *</span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">*, are you sure? I could not &quot;</span>
+                             <span class="sa">f</span><span class="s2">&quot;find this REFUND-Token in the database. It may not have been &quot;</span>
+                             <span class="sa">f</span><span class="s2">&quot;added in time due to problems on the server side.</span><span class="se">\n\n</span><span class="s2">If you see &quot;</span>
+                             <span class="sa">f</span><span class="s2">&quot;that the token looks like a real one, click the corresponding &quot;</span>
+                             <span class="sa">f</span><span class="s2">&quot;button below. BUT if you are not sure that this isn&#39;t a real &quot;</span>
+                             <span class="sa">f</span><span class="s2">&quot;token, click &#39;❌ Cancel&#39;!</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+                             <span class="sa">f</span><span class="s2">&quot;⚠ This step is registered!&quot;</span><span class="p">,</span>
+                        <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span><span class="p">,</span>
+                        <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+                    <span class="p">)</span>
+
+                    <span class="n">router_refund</span><span class="o">.</span><span class="n">callback_query</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">__refunding_step3</span><span class="p">,</span>
+                        <span class="n">F</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="s2">&quot;refund_confirmation&quot;</span>
+                    <span class="p">)</span>
+                <span class="k">elif</span> <span class="n">checked</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;ex_sub&quot;</span><span class="p">:</span>
+                    <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                        <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                        <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;⚠️ *</span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">*, are you sure? I found &quot;</span>
+                             <span class="sa">f</span><span class="s2">&quot;a user, but his subscription has expired!</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+                             <span class="sa">f</span><span class="s2">&quot;⚠ This step is registered!&quot;</span><span class="p">,</span>
+                        <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span><span class="p">,</span>
+                        <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+                    <span class="p">)</span>
+
+                    <span class="n">router_refund</span><span class="o">.</span><span class="n">callback_query</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">__refunding_step3</span><span class="p">,</span>
+                        <span class="n">F</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="s2">&quot;refund_confirmation&quot;</span>
+                    <span class="p">)</span>
+            <span class="k">elif</span> <span class="n">checked</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+                <span class="n">remains</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="k">await</span> <span class="n">SubOperations</span><span class="o">.</span><span class="n">sec_to_days</span><span class="p">(</span><span class="n">checked</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+                <span class="n">d</span> <span class="o">=</span> <span class="s2">&quot;days&quot;</span>
+
+                <span class="k">if</span> <span class="n">remains</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="n">d</span> <span class="o">=</span> <span class="s2">&quot;days&quot;</span>
+                <span class="k">elif</span> <span class="n">remains</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="n">d</span> <span class="o">=</span> <span class="s2">&quot;day&quot;</span>
+
+                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                    <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                    <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;⚠️ *</span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">*, are you sure? The subscription &quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;ends after *</span><span class="si">{</span><span class="n">remains</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s2">*. If necessary, notify the user about this!&quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">After the star(s) are returned, the *subscription will be &quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;disabled*!</span><span class="se">\n</span><span class="s2">But *user can resume* it at any other time by &quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;clicking on *Get CW PREMIUM* in main menu.&quot;</span><span class="p">,</span>
+                    <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span><span class="p">,</span>
+                    <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+                <span class="p">)</span>
+
+                <span class="n">router_refund</span><span class="o">.</span><span class="n">callback_query</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">__refunding_step3</span><span class="p">,</span>
+                    <span class="n">F</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="s2">&quot;refund_confirmation&quot;</span>
+                <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">back_on_main</span><span class="p">()</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;🚫 *</span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">*, sorry. But I can&#39;t make a refund. &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;That&#39;s a PROMO-REF-Token! (We can&#39;t make a refund on it).&quot;</span><span class="p">,</span>
+                <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span><span class="p">,</span>
+                <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+            <span class="p">)</span>
+
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Rejection of TGStars return on PROMO token.&quot;</span>
+            <span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">__refunding_step3</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">call</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Refunding. The admin has confirmed the actions.</span>
+
+<span class="sd">        :param call: Callback Query.</span>
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">back_on_main</span><span class="p">()</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">text</span><span class="o">=</span><span class="s2">&quot;⏳ Starting the refund...&quot;</span><span class="p">,</span>
+                <span class="n">message_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span>
+            <span class="p">)</span>
+
+            <span class="n">check</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">check_subscription_by_refund_token</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__refund_token</span>
+            <span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">check</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;none&quot;</span><span class="p">:</span>
+                <span class="n">user_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">check</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">refund_star_payment</span><span class="p">(</span>
+                    <span class="n">user_id</span><span class="o">=</span><span class="n">user_id</span><span class="p">,</span>
+                    <span class="n">telegram_payment_charge_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__refund_token</span>
+                <span class="p">)</span>
+
+                <span class="n">result</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">get_email_data</span><span class="p">(</span><span class="n">user_id</span><span class="p">)</span>
+
+                <span class="n">deleted</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">delete_record_for_subscribe</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__refund_token</span>
+                <span class="p">)</span>
+                <span class="k">if</span> <span class="n">deleted</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+                    <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+                        <span class="n">chat_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                        <span class="n">text</span><span class="o">=</span><span class="s2">&quot;✅ The refund is completed ✨&quot;</span><span class="p">,</span>
+                        <span class="n">message_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+                        <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+                    <span class="p">)</span>
+
+                    <span class="n">firstname</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">deleted</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+                    <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                        <span class="n">chat_id</span><span class="o">=</span><span class="n">user_id</span><span class="p">,</span>
+                        <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;ℹ </span><span class="si">{</span><span class="n">firstname</span><span class="si">}</span><span class="s2">, Your star(s) have been returned!&quot;</span><span class="p">,</span>
+                        <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+                    <span class="p">)</span>
+
+                    <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+                        <span class="n">time</span> <span class="o">=</span> <span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span>
+                                <span class="n">now</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">3</span><span class="p">)))</span><span class="o">.</span>
+                                <span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1">.%m.%Y | %H:%M:%S&#39;</span><span class="p">))</span>
+
+                        <span class="n">receipt_data</span> <span class="o">=</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&lt;tr&gt;&quot;</span>
+                                        <span class="sa">f</span><span class="s2">&quot;  &lt;td align=&#39;center&#39;&gt;&lt;code&gt;&quot;</span>
+                                        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__refund_token</span><span class="si">}</span><span class="s2">&quot;</span>
+                                        <span class="sa">f</span><span class="s2">&quot;&lt;/code&gt;&lt;/td&gt;&quot;</span>
+                                        <span class="sa">f</span><span class="s2">&quot;  &lt;td align=&#39;center&#39;&gt;@</span><span class="si">{</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">username</span><span class="si">}</span><span class="s2">&lt;/td&gt;&quot;</span>
+                                        <span class="sa">f</span><span class="s2">&quot;  &lt;td align=&#39;center&#39;&gt;15 XTR&lt;/td&gt;&quot;</span>
+                                        <span class="sa">f</span><span class="s2">&quot;  &lt;td align=&#39;center&#39;&gt;</span><span class="si">{</span><span class="n">time</span><span class="si">}</span><span class="s2"> (UTC+3)&lt;/td&gt;&quot;</span>
+                                        <span class="sa">f</span><span class="s2">&quot;  &lt;td align=&#39;center&#39;&gt;Telegram Stars (XTR)&lt;/td&gt;&quot;</span>
+                                        <span class="sa">f</span><span class="s2">&quot;&lt;/tr&gt;&quot;</span><span class="p">)</span>
+
+                        <span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="k">await</span> <span class="n">GenerateReceiptRefundForUser</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span>
+                            <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span>
+                            <span class="n">receipt_data</span>
+                        <span class="p">)</span>
+                        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_document</span><span class="p">(</span>
+                            <span class="n">chat_id</span><span class="o">=</span><span class="n">user_id</span><span class="p">,</span>
+                            <span class="n">document</span><span class="o">=</span><span class="n">FSInputFile</span><span class="p">(</span><span class="n">file_path</span><span class="p">),</span>
+                            <span class="n">caption</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;👑 </span><span class="si">{</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">, there is the payment &quot;</span>
+                                    <span class="sa">f</span><span class="s2">&quot;receipt attached below. It&#39;ll also send to you by email! ⚡&quot;</span>
+                        <span class="p">)</span>
+                        <span class="k">await</span> <span class="n">SenderEmail</span><span class="o">.</span><span class="n">send_receipt_refund_to_user_in_email_format</span><span class="p">(</span>
+                            <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+                            <span class="sa">f</span><span class="s2">&quot;🧾📨 Receipt for the refund of funds from the Manager &quot;</span>
+                            <span class="sa">f</span><span class="s2">&quot;CW for </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> | CWR.SU&quot;</span><span class="p">,</span>
+                            <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span>
+                            <span class="n">file_path</span>
+                        <span class="p">)</span>
+
+                        <span class="n">msg_temp</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">Message</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                            <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;✅ The data sent!&quot;</span><span class="p">,</span>
+                            <span class="n">chat_id</span><span class="o">=</span><span class="n">user_id</span>
+                        <span class="p">)</span>
+
+                        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">delete_message</span><span class="p">(</span>
+                            <span class="n">chat_id</span><span class="o">=</span><span class="n">msg_temp</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                            <span class="n">message_id</span><span class="o">=</span><span class="n">msg_temp</span><span class="o">.</span><span class="n">message_id</span>
+                        <span class="p">)</span>
+
+                        <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">back_on_main</span><span class="p">()</span>
+                        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                            <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;🔐 You&#39;ve all the data and they&#39;re safe. To go to the main, &quot;</span>
+                                 <span class="sa">f</span><span class="s2">&quot;click on the button below.&quot;</span><span class="p">,</span>
+                            <span class="n">chat_id</span><span class="o">=</span><span class="n">user_id</span><span class="p">,</span>
+                            <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">(),</span>
+                            <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;HTML&quot;</span>
+                        <span class="p">)</span>
+
+                        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                            <span class="sa">f</span><span class="s2">&quot;Successful return of stars to the user&#39;s balance and sending the &quot;</span>
+                            <span class="sa">f</span><span class="s2">&quot;receipt (EMail: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">). User ID: </span><span class="si">{</span><span class="n">user_id</span><span class="si">}</span><span class="s2">&quot;</span>
+                        <span class="p">)</span>
+
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+                        <span class="n">chat_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                        <span class="n">text</span><span class="o">=</span><span class="s2">&quot;⚠ Something wrong! Check your balance.&quot;</span><span class="p">,</span>
+                        <span class="n">message_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+                        <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+                    <span class="p">)</span>
+
+                    <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;SMTH wrong about returning of stars to the user&#39;s balance and sending &quot;</span>
+                        <span class="sa">f</span><span class="s2">&quot;the receipt (EMail: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">). User ID: </span><span class="si">{</span><span class="n">user_id</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="p">)</span>
+
+            <span class="k">elif</span> <span class="n">check</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;none&quot;</span><span class="p">:</span>
+                <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">sure_emergency_refund_confirmation</span><span class="p">()</span>
+                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+                    <span class="n">chat_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                    <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;⚠️ *</span><span class="si">{</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">*, are you sure? I could not find the &quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;User ID to return the stars. If you are sure that this is a &quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;real REFUND Token, click the corresponding &quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;button below. If not, then click on &#39;❌ Cancel&#39;!&quot;</span><span class="p">,</span>
+                    <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span><span class="p">,</span>
+                    <span class="n">message_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+                    <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+                <span class="p">)</span>
+
+                <span class="n">router_refund</span><span class="o">.</span><span class="n">callback_query</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">__emergency_refunding_step1</span><span class="p">,</span>
+                    <span class="n">F</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="s2">&quot;emergency_refund_confirmation&quot;</span>
+                <span class="p">)</span>
+
+                <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Registered emergency refund (stars)&quot;</span><span class="p">)</span>
+
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The exception has arisen: </span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+            <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">back_on_main</span><span class="p">()</span>
+            <span class="k">if</span> <span class="s2">&quot;CHARGE_ALREADY_REFUNDED&quot;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">):</span>
+                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+                    <span class="n">chat_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                    <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;🚫 *</span><span class="si">{</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">*, sorry. But I can&#39;t make a refund &quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;by this (`</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__refund_token</span><span class="si">}</span><span class="s2">`) &quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;token.</span><span class="se">\n\n</span><span class="s2">❌ Error: There has already been a refund for this token!&quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">Please, write: help@cwr.su for support.&quot;</span><span class="p">,</span>
+                    <span class="n">message_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+                    <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span><span class="p">,</span>
+                    <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+                <span class="p">)</span>
+
+                <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Rejection on the return of the stars. Cause: There has already been a &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;refund for this token (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__refund_token</span><span class="si">}</span><span class="s2">). User ID: &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+                    <span class="n">chat_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                    <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;🚫 *</span><span class="si">{</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">*, sorry. But I can&#39;t make a refund &quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;by this (`</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__refund_token</span><span class="si">}</span><span class="s2">`) &quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;token.</span><span class="se">\n\n</span><span class="s2">Please, write: help@cwr.su for support.&quot;</span><span class="p">,</span>
+                    <span class="n">message_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+                    <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span><span class="p">,</span>
+                    <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+                <span class="p">)</span>
+                <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Rejection on the return of the stars. &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;REF-Token: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__refund_token</span><span class="si">}</span><span class="s2">. User ID: </span><span class="si">{</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">__emergency_refunding_step1</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">call</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">CallbackQuery</span><span class="p">,</span>
+            <span class="n">state</span><span class="p">:</span> <span class="n">FSMContext</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Emergency Refund by admin. | Step 1 | Confirmation.</span>
+
+<span class="sd">        :param call: Callback Query.</span>
+<span class="sd">        :param state: FSM.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">await</span> <span class="n">state</span><span class="o">.</span><span class="n">set_state</span><span class="p">(</span><span class="n">ProcessEmergencyRefundingGetREFTokenST1</span><span class="o">.</span><span class="n">user_id</span><span class="p">)</span>
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;👌🏻 *</span><span class="si">{</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">*, OK. Tell me the 👤 User ID &quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;(To confirm the operation).</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;The user has it (User ID) in the *My CW PREMIUM&quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot; -&gt; My ID section*.&quot;</span><span class="p">,</span>
+                <span class="n">message_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+                <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;Markdown&quot;</span>
+            <span class="p">)</span>
+
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The exception has arisen: </span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;❌&lt;b&gt;</span><span class="si">{</span><span class="n">call</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">&lt;/b&gt;, Error! Exception-prog: </span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">.</span><span class="se">\n</span><span class="s2">&quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;REF-TOKEN: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__refund_token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                <span class="n">message_id</span><span class="o">=</span><span class="n">call</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+                <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;HTML&quot;</span>
+            <span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">__emergency_refunding_step2</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">message</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">Message</span><span class="p">,</span>
+            <span class="n">state</span><span class="p">:</span> <span class="n">FSMContext</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Emergency Refund by admin. | Step 2 | Confirmation.</span>
+
+<span class="sd">        :param message: UserID.</span>
+<span class="sd">        :param state: FSM.</span>
+
+<span class="sd">        :return: None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">await</span> <span class="n">state</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+                <span class="n">user_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+
+                <span class="n">msg</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">Message</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                    <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                    <span class="n">text</span><span class="o">=</span><span class="s2">&quot;⏳ Starting the refund...&quot;</span><span class="p">,</span>
+                <span class="p">)</span>
+
+                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">refund_star_payment</span><span class="p">(</span>
+                    <span class="n">user_id</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">user_id</span><span class="p">),</span>
+                    <span class="n">telegram_payment_charge_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__refund_token</span>
+                <span class="p">)</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__refund_token</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+                <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">back_on_main</span><span class="p">()</span>
+
+                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">edit_message_text</span><span class="p">(</span>
+                    <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                    <span class="n">text</span><span class="o">=</span><span class="s2">&quot;✅ The refund is completed ✨.&quot;</span><span class="p">,</span>
+                    <span class="n">message_id</span><span class="o">=</span><span class="n">msg</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
+                    <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+                <span class="p">)</span>
+
+                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                    <span class="n">chat_id</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">user_id</span><span class="p">),</span>
+                    <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;ℹ [</span><span class="si">{</span><span class="n">user_id</span><span class="si">}</span><span class="s2">] Your star(s) have been returned!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
+                    <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+                <span class="p">)</span>
+
+                <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Successful return of stars to the user&#39;s balance User ID: </span><span class="si">{</span><span class="n">user_id</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+
+                <span class="n">result</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="k">await</span> <span class="n">HandlerDB</span><span class="o">.</span><span class="n">get_email_data</span><span class="p">(</span><span class="n">user_id</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+                    <span class="n">firstname</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+                    <span class="n">time</span> <span class="o">=</span> <span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span>
+                            <span class="n">now</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">3</span><span class="p">)))</span><span class="o">.</span>
+                            <span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1">.%m.%Y | %H:%M:%S&#39;</span><span class="p">))</span>
+
+                    <span class="n">receipt_data</span> <span class="o">=</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&lt;tr&gt;&quot;</span>
+                                    <span class="sa">f</span><span class="s2">&quot;  &lt;td align=&#39;center&#39;&gt;&lt;code&gt;&quot;</span>
+                                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__refund_token</span><span class="si">}</span><span class="s2">&quot;</span>
+                                    <span class="sa">f</span><span class="s2">&quot;&lt;/code&gt;&lt;/td&gt;&quot;</span>
+                                    <span class="sa">f</span><span class="s2">&quot;  &lt;td align=&#39;center&#39;&gt;[ID]: </span><span class="si">{</span><span class="n">user_id</span><span class="si">}</span><span class="s2">&lt;/td&gt;&quot;</span>
+                                    <span class="sa">f</span><span class="s2">&quot;  &lt;td align=&#39;center&#39;&gt;15 XTR&lt;/td&gt;&quot;</span>
+                                    <span class="sa">f</span><span class="s2">&quot;  &lt;td align=&#39;center&#39;&gt;</span><span class="si">{</span><span class="n">time</span><span class="si">}</span><span class="s2"> (UTC+3)&lt;/td&gt;&quot;</span>
+                                    <span class="sa">f</span><span class="s2">&quot;  &lt;td align=&#39;center&#39;&gt;Telegram Stars (XTR)&lt;/td&gt;&quot;</span>
+                                    <span class="sa">f</span><span class="s2">&quot;&lt;/tr&gt;&quot;</span><span class="p">)</span>
+
+                    <span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="k">await</span> <span class="n">GenerateReceiptRefundForUser</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span>
+                        <span class="n">firstname</span><span class="p">,</span>
+                        <span class="n">receipt_data</span>
+                    <span class="p">)</span>
+                    <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_document</span><span class="p">(</span>
+                        <span class="n">chat_id</span><span class="o">=</span><span class="n">user_id</span><span class="p">,</span>
+                        <span class="n">document</span><span class="o">=</span><span class="n">FSInputFile</span><span class="p">(</span><span class="n">file_path</span><span class="p">),</span>
+                        <span class="n">caption</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;👑 </span><span class="si">{</span><span class="n">firstname</span><span class="si">}</span><span class="s2">, there is the payment &quot;</span>
+                                <span class="sa">f</span><span class="s2">&quot;receipt attached below. It&#39;ll also send to you by email! ⚡&quot;</span>
+                    <span class="p">)</span>
+                    <span class="k">await</span> <span class="n">SenderEmail</span><span class="o">.</span><span class="n">send_receipt_refund_to_user_in_email_format</span><span class="p">(</span>
+                        <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+                        <span class="sa">f</span><span class="s2">&quot;🧾📨 Receipt for the refund of funds from the Manager &quot;</span>
+                        <span class="sa">f</span><span class="s2">&quot;CW for </span><span class="si">{</span><span class="n">firstname</span><span class="si">}</span><span class="s2"> | CWR.SU&quot;</span><span class="p">,</span>
+                        <span class="n">firstname</span><span class="p">,</span>
+                        <span class="n">file_path</span>
+                    <span class="p">)</span>
+
+                    <span class="n">msg_temp</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">Message</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                        <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;✅ The data sent!&quot;</span><span class="p">,</span>
+                        <span class="n">chat_id</span><span class="o">=</span><span class="n">user_id</span>
+                    <span class="p">)</span>
+
+                    <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">delete_message</span><span class="p">(</span>
+                        <span class="n">chat_id</span><span class="o">=</span><span class="n">msg_temp</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                        <span class="n">message_id</span><span class="o">=</span><span class="n">msg_temp</span><span class="o">.</span><span class="n">message_id</span>
+                    <span class="p">)</span>
+
+                    <span class="n">var</span><span class="p">:</span> <span class="n">InlineKeyboardBuilder</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Buttons</span><span class="o">.</span><span class="n">back_on_main</span><span class="p">()</span>
+                    <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                        <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;🔐 You&#39;ve all the data and they&#39;re safe. To go to the main, &quot;</span>
+                             <span class="sa">f</span><span class="s2">&quot;click on the button below.&quot;</span><span class="p">,</span>
+                        <span class="n">chat_id</span><span class="o">=</span><span class="n">user_id</span><span class="p">,</span>
+                        <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">(),</span>
+                        <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;HTML&quot;</span>
+                    <span class="p">)</span>
+
+                    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;Successful sending the receipt (EMail: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">). &quot;</span>
+                        <span class="sa">f</span><span class="s2">&quot;User ID: </span><span class="si">{</span><span class="n">user_id</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                        <span class="n">chat_id</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">user_id</span><span class="p">),</span>
+                        <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;ℹ [</span><span class="si">{</span><span class="n">user_id</span><span class="si">}</span><span class="s2">], stars-refund receipt will not be delivered to your &quot;</span>
+                             <span class="sa">f</span><span class="s2">&quot;EMail! Check the history of pay in your Telegram Account.&quot;</span><span class="p">,</span>
+                        <span class="n">reply_markup</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">as_markup</span><span class="p">()</span>
+                    <span class="p">)</span>
+
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;User ID </span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2"> must be integer-type!&quot;</span><span class="p">)</span>
+
+                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                    <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                    <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;❌ &lt;b&gt;</span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">&lt;/b&gt;, Error! &quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;User ID </span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2"> must be integer-type!&quot;</span><span class="p">,</span>
+                    <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;HTML&quot;</span>
+                <span class="p">)</span>
+
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The exception has arisen: </span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+                <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;❌ &lt;b&gt;</span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">&lt;/b&gt;, Error! Exception-prog: </span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">.</span><span class="se">\n</span><span class="s2">&quot;</span>
+                     <span class="sa">f</span><span class="s2">&quot;REF-TOKEN: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__refund_token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                <span class="n">parse_mode</span><span class="o">=</span><span class="s2">&quot;HTML&quot;</span>
+            <span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2024, Alexander Laptev, CW.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
