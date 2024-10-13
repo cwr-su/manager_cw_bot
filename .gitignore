@@ -1,4 +1,3 @@
-docs/
 .venv/
 bot.json
 manager_cw_bot_api/__pycache__
