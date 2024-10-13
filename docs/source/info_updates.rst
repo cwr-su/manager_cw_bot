@@ -1,5 +1,5 @@
-Information about last update | August update!
-==============================================
+Information about last update | October update!
+===============================================
 
 Last update INFO (v. 6.0.0 - 2024 October update!)
 --------------------------------------------------
