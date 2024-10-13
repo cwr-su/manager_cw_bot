@@ -1,4 +1,6 @@
 """Module of send invoice to users."""
+import logging
+
 from aiogram import Bot, types, Router, F
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
@@ -97,7 +99,7 @@ class ChooseMethodOfPayment:
                 caption=f"⚡ See the invoice for payment above (for one message) 👆🏻."
             )
         except Exception as ex:
-            print(ex)
+            logging.warning(f"The exception has arisen: {ex}.")
 
     async def check_pay_yookassa(
             self,
@@ -130,6 +132,11 @@ class ChooseMethodOfPayment:
                          f"❕ Please, write to admin.",
                     show_alert=True
                 )
+                logging.warning(
+                    f"Payment verification - unsuccessful as it was canceled by system! User ID: "
+                    f"{call.from_user.id}"
+                )
+
             else:
                 await self.__bot.answer_callback_query(
                     callback_query_id=call.id,
@@ -137,6 +144,10 @@ class ChooseMethodOfPayment:
                          f"the bill! Try again.\n❕ If you are sure that you have paid for "
                          f"it, then write to the admin / TicketSystem.",
                     show_alert=True
+                )
+                logging.warning(
+                    f"Payment verification - unsuccessful as it has not been paid! User ID: "
+                    f"{call.from_user.id}"
                 )
 
         elif result[0] is False and result[1] == "None":
@@ -146,6 +157,11 @@ class ChooseMethodOfPayment:
                      f"Please, write to admin.",
                 show_alert=True
             )
+            logging.warning(
+                f"Payment verification - unsuccessful as it has not been created! User ID: "
+                f"{call.from_user.id}"
+            )
+
         else:
             await self.__bot.answer_callback_query(
                 callback_query_id=call.id,
@@ -153,6 +169,10 @@ class ChooseMethodOfPayment:
                      f"the main-menu (/start) and click on the: GET PREMIUM "
                      f"🔥 -> 🔑 Check payment.",
                 show_alert=True
+            )
+            logging.warning(
+                f"Payment verification - unsuccessful! User ID: "
+                f"{call.from_user.id}"
             )
 
     async def __continue_subscribe_premium_with_telegram_stars(
@@ -215,6 +235,10 @@ class SendInvoice:
             )).as_markup(),
         )
 
+        logging.info(
+            "Successful billing for Telegram XTR currency payment | First payment"
+        )
+
     async def send_invoice_extend(self) -> None:
         """
         Send invoice | Extend.
@@ -240,4 +264,8 @@ class SendInvoice:
             reply_markup=InlineKeyboardBuilder().row(types.InlineKeyboardButton(
                 text=f"⭐️ Telegram Stars", pay=True
             )).as_markup()
+        )
+
+        logging.info(
+            "Successful billing for Telegram XTR currency payment | Second payment"
         )

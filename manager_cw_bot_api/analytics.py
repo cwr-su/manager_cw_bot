@@ -2,6 +2,7 @@
 Module of the analytics data from database for admin.
 """
 import datetime
+import logging
 
 from aiogram import types, Bot
 from aiogram.utils.keyboard import InlineKeyboardBuilder
@@ -51,8 +52,5 @@ class Analytic:
                 parse_mode="HTML"
             )
 
-        except Exception(BaseException) as ex:
-            with open("logs.txt", 'a') as logs:
-                logs.write(f"\n{datetime.datetime.now()} | {ex} | The error in run-function of "
-                           f"business.py.\n")
-            print(f"The Error (ex-run-func): {ex}")
+        except Exception as ex:
+            logging.warning(f"The exception has arisen: {ex}.")

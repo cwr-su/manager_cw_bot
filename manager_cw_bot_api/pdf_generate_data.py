@@ -1,5 +1,7 @@
 """Module for generate PDF-system documents."""
 import datetime
+import logging
+
 from fpdf import FPDF, FontFace
 
 
@@ -129,6 +131,10 @@ class GenerateTicketDataUniversal:
 
         file_path: str = "ticket_data_from_manager_cw_bot.pdf"
         pdf.output(file_path)
+
+        logging.info(
+            "Successful PDF file generation"
+        )
 
         return file_path
 
@@ -267,6 +273,10 @@ class GenerateReceiptForUser:
         file_path: str = "receipt_data_from_manager_cw_bot.pdf"
         pdf.output(file_path)
 
+        logging.info(
+            "Successful PDF file generation"
+        )
+
         return file_path
 
 
@@ -400,5 +410,9 @@ class GenerateReceiptRefundForUser:
 
         file_path: str = "receipt_refund_data_from_manager_cw_bot.pdf"
         pdf.output(file_path)
+
+        logging.info(
+            "Successful PDF file generation"
+        )
 
         return file_path

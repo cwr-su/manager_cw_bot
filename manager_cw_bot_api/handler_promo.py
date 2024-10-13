@@ -1,4 +1,6 @@
 """Promo-control module."""
+import logging
+
 from aiogram import types, F, Router, Bot
 from aiogram.fsm.context import FSMContext
 from aiogram.utils.keyboard import InlineKeyboardBuilder
@@ -60,7 +62,7 @@ class HandlerEP:
         await state.clear()
 
         promo: str = message.text
-        checked: bool | tuple = await HandlerDB.check_promo_code(promo)
+        checked: tuple = await HandlerDB.check_promo_code(promo)
         if checked[0] is False:
             var: InlineKeyboardBuilder = await Buttons.back_on_main()
             await self.__bot.send_message(
@@ -68,6 +70,10 @@ class HandlerEP:
                 text="❌ *Invalid promo code*.",
                 parse_mode="Markdown",
                 reply_markup=var.as_markup()
+            )
+            logging.warning(
+                f"Invalid promo code (which was entering by user to activate). "
+                f"User ID: {message.from_user.id}"
             )
         elif checked[0] is True:
             type_promo: str = checked[3]
@@ -84,8 +90,8 @@ class HandlerEP:
             var: InlineKeyboardBuilder = await Buttons.sure_apply_promo()
             await self.__bot.send_message(
                 chat_id=message.from_user.id,
-                text=f"⚠️ Are you sure you want to *apply this promo code* `{promo}`? You'll receive "
-                     f"{count_days} days of CW PREMIUM.",
+                text=f"⚠️ Are you sure you want to *apply this promo code* "
+                     f"`{promo}`? You'll receive {count_days} days of CW PREMIUM.",
                 parse_mode="Markdown",
                 reply_markup=var.as_markup()
             )
@@ -139,7 +145,8 @@ class HandlerEP:
 
                 await self.__bot.send_message(
                     chat_id=self.__admin_id,
-                    text=f"🆕 Admin, CW PREMIUM +1 person! 🔥 | With PROMO: `{self.__class__.__promo_code}` | "
+                    text=f"🆕 Admin, CW PREMIUM +1 person! 🔥 | With PROMO: "
+                         f"`{self.__class__.__promo_code}` | "
                          f"Days: {count_days}.",
                     parse_mode="Markdown",
                     reply_markup=var.as_markup()
@@ -150,6 +157,11 @@ class HandlerEP:
                     if delete:
                         pass
 
+                logging.info(
+                    f"Successfully activated promo code: {self.__class__.__promo_code}"
+                    f"User ID: {call.from_user.id}"
+                )
+
             else:
                 await self.__bot.edit_message_text(
                     chat_id=call.from_user.id,
@@ -159,6 +171,11 @@ class HandlerEP:
                     parse_mode="Markdown"
                 )
 
+                logging.warning(
+                    f"Failed activated promo code: {self.__class__.__promo_code}"
+                    f"User ID: {call.from_user.id}"
+                )
+
         elif checked_sub[0] is False:
             await self.__bot.edit_message_text(
                 chat_id=call.from_user.id,
@@ -166,6 +183,11 @@ class HandlerEP:
                      f"\n- write on EMail: help@cwr.su.",
                 message_id=call.message.message_id,
                 parse_mode="Markdown"
+            )
+
+            logging.warning(
+                f"Failed activated promo code: {self.__class__.__promo_code}"
+                f"User ID: {call.from_user.id}"
             )
 
     async def show_promo_menu_admin(self, call_query: types.CallbackQuery) -> None:
@@ -179,7 +201,8 @@ class HandlerEP:
         var: InlineKeyboardBuilder = await Buttons.get_menu_admin_promos()
         await self.__bot.edit_message_text(
             chat_id=call_query.from_user.id,
-            text=f"👑 <b>{call_query.from_user.first_name}</b>, select the item you need below.\n\n",
+            text=f"👑 <b>{call_query.from_user.first_name}</b>, "
+                 f"select the item you need below.\n\n",
             message_id=call_query.message.message_id,
             reply_markup=var.as_markup(),
             parse_mode="HTML"
@@ -248,7 +271,11 @@ class HandlerEP:
             F.data == "add_new_promo_confirmation"
         )
 
-    async def __add_new_promo_admin_ctrl_step1(self, call: types.CallbackQuery, state: FSMContext) -> None:
+    async def __add_new_promo_admin_ctrl_step1(
+            self,
+            call: types.CallbackQuery,
+            state: FSMContext
+    ) -> None:
         """
         Add a new promo. | Control ADMIN. | Step 1.
 
@@ -260,7 +287,8 @@ class HandlerEP:
         await state.set_state(ProcessAddNewPromoPromoST2.promo)
         await self.__bot.edit_message_text(
             chat_id=call.from_user.id,
-            text=f"👌🏻 *{call.from_user.first_name}*, OK. Create a new promo-data explore this format:\n\n"
+            text=f"👌🏻 *{call.from_user.first_name}*, OK. Create a new promo-data explore "
+                 f"this format:\n\n"
                  f"*FORMAT*:\n"
                  f"```Example NEW_PROMO_CODE ~ NUM_USES ~ TYPE_PROMO```\n\n"
                  f"Types of promo codes:\n"
@@ -271,7 +299,11 @@ class HandlerEP:
             parse_mode="Markdown"
         )
 
-    async def __add_new_promo_admin_ctrl_step2(self, message: types.Message, state: FSMContext) -> None:
+    async def __add_new_promo_admin_ctrl_step2(
+            self,
+            message: types.Message,
+            state: FSMContext
+    ) -> None:
         """
         Add a new promo. | Control ADMIN. | Step 2.
 
@@ -291,40 +323,61 @@ class HandlerEP:
                     var: InlineKeyboardBuilder = await Buttons.back_in_promo_menu()
                     await self.__bot.send_message(
                         chat_id=message.from_user.id,
-                        text=f"✅ *Successful*! Done!\n\n{message.from_user.first_name}, *the promo data has been "
-                             f"added*!",
+                        text=f"✅ *Successful*! Done!\n\n{message.from_user.first_name}, "
+                             f"*the promo data has been added*!",
                         parse_mode="Markdown",
                         reply_markup=var.as_markup()
+                    )
+
+                    logging.info(
+                        f"Successfully has been added promo data "
+                        f"({promo}, {num_uses}, {type_promo})"
                     )
                 elif checked[0] is False:
                     if checked[1] == "already_exist":
                         var: InlineKeyboardBuilder = await Buttons.back_in_promo_menu()
                         await self.__bot.send_message(
                             chat_id=message.from_user.id,
-                            text=f"❌ *{message.from_user.first_name}*, the promo data *already exists*!",
+                            text=f"❌ *{message.from_user.first_name}*, the promo data "
+                                 f"*already exists*!",
                             parse_mode="Markdown",
                             reply_markup=var.as_markup()
+                        )
+                        logging.warning(
+                            f"The Promo data hasn't been added "
+                            f"({promo}, {num_uses}, {type_promo}); Already Exist!"
                         )
                     elif checked[1] == "invalid_type":
                         await self.__bot.send_message(
                             chat_id=message.from_user.id,
-                            text=f"❌ *{message.from_user.first_name}*, the type of promo is *invalid*!",
+                            text=f"❌ *{message.from_user.first_name}*, the type of promo "
+                                 f"is *invalid*!",
                             parse_mode="Markdown",
                             reply_markup=var.as_markup()
+                        )
+                        logging.warning(
+                            f"The Promo data hasn't been added "
+                            f"({promo}, {num_uses}, {type_promo}); Invalid Type!"
                         )
             else:
                 await self.__bot.send_message(
                     chat_id=message.from_user.id,
-                    text=f"❌ *{message.from_user.first_name}*, sorry. But i can't add your PROMO data!\n\n"
-                         f"*Number of uses* must be *>= 1* and *length* of promo code must be *>= 3*!\n",
+                    text=f"❌ *{message.from_user.first_name}*, sorry. But i can't add "
+                         f"your PROMO data!\n\n*Number of uses* must be *>= 1* and *length* of "
+                         f"promo code must be *>= 3*!\n",
                     parse_mode="Markdown",
                     reply_markup=var.as_markup()
+                )
+                logging.warning(
+                    f"The Promo data hasn't been added "
+                    f"({promo}, {num_uses}, {type_promo}); Invalid num_uses/length of promo code!"
                 )
 
         else:
             await self.__bot.send_message(
                 chat_id=message.from_user.id,
-                text=f"❌ *{message.from_user.first_name}*, sorry. But i can't split your message!\n\n"
+                text=f"❌ *{message.from_user.first_name}*, sorry. But i can't "
+                     f"split your message!\n\n"
                      f"*FORMAT*:\n"
                      f"```Example NEW_PROMO_CODE ~ NUM_USES ~ TYPE_PROMO```\n\n"
                      f"Types of promo codes:\n"
@@ -334,13 +387,20 @@ class HandlerEP:
                 parse_mode="Markdown",
                 reply_markup=var.as_markup()
             )
+            logging.warning(
+                f"The Promo data hasn't been added;"
+                f"Can't split message!"
+            )
 
             router_promo.callback_query.register(
                 self.__add_new_promo_admin_ctrl_step1,
                 F.data == "try_again_add_new_promo"
             )
 
-    async def __delete_promo_data_admin_ctrl(self, call: types.CallbackQuery) -> None:
+    async def __delete_promo_data_admin_ctrl(
+            self,
+            call: types.CallbackQuery
+    ) -> None:
         """
         Delete promo. | Control ADMIN. | Confirmation.
 
@@ -378,7 +438,8 @@ class HandlerEP:
         await state.set_state(ProcessDeletePromoPromoST2.promo)
         await self.__bot.edit_message_text(
             chat_id=call.from_user.id,
-            text=f"👌🏻 *{call.from_user.first_name}*, OK. Send me the promo code that you want to delete.\n",
+            text=f"👌🏻 *{call.from_user.first_name}*, OK. Send me the promo code that you "
+                 f"want to delete.\n",
             message_id=call.message.message_id,
             parse_mode="Markdown"
         )
@@ -404,18 +465,28 @@ class HandlerEP:
             var: InlineKeyboardBuilder = await Buttons.back_in_promo_menu()
             await self.__bot.send_message(
                 chat_id=message.from_user.id,
-                text=f"✅ *Successful*! Done!\n\n{message.from_user.first_name}, *the promo data has been deleted*!",
+                text=f"✅ *Successful*! Done!\n\n{message.from_user.first_name}, *the promo "
+                     f"data has been deleted*!",
                 parse_mode="Markdown",
                 reply_markup=var.as_markup()
+            )
+            logging.info(
+                f"Successfully has been deleted promo data "
+                f"(promo-code:{promo})"
             )
         else:
             var: InlineKeyboardBuilder = await Buttons.try_again_delete_promo_or_back_on_main()
             await self.__bot.send_message(
                 chat_id=message.from_user.id,
-                text=f"❌ *{message.from_user.first_name}*, the promo data *isn't exists*!\n\n"
-                     f"Or there was some kind of error when deleting the record. ANSWER: (checked) {checked}.",
+                text=f"❌ *{message.from_user.first_name}*, the promo data *doesn't exist*!\n\n"
+                     f"Or there was some kind of error when deleting the record. "
+                     f"ANSWER: (checked) {checked}.",
                 parse_mode="Markdown",
                 reply_markup=var.as_markup()
+            )
+            logging.warning(
+                f"The Promo data hasn't been deleted "
+                f"(promo-code:{promo}); Maybe this promo code doesn't exist."
             )
 
             router_promo.callback_query.register(

@@ -2,6 +2,7 @@
 Module of the ticket-system with work in DB MySQL.
 """
 import datetime
+import logging
 import random
 import string
 import json
@@ -166,8 +167,13 @@ class TicketUserView:
                     parse_mode="HTML"
                 )
 
+                logging.info(
+                    f"Successful! Sent data to user's EMail. "
+                    f"User ID: {call_query.from_user.id}"
+                )
+
         except Exception as ex:
-            print(ex)
+            logging.warning(f"The exception has arisen: {ex}.")
 
     async def __not_allow_send_email_ticket_data_user(
             self,
@@ -193,7 +199,7 @@ class TicketUserView:
             )
 
         except Exception as ex:
-            print(ex)
+            logging.warning(f"The exception has arisen: {ex}.")
 
     async def __send_new_ticket(self, call_query: types.CallbackQuery, state: FSMContext) -> None:
         """
@@ -243,6 +249,12 @@ class TicketUserView:
                      f"explore the rules and tips given above, if you want to send a ticket.",
                 reply_markup=var.as_markup()
             )
+            logging.warning(
+                f"Unsuccessful adding data to the database. "
+                f"Message contains not only text-format. "
+                f"User ID: {message.from_user.id}"
+            )
+
         else:
             if not (25 <= len(message.text) <= 2500):
                 await self.__bot.send_message(
@@ -253,6 +265,12 @@ class TicketUserView:
                          f"if you want to send a ticket.",
                     reply_markup=var.as_markup()
                 )
+                logging.warning(
+                    f"Unsuccessful adding data to the database. Message of the user doesn't have "
+                    f"25 <= symbols <= 2500. "
+                    f"User ID: {message.from_user.id}"
+                )
+
             else:
                 try:
                     id_ticket = ''.join(random.choices(string.ascii_letters + string.digits, k=5))
@@ -284,17 +302,21 @@ class TicketUserView:
 
                     await HandlerDB.update_analytic_datas_count_tickets_system()
 
+                    logging.info(
+                        f"Successful! Updated data in the database. "
+                        f"User ID: {message.from_user.id}"
+                    )
+
                 except Exception as ex:
-                    with open("logs.txt", 'a') as logs:
-                        logs.write(f"{datetime.datetime.now()} | {ex} | The error in "
-                                   f"__sending_ticket-function of tickets.py\n")
-                    print(ex)
+                    logging.warning(f"The exception has arisen: {ex}.")
+
                     await self.__bot.send_message(
                         chat_id=message.from_user.id,
                         text=f"❌ We have a problem! {message.from_user.first_name}, your ticket "
                              f"didn't add and didn't send. Please, repeat later.",
                         reply_markup=var.as_markup()
                     )
+
         await state.clear()
 
 
@@ -444,8 +466,13 @@ class TicketAdminView:
                 parse_mode="HTML"
             )
 
+            logging.info(
+                f"Successful! Sent data to user / admin EMail. "
+                f"User ID: {call_query.from_user.id}"
+            )
+
         except Exception as ex:
-            print(ex)
+            logging.warning(f"The exception has arisen: {ex}.")
 
     async def __not_allow_send_email_ticket_data_admin(
             self,
@@ -471,7 +498,7 @@ class TicketAdminView:
             )
 
         except Exception as ex:
-            print(ex)
+            logging.warning(f"The exception has arisen: {ex}.")
 
 
 class TicketAnswersToUsers:
@@ -562,6 +589,11 @@ class TicketAnswersToUsers:
                         text=f"Sorry! Data is none!\n"
                              f"Your message: {message.text}"
                     )
+                    logging.warning(
+                        f"Unsuccessful adding data to the database. Data is none. "
+                        f"User ID: {message.from_user.id}"
+                    )
+
                 else:
                     response: tuple = result[0]
 
@@ -601,6 +633,11 @@ class TicketAnswersToUsers:
                         reply_markup=var.as_markup()
                     )
 
+                    logging.info(
+                        f"Successful! Updated data in the database. "
+                        f"User ID: {message.from_user.id}"
+                    )
+
             else:
                 await self.__bot.send_message(
                     chat_id=message.from_user.id,
@@ -609,12 +646,16 @@ class TicketAnswersToUsers:
                     reply_markup=var.as_markup()
                 )
 
+                logging.error(
+                    f"Error: It's not ID Ticket, because length of user's message isn't 5 "
+                    f"symbols! {message.text}. UserID: {message.from_user.id}"
+                )
+
             connection.close()
 
         except Exception as ex:
-            with open("logs.txt", 'a') as logs:
-                logs.write(f"{datetime.datetime.now()} | {ex} | The error in "
-                           f"__get_id_ticket_for_answer-function of business.py\n")
+            logging.warning(f"The exception has arisen: {ex}.")
+
             await self.__bot.send_message(
                 chat_id=message.from_user.id,
                 text=f"❌ FAIL! Please, follow the rules!",
@@ -705,6 +746,12 @@ class TicketAnswersToAdmin:
                         text=f"Sorry! Data is none!\n"
                              f"Your message: {message.text}"
                     )
+
+                    logging.warning(
+                        f"Unsuccessful adding data to the database. Data is none."
+                        f"User ID: {message.from_user.id}"
+                    )
+
                 else:
                     response: tuple = result[0]
 
@@ -748,12 +795,22 @@ class TicketAnswersToAdmin:
                             text=f"✅ SUCCESSFUL! Updated DB-data for ID: {id_ticket}!",
                             reply_markup=var.as_markup()
                         )
+
+                        logging.info(
+                            f"Successful! Updated data in the database. "
+                            f"User ID: {message.from_user.id}"
+                        )
+
                     else:
                         await self.__bot.send_message(
                             chat_id=tg_id_sender,
                             text=f"🚫 ERROR 43! {message.from_user.first_name}, forbidden!",
                             parse_mode="Markdown",
                             reply_markup=var.as_markup()
+                        )
+
+                        logging.error(
+                            f"Error: 43 Forbidden. UserID: {message.from_user.id}"
                         )
 
             else:
@@ -764,12 +821,16 @@ class TicketAnswersToAdmin:
                     reply_markup=var.as_markup()
                 )
 
+                logging.error(
+                    f"Error: It's not ID Ticket, because length of user's message isn't 5 "
+                    f"symbols! {message.text}. UserID: {message.from_user.id}"
+                )
+
             connection.close()
 
         except Exception as ex:
-            with open("logs.txt", 'a') as logs:
-                logs.write(f"{datetime.datetime.now()} | {ex} | The error in "
-                           f"__get_id_ticket_for_answer-function of business.py\n")
+            logging.warning(f"The exception has arisen: {ex}.")
+
             await self.__bot.send_message(
                 chat_id=message.from_user.id,
                 text=f"❌ FAIL! Please, follow the rules!",

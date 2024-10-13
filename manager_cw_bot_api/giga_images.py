@@ -1,3 +1,4 @@
+import logging
 import os
 from io import BytesIO
 
@@ -90,7 +91,9 @@ class GigaCreator:
                 text="💫 Please, wait! I'm generating... ⏳",
                 message_id=call.message.message_id
             )
-        except Exception:
+        except Exception as ex:
+            logging.warning(f"The exception has arisen: {ex}.")
+
             await self.__bot.send_message(
                 chat_id=call.from_user.id,
                 text="💫 Please, wait! I'm generating... ⏳",
@@ -141,7 +144,8 @@ class GigaCreator:
                 )
 
         except Exception as ex:
-            print(ex)
+            logging.warning(f"The exception has arisen: {ex}.")
+
             var: InlineKeyboardBuilder = await Buttons.back_on_main()
             if ("cannot identify image file" in str(ex) or
                     "bytes-like object is required, not 'str'" in str(ex)):

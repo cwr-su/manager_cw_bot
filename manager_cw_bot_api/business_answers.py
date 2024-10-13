@@ -1,7 +1,7 @@
 """Module of the answers."""
-import datetime
 import json
 import abc
+import logging
 
 from aiogram import types, Bot
 
@@ -181,9 +181,7 @@ class FunctionBusinessAnswerThanksSector(BaseFunctionBusinessAnswerSector):
                 chat_id=self._admin_id,
                 text=f"Sorry! The message (THANKS_TEXT) can't send!\n{ex}"
             )
-            with open("logs.txt", 'a') as logs:
-                logs.write(f"{datetime.datetime.now()} | {ex} | The error in "
-                           f"__answer_to_user-function of business.py\n")
+            logging.warning(f"The exception has arisen: {ex}.")
         try:
             if self._sticker_pattern != "NONE":
                 await self._bot.send_sticker(
@@ -196,9 +194,7 @@ class FunctionBusinessAnswerThanksSector(BaseFunctionBusinessAnswerSector):
                 chat_id=self._admin_id,
                 text=f"Sorry! The message (THANKS_STICKER) can't send!\n{ex}"
             )
-            with open("logs.txt", 'a') as logs:
-                logs.write(f"{datetime.datetime.now()} | {ex} | The error in "
-                           f"__answer_to_user-function of business.py\n")
+            logging.warning(f"The exception has arisen: {ex}.")
 
 
 class FunctionBusinessAnswerCongratulationSector(BaseFunctionBusinessAnswerSector):
@@ -243,9 +239,7 @@ class FunctionBusinessAnswerCongratulationSector(BaseFunctionBusinessAnswerSecto
                 chat_id=self._admin_id,
                 text=f"Sorry! The message (CONGRATULATION_TEXT) can't send!\n{ex}"
             )
-            with open("logs.txt", 'a') as logs:
-                logs.write(f"{datetime.datetime.now()} | {ex} | The error in "
-                           f"__answer_to_user-function of business.py\n")
+            logging.warning(f"The exception has arisen: {ex}.")
         try:
             if self._sticker_pattern != "NONE":
                 await self._bot.send_sticker(
@@ -259,9 +253,7 @@ class FunctionBusinessAnswerCongratulationSector(BaseFunctionBusinessAnswerSecto
                 chat_id=self._admin_id,
                 text=f"Sorry! The message (CONGRATULATION_STICKER) can't send!\n{ex}"
             )
-            with open("logs.txt", 'a') as logs:
-                logs.write(f"{datetime.datetime.now()} | {ex} | The error in "
-                           f"__answer_to_user-function of business.py\n")
+            logging.warning(f"The exception has arisen: {ex}.")
 
 
 class FunctionBusinessAnswerBotDoesntWorkSector(BaseFunctionBusinessAnswerSector):
@@ -306,9 +298,7 @@ class FunctionBusinessAnswerBotDoesntWorkSector(BaseFunctionBusinessAnswerSector
                 chat_id=self._admin_id,
                 text=f"Sorry! The message (PROBLEM_WITH_BOT_TEXT) can't send!\n{ex}"
             )
-            with open("logs.txt", 'a') as logs:
-                logs.write(f"{datetime.datetime.now()} | {ex} | The error in "
-                           f"__answer_to_user-function of business.py\n")
+            logging.warning(f"The exception has arisen: {ex}.")
         try:
             if self._sticker_pattern != "NONE":
                 await self._bot.send_sticker(
@@ -321,6 +311,4 @@ class FunctionBusinessAnswerBotDoesntWorkSector(BaseFunctionBusinessAnswerSector
                 chat_id=self._admin_id,
                 text=f"Sorry! The message (PROBLEM_WITH_BOT_STICKER) can't send!\n{ex}"
             )
-            with open("logs.txt", 'a') as logs:
-                logs.write(f"{datetime.datetime.now()} | {ex} | The error in "
-                           f"__answer_to_user-function of business.py\n")
+            logging.warning(f"The exception has arisen: {ex}.")

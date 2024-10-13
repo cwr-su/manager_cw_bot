@@ -2,8 +2,8 @@
 Module of the GigaChatAI model.
 """
 import json
-
 import requests
+import logging
 import abc
 
 
@@ -162,6 +162,7 @@ class GigaChatPro(BaseAIText):
         })
 
         try:
+            logging.info("Sending a request to retrieve text in PRO mode at the user's request")
             response: dict = requests.request(
                 method="POST",
                 url=url,
@@ -169,18 +170,12 @@ class GigaChatPro(BaseAIText):
                 headers=headers,
                 verify=False
             ).json()
+
+            logging.info("Successful! I return the answer as text / lines")
+
             return response['choices'][0]['message']['content']
-        except Exception as e:
-            ans: dict = requests.request(
-                method='POST',
-                url=url,
-                data=body,
-                headers=headers,
-                verify=False
-            ).json()
-            print(
-                f"Error - pro (e): {e} | Response: "
-                f"{ans}")
+
+        except Exception as ex:
             new_token: str = await GetAuthTokenSber.get_token(auth_token_giga)
 
             with open("bot.json", encoding='utf-8') as f:
@@ -190,6 +185,11 @@ class GigaChatPro(BaseAIText):
 
             with open("bot.json", 'w', encoding='utf-8') as fl:
                 json.dump(dt, fl, ensure_ascii=False, indent=4)
+
+            logging.warning(
+                f"The AI token has expired. But it's already been updated. Write the "
+                f"AI model enquiry again. The exception has arisen: {ex}"
+            )
 
             return "Sorry! I updated the data. Please, repeat your request :)"
 
@@ -236,6 +236,7 @@ class GigaChatLight(BaseAIText):
         })
 
         try:
+            logging.info("Sending a request to retrieve text in PRO mode at the user's request")
             response: dict = requests.request(
                 method="POST",
                 url=url,
@@ -243,20 +244,12 @@ class GigaChatLight(BaseAIText):
                 headers=headers,
                 verify=False
             ).json()
+
+            logging.info("Successful! I return the answer as text / lines")
+
             return response['choices'][0]['message']['content']
-        except Exception as e:
-            ans: dict = requests.request(
-                method='POST',
-                url=url,
-                data=body,
-                headers=headers,
-                verify=False
-            ).json()
-            print(f"Error - light (e): {e} | Response: "
-                  f"{ans}")
 
-            print(auth_token_giga)
-
+        except Exception as ex:
             new_token: str = await GetAuthTokenSber.get_token(auth_token_giga)
 
             with open("bot.json", encoding='utf-8') as f:
@@ -266,6 +259,11 @@ class GigaChatLight(BaseAIText):
 
             with open("bot.json", 'w', encoding='utf-8') as fl:
                 json.dump(dt, fl, ensure_ascii=False, indent=4)
+
+            logging.warning(
+                f"The AI token has expired. But it's already been updated. Write the "
+                f"AI model enquiry again. The exception has arisen: {ex}"
+            )
 
             return "Sorry! I updated the data. Please, repeat your request :)"
 
@@ -307,6 +305,9 @@ class GigaImagePro(BaseAIImage):
         }
 
         try:
+            logging.info(
+                "Sending a request to get the AI image at the user's request"
+            )
             response: dict = requests.request(
                 method="POST",
                 url=url,
@@ -332,21 +333,23 @@ class GigaImagePro(BaseAIImage):
                     verify=False
                 ).content
 
+                logging.info(
+                    "Successful! The picture was generated, I am returning the response as bytes "
+                    "(later converted to a file)"
+                )
+
                 return response
             else:
                 src: str = str(response["choices"][0]["message"]["content"])
+
+                logging.info(
+                    "Something wrong. Perhaps the user did not request an image, but entered a "
+                    "text generation request"
+                )
+
                 return src
 
-        except Exception as e:
-            ans: dict = requests.request(
-                method='POST',
-                url=url,
-                data=payload,
-                headers=headers,
-                verify=False
-            ).json()
-            print(f"Error - GenerateImage (e): {e} | Response:"
-                  f"{ans}")
+        except Exception as ex:
             new_token: str = await GetAuthTokenSber.get_token(auth_token_giga)
 
             with open("bot.json", encoding='utf-8') as f:
@@ -356,6 +359,11 @@ class GigaImagePro(BaseAIImage):
 
             with open("bot.json", 'w', encoding='utf-8') as fl:
                 json.dump(dt, fl, ensure_ascii=False, indent=4)
+
+            logging.warning(
+                f"The AI token has expired. But it's already been updated. Write the "
+                f"AI model enquiry again. The exception has arisen: {ex}"
+            )
 
             return "Sorry! I updated the data. Please, repeat your request :)"
 
@@ -388,6 +396,11 @@ class GetData(BaseGetData):
                 "top_p": top_p,
                 "n": n
             }
+
+            logging.info(
+                "The request to retrieve AI-model data from the configuration file was successful"
+            )
+
             return response
 
 

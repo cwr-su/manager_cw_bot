@@ -1,5 +1,6 @@
 """Refunding module."""
 import datetime
+import logging
 
 from aiogram import types, Bot, Router, F
 from aiogram.fsm.context import FSMContext
@@ -75,7 +76,11 @@ class Refund:
         var: InlineKeyboardBuilder = await Buttons.sure_refund_confirmation()
         self.__class__.__refund_token = message.text
 
-        if self.__class__.__refund_token != "PROMO":
+        checked_promo: tuple = await HandlerDB.check_promo_code(
+            self.__class__.__refund_token
+        )
+
+        if checked_promo[0] is False:
             checked: tuple = await HandlerDB.check_subscription_by_refund_token(
                 self.__class__.__refund_token
             )
@@ -136,15 +141,19 @@ class Refund:
                     self.__refunding_step3,
                     F.data == "refund_confirmation"
                 )
-            else:
-                var: InlineKeyboardBuilder = await Buttons.back_on_main()
-                await self.__bot.send_message(
-                    chat_id=message.from_user.id,
-                    text=f"🚫 *{message.from_user.first_name}*, sorry. But I can't make a refund. "
-                         f"That's a PROMO-REF-Token! (We can't make a refund on it).",
-                    parse_mode="Markdown",
-                    reply_markup=var.as_markup()
-                )
+        else:
+            var: InlineKeyboardBuilder = await Buttons.back_on_main()
+            await self.__bot.send_message(
+                chat_id=message.from_user.id,
+                text=f"🚫 *{message.from_user.first_name}*, sorry. But I can't make a refund. "
+                     f"That's a PROMO-REF-Token! (We can't make a refund on it).",
+                parse_mode="Markdown",
+                reply_markup=var.as_markup()
+            )
+
+            logging.warning(
+                f"Rejection of TGStars return on PROMO token."
+            )
 
     async def __refunding_step3(self, call: types.CallbackQuery) -> None:
         """
@@ -164,29 +173,15 @@ class Refund:
             check: tuple = await HandlerDB.check_subscription_by_refund_token(
                 self.__class__.__refund_token
             )
-            print(check)
 
             if check[2] != "none":
+                user_id: int = int(check[2])
                 await self.__bot.refund_star_payment(
-                    user_id=int(check[2]),
+                    user_id=user_id,
                     telegram_payment_charge_id=self.__class__.__refund_token
                 )
 
-                time = (datetime.datetime.
-                        now(datetime.timezone(datetime.timedelta(hours=3))).
-                        strftime('%d.%m.%Y | %H:%M:%S'))
-
-                receipt_data = (f"<tr>"
-                                f"  <td align='center'><code>"
-                                f"{self.__class__.__refund_token}"
-                                f"</code></td>"
-                                f"  <td align='center'>@{call.from_user.username}</td>"
-                                f"  <td align='center'>15 XTR</td>"
-                                f"  <td align='center'>{time} (UTC+3)</td>"
-                                f"  <td align='center'>Telegram Stars (XTR)</td>"
-                                f"</tr>")
-
-                result: tuple = await HandlerDB.get_email_data(call.from_user.id)
+                result: tuple = await HandlerDB.get_email_data(user_id)
 
                 deleted: tuple = await HandlerDB.delete_record_for_subscribe(
                     self.__class__.__refund_token
@@ -201,18 +196,32 @@ class Refund:
 
                     firstname: str = deleted[2]
                     await self.__bot.send_message(
-                        chat_id=check[2],
+                        chat_id=user_id,
                         text=f"ℹ {firstname}, Your star(s) have been returned!",
                         reply_markup=var.as_markup()
                     )
 
                     if result[0]:
+                        time = (datetime.datetime.
+                                now(datetime.timezone(datetime.timedelta(hours=3))).
+                                strftime('%d.%m.%Y | %H:%M:%S'))
+
+                        receipt_data = (f"<tr>"
+                                        f"  <td align='center'><code>"
+                                        f"{self.__class__.__refund_token}"
+                                        f"</code></td>"
+                                        f"  <td align='center'>@{call.from_user.username}</td>"
+                                        f"  <td align='center'>15 XTR</td>"
+                                        f"  <td align='center'>{time} (UTC+3)</td>"
+                                        f"  <td align='center'>Telegram Stars (XTR)</td>"
+                                        f"</tr>")
+
                         file_path: str = await GenerateReceiptRefundForUser.generate(
                             result[1][1],
                             receipt_data
                         )
                         await self.__bot.send_document(
-                            chat_id=call.from_user.id,
+                            chat_id=user_id,
                             document=FSInputFile(file_path),
                             caption=f"👑 {call.from_user.first_name}, there is the payment "
                                     f"receipt attached below. It'll also send to you by email! ⚡"
@@ -227,7 +236,7 @@ class Refund:
 
                         msg_temp: types.Message = await self.__bot.send_message(
                             text=f"✅ The data sent!",
-                            chat_id=call.from_user.id
+                            chat_id=user_id
                         )
 
                         await self.__bot.delete_message(
@@ -239,9 +248,14 @@ class Refund:
                         await self.__bot.send_message(
                             text=f"🔐 You've all the data and they're safe. To go to the main, "
                                  f"click on the button below.",
-                            chat_id=call.from_user.id,
+                            chat_id=user_id,
                             reply_markup=var.as_markup(),
                             parse_mode="HTML"
+                        )
+
+                        logging.info(
+                            f"Successful return of stars to the user's balance and sending the "
+                            f"receipt (EMail: {result[1][0]}). User ID: {user_id}"
                         )
 
                 else:
@@ -250,6 +264,11 @@ class Refund:
                         text="⚠ Something wrong! Check your balance.",
                         message_id=call.message.message_id,
                         reply_markup=var.as_markup()
+                    )
+
+                    logging.warning(
+                        f"SMTH wrong about returning of stars to the user's balance and sending "
+                        f"the receipt (EMail: {result[1][0]}). User ID: {user_id}"
                     )
 
             elif check[2] == "none":
@@ -270,9 +289,13 @@ class Refund:
                     F.data == "emergency_refund_confirmation"
                 )
 
-        except Exception as t_ex:
+                logging.warning("Registered emergency refund (stars)")
+
+        except Exception as ex:
+            logging.warning(f"The exception has arisen: {ex}.")
+
             var: InlineKeyboardBuilder = await Buttons.back_on_main()
-            if "CHARGE_ALREADY_REFUNDED" in str(t_ex):
+            if "CHARGE_ALREADY_REFUNDED" in str(ex):
                 await self.__bot.edit_message_text(
                     chat_id=call.from_user.id,
                     text=f"🚫 *{call.from_user.first_name}*, sorry. But I can't make a refund "
@@ -283,6 +306,12 @@ class Refund:
                     parse_mode="Markdown",
                     reply_markup=var.as_markup()
                 )
+
+                logging.warning(
+                    f"Rejection on the return of the stars. Cause: There has already been a "
+                    f"refund for this token ({self.__class__.__refund_token}). User ID: "
+                    f"{call.from_user.id}"
+                )
             else:
                 await self.__bot.edit_message_text(
                     chat_id=call.from_user.id,
@@ -292,6 +321,10 @@ class Refund:
                     message_id=call.message.message_id,
                     parse_mode="Markdown",
                     reply_markup=var.as_markup()
+                )
+                logging.warning(
+                    f"Rejection on the return of the stars. "
+                    f"REF-Token: {self.__class__.__refund_token}. User ID: {call.from_user.id}"
                 )
 
     async def __emergency_refunding_step1(
@@ -308,7 +341,6 @@ class Refund:
         :return: None.
         """
         try:
-            print('2')
             await state.set_state(ProcessEmergencyRefundingGetREFTokenST1.user_id)
             await self.__bot.edit_message_text(
                 chat_id=call.from_user.id,
@@ -321,6 +353,8 @@ class Refund:
             )
 
         except Exception as ex:
+            logging.warning(f"The exception has arisen: {ex}.")
+
             await self.__bot.edit_message_text(
                 chat_id=call.from_user.id,
                 text=f"❌<b>{call.from_user.first_name}</b>, Error! Exception-prog: {ex}.\n"
@@ -345,34 +379,119 @@ class Refund:
         try:
             await state.clear()
 
-            user_id = message.text
-            msg: types.Message = await self.__bot.send_message(
-                chat_id=message.from_user.id,
-                text="⏳ Starting the refund...",
-            )
+            if message.text.isdigit():
+                user_id: int = int(message.text)
 
-            await self.__bot.refund_star_payment(
-                user_id=int(user_id),
-                telegram_payment_charge_id=self.__class__.__refund_token
-            )
+                msg: types.Message = await self.__bot.send_message(
+                    chat_id=message.from_user.id,
+                    text="⏳ Starting the refund...",
+                )
 
-            self.__class__.__refund_token = ""
-            var: InlineKeyboardBuilder = await Buttons.back_on_main()
+                await self.__bot.refund_star_payment(
+                    user_id=int(user_id),
+                    telegram_payment_charge_id=self.__class__.__refund_token
+                )
 
-            await self.__bot.edit_message_text(
-                chat_id=message.from_user.id,
-                text="✅ The refund is completed ✨",
-                message_id=msg.message_id,
-                reply_markup=var.as_markup()
-            )
+                self.__class__.__refund_token = ""
+                var: InlineKeyboardBuilder = await Buttons.back_on_main()
 
-            await self.__bot.send_message(
-                chat_id=int(user_id),
-                text=f"ℹ [{user_id}] Your star(s) have been returned!",
-                reply_markup=var.as_markup()
-            )
+                await self.__bot.edit_message_text(
+                    chat_id=message.from_user.id,
+                    text="✅ The refund is completed ✨.",
+                    message_id=msg.message_id,
+                    reply_markup=var.as_markup()
+                )
+
+                await self.__bot.send_message(
+                    chat_id=int(user_id),
+                    text=f"ℹ [{user_id}] Your star(s) have been returned!\n",
+                    reply_markup=var.as_markup()
+                )
+
+                logging.info(
+                    f"Successful return of stars to the user's balance User ID: {user_id}"
+                )
+
+                result: tuple = await HandlerDB.get_email_data(user_id)
+
+                if result[0]:
+                    firstname: str = result[1][1]
+                    time = (datetime.datetime.
+                            now(datetime.timezone(datetime.timedelta(hours=3))).
+                            strftime('%d.%m.%Y | %H:%M:%S'))
+
+                    receipt_data = (f"<tr>"
+                                    f"  <td align='center'><code>"
+                                    f"{self.__class__.__refund_token}"
+                                    f"</code></td>"
+                                    f"  <td align='center'>[ID]: {user_id}</td>"
+                                    f"  <td align='center'>15 XTR</td>"
+                                    f"  <td align='center'>{time} (UTC+3)</td>"
+                                    f"  <td align='center'>Telegram Stars (XTR)</td>"
+                                    f"</tr>")
+
+                    file_path: str = await GenerateReceiptRefundForUser.generate(
+                        firstname,
+                        receipt_data
+                    )
+                    await self.__bot.send_document(
+                        chat_id=user_id,
+                        document=FSInputFile(file_path),
+                        caption=f"👑 {firstname}, there is the payment "
+                                f"receipt attached below. It'll also send to you by email! ⚡"
+                    )
+                    await SenderEmail.send_receipt_refund_to_user_in_email_format(
+                        result[1][0],
+                        f"🧾📨 Receipt for the refund of funds from the Manager "
+                        f"CW for {firstname} | CWR.SU",
+                        firstname,
+                        file_path
+                    )
+
+                    msg_temp: types.Message = await self.__bot.send_message(
+                        text=f"✅ The data sent!",
+                        chat_id=user_id
+                    )
+
+                    await self.__bot.delete_message(
+                        chat_id=msg_temp.chat.id,
+                        message_id=msg_temp.message_id
+                    )
+
+                    var: InlineKeyboardBuilder = await Buttons.back_on_main()
+                    await self.__bot.send_message(
+                        text=f"🔐 You've all the data and they're safe. To go to the main, "
+                             f"click on the button below.",
+                        chat_id=user_id,
+                        reply_markup=var.as_markup(),
+                        parse_mode="HTML"
+                    )
+
+                    logging.info(
+                        f"Successful sending the receipt (EMail: {result[1][0]}). "
+                        f"User ID: {user_id}"
+                    )
+                else:
+                    await self.__bot.send_message(
+                        chat_id=int(user_id),
+                        text=f"ℹ [{user_id}], stars-refund receipt will not be delivered to your "
+                             f"EMail! Check the history of pay in your Telegram Account.",
+                        reply_markup=var.as_markup()
+                    )
+
+            else:
+                logging.warning(f"User ID {message.text} must be integer-type!")
+
+                await self.__bot.send_message(
+                    chat_id=message.from_user.id,
+                    text=f"❌ <b>{message.from_user.first_name}</b>, Error! "
+                         f"User ID {message.text} must be integer-type!",
+                    parse_mode="HTML"
+                )
 
         except Exception as ex:
+            logging.warning(f"The exception has arisen: {ex}.")
+
             await self.__bot.send_message(
                 chat_id=message.from_user.id,
                 text=f"❌ <b>{message.from_user.first_name}</b>, Error! Exception-prog: {ex}.\n"

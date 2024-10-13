@@ -2,6 +2,7 @@
 import json
 import re
 import random
+import logging
 
 from aiogram import Bot, types, Router, F
 from aiogram.fsm.context import FSMContext
@@ -54,8 +55,14 @@ class HandlerEM:
         """
         regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
         if re.fullmatch(regex, email):
+            logging.info(
+                f"Entered email address is case-correct ({email})."
+            )
             return True
         else:
+            logging.info(
+                f"Entered email address isn't case-correct ({email})."
+            )
             return False
 
     async def __generate_code(self) -> str:
@@ -377,6 +384,10 @@ class HandlerEM:
                             message.from_user.id, "code", message.from_user.first_name,
                             message.from_user.username, "del"
                         )
+                        logging.info(
+                            f"Email: {self.__class__.__email} was successfully added, and the "
+                            f"validation code was removed"
+                        )
                     else:
                         await self.__bot.send_message(
                             text=f"❌ {message.from_user.first_name}, <b>Fail</b>! Your EMail: "
@@ -385,6 +396,10 @@ class HandlerEM:
                             chat_id=message.chat.id,
                             parse_mode="HTML",
                             reply_markup=var.as_markup()
+                        )
+                        logging.warning(
+                            f"Email: {self.__class__.__email} wasn't added, and the "
+                            f"validation code wasn't removed"
                         )
                 else:
                     with open("bot.json", encoding='utf-8') as f:
@@ -408,6 +423,10 @@ class HandlerEM:
                         message.from_user.id, "code", message.from_user.first_name,
                         message.from_user.username, "del", self.__admin_id
                     )
+                    logging.info(
+                        f"Email: {self.__class__.__email} was successfully added, and the "
+                        f"validation code was removed"
+                    )
 
             else:
                 var: InlineKeyboardBuilder = await (
@@ -420,6 +439,10 @@ class HandlerEM:
                     chat_id=message.chat.id,
                     parse_mode="HTML",
                     reply_markup=var.as_markup()
+                )
+                logging.warning(
+                    f"Email: {self.__class__.__email} wasn't added, and the "
+                    f"validation code wasn't removed"
                 )
         else:
             var: InlineKeyboardBuilder = await Buttons.get_add_new_email_try_again()

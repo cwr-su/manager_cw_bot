@@ -3,6 +3,8 @@ import datetime
 import json
 import smtplib
 import os
+import logging
+
 from email import encoders
 from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
@@ -165,10 +167,13 @@ class SenderEmail:
                 server.sendmail(sender_email, receiver_email, message.as_string())
 
                 os.remove(file_path)
+                logging.info(
+                    "The email has been successfully sent!"
+                )
                 return True, "Sent!"
 
         except Exception as ex:
-            print(ex)
+            logging.warning(f"The exception has arisen: {ex}.")
             return False, ex
 
     @staticmethod
@@ -287,10 +292,13 @@ class SenderEmail:
                 server.login(sender_email, password)
                 server.sendmail(sender_email, receiver_email, message.as_string())
 
+                logging.info(
+                    "The email has been successfully sent!"
+                )
                 return True, "Sent!"
 
         except Exception as ex:
-            print(ex)
+            logging.warning(f"The exception has arisen: {ex}.")
             return False, ex
 
     @staticmethod
@@ -419,10 +427,13 @@ class SenderEmail:
                 server.sendmail(sender_email, receiver_email, message.as_string())
 
                 os.remove(file_path)
+                logging.info(
+                    "The email has been successfully sent!"
+                )
                 return True, "Sent!"
 
         except Exception as ex:
-            print(ex)
+            logging.warning(f"The exception has arisen: {ex}.")
             return False, ex
 
     @staticmethod
@@ -548,8 +559,11 @@ class SenderEmail:
                 server.sendmail(sender_email, receiver_email, message.as_string())
 
                 os.remove(file_path)
+                logging.info(
+                    "The email has been successfully sent!"
+                )
                 return True, "Sent!"
 
         except Exception as ex:
-            print(ex)
+            logging.warning(f"The exception has arisen: {ex}.")
             return False, ex

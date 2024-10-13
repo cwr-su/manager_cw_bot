@@ -2,6 +2,7 @@
 Module of the GigaChatAI.
 """
 import abc
+import logging
 
 from aiogram import Bot, types, Router, F
 from aiogram.fsm.context import FSMContext
@@ -100,6 +101,10 @@ class GigaChatAI:
             parse_mode="Markdown"
         )
 
+        logging.info(
+            "AI dialogue in Light mode - activated!"
+        )
+
     async def __chat_dialog_light(self, message: types.Message, state: FSMContext) -> None:
         """
         GLV Chat-Dialog function.
@@ -129,6 +134,10 @@ class GigaChatAI:
             chat_id=call_query.message.chat.id,
             message_id=self.__class__.msg_bot.message_id,
             parse_mode="Markdown"
+        )
+
+        logging.info(
+            "AI dialogue in PRO mode - activated!"
         )
 
     async def __chat_dialog_pro(self, message: types.Message, state: FSMContext) -> None:
@@ -214,6 +223,10 @@ class ChatDialogGigaVersionLight(BaseChatDialog):
 
             await state.clear()
 
+            logging.info(
+                "AI dialogue in Light mode - deactivated!"
+            )
+
 
 class ChatDialogGigaVersionPro(BaseChatDialog):
     """
@@ -264,6 +277,10 @@ class ChatDialogGigaVersionPro(BaseChatDialog):
             )
 
             await state.clear()
+
+            logging.info(
+                "AI dialogue in PRO mode - deactivated!"
+            )
 
 
 class BaseNewFSMContext(abc.ABC):

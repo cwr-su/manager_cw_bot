@@ -24,4 +24,5 @@ def gets(token="YOUR_TOKEN") -> dict:
     response = requests.get(url).json()
     return response
 
+
 print(gets())

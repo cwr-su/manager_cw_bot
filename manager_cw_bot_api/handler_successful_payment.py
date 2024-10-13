@@ -1,5 +1,6 @@
 """Module of the control successful payments."""
 import datetime
+import logging
 
 from aiogram import types, Bot
 from aiogram.utils.keyboard import InlineKeyboardBuilder
@@ -48,8 +49,8 @@ class HandlerSP:
             msg: types.Message = await bot.send_photo(
                 photo="https://telegra.ph/file/4279f8aec9f71db459a7e.jpg",
                 chat_id=message.from_user.id,
-                caption=f"💖 Thanks! I received the payment!\n\n🔐 Token for refund stars / money: "
-                        f"<code>{ref_token}</code>\n\nPlease, wait! I'm activating "
+                caption=f"💖 Thanks! I received the payment!\n\n🔐 Token for refund "
+                        f"stars / money: <code>{ref_token}</code>\n\nPlease, wait! I'm activating "
                         f"your subscription...⏳",
                 message_effect_id="5046509860389126442",
                 parse_mode="HTML"
@@ -66,7 +67,8 @@ class HandlerSP:
                 await HandlerDB.yookassa_delete_record_conf_id(message.from_user.id)
                 await bot.edit_message_caption(
                     chat_id=message.from_user.id,
-                    caption=f"✅ <b>Successful! Done!</b>\nYour CW PREMIUM is <b>activated</b>!\n\nNow you can:\n"
+                    caption=f"✅ <b>Successful! Done!</b>\nYour CW PREMIUM is <b>activated</b>!"
+                            f"\n\nNow you can:\n"
                             f"- Use 💥 AI-Generate IMG 🖼\n"
                             f"- 🧠 Use AI-Assistance (👑 PRO-Mode)\n"
                             f"- and more functions: ⚡ See the card 😉!\n\n"
@@ -96,12 +98,23 @@ class HandlerSP:
                         result[1][1],
                         receipt_data
                     )
+
                     await bot.send_document(
                         chat_id=message.from_user.id,
                         document=FSInputFile(file_path),
-                        caption=f"👑 {message.from_user.first_name}, there is the payment receipt attached below. It'll "
-                                f"also send to you by email! ⚡"
+                        caption=f"👑 {message.from_user.first_name}, there is the payment receipt "
+                                f"attached below. It'll also send to you by email! ⚡"
                     )
+
+                    var: InlineKeyboardBuilder = await Buttons.back_on_main()
+                    await bot.send_message(
+                        text=f"🔐 You've all the data and they're safe. To go to the main, "
+                             f"click on the button below.",
+                        chat_id=message.from_user.id,
+                        reply_markup=var.as_markup(),
+                        parse_mode="HTML"
+                    )
+
                     await SenderEmail.send_receipt_to_user_in_email_format(
                         result[1][0],
                         f"🧾📨 Payment Receipt from Manager CW for {result[1][1]} | CWR.SU",
@@ -119,23 +132,50 @@ class HandlerSP:
                         message_id=msg_temp.message_id
                     )
 
-                    var: InlineKeyboardBuilder = await Buttons.back_on_main()
-                    await bot.send_message(
-                        text=f"🔐 You've all the data and they're safe. To go to the main, click on the button below.",
-                        chat_id=message.from_user.id,
-                        reply_markup=var.as_markup(),
-                        parse_mode="HTML"
+                    logging.info(
+                        f"Successful subscription activation and sending a cheque to "
+                        f"user's email. User (id): {message.from_user.id} | "
+                        f"Email: {result[1][0]} | PayMethod: {method}"
                     )
 
             else:
-                await bot.edit_message_text(
-                    chat_id=message.from_user.id,
-                    text=f"❌ <b>Failed!</b>\nYour CW PREMIUM <b>isn't activated</b>!\n\nNow you should:\n"
-                         f"- write on EMail: help@cwr.su\n\n"
-                         f"🔐 Your refund token:\n<code>{ref_token}</code>.",
-                    message_id=msg.message_id,
-                    parse_mode="HTML"
-                )
+                try:
+                    await bot.edit_message_text(
+                        chat_id=message.from_user.id,
+                        text=f"❌ <b>Failed!</b>\nYour CW PREMIUM <b>isn't activated</b>!\n\n"
+                             f"You may have tried to buy a subscription again, but the "
+                             f"system failed and the funds may have been debited. "
+                             f"But don't worry! If they were debited, we are in the "
+                             f"process of refunding them!\n\n"
+                             f"Now you should:\n"
+                             f"- wait some minutes or write on EMail: help@cwr.su, "
+                             f"or in the TicketSystem.\n\n"
+                             f"🔐 Your refund token:\n<code>{ref_token}</code>.",
+                        message_id=msg.message_id,
+                        parse_mode="HTML"
+                    )
+
+                    logging.warning(
+                        f"Error activating subscription! "
+                        f"User (id): {message.from_user.id} | PayMethod: {method}"
+                    )
+
+                except Exception as ex:
+                    logging.warning(f"The exception has arisen: {ex}.")
+
+                    await bot.send_message(
+                        chat_id=message.from_user.id,
+                        text=f"❌ <b>Failed!</b>\nYour CW PREMIUM <b>isn't activated</b>!\n\n"
+                             f"You may have tried to buy a subscription again, but the "
+                             f"system failed and the funds may have been debited. "
+                             f"But don't worry! If they were debited, we are in the "
+                             f"process of refunding them!\n\n"
+                             f"Now you should:\n"
+                             f"- wait some minutes or write on EMail: help@cwr.su, "
+                             f"or in the TicketSystem.\n\n"
+                             f"🔐 Your refund token:\n<code>{ref_token}</code>.",
+                        parse_mode="HTML"
+                    )
 
                 if des == "error":
                     await bot.refund_star_payment(
@@ -143,18 +183,37 @@ class HandlerSP:
                         telegram_payment_charge_id=ref_token
                     )
 
-                    await bot.edit_message_text(
-                        chat_id=message.from_user.id,
-                        text=f"✨ <b>{message.from_user.first_name}</b>, you already have a CW PREMIUM subscription. "
-                             f"💞 We have <b>returned</b> the stars back to your account.",
-                        message_id=msg.message_id,
-                        reply_markup=var.as_markup(),
-                        parse_mode="HTML"
-                    )
+                    try:
+                        await bot.edit_message_text(
+                            chat_id=message.from_user.id,
+                            text=f"✨ <b>{message.from_user.first_name}</b>, you already have a "
+                                 f"CW PREMIUM subscription. "
+                                 f"💞 We have <b>returned</b> the stars back to your account.",
+                            message_id=msg.message_id,
+                            reply_markup=var.as_markup(),
+                            parse_mode="HTML"
+                        )
+                        logging.warning(
+                            f"Error activating subscription because it already exists! "
+                            f"User (id): {message.from_user.id} | PayMethod: {method}"
+                        )
+                    except Exception as ex:
+                        logging.warning(f"The exception has arisen: {ex}.")
+
+                        await bot.send_message(
+                            chat_id=message.from_user.id,
+                            text=f"✨ <b>{message.from_user.first_name}</b>, you already have a "
+                                 f"CW PREMIUM subscription. "
+                                 f"💞 We have <b>returned</b> the stars back to your account.",
+                            reply_markup=var.as_markup(),
+                            parse_mode="HTML"
+                        )
+
         except Exception as ex:
             await bot.send_message(
                 chat_id=admin_id,
-                text=f"❕ Admin, we have a problem with successful payment! Error (exception): {ex}.",
+                text=f"❕ Admin, we have a problem with successful payment! Error (exception): "
+                     f"{ex}.",
                 reply_markup=var.as_markup()
             )
-            print(ex)
+            logging.warning(f"The exception has arisen: {ex}.")

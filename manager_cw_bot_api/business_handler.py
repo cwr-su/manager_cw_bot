@@ -2,6 +2,7 @@
 Module of the business handler.
 """
 import json
+import logging
 
 from aiogram import types, Bot, Router, F
 from aiogram.fsm.context import FSMContext
@@ -312,6 +313,11 @@ class Thanks:
             with open("bot.json", "w", encoding='utf-8') as file:
                 json.dump(data, file, ensure_ascii=False, indent=4)
 
+            logging.info(
+                f"Successfully overwrote configuration file data from the business "
+                f"response section"
+            )
+
             var: InlineKeyboardBuilder = await Buttons.back_on_main()
             await self.__bot.send_message(
                 chat_id=message.from_user.id,
@@ -349,6 +355,11 @@ class Thanks:
 
             with open("bot.json", "w", encoding='utf-8') as file:
                 json.dump(data, file, ensure_ascii=False, indent=4)
+
+            logging.info(
+                f"Successfully overwrote configuration file data from the business "
+                f"response section"
+            )
 
             var: InlineKeyboardBuilder = await Buttons.back_on_main()
             await self.__bot.send_message(
@@ -394,6 +405,11 @@ class Thanks:
 
             with open("bot.json", "w", encoding='utf-8') as file:
                 json.dump(data, file, ensure_ascii=False, indent=4)
+
+            logging.info(
+                f"Successfully overwrote configuration file data from the business "
+                f"response section"
+            )
 
             var: InlineKeyboardBuilder = await Buttons.back_on_main()
             await self.__bot.send_message(
@@ -563,6 +579,11 @@ class Congratulation:
             with open("bot.json", "w", encoding='utf-8') as file:
                 json.dump(data, file, ensure_ascii=False, indent=4)
 
+            logging.info(
+                f"Successfully overwrote configuration file data from the business "
+                f"response section"
+            )
+
             var: InlineKeyboardBuilder = await Buttons.back_on_main()
             await self.__bot.send_message(
                 chat_id=message.from_user.id,
@@ -603,6 +624,11 @@ class Congratulation:
 
             with open("bot.json", "w", encoding='utf-8') as file:
                 json.dump(data, file, ensure_ascii=False, indent=4)
+
+            logging.info(
+                f"Successfully overwrote configuration file data from the business "
+                f"response section"
+            )
 
             var: InlineKeyboardBuilder = await Buttons.back_on_main()
             await self.__bot.send_message(
@@ -652,6 +678,11 @@ class Congratulation:
 
             with open("bot.json", "w", encoding='utf-8') as file:
                 json.dump(data, file, ensure_ascii=False, indent=4)
+
+            logging.info(
+                f"Successfully overwrote configuration file data from the business "
+                f"response section"
+            )
 
             var: InlineKeyboardBuilder = await Buttons.back_on_main()
             await self.__bot.send_message(
@@ -825,6 +856,11 @@ class ProblemWithBot:
             with open("bot.json", "w", encoding='utf-8') as file:
                 json.dump(data, file, ensure_ascii=False, indent=4)
 
+            logging.info(
+                f"Successfully overwrote configuration file data from the business "
+                f"response section"
+            )
+
             var: InlineKeyboardBuilder = await Buttons.back_on_main()
             await self.__bot.send_message(
                 chat_id=message.from_user.id,
@@ -870,6 +906,11 @@ class ProblemWithBot:
 
             with open("bot.json", "w", encoding='utf-8') as file:
                 json.dump(data, file, ensure_ascii=False, indent=4)
+
+            logging.info(
+                f"Successfully overwrote configuration file data from the business "
+                f"response section"
+            )
 
             var: InlineKeyboardBuilder = await Buttons.back_on_main()
             await self.__bot.send_message(
@@ -919,6 +960,11 @@ class ProblemWithBot:
 
             with open("bot.json", "w", encoding='utf-8') as file:
                 json.dump(data, file, ensure_ascii=False, indent=4)
+
+            logging.info(
+                f"Successfully overwrote configuration file data from the business "
+                f"response section"
+            )
 
             var: InlineKeyboardBuilder = await Buttons.back_on_main()
             await self.__bot.send_message(

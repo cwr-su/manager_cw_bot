@@ -1,9 +1,9 @@
 """
 Module of the Manager-Business-Helper Bot.
 """
-import datetime
 import json
 import pymysql
+import logging
 
 from aiogram import Bot, Dispatcher, types, F, Router
 from aiogram.filters import Command
@@ -449,7 +449,7 @@ class PremiumFunctionsSector:
                     reply_markup=var.as_markup()
                 )
         except Exception as ex:
-            print(ex)
+            logging.warning(f"The exception has arisen: {ex}.")
 
     @staticmethod
     async def continue_subscribe_premium(
@@ -792,7 +792,7 @@ class EmailSector:
             await email.add_new_email(call_query, state)
 
         except Exception as ex:
-            print(ex)
+            logging.warning(f"The exception has arisen: {ex}.")
 
     @staticmethod
     async def email_settings_menu(
@@ -1414,13 +1414,8 @@ class Manager(Bot):
             creator_mysql = CreateTable(connection, cursor)
             creator_mysql.create()
 
-        except Exception as e:
-            with open("logs.txt", 'a') as logs:
-                logs.write(
-                    f"{datetime.datetime.now()} | {e} | "
-                    f"The error of database in __init__ of "
-                    f"business.py of Manager-Class.\n"
-                )
+        except Exception as ex:
+            logging.error(f"The error of database of business.py Manager class: {ex}.")
 
         self.router.message.register(
             self.__get_main_menu, Command(commands=["main", "start"])
@@ -1553,6 +1548,9 @@ class Manager(Bot):
             router_send_invoice,
             self.router
         )
+
+        logging.info("Handlers and routers from other modules successfully registered")
+
         await self.__dp.start_polling(self)
 
 
@@ -1581,6 +1579,7 @@ def get_data(file_path="bot.json") -> dict:
 
         dct["BUSINESS_HANDLER"] = data["BUSINESS_HANDLER"]
 
+        logging.info("Data unloaded (received) from configuration file")
         return dct
 
 
@@ -1605,11 +1604,9 @@ async def run() -> None:
             await bot.run()
 
         else:
+            logging.error("Business connection is unavailable or the length of your EMail "
+                          "is incorrect!")
             raise ValueError("Business connection is unavailable or the length of your EMail "
                              "is incorrect!")
     except Exception as ex:
-        with open("logs.txt", 'a') as logs:
-            logs.write(f"\n{datetime.datetime.now()} | {ex} | The error in run-function of "
-                       f"business.py.\n")
-        raise ValueError("Error in bot.json configuration file! You may not have filled in all "
-                         "required fields.")
+        logging.warning(f"The exception has arisen: {ex}.")
