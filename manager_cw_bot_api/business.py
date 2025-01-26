@@ -4,6 +4,7 @@ Module of the Manager-Business-Helper Bot.
 import json
 import pymysql
 import logging
+import math
 
 from aiogram import Bot, Dispatcher, types, F, Router
 from aiogram.filters import Command
@@ -11,6 +12,7 @@ from aiogram.types import ContentType
 from aiogram.fsm.context import FSMContext
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
+from manager_cw_bot_api.activate import Activate
 from manager_cw_bot_api.analytics import Analytic
 from manager_cw_bot_api.business_answers import Answers
 from manager_cw_bot_api.business_handler import BusinessHandler, router_business
@@ -405,7 +407,7 @@ class PremiumFunctionsSector:
                 elif checked[0] is True:
                     var: InlineKeyboardBuilder = await Buttons.back_on_main()
 
-                    remains = round(await SubOperations.sec_to_days(checked[1]))
+                    remains = math.ceil(await SubOperations.sec_to_days(checked[1]))
                     d = "days"
 
                     if remains > 1:
@@ -430,7 +432,7 @@ class PremiumFunctionsSector:
                             chat_id=call_query.from_user.id,
                             text=f"🔥 <b>{call_query.from_user.first_name}</b>, the subscription "
                                  f"is still active <b>{remains} {d}</b>.\n\n"
-                                 f"💡 Ask the admin for your token.\n"
+                                 f"💡 Ask the admin for your refund-token.\n"
                                  f"#️⃣ My ID: <code>{call_query.from_user.id}</code>",
                             message_id=call_query.message.message_id,
                             parse_mode="HTML",
@@ -952,6 +954,7 @@ class Manager(Bot):
     """
     Manager of the Admin Account and helper 'AI'.
     """
+
     def __init__(
             self,
             bot_token: str,
@@ -1566,6 +1569,7 @@ def get_data(file_path="bot.json") -> dict:
         data: dict = json.load(file)
 
         dct = dict()
+        dct["LICENCE_KEY"] = data["LICENCE_KEY"]
         dct["BOT_TOKEN"] = data["BOT_TOKEN"]
         dct["business_connection_id"] = data["business_connection"]["id"]
         dct["business_connection_is_enabled"] = data["business_connection"]["is_enabled"]
@@ -1601,7 +1605,13 @@ async def run() -> None:
                 data["GIGACHAT"],
                 data["ADMIN_USERNAME"]
             )
-            await bot.run()
+
+            if (await Activate.activate(data["BOT_TOKEN"], data["LICENCE_KEY"]))[0]:
+                await bot.run()
+            else:
+                print(await Activate.activate(data["BOT_TOKEN"], data["LICENCE_KEY"]))
+                logging.error("Error with API Key!")
+                raise ValueError("Error with API Key!")
 
         else:
             logging.error("Business connection is unavailable or the length of your EMail "

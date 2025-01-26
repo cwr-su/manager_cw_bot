@@ -47,7 +47,7 @@ class CreateTable:
             "Analytics data have been executed"
         )
 
-        query: str = f"""CREATE TABLE IF NOT EXISTS premium_users(
+        query: str = f"""CREATE TABLE IF NOT EXISTS premiumusers(
                 id INTEGER PRIMARY KEY AUTO_INCREMENT,
                 tg_id VARCHAR(255) UNIQUE NOT NULL,
                 username VARCHAR(255) NOT NULL,

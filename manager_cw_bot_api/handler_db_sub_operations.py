@@ -591,11 +591,11 @@ class HandlerDB:
         )
         cursor = connection.cursor()
 
-        query: str = f"""SELECT subscribe_date FROM premium_users WHERE tg_id = %s;"""
+        query: str = f"""SELECT subscribe_date FROM premiumusers WHERE tg_id = %s;"""
         cursor.execute(query, (str(message.from_user.id),))
         result: tuple = cursor.fetchall()
         if len(result) == 0:
-            insert_q = f"""INSERT INTO premium_users (tg_id, username, firstname, cost_in_stars, 
+            insert_q = f"""INSERT INTO premiumusers (tg_id, username, firstname, cost_in_stars, 
                        refund_token, subscribe_date, promo_code) VALUES ('{message.from_user.id}', 
                        '{message.from_user.username}', '{message.from_user.first_name}', 15, 
                        '{token_successful_payment}', {ex_time_for_sub}, '{promo}');"""
@@ -608,7 +608,7 @@ class HandlerDB:
             checked: tuple = await HandlerDB.check_subscription(message)
             if checked[0] is False:
                 if checked[1] == "ex_sub":
-                    update_q = f"""UPDATE premium_users SET 
+                    update_q = f"""UPDATE premiumusers SET 
                                username = '{message.from_user.username}',
                                firstname = '{message.from_user.first_name}', cost_in_stars = 15,
                                refund_token = '{token_successful_payment}',
@@ -639,7 +639,7 @@ class HandlerDB:
         )
         cursor = connection.cursor()
 
-        query: str = "SELECT tg_id, firstname FROM premium_users WHERE refund_token = %s;"
+        query: str = "SELECT tg_id, firstname FROM premiumusers WHERE refund_token = %s;"
         cursor.execute(query, (ref_token,))
         result: tuple = cursor.fetchall()
         if len(result[0]) == 0:
@@ -649,7 +649,7 @@ class HandlerDB:
             tg_id: str = result[0][0]
             firstname: str = result[0][1]
 
-            del_q: str = "DELETE FROM premium_users WHERE tg_id = %s;"
+            del_q: str = "DELETE FROM premiumusers WHERE tg_id = %s;"
             cursor.execute(del_q, (tg_id,))
             connection.commit()
             connection.close()
@@ -669,7 +669,7 @@ class HandlerDB:
         )
         cursor = connection.cursor()
 
-        query: str = f"SELECT subscribe_date FROM premium_users WHERE tg_id = %s;"
+        query: str = f"SELECT subscribe_date FROM premiumusers WHERE tg_id = %s;"
         cursor.execute(query, (str(message.from_user.id),))
         result: tuple = cursor.fetchall()
         if len(result) == 0:
@@ -701,7 +701,7 @@ class HandlerDB:
         )
         cursor = connection.cursor()
 
-        query: str = f"SELECT subscribe_date, tg_id FROM premium_users WHERE refund_token = %s;"
+        query: str = f"SELECT subscribe_date, tg_id FROM premiumusers WHERE refund_token = %s;"
         cursor.execute(query, (refund_token,))
         result: tuple = cursor.fetchall()
         if len(result) == 0:
@@ -731,7 +731,7 @@ class HandlerDB:
             await HandlerDB.get_data()
         )
         cursor = connection.cursor()
-        query: str = f"SELECT refund_token FROM premium_users WHERE tg_id = %s;"
+        query: str = f"SELECT refund_token FROM premiumusers WHERE tg_id = %s;"
         cursor.execute(query, (str(message.from_user.id),))
         result: tuple = cursor.fetchall()
 
@@ -744,7 +744,7 @@ class HandlerDB:
             return False
 
     @staticmethod
-    async def check_promo_code(promo: str) ->  tuple:
+    async def check_promo_code(promo: str) -> tuple:
         """
         Get and check promo code from database.
 

@@ -500,23 +500,27 @@ class Buttons:
 
         elif (type(result) is tuple) and result[0] is True:
             response = (True, result[1], result[2])
+            var1: types.InlineKeyboardButton = types.InlineKeyboardButton(
+                text="✅ Allow",
+                callback_data="allow_send_email_ticket_data_admin"
+            )
+            var2: types.InlineKeyboardButton = types.InlineKeyboardButton(
+                text="❌ No, just show available data",
+                callback_data="not_allow_send_email_ticket_data_admin"
+            )
+            var3: types.InlineKeyboardButton = types.InlineKeyboardButton(
+                text="🔙 Main",
+                callback_data="back_on_main"
+            )
+            builder.row(var1).row(var2).row(var3)
 
         elif (type(result) is tuple) and result[0] is False:
             response = (False, result[1])
-
-        var1: types.InlineKeyboardButton = types.InlineKeyboardButton(
-            text="✅ Allow",
-            callback_data="allow_send_email_ticket_data_admin"
-        )
-        var2: types.InlineKeyboardButton = types.InlineKeyboardButton(
-            text="❌ No, just show available data",
-            callback_data="not_allow_send_email_ticket_data_admin"
-        )
-        var3: types.InlineKeyboardButton = types.InlineKeyboardButton(
-            text="🔙 Main",
-            callback_data="back_on_main"
-        )
-        builder.row(var1).row(var2).row(var3)
+            var1: types.InlineKeyboardButton = types.InlineKeyboardButton(
+                text="🔙 Main",
+                callback_data="back_on_main"
+            )
+            builder.row(var1)
 
         results: tuple = (response, builder)
         return results
