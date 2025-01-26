@@ -41,7 +41,7 @@ class Activate(abc.ABC):
         data = {
             "licence_key": str(licence_key),
             "bot_id": str(bot_id)
-        } 
+        }
         response = requests.post("https://api.cwr.ru/v1/", json=data, verify=False)
 
         #        Dear User! DO NOT attempt to modify the contents of this file, as it may
